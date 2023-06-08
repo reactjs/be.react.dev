@@ -1,57 +1,55 @@
 ---
-title: Installation
+title: Устаноўка
 ---
 
 <Intro>
 
-React has been designed from the start for gradual adoption. You can use as little or as much React as you need. Whether you want to get a taste of React, add some interactivity to an HTML page, or start a complex React-powered app, this section will help you get started.
+React быў распрацаваны для паступовага ўкаранення. Вы можаце выкарыстоўваць як маленькую часту або столькі React, колькі вам трэба. Ці вы хочаце паспрабаваць React на смак, дадаць трохі інтэрактыўнасці HTML старонцы або запусціць складанае React прыкладанне, гэты раздел дапаможа вам прыступіць да працы.
 
 </Intro>
 
 <YouWillLearn isChapter={true}>
 
-* [How to start a new React project](/learn/start-a-new-react-project)
-* [How to add React to an existing project](/learn/add-react-to-an-existing-project)
-* [How to set up your editor](/learn/editor-setup)
-* [How to install React Developer Tools](/learn/react-developer-tools)
+
+* [Як стварыць новы React праект](/learn/start-a-new-react-project)
+* [Як дадаць React ў існуючы праект](/learn/add-react-to-an-existing-project)
+* [Як наладзіць рэдатор коду](/learn/editor-setup)
+* [Як усталяваць React Developer Tools](/learn/react-developer-tools)
 
 </YouWillLearn>
 
-## Try React {/*try-react*/}
+## Паспрабаваць React {/*try-react*/}
 
-You don't need to install anything to play with React. Try editing this sandbox!
+Вам не трэба нічога усталёўваць, каб паспрабаваць React. Падрэдагаваць код у пясочніцы!
 
 <Sandpack>
 
 ```js
 function Greeting({ name }) {
-  return <h1>Hello, {name}</h1>;
+  return <h1>Вітаю, {name}</h1>;
 }
 
 export default function App() {
-  return <Greeting name="world" />
+  return <Greeting name="свет" />
 }
 ```
 
 </Sandpack>
 
-You can edit it directly or open it in a new tab by pressing the "Fork" button in the upper right corner.
+Вы можаце рэдагаваць прама тут або адкрыць код у новай укладцы, націснуўшы кнопцы "Fork" у правым верхнім куце.
 
-Most pages in the React documentation contain sandboxes like this. Outside of the React documentation, there are many online sandboxes that support React: for example, [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), or [CodePen.](https://codepen.io/pen?&editors=0010&layout=left&prefill_data_id=3f4569d1-1b11-4bce-bd46-89090eed5ddb)
+Большасць старонак у React дакументацыі ўтрымліваюць пясочніцы падобныя гэтай. Акрамя дакументацыі React, існуе онлайн пясочніцы, якія падтрымліваюць React: напрыклад, [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), або [CodePen.](https://codepen.io/pen?&editors=0010&layout=left&prefill_data_id=3f4569d1-1b11-4bce-bd46-89090eed5ddb)
 
-### Try React locally {/*try-react-locally*/}
+### Паспрабаваць React лакальна {/*try-react-locally*/}
 
-To try React locally on your computer, [download this HTML page.](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html) Open it in your editor and in your browser!
+Каб паспрабавать React лакальна на вашым кампутары, [загрзіць гэтую HTML старонку.](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html) Адкрыйце яе ў сваім тэкставым рэдакторы і браўзэры!
 
-## Start a new React project {/*start-a-new-react-project*/}
+## Стварыць новы React праект {/*start-a-new-react-project*/}
+Калі вы хочаце стварыць прыкладанне або вэб-сайт цалкам на React, [стварыць новы React праект.](/learn/start-a-new-react-project)
 
-If you want to build an app or a website fully with React, [start a new React project.](/learn/start-a-new-react-project)
+## Дадаць React ў існуючы React праект {/*add-react-to-an-existing-project*/}
 
-## Add React to an existing project {/*add-react-to-an-existing-project*/}
+Калі вы хочаце паспрабаваць React ў існуючы прыкладанне або вэб-сайты, [дадаць React ў існуючы праект.](/learn/add-react-to-an-existing-project)
 
-If want to try using React in your existing app or a website, [add React to an existing project.](/learn/add-react-to-an-existing-project)
-
-## Next steps {/*next-steps*/}
-
-Head to the [Quick Start](/learn) guide for a tour of the most important React concepts you will encounter every day.
-
+## Наступныя крокі {/*next-steps*/}
+Азнаемцеся з [Хуткі старт](/learn), каб пазнаеміцца з найбольш важнымі канцепцыямі React, якімі вы будзеце карыстацца кожны дзень.

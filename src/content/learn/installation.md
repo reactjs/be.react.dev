@@ -11,7 +11,7 @@ React быў распрацаваны для паступовага ўкаран
 <YouWillLearn isChapter={true}>
 
 
-* [Як стварыць новы з React праект](/learn/start-a-new-react-project)
+* [Як стварыць новы праект з React](/learn/start-a-new-react-project)
 * [Як дадаць React у існуючы праект](/learn/add-react-to-an-existing-project)
 * [Як наладзіць рэдактар коду](/learn/editor-setup)
 * [Як усталяваць React Developer Tools](/learn/react-developer-tools)

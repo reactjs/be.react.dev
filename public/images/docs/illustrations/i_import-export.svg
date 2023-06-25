@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="395" viewBox="0 0 800 395">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="405" viewBox="0 0 800 405">
   <defs>
     <style>
       .a {
@@ -69,7 +69,7 @@
     <text class="e" transform="translate(86.99 62.68)">Component.js</text>
     <rect class="f" x="68.11" y="76" width="164.75" height="40" rx="4.83"/>
     <rect class="f" x="68.11" y="124.33" width="164.75" height="40" rx="4.83"/>
-    <text class="g" transform="translate(54.60 355.13)">default экспартаванне</text>
+    <text class="g" transform="translate(77.26 355.13)">прадвызначанае<tspan x="9.60" y="21.6">экспартаванне</tspan></text>
   </g>
   <g>
     <text class="g" transform="translate(306.64 355.13)">некалькі іменаваных<tspan x="22.71" y="21.6">экспартаванняў</tspan></text>
@@ -95,6 +95,6 @@
       <rect class="b" x="565.11" y="185.28" width="164.75" height="115.45" rx="4.83"/>
       <text class="c" transform="translate(577.31 212.64)">export default <tspan class="d"><tspan x="0.56" y="16.8">function </tspan><tspan x="0" y="33.6">FriendsList() { </tspan><tspan x="0" y="50.4" xml:space="preserve"> ... </tspan><tspan x="0" y="67.2">}</tspan></tspan></text>
     </g>
-    <text class="g" transform="translate(530.21 355.18)">іменаваныя экспартаванні<tspan x="-21.03" y="21.6">разам з default экспартаваннем</tspan></text>
+    <text class="g" transform="translate(530.21 355.18)">іменаваныя экспартаванні<tspan x="-1.70" y="21.6">разам з прадвызначайным<tspan x="47.07" y="43.2">экспартаваннем</tspan></tspan></text>
   </g>
 </svg>

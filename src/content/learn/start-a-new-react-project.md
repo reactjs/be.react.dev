@@ -50,7 +50,7 @@ npx create-gatsby
 
 Для хуткага знаёмства з Gatsby, азнаёмцеся з яго [інструкцыяй](https://www.gatsbyjs.com/docs/tutorial/)
 
-Gatsby падтрымліваецца [Netlify](https://www.netlify.com/). Вы можаце [разгарнуць цалкам статычны Gatsby сайт](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting) на любым статычным хостынгу. Калі вы жадаеце выкарыстоўваць толькі серверныя магчымасці Gatsby, пераканайцеся што ваш хостынг іх падтрымлівае.
+Gatsby падтрымліваецца [Netlify](https://www.netlify.com/). Вы можаце [разгарнуць цалкам статычны Gatsby сайт](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting) на любым статычным хостынгу. Калі вы жадаеце выкарыстоўваць толькі серверныя магчымасці Gatsby, пераканаецеся што ваш хостынг іх падтрымлівае.
 
 ### Expo (для натыўных праграм) {/*expo*/}
 

@@ -1,26 +1,26 @@
 ---
-title: Importing and Exporting Components
+title: Імпартаванне і экспартаванне кампанентаў
 ---
 
 <Intro>
 
-The magic of components lies in their reusability: you can create components that are composed of other components. But as you nest more and more components, it often makes sense to start splitting them into different files. This lets you keep your files easy to scan and reuse components in more places.
+Магіяй кампанентаў з’яўляецца іх гатоўнасць да паўторнага выкарыстання: вы можаце стварыць кампанент, які будзе змяшчаць у сабе іншыя кампаненты. Але з павелічэннем колькасці ўкладзеных кампанентаў, часта з’яўляецца і патрэба ў разбіванні кампанентаў па ўласных файлах. Гэта дазваляе захоўваць вашы файлы прасцейшымі для разумення, а кампаненты прасцейшымі для паўторнага выкарыстання.
 
 </Intro>
 
 <YouWillLearn>
 
-* What a root component file is
-* How to import and export a component
-* When to use default and named imports and exports
-* How to import and export multiple components from one file
-* How to split components into multiple files
+* Што такое файл каранёвага кампанента
+* Як імпартаваць і экспартаваць кампаненты
+* Калі выкарыстоўваць прадвызначанае імпартаванне і экспартаванне, а калі найменнае.
+* Як імпартаваць і экспартаваць некалькі кампанентаў з аднаго файла
+* Як падзяліць кампанент на некалькі файлаў
 
 </YouWillLearn>
 
-## The root component file {/*the-root-component-file*/}
+## Файл каранёвага кампанента {/*the-root-component-file*/}
 
-In [Your First Component](/learn/your-first-component), you made a `Profile` component and a `Gallery` component that renders it:
+На старонцы «[Ваш першы кампанент](/learn/your-first-component)», вы стварылі кампаненты `Profile` і `Gallery`, яны выглядаюць наступным чынам:
 
 <Sandpack>
 
@@ -29,7 +29,7 @@ function Profile() {
   return (
     <img
       src="https://i.imgur.com/MK3eW3As.jpg"
-      alt="Katherine Johnson"
+      alt="Кэтрын Джонсан"
     />
   );
 }
@@ -37,7 +37,7 @@ function Profile() {
 export default function Gallery() {
   return (
     <section>
-      <h1>Amazing scientists</h1>
+      <h1>Выбітныя навукоўцы</h1>
       <Profile />
       <Profile />
       <Profile />
@@ -52,17 +52,17 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-These currently live in a **root component file,** named `App.js` in this example. In [Create React App](https://create-react-app.dev/), your app lives in `src/App.js`. Depending on your setup, your root component could be in another file, though. If you use a framework with file-based routing, such as Next.js, your root component will be different for every page.
+У дадзеным прыкладзе ўсе кампаненты існуюць у **файле каранёвага кампанента**, які называецца `App.js`. У [Create React App](https://create-react-app.dev/), вашая праграма змяшчаецца ў `src/App.js`. У залежнасці ад вашага асяроддзя, каранёвы кампанент можа змяшчацца і ў іншым файле. Калі вы выкарыстоўваеце фрэймворк з маршрутызацыяй, што базуецца на файлавай сістэме, (напрыклад, Next.js), ваш каранёвы кампанент будзе розным для кожнай старонкі.
 
-## Exporting and importing a component {/*exporting-and-importing-a-component*/}
+## Экспартаванне і імпартаванне кампанентаў {/*exporting-and-importing-a-component*/}
 
-What if you want to change the landing screen in the future and put a list of science books there? Or place all the profiles somewhere else? It makes sense to move `Gallery` and `Profile` out of the root component file. This will make them more modular and reusable in other files. You can move a component in three steps:
+Што калі вы захочаце змяніць старонку ў будучыні, дадаўшы сюды спіс навуковых кніг? Ці перамясціўшы профілі куды-небудзь яшчэ? Тады з’яўляецца сэнс вынесці `Gallery` і `Profile` з файла каранёвага кампанента. Гэта зробіць іх модульнымі і прыдатнымі для паўторнага выкарыстання ў іншых файлах. Каб вынесці кампанент, трэба выканаць наступныя крокі:
 
-1. **Make** a new JS file to put the components in.
-2. **Export** your function component from that file (using either [default](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export#using_the_default_export) or [named](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export#using_named_exports) exports).
-3. **Import** it in the file where you’ll use the component (using the corresponding technique for importing [default](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import#importing_defaults) or [named](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import#import_a_single_export_from_a_module) exports).
+1. **Стварыце** новы JS файл, куды вы складзяце кампанент.
+2. **Экспартуйце** вашую функцыю з гэтага файла (Выкарыстоўваючы [прадвызначанае](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export#using_the_default_export) або [найменнае](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export#using_named_exports) імпартаванне).
+3. **Імпартуйце** кампанент у файл, дзе вы хочаце яго выкарыстоўваць (адпаведна выкарыстоўваючы [прадвызначанае](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import#importing_defaults) або [найменнае](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import#import_a_single_export_from_a_module) імпартаванне, у залежнасці ад таго, як вы экспартуеце свой кампанент).
 
-Here both `Profile` and `Gallery` have been moved out of `App.js` into a new file called `Gallery.js`. Now you can change `App.js` to import `Gallery` from `Gallery.js`:
+У дадзеным прыкладзе `Profile` і `Gallery` былі вынесеныя з `App.js` у асобны файл `Gallery.js`. Цяпер вы можаце змяніць `App.js`, каб імпартаваць `Gallery` з файла `Gallery.js`:
 
 <Sandpack>
 
@@ -89,7 +89,7 @@ function Profile() {
 export default function Gallery() {
   return (
     <section>
-      <h1>Amazing scientists</h1>
+      <h1>Выбітныя навукоўцы</h1>
       <Profile />
       <Profile />
       <Profile />
@@ -104,60 +104,60 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-Notice how this example is broken down into two component files now:
+Заўважце якім чынам цяпер код у дадзеным прыкладзе разбіты на два файлы з кампанентамі:
 
 1. `Gallery.js`:
-     - Defines the `Profile` component which is only used within the same file and is not exported.
-     - Exports the `Gallery` component as a **default export.**
+     - Вызначае кампанент `Profile`, які  выкарыстоўваецца толькі ў межах файла, таму не экспартуецца.
+     - Экспартуе кампанент `Gallery`, выкарыстоўваючы **прадвызначанае экспартаванне**.
 2. `App.js`:
-     - Imports `Gallery` as a **default import** from `Gallery.js`.
-     - Exports the root `App` component as a **default export.**
+     - Імпартуе `Gallery` выкарыстоўваючы **прадвызначанае імпартаванне** з файла `Gallery.js`.
+     - Экспартуе каранёвы кампанент `App`, выкарыстоўваючы **прадвызначанае экспартаванне**.
 
 
 <Note>
 
-You may encounter files that leave off the `.js` file extension like so:
+Вы таксама можаце сутыкнуцца з выпадкамі, калі ў назве файла прапушчана частка `.js`:
 
 ```js 
 import Gallery from './Gallery';
 ```
 
-Either `'./Gallery.js'` or `'./Gallery'` will work with React, though the former is closer to how [native ES Modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules) work.
+Абодва варыянты: `'./Gallery.js'` і `'./Gallery'` будуць працаваць у React, хай і першы варыянт бліжэйшы да таго, як працуюць [натыўныя ES модулі](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules).
 
 </Note>
 
 <DeepDive>
 
-#### Default vs named exports {/*default-vs-named-exports*/}
+#### Розніца паміж прадвызначаным і найменным экспартаваннем {/*default-vs-named-exports*/}
 
-There are two primary ways to export values with JavaScript: default exports and named exports. So far, our examples have only used default exports. But you can use one or both of them in the same file. **A file can have no more than one _default_ export, but it can have as many _named_ exports as you like.**
+У JavaScript ёсць два асноўных спосабы экспартавання: прадвызначанае экспартаванне і найменнае экспартаванне. У нашых прыкладах дагэтуль выкарыстоўвалася толькі прадвызначанае экспартаванне. Але вы можаце выкарыстоўваць любы з іх ці адразу некалькі ў межах аднаго файла. **Адзін файл можа выкарыстоўваць _прадвызначанае_ экспартаванне не болей за адзін раз, але _найменныя_ экспартаванні можна выкарыстоўваць колькі хочаце разоў**.
 
-![Default and named exports](/images/docs/illustrations/i_import-export.svg)
+![Прадвызначанае і найменныя спосабы экспартавання](/images/docs/illustrations/i_import-export.svg)
 
-How you export your component dictates how you must import it. You will get an error if you try to import a default export the same way you would a named export! This chart can help you keep track:
+Ад таго, як вы экспартуеце кампанент, залежыць тое, як вам давядзецца яго імпартаваць. Вы атрымаеце памылку, калі паспрабуеце імпартаваць прадвызначана экспартаваны кампанент такім жа чынам, якім трэба імпартаваць найменна экспартаваныя кампаненты! Гэтая табліца дапаможа вам не блытацца:
 
-| Syntax           | Export statement                           | Import statement                          |
+| Сінтаксіс           | Аператар экспартавання                           | Аператар імпартавання                          |
 | -----------      | -----------                                | -----------                               |
-| Default  | `export default function Button() {}` | `import Button from './Button.js';`     |
-| Named    | `export function Button() {}`         | `import { Button } from './Button.js';` |
+| Прадвызначанае  | `export default function Button() {}` | `import Button from './Button.js';`     |
+| Найменнае    | `export function Button() {}`         | `import { Button } from './Button.js';` |
 
-When you write a _default_ import, you can put any name you want after `import`. For example, you could write `import Banana from './Button.js'` instead and it would still provide you with the same default export. In contrast, with named imports, the name has to match on both sides. That's why they are called _named_ imports!
+Калі вы выкарыстоўваеце _прадвызначанае_ імпартаванне, вы можаце выкарыстоўваць любую назву ў `import`. Напрыклад, вы можаце напісаць `import Banana from './Button.js'` і атрымаць усё той жа прадвызначана экспартаваны кампанент. Гэтаму супрацьпастаўляюцца найменныя імпартаванні: пры іх назва павінна супадаць у абодвух файлах. Таму яны і называюцца _найменнымі_!
 
-**People often use default exports if the file exports only one component, and use named exports if it exports multiple components and values.** Regardless of which coding style you prefer, always give meaningful names to your component functions and the files that contain them. Components without names, like `export default () => {}`, are discouraged because they make debugging harder.
+**Звычайна людзі выкарыстоўваць прадвызначанае экспартаванне, калі файл экспартуе толькі адзін кампанент, і найменныя экспартаванні, калі файл экспартуе некалькі кампанентаў**. Незалежна ад таго, якому стылю напісання кода вы аддаяце перавагу, заўсёды называйце кампаненты і іх файлы асэнсавана. Кампаненты без назваў, такія як `export default () => {}`, выкарыстоўваць не варта, бо яны ўскладняюць працэс адладжвання.
 
 </DeepDive>
 
-## Exporting and importing multiple components from the same file {/*exporting-and-importing-multiple-components-from-the-same-file*/}
+## Экспартаванне і імпартаванне некалькіх кампанентаў з аднаго файла {/*exporting-and-importing-multiple-components-from-the-same-file*/}
 
-What if you want to show just one `Profile` instead of a gallery? You can export the `Profile` component, too. But `Gallery.js` already has a *default* export, and you can't have _two_ default exports. You could create a new file with a default export, or you could add a *named* export for `Profile`. **A file can only have one default export, but it can have numerous named exports!**
+Што калі вы хочаце паказваць адзін `Profile` замест галерэі? Вы можаце экспартаваць кампанент `Profile` таксама. Але `Gallery.js` ужо мае *прадвызначанае* экспартаванне, і вы не можаце скарыстацца прадвызначаным экспартаваннем _двойчы_. Вы можаце стварыць новы файл з прадвызначаным экспартаваннем, але таксама вы можаце дадаць найменнае экспартаванне для `Profile`. **Адзін файл можа мець толькі адное прадвызначанае экспартаванне, але любую колькасць найменных экспартаванняў!**
 
 <Note>
 
-To reduce the potential confusion between default and named exports, some teams choose to only stick to one style (default or named), or avoid mixing them in a single file. Do what works best for you!
+Каб пазбавіцца патэнцыйнай блытаніны праз розныя варыянты экспартавання, некаторыя людзі, асабліва хто працуюць у камандзе, карыстаюцца толькі адным стылем экспартавання (прадвызначаным або найменным) ці прынамсі пазбягаюць выкарыстання іх разам у межах аднаго файла. Рабіце тое, што вам падыдзе найлепш!
 
 </Note>
 
-First, **export** `Profile` from `Gallery.js` using a named export (no `default` keyword):
+Спачатку, **экспартуйце** `Profile` з `Gallery.js` выкарыстоўваючы найменнае экспартаванне (без ключавога слова `default`):
 
 ```js
 export function Profile() {
@@ -165,13 +165,13 @@ export function Profile() {
 }
 ```
 
-Then, **import** `Profile` from `Gallery.js` to `App.js` using a named import (with the curly braces):
+Затым, **імпартуйце** `Profile` з `Gallery.js` у `App.js` выкарыстоўваючы найменнае імпартаванне (з фігурнымі дужкамі):
 
 ```js
 import { Profile } from './Gallery.js';
 ```
 
-Finally, **render** `<Profile />` from the `App` component:
+Нарэшце, **дадайце** `<Profile />` унутр кампанента `App`:
 
 ```js
 export default function App() {
@@ -179,7 +179,7 @@ export default function App() {
 }
 ```
 
-Now `Gallery.js` contains two exports: a default `Gallery` export, and a named `Profile` export. `App.js` imports both of them. Try editing `<Profile />` to `<Gallery />` and back in this example:
+Цяпер `Gallery.js` змяшчае два кампаненты: прадвызначана экспартаваны `Gallery` і найменна экспартаваны `Profile`. `App.js` імпартуе іх разам. Паспрабуйце замяніць `<Profile />` на `<Gallery />` і назад у наступным прыкладзе:
 
 <Sandpack>
 
@@ -207,7 +207,7 @@ export function Profile() {
 export default function Gallery() {
   return (
     <section>
-      <h1>Amazing scientists</h1>
+      <h1>Выбітныя навукоўцы</h1>
       <Profile />
       <Profile />
       <Profile />
@@ -222,24 +222,24 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-Now you're using a mix of default and named exports:
+Цяпер вы выкарыстоўваеце адразу прадвызначанае і найменнае экспартаванні:
 
 * `Gallery.js`:
-  - Exports the `Profile` component as a **named export called `Profile`.**
-  - Exports the `Gallery` component as a **default export.**
+  - Экспартуе кампанент `Profile`, выкарыстоўваючы **найменны экспарт**, экспартаваны кампанент мае назву **`Profile`**.
+  - Экспартуе кампанент `Gallery`, выкарыстоўваючы **прадвызначанае экспартаванне**.
 * `App.js`:
-  - Imports `Profile` as a **named import called `Profile`** from `Gallery.js`.
-  - Imports `Gallery` as a **default import** from `Gallery.js`.
-  - Exports the root `App` component as a **default export.**
+  - Імпартуе кампанент `Profile`, выкарыстоўваючы **найменнае імпартаванне, пад назвай `Profile`** з `Gallery.js`.
+  - Імпартуе `Gallery`, выкарыстоўваючы **прадвызначанае экспартаванне**, з `Gallery.js`.
+  - Экспартуе каранёвы кампаненты `App`, выкарыстоўваючы **прадвызначанае экспартаванне**.
 
 <Recap>
 
-On this page you learned:
+На гэтай старонцы вы вывучылі:
 
-* What a root component file is
-* How to import and export a component
-* When and how to use default and named imports and exports
-* How to export multiple components from the same file
+* Што такое файл каранёвага кампанента
+* Як імпартаваць і экспартаваць кампаненты
+* Калі і як выкарыстоўваць прадвызначанае імпартаванне і экспартаванне, а калі найменнае.
+* Як экспартаваць некалькі кампанентаў з аднаго файла
 
 </Recap>
 
@@ -247,22 +247,22 @@ On this page you learned:
 
 <Challenges>
 
-#### Split the components further {/*split-the-components-further*/}
+#### Працягніце разбіванне кампанентаў {/*split-the-components-further*/}
 
-Currently, `Gallery.js` exports both `Profile` and `Gallery`, which is a bit confusing.
+На дадзены момант `Gallery.js` экспартуе абодва кампаненты: `Profile` і `Gallery`, што можа блытаць.
 
-Move the `Profile` component to its own `Profile.js`, and then change the `App` component to render both `<Profile />` and `<Gallery />` one after another.
+Перанясіце кампанент `Profile` ва ўласны файл `Profile.js`, затым змяніце кампанент `App`, каб ён рэндэрыў абодва кампаненты: `<Profile />` і `<Gallery />` адзін пасля іншага.
 
-You may use either a default or a named export for `Profile`, but make sure that you use the corresponding import syntax in both `App.js` and `Gallery.js`! You can refer to the table from the deep dive above:
+Вы можаце выкарыстоўваць для кампанента `Profile` любы стыль экспартавання: прадвызначаны або найменны, але не забудзьцеся пераканацца, што выкарыстоўваеце адпаведны сінтаксіс у абодвух файлах: `App.js` і `Gallery.js`! Звярніцеся да табліцы для прасцейшага разумення:
 
-| Syntax           | Export statement                           | Import statement                          |
+| Сінтаксіс           | Аператар экспарту                           | Аператар імпарту                          |
 | -----------      | -----------                                | -----------                               |
 | Default  | `export default function Button() {}` | `import Button from './Button.js';`     |
-| Named    | `export function Button() {}`         | `import { Button } from './Button.js';` |
+| Найменнае    | `export function Button() {}`         | `import { Button } from './Button.js';` |
 
 <Hint>
 
-Don't forget to import your components where they are called. Doesn't `Gallery` use `Profile`, too?
+Не забудзьцеся на імпартаванне вашых кампанентаў там, дзе вы іх выкарыстоўваеце. Ці не выкарыстоўваецца кампанент `Profile` таксама і ў кампаненце `Gallery`?
 
 </Hint>
 
@@ -295,7 +295,7 @@ export function Profile() {
 export default function Gallery() {
   return (
     <section>
-      <h1>Amazing scientists</h1>
+      <h1>Выбітныя навукоўцы</h1>
       <Profile />
       <Profile />
       <Profile />
@@ -313,11 +313,11 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-After you get it working with one kind of exports, make it work with the other kind.
+Як толькі ў вас атрымаецца зрабіць гэта з дапамогай аднаго са стыляў экспартавання, паспрабуйце зрабіць тое ж самае, выкарыстоўваючы іншы стыль.
 
 <Solution>
 
-This is the solution with named exports:
+Вось варыянт рашэння з найменным экспартаваннем:
 
 <Sandpack>
 
@@ -341,7 +341,7 @@ import { Profile } from './Profile.js';
 export default function Gallery() {
   return (
     <section>
-      <h1>Amazing scientists</h1>
+      <h1>Выбітныя навукоўцы</h1>
       <Profile />
       <Profile />
       <Profile />
@@ -367,7 +367,7 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-This is the solution with default exports:
+Вось варыянт рашэння з прадвызначаным экспартаваннем:
 
 <Sandpack>
 
@@ -391,7 +391,7 @@ import Profile from './Profile.js';
 export default function Gallery() {
   return (
     <section>
-      <h1>Amazing scientists</h1>
+      <h1>Выбітныя навукоўцы</h1>
       <Profile />
       <Profile />
       <Profile />

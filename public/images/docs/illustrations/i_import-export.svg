@@ -95,6 +95,6 @@
       <rect class="b" x="565.11" y="185.28" width="164.75" height="115.45" rx="4.83"/>
       <text class="c" transform="translate(577.31 212.64)">export default <tspan class="d"><tspan x="0.56" y="16.8">function </tspan><tspan x="0" y="33.6">FriendsList() { </tspan><tspan x="0" y="50.4" xml:space="preserve"> ... </tspan><tspan x="0" y="67.2">}</tspan></tspan></text>
     </g>
-    <text class="g" transform="translate(530.21 355.18)">іменаваныя экспартаванні<tspan x="-1.70" y="21.6">разам з прадвызначайным<tspan x="47.07" y="43.2">экспартаваннем</tspan></tspan></text>
+    <text class="g" transform="translate(530.21 355.18)">іменаваныя экспартаванні<tspan x="3.50" y="21.6">разам з прадвызначаным<tspan x="47.07" y="43.2">экспартаваннем</tspan></tspan></text>
   </g>
 </svg>

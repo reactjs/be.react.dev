@@ -1,126 +1,124 @@
 ---
-title: Start a New React Project
+title: Пачаць новы React праект
 ---
 
 <Intro>
 
-If you want to build a new app or a new website fully with React, we recommend picking one of the React-powered frameworks popular in the community. Frameworks provide features that most apps and sites eventually need, including routing, data fetching, and generating HTML.
+Калі вы хочаце стварыць новую праграму або новы вэб-сайт цалкам на React, мы рэкамендуем выбраць адзін з фрэймворкаў на базе React, папулярных у супольнасці. Фрэймворкі забяспечваюць функцыі, якія патрэбны большасці праграм і сайтаў, уключаючы маршрутызацыю, выбарку даных і генерацыю HTML.
 
 </Intro>
 
 <Note>
 
-**You need to install [Node.js](https://nodejs.org/en/) for local development.** You can *also* choose to use Node.js in production, but you don't have to. Many React frameworks support export to a static HTML/CSS/JS folder.
+**Вам трэба ўсталяваць [Node.js](https://nodejs.org/en/) для лакальнага разгортвання.** Вы можаце *таксама* выкарыстоўваць Node.js у вытворчасці, але гэта неабавязкова. Многія React фрэймворкі падтрымліваюць экспарт у статычны HTML/CSS/JS.
 
 </Note>
 
-## Production-grade React frameworks {/*production-grade-react-frameworks*/}
+## React фрэймворкі, гатовыя для выкарыстання ў працоўным асяроддзі {/*production-grade-react-frameworks*/}
 
 ### Next.js {/*nextjs*/}
 
-**[Next.js](https://nextjs.org/) is a full-stack React framework.** It's versatile and lets you create React apps of any size--from a mostly static blog to a complex dynamic application. To create a new Next.js project, run in your terminal:
+**[Next.js](https://nextjs.org/) — гэта ўніверсальны фулстэк React фрэймворк.** З яго дапамогай вы можаце ствараць сайты любога памеру ад простага статычнага блога да складанага дынамічнага сайта. Каб стварыць новы Next.js праект, запусціце ў вашым тэрмінале:
 
 <TerminalBlock>
 npx create-next-app
 </TerminalBlock>
 
-If you're new to Next.js, check out the [Next.js tutorial.](https://nextjs.org/learn/foundations/about-nextjs)
+Для знаёмства з Next.js вы можаце азнаёміцца з іх [падручнікам па Next.js.](https://nextjs.org/learn/foundations/about-nextjs)
 
-Next.js is maintained by [Vercel](https://vercel.com/). You can [deploy a Next.js app](https://nextjs.org/docs/deployment) to any Node.js or serverless hosting, or to your own server. [Fully static Next.js apps](https://nextjs.org/docs/advanced-features/static-html-export) can be deployed to any static hosting.
+Next.js падтрымліваецца [Vercel](https://vercel.com/). Вы можаце [разгарнуць Next.js](https://nextjs.org/docs/deployment) на любым бессерверным хостынгу, Node.js хостынгу або на вашым уласным серверы. [Цалкам статычную праграму на Next.js](https://nextjs.org/docs/advanced-features/static-html-export) можна разгарнуць на любым статычным хостынгу.
 
 ### Remix {/*remix*/}
 
-**[Remix](https://remix.run/) is a full-stack React framework with nested routing.** It lets you break your app into nested parts that can load data in parallel and refresh in response to the user actions. To create a new Remix project, run:
+**[Remix](https://remix.run/) — гэта фулстэк React фрэймворк з укладзенай маршрутызацыяй.** Ён дазваляе разбіваць вашу праграму на ўкладзеныя часткі, якія могуць загружаць даныя паралельна і абнаўляць у адказ на дзеянні карыстальніка. Каб стварыць новы Remix праект, запусціце:
 
 <TerminalBlock>
 npx create-remix
 </TerminalBlock>
 
-If you're new to Remix, check out the Remix [blog tutorial](https://remix.run/docs/en/main/tutorials/blog) (short) and [app tutorial](https://remix.run/docs/en/main/tutorials/jokes) (long).
+Для знаёмства з Remix вы можаце азнаёміцца з іх інструкцыямі па [стварэнні блога](https://remix.run/docs/en/main/tutorials/blog) (кароткая) і [праграмы](https://remix.run/docs/en/main/tutorials/jokes) (доўгая).
 
-Remix is maintained by [Shopify](https://www.shopify.com/). When you create a Remix project, you need to [pick your deployment target](https://remix.run/docs/en/main/guides/deployment). You can deploy a Remix app to any Node.js or serverless hosting by using or writing an [adapter](https://remix.run/docs/en/main/other-api/adapter).
+Remix падтрымліваецца [Shopify](https://www.shopify.com/). Калі вы ствараеце Remix праект, вам трэба [выбраць шаблон для разгортвання праграмы](https://remix.run/docs/en/main/guides/deployment). Вы можаце разгарнуць Remix праграму на любым бессерверным хостынгу або Node.js хостынгу, выкарыстоўваючы або напісаўшы [адаптар](https://remix.run/docs/en/main/other-api/adapter).
 
 ### Gatsby {/*gatsby*/}
 
-**[Gatsby](https://www.gatsbyjs.com/) is a React framework for fast CMS-backed websites.** Its rich plugin ecosystem and its GraphQL data layer simplify integrating content, APIs, and services into one website. To create a new Gatsby project, run:
+**[Gatsby](https://www.gatsbyjs.com/) — гэта React фрэймворк для стварэння хуткіх сайтаў з падтрымкай CMS.** Багатая экасістэма плагінаў і слой даных GraphQL спрашчаюць інтэграцыю змесціва, API і сэрвісаў на адным вэб-сайце. Каб стварыць новы Gatsby праект, запусціце:
 
 <TerminalBlock>
 npx create-gatsby
 </TerminalBlock>
 
-If you're new to Gatsby, check out the [Gatsby tutorial.](https://www.gatsbyjs.com/docs/tutorial/)
+Для хуткага знаёмства з Gatsby, азнаёмцеся з яго [інструкцыяй](https://www.gatsbyjs.com/docs/tutorial/)
 
-Gatsby is maintained by [Netlify](https://www.netlify.com/). You can [deploy a fully static Gatsby site](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting) to any static hosting. If you opt into using server-only features, make sure your hosting provider supports them for Gatsby.
+Gatsby падтрымліваецца [Netlify](https://www.netlify.com/). Вы можаце [разгарнуць цалкам статычны Gatsby сайт](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting) на любым статычным хостынгу. Калі вы жадаеце выкарыстоўваць толькі серверныя магчымасці Gatsby, пераканайцеся, што ваш хостынг іх падтрымлівае.
 
-### Expo (for native apps) {/*expo*/}
+### Expo (для натыўных праграм) {/*expo*/}
 
-**[Expo](https://expo.dev/) is a React framework that lets you create universal Android, iOS, and web apps with truly native UIs.** It provides an SDK for [React Native](https://reactnative.dev/) that makes the native parts easier to use. To create a new Expo project, run:
+**[Expo](https://expo.dev/) — гэта React фрэймворк, які дазваляе ствараць універсальныя праграмы для Android, iOS і вэб-праграмы з натыўным карыстальніцкім інтэрфейсам.** Ён пастаўляецца разам з SDK для [React Native](https://reactnative.dev/), што палягчае распрацоўку натыўных частак. Каб стварыць новы Expo праект, запусціце:
 
 <TerminalBlock>
 npx create-expo-app
 </TerminalBlock>
 
-If you're new to Expo, check out the [Expo tutorial](https://docs.expo.dev/tutorial/introduction/).
+Для знаёмства з Expo вы можаце азнаёміцца з іх [інструкцыя Expo](https://docs.expo.dev/tutorial/introduction/).
 
-Expo is maintained by [Expo (the company)](https://expo.dev/about). Building apps with Expo is free, and you can submit them to the Google and Apple app stores without restrictions. Expo additionally provides opt-in paid cloud services.
+Expo падтрымліваецца [Expo (кампанія)](https://expo.dev/about). Вы можаце бясплатна ствараць праграмы з дапамогай Expo і дадаваць іх у крамы Google і Apple без абмежаванняў. Дадаткова Expo прапануе платныя воблачныя паслугі.
 
 <DeepDive>
 
-#### Can I use React without a framework? {/*can-i-use-react-without-a-framework*/}
+#### Ці можна выкарыстоўваць React без фрэймворка? {/*can-i-use-react-without-a-framework*/}
 
-You can definitely use React without a framework--that's how you'd [use React for a part of your page.](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) **However, if you're building a new app or a site fully with React, we recommend using a framework.**
+React дакладна можна выкарыстоўваць без фрэймворка. Напрыклад, вы можаце [выкарыстоўваць React толькі для пэўнай часткі старонкі.](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) **Аднак, калі вы ствараеце новую праграму або сайт цалкам з React, мы рэкамендуем выкарыстоўваць фрэймворк.**
 
-Here's why.
+Вось чаму:
 
-Even if you don't need routing or data fetching at first, you'll likely want to add some libraries for them. As your JavaScript bundle grows with every new feature, you might have to figure out how to split code for every route individually. As your data fetching needs get more complex, you are likely to encounter server-client network waterfalls that make your app feel very slow. As your audience includes more users with poor network conditions and low-end devices, you might need to generate HTML from your components to display content early--either on the server, or during the build time. Changing your setup to run some of your code on the server or during the build can be very tricky.
+Нават калі спачатку вам не патрэбна маршрутызацыя або атрыманне даных, вы, верагодна, захочаце пазней дадаць некаторыя бібліятэкі для гэтага. С кожнай новай функцыяй памер вашага JavaScript кода будзе расці і вам давядзецца задумацца аб тым, як падзяляць код для розных маршрутаў. Па меры таго, як ваша праграма будзе атрымліваць усё больш даных, вы можаце сутыкнуцца з каскаднымі запытамі, якія запаволяць вашу праграму. Сярод вашых карыстальнікаў з'явяцца тыя, хто карыстаецца нізкахуткасным інтэрнэтам або старымі прыладамі, і вы захочаце генерыраваць HTML на серверы або падчас зборкі. Змяніць налады вялікага праекту так, каб запускаць код на серверы або падчас зборкі, можа аказацца складанай задачай.
 
-**These problems are not React-specific. This is why Svelte has SvelteKit, Vue has Nuxt, and so on.** To solve these problems on your own, you'll need to integrate your bundler with your router and with your data fetching library. It's not hard to get an initial setup working, but there are a lot of subtleties involved in making an app that loads quickly even as it grows over time. You'll want to send down the minimal amount of app code but do so in a single client–server roundtrip, in parallel with any data required for the page. You'll likely want the page to be interactive before your JavaScript code even runs, to support progressive enhancement. You may want to generate a folder of fully static HTML files for your marketing pages that can be hosted anywhere and still work with JavaScript disabled. Building these capabilities yourself takes real work.
+**Гэтыя праблемы не з'яўляюцца спецыфічнымі для React. Вось чаму ў Svelte ёсць SvelteKit, у Vue ёсць Nuxt і гэтак далей.** Каб іх вырашыць, вам давядзецца інтэграваць ваш зборшчык з абранымі бібліятэкамі для маршрутызацыі і атрымання даных. Зрабіць першасную наладу і прымусіць усё гэта працаваць разам можа аказацца не так складана, але існуе шмат падводных камянёў аб якіх вам прыйдзецца даведацца, каб падтрымліваць прадукцыйнасць праграмы па меры яе росту. Вы захочаце адпраўляць як мага менш кода, але зрабіць гэта за адзін раўнд запытаў паміж кліентам і серверам, пры гэтым паралельна атрымліваючы неабходныя для старонкі даныя. Верагодна, вы захочаце, каб са старонка можна было працаваць яшчэ да запуску JavaScript кода, каб падтрымліваць прагрэсіўнае паляпшэнне. Магчыма, вам спатрэбіцца дадаць папку статычных HTML файлаў для маркетынгавых старонак, якія могуць працаваць з адключаным на старонцы Javascript. Самастойнае стварэнне і падтрымка ўсіх гэтых магчымасцей патрабуе вельмі вялікай і сур'ёзнай працы.
 
-**React frameworks on this page solve problems like these by default, with no extra work from your side.** They let you start very lean and then scale your app with your needs. Each React framework has a community, so finding answers to questions and upgrading tooling is easier. Frameworks also give structure to your code, helping you and others retain context and skills between different projects. Conversely, with a custom setup it's easier to get stuck on unsupported dependency versions, and you'll essentially end up creating your own framework—albeit one with no community or upgrade path (and if it's anything like the ones we've made in the past, more haphazardly designed).
+**React фреймворкі на гэтай старонцы вырашаюць усе гэтыя праблемы і не патрабуюць ад вас дадатковых намаганняў.** Вы можаце пачаць з малога і дадаваць неабходную функцыянальнасць па меры неабходнасці. Кожны React фрэймворк мае суполку, таму знаходзіць адказы на пытанні і абнаўляць інструменты з іх дапамогай прасцей. Акрамя таго, фрэймворкі дапамагаюць структураваць ваш код і робяць яго зразумелым для іншых распрацоўшчыкаў. Правільна і адваротнае, зрабіўшы ўласнае рашэнне, ёсць рызыка захраснуць на версіі залежнасці, якая ўжо не падтрымліваецца і ў выніку стварыць свой уласны фрэймворк без суполкі і развіцця (і, хутчэй за ўсё, ён акажацца спраектаваны горш за ўжо існуючыя рашэнні ад каманд, якія прысвяцілі гэтым праблемам вялікую колькасць часу).
 
-If you're still not convinced, or your app has unusual constraints not served well by these frameworks and you'd like to roll your own custom setup, we can't stop you--go for it! Grab `react` and `react-dom` from npm, set up your custom build process with a bundler like [Vite](https://vitejs.dev/) or [Parcel](https://parceljs.org/), and add other tools as you need them for routing, static generation or server-side rendering, and more.
+Калі мы вас яшчэ не пераканалі або фрэймворкі не рашаюць тую праблему, якая паўстала перад вашай праграмай і вы хочаце стварыць свой уласны фрэймворк - дзейнічайце! Усталюйце `react` і `react-dom` з npm, наладзьце свой уласны працэс зборкі з дапамогай зборшчыка, напрыклад [Vite](https://vitejs.dev/) або [Parcel](https://parceljs.org/), і па меры неабходнасці дадайце ўсе неабходныя інструменты для маршрутызацыі, статычнай генерацыі кода, сервернага рэндэрынгу і гэтак далей.
 </DeepDive>
 
-## Bleeding-edge React frameworks {/*bleeding-edge-react-frameworks*/}
+## Перадавыя React фрэймворкі {/*bleeding-edge-react-frameworks*/}
 
-As we've explored how to continue improving React, we realized that integrating React more closely with frameworks (specifically, with routing, bundling, and server technologies) is our biggest opportunity to help React users build better apps. The Next.js team has agreed to collaborate with us in researching, developing, integrating, and testing framework-agnostic bleeding-edge React features like [React Server Components.](/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components)
+Па меры таго як мы развівалі React, мы зразумелі, што лепшая інтэграцыя з фрэймворкамі (асабліва ў пытаннях маршрутызацыі, зборкі і серверных тэхналогій) прынясе найбольшую карысць нашым карыстальнікам. Каманда Next.js пагадзілася ўзаемадзейнічаць з намі ў пошуку, распрацоўцы, інтэграцыі і тэсціраванні перадавых падыходаў, якія не залежаць ад канкрэтнага фрэймворка, напрыклад [серверныя кампаненты React.](/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components)
 
-These features are getting closer to being production-ready every day, and we've been in talks with other bundler and framework developers about integrating them. Our hope is that in a year or two, all frameworks listed on this page will have full support for these features. (If you're a framework author interested in partnering with us to experiment with these features, please let us know!)
+Мы працуем над тым, каб новыя магчымасці сталі прыдатнымі для працоўнага асяроддзя як мага хутчэй, і дамаўляемся з распрацоўшчыкамі зборшчыкаў і фрэймворкаў аб іх інтэграцыі. Мы разлічваем, праз год ці два ўсе пералічаныя фрэймворкі будуць поўнасцю падтрымліваць гэтыя магчымасці. (Калі вы распрацоўшчык фрэймворка і хочаце дапамагчы нам у эксперыментах, калі ласка, дайце нам ведаць!)
 
 ### Next.js (App Router) {/*nextjs-app-router*/}
 
-**[Next.js's App Router](https://beta.nextjs.org/docs/getting-started) is a redesign of the Next.js APIs aiming to fulfill the React team’s full-stack architecture vision.** It lets you fetch data in asynchronous components that run on the server or even during the build.
+**[Next.js App Router](https://beta.nextjs.org/docs/getting-started) — гэта абноўлены API Next.js, які адпавядае таму, як каманда React бачыць архітэктуру фулстэк-праграм сёння.** Ён дазваляе загружаць даныя ў асінхронных кампанентах на серверы або нават падчас зборкі.
 
-Next.js is maintained by [Vercel](https://vercel.com/). You can [deploy a Next.js app](https://nextjs.org/docs/deployment) to any Node.js or serverless hosting, or to your own server. Next.js also supports [static export](https://beta.nextjs.org/docs/configuring/static-export) which doesn't require a server.
+Next.js падтрымліваецца [Vercel](https://vercel.com/). Вы можаце [разгарнуць Next.js праграму](https://nextjs.org/docs/deployment) на любым Node.js або бессерверным хостынгу, або на вашым уласным серверы. Next.js таксама падтрымлівае [статычны экспарт](https://beta.nextjs.org/docs/configuring/static-export), які не патрабуе сервера.
 <Pitfall>
 
-Next.js's App Router is **currently in beta and is not yet recommended for production** (as of Mar 2023). To experiment with it in an existing Next.js project, [follow this incremental migration guide](https://beta.nextjs.org/docs/upgrade-guide#migrating-from-pages-to-app).
-
+Next.js App Router **у цяперашні час знаходзіцца ў бэта-версіі і пакуль не рэкамендуецца для выкарыстання ў працоўным асяроддзі** (па стане на сакавік 2023 году). Каб паэксперыментаваць з ім у існуючым праекце Next.js, [прытрымлівайцеся гэтага кіраўніцтва па паступовай міграцыі](https://beta.nextjs.org/docs/upgrade-guide#migrating-from-pages-to-app).
 </Pitfall>
 
 <DeepDive>
 
-#### Which features make up the React team’s full-stack architecture vision? {/*which-features-make-up-the-react-teams-full-stack-architecture-vision*/}
+#### Якія функцыі складаюць бачанне поўнай архітэктуры React каманды? {/*which-features-make-up-the-react-teams-full-stack-architecture-vision*/}
 
-Next.js's App Router bundler fully implements the official [React Server Components specification](https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md). This lets you mix build-time, server-only, and interactive components in a single React tree.
+Зборшчык Next.js App Router цалкам рэалізуе афіцыйную [спецыфікацыю серверных кампанентаў React](https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md). Гэта дазваляе змяшаць кампаненты часу зборкі, серверныя і інтэрактыўныя кампаненты ў адным дрэве React.
 
-For example, you can write a server-only React component as an `async` function that reads from a database or from a file. Then you can pass data down from it to your interactive components:
+Напрыклад, вы можаце напісаць серверны кампанент React як `async` функцыю, якая чытае з базы даных або з файла. Затым вы можаце перадаваць даныя з яго ў інтэрактыўныя кампаненты:
 
 ```js
-// This component runs *only* on the server (or during the build).
+// Гэты кампанент працуе *толькі* на серверы (або падчас зборкі).
 async function Talks({ confId }) {
-  // 1. You're on the server, so you can talk to your data layer. API endpoint not required.
+  // 1. Вы знаходзіцеся на серверы, таму можаце напрамую звярнуцца да вашай базы даных без запытаў да API.
   const talks = await db.Talks.findAll({ confId });
 
-  // 2. Add any amount of rendering logic. It won't make your JavaScript bundle larger.
+  // 2. Дадайце любую колькасць логікі рэндэрынгу. Гэта не павялічыць памер вашага JavaScript пакета.
   const videos = talks.map(talk => talk.video);
 
-  // 3. Pass the data down to the components that will run in the browser.
+  // 3. Перадайце даныя кампанентам, якія будуць працаваць у браўзеры.
   return <SearchableVideoList videos={videos} />;
 }
 ```
-
-Next.js's App Router also integrates [data fetching with Suspense](/blog/2022/03/29/react-v18#suspense-in-data-frameworks). This lets you specify a loading state (like a skeleton placeholder) for different parts of your user interface directly in your React tree:
+Next.js App Router таксама падтрымлівае [атрыманне даных з затрымкай (Suspense)](/blog/2022/03/29/react-v18#suspense-in-data-frameworks). Так вы можаце задаць стан розных частак вашай праграмы пры загрузцы (напрыклад, паказаць заглушкі) непасрэдна ў вашым дрэве React:
 
 ```js
 <Suspense fallback={<TalksLoading />}>
@@ -128,6 +126,5 @@ Next.js's App Router also integrates [data fetching with Suspense](/blog/2022/03
 </Suspense>
 ```
 
-Server Components and Suspense are React features rather than Next.js features. However, adopting them at the framework level requires buy-in and non-trivial implementation work. At the moment, the Next.js App Router is the most complete implementation. The React team is working with bundler developers to make these features easier to implement in the next generation of frameworks.
-
+Серверныя кампаненты і затрымка (Suspense) — гэта хутчэй магчымасці React, чым Next.js. Аднак іх прыняцце на ўзроўні фрэймворка патрабуе згоды на гэта ад каманды распрацоўкі і нетрывіяльнай працы па рэалізацыі. На дадзены момант Next.js App Router з'яўляецца найбольш поўнай рэалізацыяй гэтых магчымасцей. Каманда React працуе разам з распрацоўшчыкамі зборшчыкаў, каб палегчыць рэалізацыю гэтых функцый у фрэймворках наступнага пакалення.
 </DeepDive>

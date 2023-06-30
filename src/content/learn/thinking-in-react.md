@@ -1,5 +1,5 @@
 ---
-title: Thinking in React
+title: Філасофія React
 ---
 
 <Intro>

@@ -7,7 +7,7 @@
       "sectionHeader": "GET STARTED"
     },
     {
-      "title": "Quick Start",
+      "title": "Хуткі старт",
       "path": "/learn",
       "routes": [
         {
@@ -15,17 +15,17 @@
           "path": "/learn/tutorial-tic-tac-toe"
         },
         {
-          "title": "Thinking in React",
+          "title": "Філасофія React",
           "path": "/learn/thinking-in-react"
         }
       ]
     },
     {
-      "title": "Installation",
+      "title": "Усталяванне",
       "path": "/learn/installation",
       "routes": [
         {
-          "title": "Start a New React Project",
+          "title": "Пачаць новы React праект",
           "path": "/learn/start-a-new-react-project"
         },
         {
@@ -47,16 +47,16 @@
       "sectionHeader": "LEARN REACT"
     },
     {
-      "title": "Describing the UI",
+      "title": "Апісанне UI",
       "tags": [],
       "path": "/learn/describing-the-ui",
       "routes": [
         {
-          "title": "Your First Component",
+          "title": "Ваш першы кампанент",
           "path": "/learn/your-first-component"
         },
         {
-          "title": "Importing and Exporting Components",
+          "title": "Імпартаванне і экспартаванне кампанентаў",
           "path": "/learn/importing-and-exporting-components"
         },
         {

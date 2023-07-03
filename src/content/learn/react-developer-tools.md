@@ -4,30 +4,30 @@ title: React Developer Tools
 
 <Intro>
 
-Use React Developer Tools to inspect React [components](/learn/your-first-component), edit [props](/learn/passing-props-to-a-component) and [state](/learn/state-a-components-memory), and identify performance problems.
+Для інспектавання [кампанентаў](/learn/your-first-component) React, змянення [пропсаў](/learn/passing-props-to-a-component) і [стану](/learn/state-a-components-memory), а таксама вызначэння праблем прадукцыйнасці раім да выкарыстання React Developer Tools — інструменты для распрацоўшчыкаў React.
 
 </Intro>
 
 <YouWillLearn>
 
-* How to install React Developer Tools
+* Як усталяваць React Developer Tools
 
 </YouWillLearn>
 
-## Browser extension {/*browser-extension*/}
+## Пашырэнне для браўзера {/*browser-extension*/}
 
-The easiest way to debug websites built with React is to install the React Developer Tools browser extension. It is available for several popular browsers:
+Самы лёгкі спосаб адладжвання вэб-сайтаў, пабудаваных на React, — усталяваць браўзернае пашырэнне React Developer Tools. Яно даступнае для шэрагу папулярных браўзераў:
 
-* [Install for **Chrome**](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-* [Install for **Firefox**](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
-* [Install for **Edge**](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil)
+* [Усталяваць у **Chrome**](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+* [Усталяваць у **Firefox**](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+* [Усталяваць у **Edge**](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil)
 
-Now, if you visit a website **built with React,** you will see the _Components_ and _Profiler_ panels.
+Цяпер, калі вы адкрыеце сайт, **які пабудаваны на React**, вы пабачыце панэлі _Components_ і _Profiler_.
 
 ![React Developer Tools extension](/images/docs/react-devtools-extension.png)
 
-### Safari and other browsers {/*safari-and-other-browsers*/}
-For other browsers (for example, Safari), install the [`react-devtools`](https://www.npmjs.com/package/react-devtools) npm package:
+### Safari і іншыя браўзеры {/*safari-and-other-browsers*/}
+Для іншых браўзераў (напрыклад, Safari) усталюйце npm пакет [`react-devtools`](https://www.npmjs.com/package/react-devtools):
 ```bash
 # Yarn
 yarn global add react-devtools
@@ -36,26 +36,26 @@ yarn global add react-devtools
 npm install -g react-devtools
 ```
 
-Next open the developer tools from the terminal:
+Затым адкрыйце інструменты для распрацоўшчыка праз тэрмінал:
 ```bash
 react-devtools
 ```
 
-Then connect your website by adding the following `<script>` tag to the beginning of your website's `<head>`:
+Цяпер падключыце свой вэб-сайт, дадаўшы дадзены тэг `<script>` унутр тэга `<head>` вашага вэб-сайта:
 ```html {3}
 <html>
   <head>
     <script src="http://localhost:8097"></script>
 ```
 
-Reload your website in the browser now to view it in developer tools.
+Цяпер перазагрузіце ваш вэб-сайт у браўзеры, каб пабачыць яго ў інструментах для распрацоўшчыка.
 
 ![React Developer Tools standalone](/images/docs/react-devtools-standalone.png)
 
-## Mobile (React Native) {/*mobile-react-native*/}
-React Developer Tools can be used to inspect apps built with [React Native](https://reactnative.dev/) as well.
+## Для мабільных праграм (React Native) {/*mobile-react-native*/}
+React Developer Tools таксама можна выкарыстоўваць і для прагляду праграм, пабудаваных з дапамогай [React Native](https://reactnative.dev/).
 
-The easiest way to use React Developer Tools is to install it globally:
+Прасцей за ўсё карыстацца React Developer Tools будзе, усталяваўшы глабальна:
 ```bash
 # Yarn
 yarn global add react-devtools
@@ -64,13 +64,13 @@ yarn global add react-devtools
 npm install -g react-devtools
 ```
 
-Next open the developer tools from the terminal.
+Затым адкрыўшы праз тэрмінал:
 ```bash
 react-devtools
 ```
 
-It should connect to any local React Native app that's running.
+React Developer Tools мае падключыцца да ўжо запушчанай React Native праграмы.
 
-> Try reloading the app if developer tools doesn't connect after a few seconds.
+> Паспрабуйце перазагрузіць праграму, калі інструменты для распрацоўшчыка не падключаюцца да яе цягам некалькіх секунд.
 
-[Learn more about debugging React Native.](https://reactnative.dev/docs/debugging)
+[Даведацца больш пра адладжванне React Native.](https://reactnative.dev/docs/debugging)

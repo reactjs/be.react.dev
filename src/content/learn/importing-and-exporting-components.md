@@ -52,11 +52,7 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-<<<<<<< HEAD
-У дадзеным прыкладзе ўсе кампаненты існуюць у **файле каранёвага кампанента**, які называецца `App.js`. У [Create React App](https://create-react-app.dev/), вашая праграма змяшчаецца ў `src/App.js`. У залежнасці ад вашага асяроддзя, каранёвы кампанент можа змяшчацца і ў іншым файле. Калі вы выкарыстоўваеце фрэймворк з маршрутызацыяй, што базуецца на файлавай сістэме, (напрыклад, Next.js), ваш каранёвы кампанент будзе розным для кожнай старонкі.
-=======
-These currently live in a **root component file,** named `App.js` in this example. Depending on your setup, your root component could be in another file, though. If you use a framework with file-based routing, such as Next.js, your root component will be different for every page.
->>>>>>> 819518cfe32dd2db3b765410247c30feea713c77
+У дадзеным прыкладзе ўсе кампаненты існуюць у **файле каранёвага кампанента**, які называецца `App.js`. У залежнасці ад вашага асяроддзя, каранёвы кампанент можа змяшчацца і ў іншым файле. Калі вы выкарыстоўваеце фрэймворк з маршрутызацыяй, што базуецца на файлавай сістэме, (напрыклад, Next.js), ваш каранёвы кампанент будзе розным для кожнай старонкі.
 
 ## Экспартаванне і імпартаванне кампанентаў {/*exporting-and-importing-a-component*/}
 

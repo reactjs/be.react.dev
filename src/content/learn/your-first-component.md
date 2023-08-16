@@ -211,11 +211,7 @@ function Profile() {
 
 #### Кампаненты паўсюль {/*components-all-the-way-down*/}
 
-<<<<<<< HEAD
-Ваша React праграма пачынаецца з «каранёвага» кампанента. Звычайна ён ствараецца аўтаматычна, пры стварэнні новага праекта. Напрыклад, калі вы выкарыстоўваеце [CodeSandbox](https://codesandbox.io/) або [Create React App](https://create-react-app.dev/), каранёвы кампанент будзе аб’яўлены ў файле `src/App.js`. Калі вы выкарыстоўваеце фрэймворк [Next.js](https://nextjs.org/), каранёвы кампанент аб’яўляецца ў файле `pages/index.js`. У прыкладах вышэй вы экспартавалі каранёвыя кампаненты.
-=======
-Your React application begins at a "root" component. Usually, it is created automatically when you start a new project. For example, if you use [CodeSandbox](https://codesandbox.io/) or if you use the framework [Next.js](https://nextjs.org/), the root component is defined in `pages/index.js`. In these examples, you've been exporting root components.
->>>>>>> 819518cfe32dd2db3b765410247c30feea713c77
+Ваша React праграма пачынаецца з «каранёвага» кампанента. Звычайна ён ствараецца аўтаматычна, пры стварэнні новага праекта. Напрыклад, калі вы выкарыстоўваеце [CodeSandbox](https://codesandbox.io/) або калі вы выкарыстоўваеце фрэймворк [Next.js](https://nextjs.org/), каранёвы кампанент аб’яўляецца ў файле `pages/index.js`. У прыкладах вышэй вы экспартавалі каранёвыя кампаненты.
 
 Большасць React праграм выкарыстоўваюць кампаненты паўсюль. Гэта азначае, што вы будзеце выкарыстоўваць кампаненты не толькі для элементаў, што паўторна выкарыстоўваюцца, такіх як кнопкі, але і для буйнейшых элементаў: бакавых панэляў, спісаў і, у рэшце, цэлых старонак! Кампаненты — гэта зручны спосаб арганізаваць код карыстальніцкага інтэрфейсу і разметку, нават калі некаторыя з іх выкарыстоўваюцца толькі адзін раз.
 

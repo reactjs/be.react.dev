@@ -1,74 +1,74 @@
 ---
-title: Rendering Lists
+title: Рэндэрынг спісаў
 ---
 
 <Intro>
 
-You will often want to display multiple similar components from a collection of data. You can use the [JavaScript array methods](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array#) to manipulate an array of data. On this page, you'll use [`filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) and [`map()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map) with React to filter and transform your array of data into an array of components.
+Часта ўзнікае неабходнасць адлюстравання шэрагу падобных кампанентаў на аснове набору даных. Каб маніпуліраваць масівам даных можна выкарыстоўваць [метады масіваў JavaScript.](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array#) На гэтай старонцы вы будзеце выкарыстоўваць метады [`filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) і [`map()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map) разам з React для фільтрацыі і пераўтварэння масіву даных у масіў кампанентаў.
 
 </Intro>
 
 <YouWillLearn>
 
-* How to render components from an array using JavaScript's `map()`
-* How to render only specific components using JavaScript's `filter()`
-* When and why to use React keys
+* Як рэндэрыць кампаненты з масіву з дапамогай метаду `map()`
+* Як рэндэрыць толькі пэўныя кампаненты з дапамогай метаду `filter()`
+* Калі і навошта выкарыстоўваць React ключы
 
 </YouWillLearn>
 
-## Rendering data from arrays {/*rendering-data-from-arrays*/}
+## Рэндэрынг даных з масіваў {/*rendering-data-from-arrays*/}
 
-Say that you have a list of content.
+Дапусцім, у вас ёсць спіс кантэнту.
 
 ```js
 <ul>
-  <li>Creola Katherine Johnson: mathematician</li>
-  <li>Mario José Molina-Pasquel Henríquez: chemist</li>
-  <li>Mohammad Abdus Salam: physicist</li>
-  <li>Percy Lavon Julian: chemist</li>
-  <li>Subrahmanyan Chandrasekhar: astrophysicist</li>
+  <li>Крэола Кэтрын Джонсан: матэматык</li>
+  <li>Марыа Хасэ Маліна-Паскель Энрыкес: хімік</li>
+  <li>Махамад Абдус Салам: фізік</li>
+  <li>Персі Лавон Джуліан: хімік</li>
+  <li>Субрахманьян Чандрасекар: астрафізік</li>
 </ul>
 ```
 
-The only difference among those list items is their contents, their data. You will often need to show several instances of the same component using different data when building interfaces: from lists of comments to galleries of profile images. In these situations, you can store that data in JavaScript objects and arrays and use methods like [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) and [`filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) to render lists of components from them.
+Адзіная розніца паміж гэтымі пунктамі спісу - іх змест, іх даныя. Пры стварэнні інтэрфейсаў часта трэба паказваць некалькі асобнікаў аднаго і таго ж кампанента, выкарыстоўваючы розныя даныя: ад спісаў каментарыяў да галерэй відарысаў профілю. У такіх сітуацыях вы можаце захоўваць гэтыя даныя ў аб'ектах і масівах JavaScript і выкарыстоўваць такія метады, як [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ Array/map) і [`filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), каб рэндэрыць з іх спісы кампанентаў.
 
-Here’s a short example of how to generate a list of items from an array:
+Вось кароткі прыклад таго, як стварыць спіс элементаў з масіву:
 
-1. **Move** the data into an array:
+1. **Перамясціце** даныя ў масіў:
 
 ```js
 const people = [
-  'Creola Katherine Johnson: mathematician',
-  'Mario José Molina-Pasquel Henríquez: chemist',
-  'Mohammad Abdus Salam: physicist',
-  'Percy Lavon Julian: chemist',
-  'Subrahmanyan Chandrasekhar: astrophysicist'
+  'Крэола Кэтрын Джонсан: матэматык',
+  'Марыа Хасэ Маліна-Паскель Энрыкес: хімік',
+  'Махамад Абдус Салам: фізік',
+  'Персі Лавон Джуліан: хімік',
+  'Субрахманьян Чандрасекар: астрафізік'
 ];
 ```
 
-2. **Map** the `people` members into a new array of JSX nodes, `listItems`:
+2. **Пераўтварыце** элементы масіву `people` у новы масіў JSX вузлоў — `listItems`:
 
 ```js
 const listItems = people.map(person => <li>{person}</li>);
 ```
 
-3. **Return** `listItems` from your component wrapped in a `<ul>`:
+3. **Вярніце** `listItems` з вашага кампанента, абгарнуўшы іх у `<ul>`:
 
 ```js
 return <ul>{listItems}</ul>;
 ```
 
-Here is the result:
+Вось што мусіць атрымацца ў выніку:
 
 <Sandpack>
 
 ```js
 const people = [
-  'Creola Katherine Johnson: mathematician',
-  'Mario José Molina-Pasquel Henríquez: chemist',
-  'Mohammad Abdus Salam: physicist',
-  'Percy Lavon Julian: chemist',
-  'Subrahmanyan Chandrasekhar: astrophysicist'
+  'Крэола Кэтрын Джонсан: матэматык',
+  'Марыа Хасэ Маліна-Паскель Энрыкес: хімік',
+  'Махамад Абдус Салам: фізік',
+  'Персі Лавон Джуліан: хімік',
+  'Субрахманьян Чандрасекар: астрафізік'
 ];
 
 export default function List() {
@@ -84,8 +84,8 @@ li { margin-bottom: 10px; }
 ```
 
 </Sandpack>
-
-Notice the sandbox above displays a console error:
+ 
+Звярніце ўвагу, што ў кансолі пясочніцы адлюстроўваецца памылка:
 
 <ConsoleBlock level="error">
 
@@ -93,47 +93,47 @@ Warning: Each child in a list should have a unique "key" prop.
 
 </ConsoleBlock>
 
-You'll learn how to fix this error later on this page. Before we get to that, let's add some structure to your data.
+Вы даведаецеся, як выправіць гэтую памылку пазней на гэтай старонцы. Перш чым перайсці да гэтага, давайце дададзім некаторую структуру да даных.
 
-## Filtering arrays of items {/*filtering-arrays-of-items*/}
+## Фільтрацыя масіваў элементаў {/*filtering-arrays-of-items*/}
 
-This data can be structured even more.
+Структуру гэтых даных можна палепшыць.
 
 ```js
 const people = [{
   id: 0,
-  name: 'Creola Katherine Johnson',
-  profession: 'mathematician',
+  name: 'Крэола Кэтрын Джонсан',
+  profession: 'матэматык',
 }, {
   id: 1,
-  name: 'Mario José Molina-Pasquel Henríquez',
-  profession: 'chemist',
+  name: 'Марыа Хасэ Маліна-Паскель Энрыкес',
+  profession: 'хімік',
 }, {
   id: 2,
-  name: 'Mohammad Abdus Salam',
-  profession: 'physicist',
+  name: 'Махамад Абдус Салам',
+  profession: 'фізік',
 }, {
-  name: 'Percy Lavon Julian',
-  profession: 'chemist',  
+  name: 'Персі Лавон Джуліан',
+  profession: 'хімік',  
 }, {
-  name: 'Subrahmanyan Chandrasekhar',
-  profession: 'astrophysicist',
+  name: 'Субрахманьян Чандрасекар',
+  profession: 'астрафізік',
 }];
 ```
 
-Let's say you want a way to only show people whose profession is `'chemist'`. You can use JavaScript's `filter()` method to return just those people. This method takes an array of items, passes them through a “test” (a function that returns `true` or `false`), and returns a new array of only those items that passed the test (returned `true`).
+Дапусцім, вы хочаце паказаць толькі людзей, чыя прафесія `'хімік'`. Каб вярнуць толькі гэтых людзей, вы можаце выкарыстоўваць JavaScript метад `filter()`. Гэты метад бярэ масіў элементаў, прапускае іх праз «тэст» (функцыю, якая вяртае `true` або `false`) і вяртае новы масіў толькі з тых элементаў, якія прайшлі праверку (вярнулі `true`).
 
-You only want the items where `profession` is `'chemist'`. The "test" function for this looks like `(person) => person.profession === 'chemist'`. Here's how to put it together:
+Нам патрэбны толькі элементы, дзе `profession` з'яўляецца `'хімік'`. Функцыя "тэст" для гэтага выглядае так: `(person) => person.profession === 'хімік'`. Вось як сабраць гэта ўсё разам:
 
-1. **Create** a new array of just “chemist” people, `chemists`, by calling `filter()` on the `people` filtering by `person.profession === 'chemist'`:
+1. **Стварыце** новы масіў толькі з «хімікаў» (пераменная `chemists`) выклікаўшы метад `filter()` на `people` для фільтрацыі па `person.profession === 'хімік'`:
 
 ```js
 const chemists = people.filter(person =>
-  person.profession === 'chemist'
+  person.profession === 'хімік'
 );
 ```
 
-2. Now **map** over `chemists`:
+2. Цяпер **пераўтварыце** элементы масіву `chemists`:
 
 ```js {1,13}
 const listItems = chemists.map(person =>
@@ -144,14 +144,14 @@ const listItems = chemists.map(person =>
      />
      <p>
        <b>{person.name}:</b>
-       {' ' + person.profession + ' '}
-       known for {person.accomplishment}
+       {' ' + person.profession}.
+       Галоўнае дасягненне: {person.accomplishment}
      </p>
   </li>
 );
 ```
 
-3. Lastly, **return** the `listItems` from your component:
+3. Нарэшце, **вярніце** `listItems` з вашага кампанента:
 
 ```js
 return <ul>{listItems}</ul>;
@@ -165,7 +165,7 @@ import { getImageUrl } from './utils.js';
 
 export default function List() {
   const chemists = people.filter(person =>
-    person.profession === 'chemist'
+    person.profession === 'хімік'
   );
   const listItems = chemists.map(person =>
     <li>
@@ -175,8 +175,8 @@ export default function List() {
       />
       <p>
         <b>{person.name}:</b>
-        {' ' + person.profession + ' '}
-        known for {person.accomplishment}
+        {' ' + person.profession}.
+        Галоўнае дасягненне: {person.accomplishment}
       </p>
     </li>
   );
@@ -187,33 +187,33 @@ export default function List() {
 ```js data.js
 export const people = [{
   id: 0,
-  name: 'Creola Katherine Johnson',
-  profession: 'mathematician',
-  accomplishment: 'spaceflight calculations',
+  name: 'Крэола Кэтрын Джонсан',
+  profession: 'матэматык',
+  accomplishment: 'разлікі для касмічных палётаў',
   imageId: 'MK3eW3A'
 }, {
   id: 1,
-  name: 'Mario José Molina-Pasquel Henríquez',
-  profession: 'chemist',
-  accomplishment: 'discovery of Arctic ozone hole',
+  name: 'Марыа Хасэ Маліна-Паскель Энрыкес',
+  profession: 'хімік',
+  accomplishment: 'адкрыццё арктычнай азонавай дзіркі',
   imageId: 'mynHUSa'
 }, {
   id: 2,
-  name: 'Mohammad Abdus Salam',
-  profession: 'physicist',
-  accomplishment: 'electromagnetism theory',
+  name: 'Махамад Абдус Салам',
+  profession: 'фізік',
+  accomplishment: 'тэорыя электрамагнетызму',
   imageId: 'bE7W1ji'
 }, {
   id: 3,
-  name: 'Percy Lavon Julian',
-  profession: 'chemist',
-  accomplishment: 'pioneering cortisone drugs, steroids and birth control pills',
+  name: 'Персі Лавон Джуліан',
+  profession: 'хімік',
+  accomplishment: 'піянер у вытворчасці картызону, стэроідаў і супрацьзачаткавых таблетак',
   imageId: 'IOjWm71'
 }, {
   id: 4,
-  name: 'Subrahmanyan Chandrasekhar',
-  profession: 'astrophysicist',
-  accomplishment: 'white dwarf star mass calculations',
+  name: 'Субрахманьян Чандрасекар',
+  profession: 'астрафізік',
+  accomplishment: 'разлік масы белага карліка',
   imageId: 'lrWQx8l'
 }];
 ```
@@ -244,29 +244,29 @@ img { width: 100px; height: 100px; border-radius: 50%; }
 
 <Pitfall>
 
-Arrow functions implicitly return the expression right after `=>`, so you didn't need a `return` statement:
+Стрэлачныя функцыі няяўна вяртаюць вынік выразу адразу пасля `=>`, таму не трэба выкарыстоўваць аператар `return`:
 
 ```js
 const listItems = chemists.map(person =>
-  <li>...</li> // Implicit return!
+  <li>...</li> // Няяўнае вяртанне!
 );
 ```
 
-However, **you must write `return` explicitly if your `=>` is followed by a `{` curly brace!**
+Аднак **вы павінны яўна напісаць `return`, калі пасля `=>` ідзе фігурная дужка `{`!**
 
 ```js
-const listItems = chemists.map(person => { // Curly brace
+const listItems = chemists.map(person => { // Фігурная дужка
   return <li>...</li>;
 });
 ```
 
-Arrow functions containing `=> {` are said to have a ["block body".](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#function_body) They let you write more than a single line of code, but you *have to* write a `return` statement yourself. If you forget it, nothing gets returned!
+Стрэлачныя функцыі, якія змяшчаюць `=> {` лічацца функцыямі з [«блокавай формай».](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#function_body) Яны дазваляюць вам напісаць больш, чым адзін радок кода, але вы *павінны* напісаць аператар `return` самастойна. Калі вы забудзецеся гэта зрабіць, функцыя нічога не верне!
 
 </Pitfall>
 
-## Keeping list items in order with `key` {/*keeping-list-items-in-order-with-key*/}
+## Захаванне парадку элементаў спісу з дапамогай `key` {/*keeping-list-items-in-order-with-key*/}
 
-Notice that all the sandboxes above show an error in the console:
+Звярніце ўвагу, што ўсе пясочніцы вышэй паказваюць памылку ў кансолі:
 
 <ConsoleBlock level="error">
 
@@ -274,7 +274,7 @@ Warning: Each child in a list should have a unique "key" prop.
 
 </ConsoleBlock>
 
-You need to give each array item a `key` -- a string or a number that uniquely identifies it among other items in that array:
+Каб выправіць гэту памылку трэба прысвоіць кожнаму элементу масіву ключ (`key`) -- радок або лік, які адназначна ідэнтыфікуе яго сярод іншых элементаў у гэтым масіве:
 
 ```js
 <li key={person.id}>...</li>
@@ -282,13 +282,13 @@ You need to give each array item a `key` -- a string or a number that uniquely i
 
 <Note>
 
-JSX elements directly inside a `map()` call always need keys!
+JSX элементы, што ствараюцца непасрэдна ўнутры выкліку метаду `map()` заўсёды мусяць мець ключы!
 
 </Note>
 
-Keys tell React which array item each component corresponds to, so that it can match them up later. This becomes important if your array items can move (e.g. due to sorting), get inserted, or get deleted. A well-chosen `key` helps React infer what exactly has happened, and make the correct updates to the DOM tree.
+Ключы паведамляюць React, якому элементу масіву адпавядае кожны кампанент, каб потым ён мог іх супаставіць. Гэта важна, калі элементы масіву могуць перамяшчацца (напрыклад, з-за сартавання), устаўляцца або выдаляцца. Добра падабраны `key` дапамагае React зразумець, што менавіта адбылося, і зрабіць правільныя абнаўленні ў дрэве DOM.
 
-Rather than generating keys on the fly, you should include them in your data:
+Замест таго, каб генераваць ключы на хаду, вы павінны ўключыць іх у свае даныя:
 
 <Sandpack>
 
@@ -304,9 +304,9 @@ export default function List() {
         alt={person.name}
       />
       <p>
-        <b>{person.name}</b>
-          {' ' + person.profession + ' '}
-          known for {person.accomplishment}
+        <b>{person.name}:</b>
+        {' ' + person.profession}.
+        Галоўнае дасягненне: {person.accomplishment}
       </p>
     </li>
   );
@@ -316,34 +316,34 @@ export default function List() {
 
 ```js data.js active
 export const people = [{
-  id: 0, // Used in JSX as a key
-  name: 'Creola Katherine Johnson',
-  profession: 'mathematician',
-  accomplishment: 'spaceflight calculations',
+  id: 0, // Выкарыстоўваецца як ключ у JSX
+  name: 'Крэола Кэтрын Джонсан',
+  profession: 'матэматык',
+  accomplishment: 'разлікі для касмічных палётаў',
   imageId: 'MK3eW3A'
 }, {
-  id: 1, // Used in JSX as a key
-  name: 'Mario José Molina-Pasquel Henríquez',
-  profession: 'chemist',
-  accomplishment: 'discovery of Arctic ozone hole',
+  id: 1, // Выкарыстоўваецца як ключ у JSX
+  name: 'Марыа Хасэ Маліна-Паскель Энрыкес',
+  profession: 'хімік',
+  accomplishment: 'адкрыццё арктычнай азонавай дзіркі',
   imageId: 'mynHUSa'
 }, {
-  id: 2, // Used in JSX as a key
-  name: 'Mohammad Abdus Salam',
-  profession: 'physicist',
-  accomplishment: 'electromagnetism theory',
+  id: 2, // Выкарыстоўваецца як ключ у JSX
+  name: 'Махамад Абдус Салам',
+  profession: 'фізік',
+  accomplishment: 'тэорыя электрамагнетызму',
   imageId: 'bE7W1ji'
 }, {
-  id: 3, // Used in JSX as a key
-  name: 'Percy Lavon Julian',
-  profession: 'chemist',
-  accomplishment: 'pioneering cortisone drugs, steroids and birth control pills',
+  id: 3, // Выкарыстоўваецца як ключ у JSX
+  name: 'Персі Лавон Джуліан',
+  profession: 'хімік',
+  accomplishment: 'піянер у вытворчасці картызону, стэроідаў і супрацьзачаткавых таблетак',
   imageId: 'IOjWm71'
 }, {
-  id: 4, // Used in JSX as a key
-  name: 'Subrahmanyan Chandrasekhar',
-  profession: 'astrophysicist',
-  accomplishment: 'white dwarf star mass calculations',
+  id: 4, // Выкарыстоўваецца як ключ у JSX
+  name: 'Субрахманьян Чандрасекар',
+  profession: 'астрафізік',
+  accomplishment: 'разлік масы белага карліка',
   imageId: 'lrWQx8l'
 }];
 ```
@@ -374,11 +374,11 @@ img { width: 100px; height: 100px; border-radius: 50%; }
 
 <DeepDive>
 
-#### Displaying several DOM nodes for each list item {/*displaying-several-dom-nodes-for-each-list-item*/}
+#### Адлюстраванне некалькіх вузлоў DOM для кожнага элемента спіса {/*displaying-several-dom-nodes-for-each-list-item*/}
 
-What do you do when each item needs to render not one, but several DOM nodes?
+Што рабіць, калі кожны элемент павінен адлюстроўваць не адзін, а некалькі вузлоў DOM?
 
-The short [`<>...</>` Fragment](/reference/react/Fragment) syntax won't let you pass a key, so you need to either group them into a single `<div>`, or use the slightly longer and [more explicit `<Fragment>` syntax:](/reference/react/Fragment#rendering-a-list-of-fragments)
+Скарочаны сінтаксіс [`<>...</>` фрагмента](/reference/react/Fragment) не дазволіць вам перадаць ключ, таму вам трэба альбо згрупаваць іх у адзін `<div>`, альбо выкарыстоўваць крыху даўжэйшы і [больш выразны сінтаксіс `<Fragment>`:](/reference/react/Fragment#rendering-a-list-of-fragments)
 
 ```js
 import { Fragment } from 'react';
@@ -393,46 +393,46 @@ const listItems = people.map(person =>
 );
 ```
 
-Fragments disappear from the DOM, so this will produce a flat list of `<h1>`, `<p>`, `<h1>`, `<p>`, and so on.
+Фрагменты знікаюць з DOM, так што гэта створыць плоскі спіс `<h1>`, `<p>`, `<h1>`, `<p>` і г.д.
 
 </DeepDive>
 
-### Where to get your `key` {/*where-to-get-your-key*/}
+### Дзе ўзяць `key` {/*where-to-get-your-key*/}
 
-Different sources of data provide different sources of keys:
+Розныя крыніцы даных даюць розныя крыніцы ключоў:
 
-* **Data from a database:** If your data is coming from a database, you can use the database keys/IDs, which are unique by nature.
-* **Locally generated data:** If your data is generated and persisted locally (e.g. notes in a note-taking app), use an incrementing counter, [`crypto.randomUUID()`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) or a package like [`uuid`](https://www.npmjs.com/package/uuid) when creating items.
+* **Даныя з базы даных:** Калі вашы даныя прыходзяць з базы даных, вы можаце выкарыстоўваць ключы/ID з базы даных, якія па сваёй прыродзе з'яўляюцца ўнікальнымі.
+* **Лакальна згенераваныя даныя:** Калі вашы даныя згенерыраваны і захоўваюцца лакальна (напрыклад, нататкі ў праграме для вядзення нататак), выкарыстоўвайце інкрэментны лічыльнік [`crypto.randomUUID()`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) або пакет [`uuid`](https://www.npmjs.com/package/uuid) пры стварэнні элементаў.
 
-### Rules of keys {/*rules-of-keys*/}
+### Правілы ключоў {/*rules-of-keys*/}
 
-* **Keys must be unique among siblings.** However, it’s okay to use the same keys for JSX nodes in _different_ arrays.
-* **Keys must not change** or that defeats their purpose! Don't generate them while rendering.
+* **Ключы павінны быць унікальнымі сярод сваіх суседніх элементаў.** Аднак, можна выкарыстоўваць аднолькавыя ключы для JSX вузлоў у _розных_ масівах.
+* **Ключы не павінны мяняцца** паколькі гэта пазбаўляе іх сэнсу! Не генеруйце іх падчас рэндэрынгу.
 
-### Why does React need keys? {/*why-does-react-need-keys*/}
+### Навошта React патрэбны ключы? {/*why-does-react-need-keys*/}
 
-Imagine that files on your desktop didn't have names. Instead, you'd refer to them by their order -- the first file, the second file, and so on. You could get used to it, but once you delete a file, it would get confusing. The second file would become the first file, the third file would be the second file, and so on.
+Уявіце, што файлы на вашым працоўным стале не маюць імёнаў. Замест гэтага вы б спасылаліся на іх па парадку - першы файл, другі файл і г.д. Магчыма да гэтага і можна прызвычаіцца, але калі вы выдаліце які-небудзь файл, парадак зменіцца і ўсё стане заблытаным. Другі файл стане першым файлам, трэці файл будзе другім файлам і г.д.
 
-File names in a folder and JSX keys in an array serve a similar purpose. They let us uniquely identify an item between its siblings. A well-chosen key provides more information than the position within the array. Even if the _position_ changes due to reordering, the `key` lets React identify the item throughout its lifetime.
+Імёны файлаў у папцы і JSX ключы ў масіве маюць падобную мэту. Яны дазваляюць нам адрозніваць элементы ад іншых элементаў у масіве. Добра падабраны ключ дае больш інфармацыі, чым пазіцыя ў масіве. Нават калі _пазіцыя_ мяняецца з-за змены парадку, `key` дазваляе React ідэнтыфікаваць элемент на працягу ўсяго яго існавання.
 
 <Pitfall>
 
-You might be tempted to use an item's index in the array as its key. In fact, that's what React will use if you don't specify a `key` at all. But the order in which you render items will change over time if an item is inserted, deleted, or if the array gets reordered. Index as a key often leads to subtle and confusing bugs.
+У вас можа ўзнікнуць спакуса выкарыстоўваць індэкс элемента ў масіве ў якасці ключа. Дарэчы, гэта тое, што React будзе выкарыстоўваць, калі вы не ўкажаце `key`. Але парадак, у якім вы рэндэрыце элементы, можа памяняцца з часам, калі які-небудзь элемент будзе ўстаўлены, выдалены або калі масіў будзе пераўпарадкаваны. Індэкс у якасці ключа часта прыводзіць да каварных памылак і памылак, што могуць збіваць з толку.
 
-Similarly, do not generate keys on the fly, e.g. with `key={Math.random()}`. This will cause keys to never match up between renders, leading to all your components and DOM being recreated every time. Not only is this slow, but it will also lose any user input inside the list items. Instead, use a stable ID based on the data.
+Аналагічна, не генеруйце ключы на ляту, напрыклад, з дапамогай `key={Math.random()}`. Гэта прывядзе да таго, што ключы ніколі не будуць супадаць паміж рэндэрамі, што прывядзе да перастварэння ўсіх вашых кампанентаў і DOM пры кожным рэндэры. Гэта не толькі павольна, але і прывядзе да страты любых даных уведзеных карыстальнікам унутры элементаў спіса. Замест гэтага выкарыстоўвайце стабільны ідэнтыфікатар, заснаваны на даных.
 
-Note that your components won't receive `key` as a prop. It's only used as a hint by React itself. If your component needs an ID, you have to pass it as a separate prop: `<Profile key={id} userId={id} />`.
+Звярніце ўвагу, што вашыя кампаненты не атрымаюць `key` у якасці пропса. Ён выкарыстоўваецца толькі як падказка для React. Калі вашаму кампаненту патрэбны ідэнтыфікатар, вы мусіце перадаць яго як асобны пропс: `<Profile key={id} userId={id} />`.
 
 </Pitfall>
 
 <Recap>
 
-On this page you learned:
+На гэтай старонцы вы даведаліся:
 
-* How to move data out of components and into data structures like arrays and objects.
-* How to generate sets of similar components with JavaScript's `map()`.
-* How to create arrays of filtered items with JavaScript's `filter()`.
-* Why and how to set `key` on each component in a collection so React can keep track of each of them even if their position or data changes.
+* Як перамясціць даныя з кампанентаў у такія структуры даных, як масівы і аб'екты.
+* Як стварыць наборы падобных кампанентаў з дапамогай JavaScript метаду `map()` .
+* Як ствараць масівы адфільтраваных элементаў з дапамогай JavaScript метаду `filter()`.
+* Навошта і як задаваць `key` для кожнага кампанента ў калекцыі, каб React мог адсочваць кожны з іх, нават калі іх пазіцыя або даныя змяняюцца.
 
 </Recap>
 
@@ -440,11 +440,11 @@ On this page you learned:
 
 <Challenges>
 
-#### Splitting a list in two {/*splitting-a-list-in-two*/}
+#### Падзел спісу на два {/*splitting-a-list-in-two*/}
 
-This example shows a list of all people.
+У гэтым прыкладзе паказаны спіс усіх людзей.
 
-Change it to show two separate lists one after another: **Chemists** and **Everyone Else.** Like previously, you can determine whether a person is a chemist by checking if `person.profession === 'chemist'`.
+Змяніце яго так, каб паказаць два асобныя спісы адзін за адным: **Хімікі** і **Усе астатнія.** Як і раней, вы можаце вызначыць, ці з'яўляецца чалавек хімікам, праверыўшы `person.profession === 'хімік'`.
 
 <Sandpack>
 
@@ -461,14 +461,14 @@ export default function List() {
       />
       <p>
         <b>{person.name}:</b>
-        {' ' + person.profession + ' '}
-        known for {person.accomplishment}
+        {' ' + person.profession}.
+        Галоўнае дасягненне: {person.accomplishment}
       </p>
     </li>
   );
   return (
     <article>
-      <h1>Scientists</h1>
+      <h1>Вучоныя</h1>
       <ul>{listItems}</ul>
     </article>
   );
@@ -478,33 +478,33 @@ export default function List() {
 ```js data.js
 export const people = [{
   id: 0,
-  name: 'Creola Katherine Johnson',
-  profession: 'mathematician',
-  accomplishment: 'spaceflight calculations',
+  name: 'Крэола Кэтрын Джонсан',
+  profession: 'матэматык',
+  accomplishment: 'разлікі для касмічных палётаў',
   imageId: 'MK3eW3A'
 }, {
   id: 1,
-  name: 'Mario José Molina-Pasquel Henríquez',
-  profession: 'chemist',
-  accomplishment: 'discovery of Arctic ozone hole',
+  name: 'Марыа Хасэ Маліна-Паскель Энрыкес',
+  profession: 'хімік',
+  accomplishment: 'адкрыццё арктычнай азонавай дзіркі',
   imageId: 'mynHUSa'
 }, {
   id: 2,
-  name: 'Mohammad Abdus Salam',
-  profession: 'physicist',
-  accomplishment: 'electromagnetism theory',
+  name: 'Махамад Абдус Салам',
+  profession: 'фізік',
+  accomplishment: 'тэорыя электрамагнетызму',
   imageId: 'bE7W1ji'
 }, {
   id: 3,
-  name: 'Percy Lavon Julian',
-  profession: 'chemist',
-  accomplishment: 'pioneering cortisone drugs, steroids and birth control pills',
+  name: 'Персі Лавон Джуліан',
+  profession: 'хімік',
+  accomplishment: 'піянер у вытворчасці картызону, стэроідаў і супрацьзачаткавых таблетак',
   imageId: 'IOjWm71'
 }, {
   id: 4,
-  name: 'Subrahmanyan Chandrasekhar',
-  profession: 'astrophysicist',
-  accomplishment: 'white dwarf star mass calculations',
+  name: 'Субрахманьян Чандрасекар',
+  profession: 'астрафізік',
+  accomplishment: 'разлік масы белага карліка',
   imageId: 'lrWQx8l'
 }];
 ```
@@ -535,7 +535,7 @@ img { width: 100px; height: 100px; border-radius: 50%; }
 
 <Solution>
 
-You could use `filter()` twice, creating two separate arrays, and then `map` over both of them:
+Вы можаце выкарыстоўваць `filter()` двойчы, стварыўшы два асобныя масівы, а затым выкарыстаць `map()` на абодвух:
 
 <Sandpack>
 
@@ -545,15 +545,15 @@ import { getImageUrl } from './utils.js';
 
 export default function List() {
   const chemists = people.filter(person =>
-    person.profession === 'chemist'
+    person.profession === 'хімік'
   );
   const everyoneElse = people.filter(person =>
-    person.profession !== 'chemist'
+    person.profession !== 'хімік'
   );
   return (
     <article>
-      <h1>Scientists</h1>
-      <h2>Chemists</h2>
+      <h1>Вучоныя</h1>
+      <h2>Хімікі</h2>
       <ul>
         {chemists.map(person =>
           <li key={person.id}>
@@ -563,13 +563,13 @@ export default function List() {
             />
             <p>
               <b>{person.name}:</b>
-              {' ' + person.profession + ' '}
-              known for {person.accomplishment}
+              {' ' + person.profession}.
+              Галоўнае дасягненне: {person.accomplishment}
             </p>
           </li>
         )}
       </ul>
-      <h2>Everyone Else</h2>
+      <h2>Усе астатнія</h2>
       <ul>
         {everyoneElse.map(person =>
           <li key={person.id}>
@@ -579,8 +579,8 @@ export default function List() {
             />
             <p>
               <b>{person.name}:</b>
-              {' ' + person.profession + ' '}
-              known for {person.accomplishment}
+              {' ' + person.profession}.
+              Галоўнае дасягненне: {person.accomplishment}
             </p>
           </li>
         )}
@@ -593,33 +593,33 @@ export default function List() {
 ```js data.js
 export const people = [{
   id: 0,
-  name: 'Creola Katherine Johnson',
-  profession: 'mathematician',
-  accomplishment: 'spaceflight calculations',
+  name: 'Крэола Кэтрын Джонсан',
+  profession: 'матэматык',
+  accomplishment: 'разлікі для касмічных палётаў',
   imageId: 'MK3eW3A'
 }, {
   id: 1,
-  name: 'Mario José Molina-Pasquel Henríquez',
-  profession: 'chemist',
-  accomplishment: 'discovery of Arctic ozone hole',
+  name: 'Марыа Хасэ Маліна-Паскель Энрыкес',
+  profession: 'хімік',
+  accomplishment: 'адкрыццё арктычнай азонавай дзіркі',
   imageId: 'mynHUSa'
 }, {
   id: 2,
-  name: 'Mohammad Abdus Salam',
-  profession: 'physicist',
-  accomplishment: 'electromagnetism theory',
+  name: 'Махамад Абдус Салам',
+  profession: 'фізік',
+  accomplishment: 'тэорыя электрамагнетызму',
   imageId: 'bE7W1ji'
 }, {
   id: 3,
-  name: 'Percy Lavon Julian',
-  profession: 'chemist',
-  accomplishment: 'pioneering cortisone drugs, steroids and birth control pills',
+  name: 'Персі Лавон Джуліан',
+  profession: 'хімік',
+  accomplishment: 'піянер у вытворчасці картызону, стэроідаў і супрацьзачаткавых таблетак',
   imageId: 'IOjWm71'
 }, {
   id: 4,
-  name: 'Subrahmanyan Chandrasekhar',
-  profession: 'astrophysicist',
-  accomplishment: 'white dwarf star mass calculations',
+  name: 'Субрахманьян Чандрасекар',
+  profession: 'астрафізік',
+  accomplishment: 'разлік масы белага карліка',
   imageId: 'lrWQx8l'
 }];
 ```
@@ -648,9 +648,9 @@ img { width: 100px; height: 100px; border-radius: 50%; }
 
 </Sandpack>
 
-In this solution, the `map` calls are placed directly inline into the parent `<ul>` elements, but you could introduce variables for them if you find that more readable.
+У гэтым рашэнні выклікі `map` размяшчаюцца непасрэдна ў бацькоўскіх элементах `<ul>`, але вы можаце вынесці іх у асобныя пераменныя, калі лічыце гэта больш зручным для чытання.
 
-There is still a bit duplication between the rendered lists. You can go further and extract the repetitive parts into a `<ListSection>` component:
+Паміж спісамі ўсё яшчэ існуе невялікае дубліраванне. Вы можаце пайсці далей і вынесці часткі, якія паўтараюцца, у кампанент `<ListSection>`:
 
 <Sandpack>
 
@@ -671,8 +671,8 @@ function ListSection({ title, people }) {
             />
             <p>
               <b>{person.name}:</b>
-              {' ' + person.profession + ' '}
-              known for {person.accomplishment}
+              {' ' + person.profession}.
+              Галоўнае дасягненне: {person.accomplishment}
             </p>
           </li>
         )}
@@ -683,20 +683,20 @@ function ListSection({ title, people }) {
 
 export default function List() {
   const chemists = people.filter(person =>
-    person.profession === 'chemist'
+    person.profession === 'хімік'
   );
   const everyoneElse = people.filter(person =>
-    person.profession !== 'chemist'
+    person.profession !== 'хімік'
   );
   return (
     <article>
-      <h1>Scientists</h1>
+      <h1>Вучоныя</h1>
       <ListSection
-        title="Chemists"
+        title="Хімікі"
         people={chemists}
       />
       <ListSection
-        title="Everyone Else"
+        title="Усе астатнія"
         people={everyoneElse}
       />
     </article>
@@ -707,33 +707,33 @@ export default function List() {
 ```js data.js
 export const people = [{
   id: 0,
-  name: 'Creola Katherine Johnson',
-  profession: 'mathematician',
-  accomplishment: 'spaceflight calculations',
+  name: 'Крэола Кэтрын Джонсан',
+  profession: 'матэматык',
+  accomplishment: 'разлікі для касмічных палётаў',
   imageId: 'MK3eW3A'
 }, {
   id: 1,
-  name: 'Mario José Molina-Pasquel Henríquez',
-  profession: 'chemist',
-  accomplishment: 'discovery of Arctic ozone hole',
+  name: 'Марыа Хасэ Маліна-Паскель Энрыкес',
+  profession: 'хімік',
+  accomplishment: 'адкрыццё арктычнай азонавай дзіркі',
   imageId: 'mynHUSa'
 }, {
   id: 2,
-  name: 'Mohammad Abdus Salam',
-  profession: 'physicist',
-  accomplishment: 'electromagnetism theory',
+  name: 'Махамад Абдус Салам',
+  profession: 'фізік',
+  accomplishment: 'тэорыя электрамагнетызму',
   imageId: 'bE7W1ji'
 }, {
   id: 3,
-  name: 'Percy Lavon Julian',
-  profession: 'chemist',
-  accomplishment: 'pioneering cortisone drugs, steroids and birth control pills',
+  name: 'Персі Лавон Джуліан',
+  profession: 'хімік',
+  accomplishment: 'піянер у вытворчасці картызону, стэроідаў і супрацьзачаткавых таблетак',
   imageId: 'IOjWm71'
 }, {
   id: 4,
-  name: 'Subrahmanyan Chandrasekhar',
-  profession: 'astrophysicist',
-  accomplishment: 'white dwarf star mass calculations',
+  name: 'Субрахманьян Чандрасекар',
+  profession: 'астрафізік',
+  accomplishment: 'разлік масы белага карліка',
   imageId: 'lrWQx8l'
 }];
 ```
@@ -762,9 +762,9 @@ img { width: 100px; height: 100px; border-radius: 50%; }
 
 </Sandpack>
 
-A very attentive reader might notice that with two `filter` calls, we check each person's profession twice. Checking a property is very fast, so in this example it's fine. If your logic was more expensive than that, you could replace the `filter` calls with a loop that manually constructs the arrays and checks each person once.
+Вельмі ўважлівы чытач можа заўважыць, што пры двух выкліках метаду `filter` мы двойчы правяраем прафесію кожнага чалавека. Праверка ўласцівасці працуе вельмі хутка, таму ў гэтым прыкладзе гэта нармальна. Калі б ваша логіка была больш затратная, вы маглі б замяніць выклікі метаду `filter` цыклам, які ўручную стварае масівы і правярае кожнага чалавека адзін раз.
 
-In fact, if `people` never change, you could move this code out of your component. From React's perspective, all that matters is that you give it an array of JSX nodes in the end. It doesn't care how you produce that array:
+На самай справе, калі `people` ніколі не мяняецца, вы можаце вынесці гэты код са свайго кампанента. З пункту гледжання React, адзінае, што мае значэнне, гэта тое, што ў канцы вы даяце яму масіў JSX вузлоў. React не важна, як вы ствараеце гэты масіў:
 
 <Sandpack>
 
@@ -775,7 +775,7 @@ import { getImageUrl } from './utils.js';
 let chemists = [];
 let everyoneElse = [];
 people.forEach(person => {
-  if (person.profession === 'chemist') {
+  if (person.profession === 'хімік') {
     chemists.push(person);
   } else {
     everyoneElse.push(person);
@@ -795,8 +795,8 @@ function ListSection({ title, people }) {
             />
             <p>
               <b>{person.name}:</b>
-              {' ' + person.profession + ' '}
-              known for {person.accomplishment}
+              {' ' + person.profession}.
+              Галоўнае дасягненне: {person.accomplishment}
             </p>
           </li>
         )}
@@ -810,11 +810,11 @@ export default function List() {
     <article>
       <h1>Scientists</h1>
       <ListSection
-        title="Chemists"
+        title="Хімікі"
         people={chemists}
       />
       <ListSection
-        title="Everyone Else"
+        title="Усе астатнія"
         people={everyoneElse}
       />
     </article>
@@ -825,33 +825,33 @@ export default function List() {
 ```js data.js
 export const people = [{
   id: 0,
-  name: 'Creola Katherine Johnson',
-  profession: 'mathematician',
-  accomplishment: 'spaceflight calculations',
+  name: 'Крэола Кэтрын Джонсан',
+  profession: 'матэматык',
+  accomplishment: 'разлікі для касмічных палётаў',
   imageId: 'MK3eW3A'
 }, {
   id: 1,
-  name: 'Mario José Molina-Pasquel Henríquez',
-  profession: 'chemist',
-  accomplishment: 'discovery of Arctic ozone hole',
+  name: 'Марыа Хасэ Маліна-Паскель Энрыкес',
+  profession: 'хімік',
+  accomplishment: 'адкрыццё арктычнай азонавай дзіркі',
   imageId: 'mynHUSa'
 }, {
   id: 2,
-  name: 'Mohammad Abdus Salam',
-  profession: 'physicist',
-  accomplishment: 'electromagnetism theory',
+  name: 'Махамад Абдус Салам',
+  profession: 'фізік',
+  accomplishment: 'тэорыя электрамагнетызму',
   imageId: 'bE7W1ji'
 }, {
   id: 3,
-  name: 'Percy Lavon Julian',
-  profession: 'chemist',
-  accomplishment: 'pioneering cortisone drugs, steroids and birth control pills',
+  name: 'Персі Лавон Джуліан',
+  profession: 'хімік',
+  accomplishment: 'піянер у вытворчасці картызону, стэроідаў і супрацьзачаткавых таблетак',
   imageId: 'IOjWm71'
 }, {
   id: 4,
-  name: 'Subrahmanyan Chandrasekhar',
-  profession: 'astrophysicist',
-  accomplishment: 'white dwarf star mass calculations',
+  name: 'Субрахманьян Чандрасекар',
+  profession: 'астрафізік',
+  accomplishment: 'разлік масы белага карліка',
   imageId: 'lrWQx8l'
 }];
 ```
@@ -882,13 +882,13 @@ img { width: 100px; height: 100px; border-radius: 50%; }
 
 </Solution>
 
-#### Nested lists in one component {/*nested-lists-in-one-component*/}
+#### Укладзеныя спісы ў адным кампаненце {/*nested-lists-in-one-component*/}
 
-Make a list of recipes from this array! For each recipe in the array, display its name as an `<h2>` and list its ingredients in a `<ul>`.
+Стварыце спіс рэцэптаў з гэтага масіву! Для кожнага рэцэпту ў масіве пакажыце яго назву ўнутры `<h2>` і пералічыце інгрэдыенты ў `<ul>`.
 
 <Hint>
 
-This will require nesting two different `map` calls.
+Для гэтага спатрэбіцца ўкладанне двух розных выклікаў метаду `map`.
 
 </Hint>
 
@@ -900,7 +900,7 @@ import { recipes } from './data.js';
 export default function RecipeList() {
   return (
     <div>
-      <h1>Recipes</h1>
+      <h1>Рэцэпты</h1>
     </div>
   );
 }
@@ -909,16 +909,16 @@ export default function RecipeList() {
 ```js data.js
 export const recipes = [{
   id: 'greek-salad',
-  name: 'Greek Salad',
-  ingredients: ['tomatoes', 'cucumber', 'onion', 'olives', 'feta']
+  name: 'Грэчаская салата',
+  ingredients: ['памідоры', 'агурок', 'цыбуля', 'аліўкі', 'фета']
 }, {
   id: 'hawaiian-pizza',
-  name: 'Hawaiian Pizza',
-  ingredients: ['pizza crust', 'pizza sauce', 'mozzarella', 'ham', 'pineapple']
+  name: 'Гавайская піца',
+  ingredients: ['цеста для піцы', 'соус для піцы', 'мацарэла', 'вяндліна', 'ананас']
 }, {
   id: 'hummus',
-  name: 'Hummus',
-  ingredients: ['chickpeas', 'olive oil', 'garlic cloves', 'lemon', 'tahini']
+  name: 'Хумус',
+  ingredients: ['нут', 'аліўкавы алей', 'зубкі часнаку', 'лімон', 'тахіні']
 }];
 ```
 
@@ -926,7 +926,7 @@ export const recipes = [{
 
 <Solution>
 
-Here is one way you could go about it:
+Вось адзін са спосабаў, як вы можаце гэта зрабіць:
 
 <Sandpack>
 
@@ -936,7 +936,7 @@ import { recipes } from './data.js';
 export default function RecipeList() {
   return (
     <div>
-      <h1>Recipes</h1>
+      <h1>Рэцэпты</h1>
       {recipes.map(recipe =>
         <div key={recipe.id}>
           <h2>{recipe.name}</h2>
@@ -957,28 +957,28 @@ export default function RecipeList() {
 ```js data.js
 export const recipes = [{
   id: 'greek-salad',
-  name: 'Greek Salad',
-  ingredients: ['tomatoes', 'cucumber', 'onion', 'olives', 'feta']
+  name: 'Грэчаская салата',
+  ingredients: ['памідоры', 'агурок', 'цыбуля', 'аліўкі', 'фета']
 }, {
   id: 'hawaiian-pizza',
-  name: 'Hawaiian Pizza',
-  ingredients: ['pizza crust', 'pizza sauce', 'mozzarella', 'ham', 'pineapple']
+  name: 'Гавайская піца',
+  ingredients: ['цеста для піцы', 'соус для піцы', 'мацарэла', 'вяндліна', 'ананас']
 }, {
   id: 'hummus',
-  name: 'Hummus',
-  ingredients: ['chickpeas', 'olive oil', 'garlic cloves', 'lemon', 'tahini']
+  name: 'Хумус',
+  ingredients: ['нут', 'аліўкавы алей', 'зубкі часнаку', 'лімон', 'тахіні']
 }];
 ```
 
 </Sandpack>
 
-Each of the `recipes` already includes an `id` field, so that's what the outer loop uses for its `key`. There is no ID you could use to loop over ingredients. However, it's reasonable to assume that the same ingredient won't be listed twice within the same recipe, so its name can serve as a `key`. Alternatively, you could change the data structure to add IDs, or use index as a `key` (with the caveat that you can't safely reorder ingredients).
+Кожны з рэцэптаў у `recipes` ужо мае поле `id`, таму знешні цыкл і выкарыстоўвае яго ў якасці свайго `key`. У нашай мадэлі няма ідэнтыфікатара, які можна выкарыстоўваць для перабору інгрэдыентаў. Тым не менш, разумна выказаць здагадку, што адзін і той жа інгрэдыент не будзе пералічаны двойчы ў адным рэцэпце, таму яго назва можа выкарыстоўвацца ў якасці `key`. У якасці альтэрнатывы вы можаце змяніць структуру даных і дадаць ідэнтыфікатары, або выкарыстоўваць індэкс у якасці `key` (з агаворкай, што вы не зможаце бяспечна змяніць парадак інгрэдыентаў).
 
 </Solution>
 
-#### Extracting a list item component {/*extracting-a-list-item-component*/}
+#### Вынясенне кампанента элемента спісу {/*extracting-a-list-item-component*/}
 
-This `RecipeList` component contains two nested `map` calls. To simplify it, extract a `Recipe` component from it which will accept `id`, `name`, and `ingredients` props. Where do you place the outer `key` and why?
+Кампанент `RecipeList` змяшчае два ўкладзеныя выклікі метаду `map`. Каб спрасціць яго, вылучыце з яго кампанент `Recipe`, які будзе прымаць пропсы `id`, `name` і `ingredients`. Дзе вы размясціце знешні `key` і чаму?
 
 <Sandpack>
 
@@ -988,7 +988,7 @@ import { recipes } from './data.js';
 export default function RecipeList() {
   return (
     <div>
-      <h1>Recipes</h1>
+      <h1>Рэцэпты</h1>
       {recipes.map(recipe =>
         <div key={recipe.id}>
           <h2>{recipe.name}</h2>
@@ -1009,16 +1009,16 @@ export default function RecipeList() {
 ```js data.js
 export const recipes = [{
   id: 'greek-salad',
-  name: 'Greek Salad',
-  ingredients: ['tomatoes', 'cucumber', 'onion', 'olives', 'feta']
+  name: 'Грэчаская салата',
+  ingredients: ['памідоры', 'агурок', 'цыбуля', 'аліўкі', 'фета']
 }, {
   id: 'hawaiian-pizza',
-  name: 'Hawaiian Pizza',
-  ingredients: ['pizza crust', 'pizza sauce', 'mozzarella', 'ham', 'pineapple']
+  name: 'Гавайская піца',
+  ingredients: ['цеста для піцы', 'соус для піцы', 'мацарэла', 'вяндліна', 'ананас']
 }, {
   id: 'hummus',
-  name: 'Hummus',
-  ingredients: ['chickpeas', 'olive oil', 'garlic cloves', 'lemon', 'tahini']
+  name: 'Хумус',
+  ingredients: ['нут', 'аліўкавы алей', 'зубкі часнаку', 'лімон', 'тахіні']
 }];
 ```
 
@@ -1026,7 +1026,7 @@ export const recipes = [{
 
 <Solution>
 
-You can copy-paste the JSX from the outer `map` into a new `Recipe` component and return that JSX. Then you can change `recipe.name` to `name`, `recipe.id` to `id`, and so on, and pass them as props to the `Recipe`:
+Вы можаце скапіяваць і ўставіць JSX са знешняга выкліку метаду `map` у новы кампанент `Recipe` і вярнуць гэты JSX. Затым вы можаце змяніць `recipe.name` на `name`, `recipe.id` на `id`, і гэтак далей, і перадаць іх у якасці пропсаў у `Recipe`:
 
 <Sandpack>
 
@@ -1063,51 +1063,51 @@ export default function RecipeList() {
 ```js data.js
 export const recipes = [{
   id: 'greek-salad',
-  name: 'Greek Salad',
-  ingredients: ['tomatoes', 'cucumber', 'onion', 'olives', 'feta']
+  name: 'Грэчаская салата',
+  ingredients: ['памідоры', 'агурок', 'цыбуля', 'аліўкі', 'фета']
 }, {
   id: 'hawaiian-pizza',
-  name: 'Hawaiian Pizza',
-  ingredients: ['pizza crust', 'pizza sauce', 'mozzarella', 'ham', 'pineapple']
+  name: 'Гавайская піца',
+  ingredients: ['цеста для піцы', 'соус для піцы', 'мацарэла', 'вяндліна', 'ананас']
 }, {
   id: 'hummus',
-  name: 'Hummus',
-  ingredients: ['chickpeas', 'olive oil', 'garlic cloves', 'lemon', 'tahini']
+  name: 'Хумус',
+  ingredients: ['нут', 'аліўкавы алей', 'зубкі часнаку', 'лімон', 'тахіні']
 }];
 ```
 
 </Sandpack>
 
-Here, `<Recipe {...recipe} key={recipe.id} />` is a syntax shortcut saying "pass all properties of the `recipe` object as props to the `Recipe` component". You could also write each prop explicitly: `<Recipe id={recipe.id} name={recipe.name} ingredients={recipe.ingredients} key={recipe.id} />`.
+Тут `<Recipe {...recipe} key={recipe.id} />` — гэта скарочаны сінтаксіс, які кажа «перадаць усе ўласцівасці аб'екта `recipe` як пропсы ў кампанент `Recipe`». Вы таксама можаце напісаць кожны пропс яўна: `<Recipe id={recipe.id} name={recipe.name} ingredients={recipe.ingredients} key={recipe.id} />`.
 
-**Note that the `key` is specified on the `<Recipe>` itself rather than on the root `<div>` returned from `Recipe`.** This is because this `key` is needed directly within the context of the surrounding array. Previously, you had an array of `<div>`s so each of them needed a `key`, but now you have an array of `<Recipe>`s. In other words, when you extract a component, don't forget to leave the `key` outside the JSX you copy and paste.
+**Звярніце ўвагу, што `key` пазначаны ў самім кампаненце `<Recipe>`, а не ў каранёвым `<div>`, які вяртаецца з `Recipe`.** Усё таму, што гэты `key` неабходны непасрэдна ў кантэксце навакольнага масіву. Раней у вас быў масіў <div>, таму кожнаму з іх быў патрэбны ключ, але цяпер у вас ёсць масіў <Recipe>. Іншымі словамі, калі вы выносіце кампанент, не забывайце пакідаць `key` па-за JSX, які вы капіюеце і ўстаўляеце.
 
 </Solution>
 
-#### List with a separator {/*list-with-a-separator*/}
+#### Спіс з раздзяляльнікам {/*list-with-a-separator*/}
 
-This example renders a famous haiku by Katsushika Hokusai, with each line wrapped in a `<p>` tag. Your job is to insert an `<hr />` separator between each paragraph. Your resulting structure should look like this:
+У гэтым прыкладзе рэндэрыцца знакамітае хайку Кацусіка Хокусая, кожны радок якога абгорнуты тэгам `<p>`. Ваша задача — уставіць раздзяляльнік `<hr />` паміж кожным абзацам. Ваша выніковая структура павінна выглядаць так:
 
 ```js
 <article>
-  <p>I write, erase, rewrite</p>
+  <p>Я пішу, сціраю, перапісваю</p>
   <hr />
-  <p>Erase again, and then</p>
+  <p>Сціраю зноў, а потым</p>
   <hr />
-  <p>A poppy blooms.</p>
+  <p>Зацвіў мак.</p>
 </article>
 ```
 
-A haiku only contains three lines, but your solution should work with any number of lines. Note that `<hr />` elements only appear *between* the `<p>` elements, not in the beginning or the end!
+Хайку змяшчае толькі тры радкі, але ваша рашэнне павінна працаваць з любой колькасцю радкоў. Звярніце ўвагу, што элементы `<hr />` павінны быць толькі *паміж* элементамі `<p>`, а не ў пачатку або ў канцы!
 
 <Sandpack>
 
 ```js
 const poem = {
   lines: [
-    'I write, erase, rewrite',
-    'Erase again, and then',
-    'A poppy blooms.'
+    'Я пішу, сціраю, перапісваю',
+    'Сціраю зноў, а потым',
+    'Зацвіў мак.'
   ]
 };
 
@@ -1141,33 +1141,33 @@ hr {
 
 </Sandpack>
 
-(This is a rare case where index as a key is acceptable because a poem's lines will never reorder.)
+(Гэта рэдкі выпадак, калі выкарыстоўванне індэкса ў якасці ключа — прымальны варыянт, таму што парадак радкоў верша ніколі не будзе зменены.)
 
 <Hint>
 
-You'll either need to convert `map` to a manual loop, or use a fragment.
+Вам трэба альбо пераўтварыць `map` у звычайны цыкл, альбо выкарыстоўваць фрагмент.
 
 </Hint>
 
 <Solution>
 
-You can write a manual loop, inserting `<hr />` and `<p>...</p>` into the output array as you go:
+Вы можаце выкарыстоўваць звычайны цыкл, устаўляючы `<hr />` і `<p>...</p>` у выхадны масіў па ходзе выканання:
 
 <Sandpack>
 
 ```js
 const poem = {
   lines: [
-    'I write, erase, rewrite',
-    'Erase again, and then',
-    'A poppy blooms.'
+    'Я пішу, сціраю, перапісваю',
+    'Сціраю зноў, а потым',
+    'Зацвіў мак.'
   ]
 };
 
 export default function Poem() {
   let output = [];
 
-  // Fill the output array
+  // Запоўненне выхаднога масіву
   poem.lines.forEach((line, i) => {
     output.push(
       <hr key={i + '-separator'} />
@@ -1178,7 +1178,7 @@ export default function Poem() {
       </p>
     );
   });
-  // Remove the first <hr />
+  // Выдаляем першы <hr />
   output.shift();
 
   return (
@@ -1206,9 +1206,9 @@ hr {
 
 </Sandpack>
 
-Using the original line index as a `key` doesn't work anymore because each separator and paragraph are now in the same array. However, you can give each of them a distinct key using a suffix, e.g. `key={i + '-text'}`.
+Выкарыстанне першапачатковага радковага індэкса ў якасці `key` больш не працуе, таму што цяпер кожны раздзяляльнік і абзац знаходзяцца ў адным і тым жа масіве. Аднак вы можаце даць кожнаму з іх асобны ключ з дапамогай суфікса, напрыклад. `key={i + '-text'}`.
 
-Alternatively, you could render a collection of fragments which contain `<hr />` and `<p>...</p>`. However, the `<>...</>` shorthand syntax doesn't support passing keys, so you'd have to write `<Fragment>` explicitly:
+У якасці альтэрнатывы вы можаце стварыць калекцыю фрагментаў, якія змяшчаюць `<hr />` і `<p>...</p>`. Аднак скарочаны сінтаксіс `<>...</>` не падтрымлівае перадачу ключоў, таму вам трэба напісаць `<Fragment>` відавочна:
 
 <Sandpack>
 
@@ -1217,9 +1217,9 @@ import { Fragment } from 'react';
 
 const poem = {
   lines: [
-    'I write, erase, rewrite',
-    'Erase again, and then',
-    'A poppy blooms.'
+    'Я пішу, сціраю, перапісваю',
+    'Сціраю зноў, а потым',
+    'Зацвіў мак.'
   ]
 };
 
@@ -1254,7 +1254,7 @@ hr {
 
 </Sandpack>
 
-Remember, fragments (often written as `<> </>`) let you group JSX nodes without adding extra `<div>`s!
+Памятайце, што фрагменты (часта пішуцца як `<> </>`) дазваляюць групаваць JSX вузлы без дадавання дадатковых `<div>`!
 
 </Solution>
 

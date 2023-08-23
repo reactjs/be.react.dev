@@ -468,7 +468,7 @@ export default function List() {
   );
   return (
     <article>
-      <h1>Вучоныя</h1>
+      <h1>Навукоўцы</h1>
       <ul>{listItems}</ul>
     </article>
   );
@@ -552,7 +552,7 @@ export default function List() {
   );
   return (
     <article>
-      <h1>Вучоныя</h1>
+      <h1>Навукоўцы</h1>
       <h2>Хімікі</h2>
       <ul>
         {chemists.map(person =>
@@ -690,7 +690,7 @@ export default function List() {
   );
   return (
     <article>
-      <h1>Вучоныя</h1>
+      <h1>Навукоўцы</h1>
       <ListSection
         title="Хімікі"
         people={chemists}

@@ -1,10 +1,10 @@
 {
-  "title": "Learn React",
+  "title": "Вывучэнне React",
   "path": "/learn",
   "routes": [
     {
       "hasSectionHeader": true,
-      "sectionHeader": "GET STARTED"
+      "sectionHeader": "ПАЧАТАК"
     },
     {
       "title": "Хуткі старт",
@@ -33,7 +33,7 @@
           "path": "/learn/add-react-to-an-existing-project"
         },
         {
-          "title": "Editor Setup",
+          "title": "Наладжванне рэдактара",
           "path": "/learn/editor-setup"
         },
         {
@@ -48,7 +48,7 @@
     },
     {
       "hasSectionHeader": true,
-      "sectionHeader": "LEARN REACT"
+      "sectionHeader": "ВЫВУЧЭННЕ REACT"
     },
     {
       "title": "Апісанне UI",
@@ -68,7 +68,7 @@
           "path": "/learn/writing-markup-with-jsx"
         },
         {
-          "title": "JavaScript in JSX with Curly Braces",
+          "title": "JavaScript у JSX з дапамогай фігурных дужак",
           "path": "/learn/javascript-in-jsx-with-curly-braces"
         },
         {
@@ -76,11 +76,11 @@
           "path": "/learn/passing-props-to-a-component"
         },
         {
-          "title": "Conditional Rendering",
+          "title": "Умоўны рэндэрынг",
           "path": "/learn/conditional-rendering"
         },
         {
-          "title": "Rendering Lists",
+          "title": "Рэндэрынг спісаў",
           "path": "/learn/rendering-lists"
         },
         {

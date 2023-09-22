@@ -68,7 +68,7 @@ button { margin-right: 10px; }
 
 <LearnMore path="/learn/responding-to-events">
 
-Даведайцеся ў артыкуле **«[Рэагаванне на падзеі](/learn/responding-to-events)»** аб тым, як дадаваць апрацоўшчыкі падзей.
+Звярніцеся да старонкі «**[Рэагаванне на падзеі](/learn/responding-to-events)**» каб даведацца як дадаваць апрацоўшчыкі падзей.
 
 </LearnMore>
 
@@ -229,7 +229,7 @@ button {
 
 <LearnMore path="/learn/state-a-components-memory">
 
-Даведайцеся ў артыкуле **«[Стан: памяць кампанента](/learn/state-a-components-memory)»** аб тым, як запамінаць значэнне і абнаўляць яго пры ўзаемадзеянні.
+Звярніцеся да старонкі «**[Стан: памяць кампанента](/learn/state-a-components-memory)**» каб даведацца як запамінаць значэнне і абнаўляць яго пры ўзаемадзеянні.
 
 </LearnMore>
 
@@ -251,7 +251,7 @@ button {
 
 <LearnMore path="/learn/render-and-commit">
 
-Даведайцеся ў артыкуле **«[Адлюстраванне і фіксацыя](/learn/render-and-commit)»** аб тым, як працуе жыццёвы цыкл абнаўлення карыстальніцкага інтэрфейсу.
+Звярніцеся да старонкі «**[Адлюстраванне і фіксацыя](/learn/render-and-commit)**» каб даведацца як працуе жыццёвы цыкл абнаўлення карыстальніцкага інтэрфейсу.
 
 </LearnMore>
 
@@ -402,7 +402,7 @@ button { display: inline-block; margin: 10px; font-size: 20px; }
 
 <LearnMore path="/learn/queueing-a-series-of-state-updates">
 
-Даведайцеся ў артыкуле **«[Чарга абнаўленняў стану](/learn/queueing-a-series-of-state-updates)»** аб тым, як паставіць у чаргу некалькі абнаўленняў стану.
+Звярніцеся да старонкі «**[Чарга абнаўленняў стану](/learn/queueing-a-series-of-state-updates)**» каб даведацца як паставіць у чаргу некалькі абнаўленняў стану.
 
 </LearnMore>
 
@@ -633,7 +633,7 @@ img { width: 200px; height: 200px; }
 
 <LearnMore path="/learn/updating-objects-in-state">
 
-Даведайцеся ў артыкуле **«[Абнаўленне аб'ектаў у стане](/learn/updating-objects-in-state)»** аб тым, як правільна абнаўляць аб'екты.
+Звярніцеся да старонкі «**[Абнаўленне аб'ектаў у стане](/learn/updating-objects-in-state)**» каб даведацца як правільна абнаўляць аб'екты.
 
 </LearnMore>
 
@@ -791,7 +791,7 @@ function ItemList({ artworks, onToggle }) {
 
 <LearnMore path="/learn/updating-arrays-in-state">
 
-Даведайцеся ў артыкуле **«[Абнаўленне масіваў у стане](/learn/updating-arrays-in-state)»** аб тым, як правільна абнаўляць масівы.
+Звярніцеся да старонкі «**[Абнаўленне масіваў у стане](/learn/updating-arrays-in-state)**» каб даведацца як правільна абнаўляць масівы.
 
 </LearnMore>
 

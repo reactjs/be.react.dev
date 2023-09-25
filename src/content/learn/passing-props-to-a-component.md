@@ -462,7 +462,7 @@ export default function Gallery() {
           </li>
           <li>
             <b>Адкрыццё: </b>
-            Палоній (элемент)
+            Палоній (хімічны элемент)
           </li>
         </ul>
       </section>

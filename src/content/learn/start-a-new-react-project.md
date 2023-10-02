@@ -26,11 +26,7 @@ npx create-next-app@latest
 
 Для знаёмства з Next.js вы можаце азнаёміцца з іх [падручнікам па Next.js.](https://nextjs.org/learn/foundations/about-nextjs)
 
-<<<<<<< HEAD
-Next.js падтрымліваецца [Vercel](https://vercel.com/). Вы можаце [разгарнуць Next.js](https://nextjs.org/docs/deployment) на любым бессерверным хостынгу, Node.js хостынгу або на вашым уласным серверы. [Цалкам статычную праграму на Next.js](https://nextjs.org/docs/advanced-features/static-html-export) можна разгарнуць на любым статычным хостынгу.
-=======
-Next.js is maintained by [Vercel](https://vercel.com/). You can [deploy a Next.js app](https://nextjs.org/docs/app/building-your-application/deploying) to any Node.js or serverless hosting, or to your own server. Next.js also supports a [static export](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports) which doesn't require a server.
->>>>>>> 68f417a600c7d7b8c4131e39f8a843a856ae3909
+Next.js падтрымліваецца [Vercel](https://vercel.com/). Вы можаце [разгарнуць Next.js](https://nextjs.org/docs/app/building-your-application/deploying) на любым бессерверным хостынгу, Node.js хостынгу або на вашым уласным серверы. [Цалкам статычную праграму на Next.js](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports) можна разгарнуць на любым статычным хостынгу.
 
 ### Remix {/*remix*/}
 

@@ -1086,11 +1086,7 @@ export const recipes = [{
 
 #### Спіс з раздзяляльнікам {/*list-with-a-separator*/}
 
-<<<<<<< HEAD
-У гэтым прыкладзе рэндэрыцца знакамітае хайку Кацусіка Хокусая, кожны радок якога абгорнуты тэгам `<p>`. Ваша задача — уставіць раздзяляльнік `<hr />` паміж кожным абзацам. Ваша выніковая структура павінна выглядаць так:
-=======
-This example renders a famous haiku by Tachibana Hokushi, with each line wrapped in a `<p>` tag. Your job is to insert an `<hr />` separator between each paragraph. Your resulting structure should look like this:
->>>>>>> 68f417a600c7d7b8c4131e39f8a843a856ae3909
+У гэтым прыкладзе рэндэрыцца знакамітае хайку Тацібана Хокусі, кожны радок якога абгорнуты тэгам `<p>`. Ваша задача — уставіць раздзяляльнік `<hr />` паміж кожным абзацам. Ваша выніковая структура павінна выглядаць так:
 
 ```js
 <article>

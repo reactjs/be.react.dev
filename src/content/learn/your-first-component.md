@@ -163,7 +163,7 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 ```html
 <section>
-  <h1>Выбітныя вучоныя</h1>
+  <h1>Выбітныя навукоўцы</h1>
   <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
   <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
   <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
@@ -376,7 +376,7 @@ function profile() {
 export default function Gallery() {
   return (
     <section>
-      <h1>Выбітныя вучоныя</h1>
+      <h1>Выбітныя навукоўцы</h1>
       <profile />
       <profile />
       <profile />
@@ -412,7 +412,7 @@ function Profile() {
 export default function Gallery() {
   return (
     <section>
-      <h1>Выбітныя вучоныя</h1>
+      <h1>Выбітныя навукоўцы</h1>
       <Profile />
       <Profile />
       <Profile />

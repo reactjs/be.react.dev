@@ -26,7 +26,7 @@ npx create-next-app@latest
 
 Для знаёмства з Next.js вы можаце азнаёміцца з іх [падручнікам па Next.js.](https://nextjs.org/learn/foundations/about-nextjs)
 
-Next.js падтрымліваецца [Vercel](https://vercel.com/). Вы можаце [разгарнуць Next.js](https://nextjs.org/docs/app/building-your-application/deploying) на любым бессерверным хостынгу, Node.js хостынгу або на вашым уласным серверы. [Цалкам статычную праграму на Next.js](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports) можна разгарнуць на любым статычным хостынгу.
+Next.js падтрымліваецца [Vercel](https://vercel.com/). Вы можаце [разгарнуць Next.js](https://nextjs.org/docs/app/building-your-application/deploying) на любым бессерверным хостынгу, Node.js хостынгу або на вашым уласным серверы. Next.js таксама падтрымлівае [экспарт у статычныя файлы](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports), якія не патрабуюць хостынгу.
 
 ### Remix {/*remix*/}
 
@@ -89,19 +89,9 @@ React дакладна можна выкарыстоўваць без фрэйм
 
 ### Next.js (App Router) {/*nextjs-app-router*/}
 
-<<<<<<< HEAD
-**[Next.js App Router](https://beta.nextjs.org/docs/getting-started) — гэта абноўлены API Next.js, які адпавядае таму, як каманда React бачыць архітэктуру фулстэк-праграм сёння.** Ён дазваляе загружаць даныя ў асінхронных кампанентах на серверы або нават падчас зборкі.
+**[Next.js App Router](https://nextjs.org/docs) — гэта абноўлены API Next.js, які адпавядае таму, як каманда React бачыць архітэктуру фулстэк-праграм сёння.** Ён дазваляе загружаць даныя ў асінхронных кампанентах на серверы або нават падчас зборкі.
 
-Next.js падтрымліваецца [Vercel](https://vercel.com/). Вы можаце [разгарнуць Next.js праграму](https://nextjs.org/docs/deployment) на любым Node.js або бессерверным хостынгу, або на вашым уласным серверы. Next.js таксама падтрымлівае [статычны экспарт](https://beta.nextjs.org/docs/configuring/static-export), які не патрабуе сервера.
-<Pitfall>
-
-Next.js App Router **у цяперашні час знаходзіцца ў бэта-версіі і пакуль не рэкамендуецца для выкарыстання ў працоўным асяроддзі** (па стане на сакавік 2023 году). Каб паэксперыментаваць з ім у існуючым праекце Next.js, [прытрымлівайцеся гэтага кіраўніцтва па паступовай міграцыі](https://beta.nextjs.org/docs/upgrade-guide#migrating-from-pages-to-app).
-</Pitfall>
-=======
-**[Next.js's App Router](https://nextjs.org/docs) is a redesign of the Next.js APIs aiming to fulfill the React team’s full-stack architecture vision.** It lets you fetch data in asynchronous components that run on the server or even during the build.
-
-Next.js is maintained by [Vercel](https://vercel.com/). You can [deploy a Next.js app](https://nextjs.org/docs/app/building-your-application/deploying) to any Node.js or serverless hosting, or to your own server. Next.js also supports [static export](https://nextjs.org/docs/app/building-your-application/deploying/static-exports) which doesn't require a server.
->>>>>>> 68f417a600c7d7b8c4131e39f8a843a856ae3909
+Next.js падтрымліваецца [Vercel](https://vercel.com/). Вы можаце [разгарнуць Next.js праграму](https://nextjs.org/docs/app/building-your-application/deploying) на любым Node.js або бессерверным хостынгу, або на вашым уласным серверы. Next.js таксама падтрымлівае [статычны экспарт](https://nextjs.org/docs/app/building-your-application/deploying/static-exports), які не патрабуе сервера.
 
 <DeepDive>
 

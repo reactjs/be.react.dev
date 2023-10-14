@@ -128,7 +128,7 @@ function MessageComponent({ messagePromise }) {
 
 Гэтыя хукі болей карысныя аўтарам бібліятэк і не часта выкарыстоўваюцца ў кодзе праграм. 
 
-- [`useDebugValue`](/reference/react/useDebugValue) дазваляе наладзіць цэтлік, які React DevTools будзе паказваць для вашага хука.
+- [`useDebugValue`](/reference/react/useDebugValue) дазваляе наладзіць пазнаку, якую React DevTools будзе паказваць для вашага хука.
 - [`useId`](/reference/react/useId) дазваляе кампаненту атрымаць унікальны ідэнтыфікатар. Звычайна выкарыстоўваецца з API спецыяльных магчымасцяў.
 - [`useSyncExternalStore`](/reference/react/useSyncExternalStore) дазваляе кампаненту падпісацца на знешняе сховішча.
 

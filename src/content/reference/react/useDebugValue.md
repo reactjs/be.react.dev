@@ -4,7 +4,7 @@ title: useDebugValue
 
 <Intro>
 
-`useDebugValue` is a React Hook that lets you add a label to a custom Hook in [React DevTools.](/learn/react-developer-tools)
+`useDebugValue` — хук React, які дазваляе дадаць пазнаку да ўласнага хука ў [React DevTools.](/learn/react-developer-tools)
 
 ```js
 useDebugValue(value, format?)
@@ -20,7 +20,7 @@ useDebugValue(value, format?)
 
 ### `useDebugValue(value, format?)` {/*usedebugvalue*/}
 
-Call `useDebugValue` at the top level of your [custom Hook](/learn/reusing-logic-with-custom-hooks) to display a readable debug value:
+Выклічце `useDebugValue` на верхнім узроўні вашага [ўласнага хука](/learn/reusing-logic-with-custom-hooks) каб паказаць прыдатнае да чытання значэнне:
 
 ```js
 import { useDebugValue } from 'react';
@@ -32,22 +32,22 @@ function useOnlineStatus() {
 }
 ```
 
-[See more examples below.](#usage)
+[Болей прыкладаў глядзіце ніжэй.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Параметры {/*parameters*/}
 
-* `value`: The value you want to display in React DevTools. It can have any type.
-* **optional** `format`: A formatting function. When the component is inspected, React DevTools will call the formatting function with the `value` as the argument, and then display the returned formatted value (which may have any type). If you don't specify the formatting function, the original `value` itself will be displayed.
+* `value` — значэнне, якое вы хочаце паказваць у React DevTools. Яно можа мець любы тып.
+* **(неабавязковае)** `format` — функцыя фармаціравання. Пры даследаванні элемента, React DevTools выкліча функцыю фармаціравання, перадаўшы ў яе `value` у якасці аргумента, і пакажа адфармаціраванае значэнне, якое верне функцыя (яна прымае значэнне любога тыпу). Калі не задаваць функцыю фармаціравання, будзе паказана арыгінальнае значэнне `value`.
 
-#### Returns {/*returns*/}
+#### Значэнні, якія вяртаюцца {/*returns*/}
 
-`useDebugValue` does not return anything.
+`useDebugValue` нічога не вяртае.
 
-## Usage {/*usage*/}
+## Выкарыстанне {/*usage*/}
 
-### Adding a label to a custom Hook {/*adding-a-label-to-a-custom-hook*/}
+### Дадаванне пазнакі да ўласнага хука {/*adding-a-label-to-a-custom-hook*/}
 
-Call `useDebugValue` at the top level of your [custom Hook](/learn/reusing-logic-with-custom-hooks) to display a readable <CodeStep step={1}>debug value</CodeStep> for [React DevTools.](/learn/react-developer-tools)
+Выклічце `useDebugValue` на верхнім узроўні вашага [ўласнага хука](/learn/reusing-logic-with-custom-hooks) каб паказаць прыдатнае да чытання <CodeStep step={1}>значэнне для адладкі</CodeStep> для [React DevTools](/learn/react-developer-tools).
 
 ```js [[1, 5, "isOnline ? 'Online' : 'Offline'"]]
 import { useDebugValue } from 'react';
@@ -59,11 +59,11 @@ function useOnlineStatus() {
 }
 ```
 
-This gives components calling `useOnlineStatus` a label like `OnlineStatus: "Online"` when you inspect them:
+Гэта задасць кампаненту, які выклікае `useOnlineStatus`, пазнаку `OnlineStatus: "Online"` пры даследаванні яго:
 
-![A screenshot of React DevTools showing the debug value](/images/docs/react-devtools-usedebugvalue.png)
+![Здымак экрана React DevTools, у якім паказваецца значэнне для адладкі](/images/docs/react-devtools-usedebugvalue.png)
 
-Without the `useDebugValue` call, only the underlying data (in this example, `true`) would be displayed.
+Без выкліку `useDebugValue` будзе паказана толькі асноўнае значэнне (у дадзеным прыкладзе — `true`).
 
 <Sandpack>
 
@@ -103,20 +103,20 @@ function subscribe(callback) {
 
 <Note>
 
-Don't add debug values to every custom Hook. It's most valuable for custom Hooks that are part of shared libraries and that have a complex internal data structure that's difficult to inspect.
+Не дадавайце значэнні для адладкі кожнаму хуку. Іх карысна выкарыстоўваць у хуках, што з'яўляюцца часткай агульнай бібліятэкі і ў хуках са складанай унутранай структурай даных, якую можа быць складана даследаваць.
 
 </Note>
 
 ---
 
-### Deferring formatting of a debug value {/*deferring-formatting-of-a-debug-value*/}
+### Адтэрміноўка фармаціравання значэння для адладкі {/*deferring-formatting-of-a-debug-value*/}
 
-You can also pass a formatting function as the second argument to `useDebugValue`:
+Вы заўсёды можаце перадаць функцыю фармаціравання ў якасці другога аргумента `useDebugValue`:
 
 ```js [[1, 1, "date", 18], [2, 1, "date.toDateString()"]]
 useDebugValue(date, date => date.toDateString());
 ```
 
-Your formatting function will receive the <CodeStep step={1}>debug value</CodeStep> as a parameter and should return a <CodeStep step={2}>formatted display value</CodeStep>. When your component is inspected, React DevTools will call this function and display its result.
+Вашая функцыя фармаціравання атрымае <CodeStep step={1}>значэнне для адладкі</CodeStep> ў якасці параметра і мае вярнуць <CodeStep step={2}>фармаціраванае значэнне</CodeStep>. Калі вы дасладуеце свой кампанент, React DevTools выклікае функцыю і паказвае вынік выканання.
 
-This lets you avoid running potentially expensive formatting logic unless the component is actually inspected. For example, if `date` is a Date value, this avoids calling `toDateString()` on it for every render.
+Гэта дазваляе пазбегнуць выканання патэнцыйна складанай логікі фармаціравання да таго часу, як кампанент будзе даследавацца. Напрыклад, калі `date` мае тып Date, гэта пазбягае выканання `toDateString()` падчас кожнага перарэндэрынгу.

@@ -284,7 +284,11 @@ export default App = AppTSX;
 
 </Sandpack>
 
+<<<<<<< HEAD
 Дадзеная тэхніка працуе калі маецца прадвызначанае значэнне, якое мае сэнс, але бываюць сітуацыі, калі такога няма. У такім выпадку разумна будзе скарыстацца `null` у якасці прадвызначанага значэння. Але каб сістэме тыпізацыі было зразумела, трэба відавочна ўказаць тып `ContextShape | null` для `createContext`.
+=======
+This technique works when you have a default value which makes sense - but there are occasionally cases when you do not, and in those cases `null` can feel reasonable as a default value. However, to allow the type-system to understand your code, you need to explicitly set `ContextShape | null` on the `createContext`. 
+>>>>>>> e85b71de88a20cda9588f51f01d4a70e5cbe1cb4
 
 Разам з тым з’яўляецца патрэба выключаць `| null` пры атрыманні значэння. Мы раім дадаць у хук праверку, якая будзе падчас выканання правяраць наяўнасць значэння і выкідваць памылку пры яго адсутнасці:
 
@@ -460,4 +464,8 @@ interface MyComponentProps {
 
  - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/) — мадэруемая супольнасцю шпаргалка па выкарыстанні TypeScript з React, што тлумачыць шмат карысных выпадкаў і забяспечвае ахоп большы за гэтую старонку.
 
+<<<<<<< HEAD
  - [TypeScript супольнасць у Discord](https://discord.com/invite/typescript) — выдатнае месца, каб задаць пытанні і атрымаць дапамогу па пытаннях  TypeScript і React.
+=======
+ - [TypeScript Community Discord](https://discord.com/invite/typescript) is a great place to ask questions and get help with TypeScript and React issues.
+>>>>>>> e85b71de88a20cda9588f51f01d4a70e5cbe1cb4

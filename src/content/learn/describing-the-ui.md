@@ -530,29 +530,21 @@ React выкарыстоўвае дрэвы для мадэліравання а
 
 Дрэва рэндэрынгу React — гэта адлюстраванне бацькоўскіх і даччыных адносін паміж кампанентамі.
 
-<<<<<<< HEAD
-<Diagram name="generic_render_tree" height={250} width={500} alt="Дрэвападобны графік з пяццю вузламі, кожны з якіх уяўляе кампанент. Каранёвы вузел знаходзіцца ў верхняй частцы дрэвападобнага графіка і пазначаны як «Каранёвы кампанент (Root Component)». Ён мае дзве стрэлкі, якія ідуць уніз да двух вузлоў, пазначаных «Кампанент A (Component A)» і «Кампанент C (Component C)». Кожная са стрэлак пазначана надпісам «рэндэрыць». «Кампанент A» мае адзіную стрэлку «рэндэрыць» да вузла з надпісам «Кампанент B (Component B)». «Кампанент C» мае адну стрэлку «рэндэрыць» да вузла з надпісам «Кампанент D (Component D)».">Прыклад дрэва рэндэрынгу React.</Diagram>
-=======
-<Diagram name="generic_render_tree" height={250} width={500} alt="A tree graph with five nodes, with each node representing a component. The root node is located at the top the tree graph and is labelled 'Root Component'. It has two arrows extending down to two nodes labelled 'Component A' and 'Component C'. Each of the arrows is labelled with 'renders'. 'Component A' has a single 'renders' arrow to a node labelled 'Component B'. 'Component C' has a single 'renders' arrow to a node labelled 'Component D'.">
+<Diagram name="generic_render_tree" height={250} width={500} alt="Дрэвападобны графік з пяццю вузламі, кожны з якіх уяўляе кампанент. Каранёвы вузел знаходзіцца ў верхняй частцы дрэвападобнага графіка і пазначаны як «Каранёвы кампанент (Root Component)». Ён мае дзве стрэлкі, якія ідуць уніз да двух вузлоў, пазначаных «Кампанент A (Component A)» і «Кампанент C (Component C)». Кожная са стрэлак пазначана надпісам «рэндэрыць». «Кампанент A» мае адзіную стрэлку «рэндэрыць» да вузла з надпісам «Кампанент B (Component B)». «Кампанент C» мае адну стрэлку «рэндэрыць» да вузла з надпісам «Кампанент D (Component D)».">
 
-An example React render tree.
+Прыклад дрэва рэндэрынгу React.
 
 </Diagram>
->>>>>>> 4bdb87b172a7723d56d03a5630c8a9870f6f03ec
 
 Кампаненты, якія знаходзяцца ў верхняй частцы дрэва, каля каранёвага кампанента, лічацца кампанентамі верхняга ўзроўню. Кампаненты без даччыных кампанентаў з'яўляюцца ліставымі кампанентамі. Такая класіфікацыя кампанентаў карысная для разумення патоку даных і прадукцыйнасці рэндэрынгу.
 
 Мадэліраванне адносін паміж модулямі JavaScript — гэта яшчэ адзін карысны спосаб зразумець вашу праграму. Мы называем гэта «дрэвам залежнасці модуляў».
 
-<<<<<<< HEAD
-<Diagram name="generic_dependency_tree" height={250} width={500} alt="Дрэвападобны графік з пяццю вузламі. Кожны вузел уяўляе сабой JavaScript модуль. Самы верхні вузел пазначаны як «RootModule.js». Ён мае тры стрэлкі, якія ідуць да вузлоў: «ModuleA.js», «ModuleB.js» і «ModuleC.js». Кожная стрэлка пазначана надпісам «імпартуе». Вузел «ModuleC.js» мае адну стрэлку з надпісам «імпартуе», якая паказвае на вузел з надпісам «ModuleD.js».">Прыклад дрэва залежнасцяў модуля.</Diagram>
-=======
-<Diagram name="generic_dependency_tree" height={250} width={500} alt="A tree graph with five nodes. Each node represents a JavaScript module. The top-most node is labelled 'RootModule.js'. It has three arrows extending to the nodes: 'ModuleA.js', 'ModuleB.js', and 'ModuleC.js'. Each arrow is labelled as 'imports'. 'ModuleC.js' node has a single 'imports' arrow that points to a node labelled 'ModuleD.js'.">
+<Diagram name="generic_dependency_tree" height={250} width={500} alt="Дрэвападобны графік з пяццю вузламі. Кожны вузел уяўляе сабой JavaScript модуль. Самы верхні вузел пазначаны як «RootModule.js». Ён мае тры стрэлкі, якія ідуць да вузлоў: «ModuleA.js», «ModuleB.js» і «ModuleC.js». Кожная стрэлка пазначана надпісам «імпартуе». Вузел «ModuleC.js» мае адну стрэлку з надпісам «імпартуе», якая паказвае на вузел з надпісам «ModuleD.js».">
 
-An example module dependency tree.
+Прыклад дрэва залежнасцяў модуля.
 
 </Diagram>
->>>>>>> 4bdb87b172a7723d56d03a5630c8a9870f6f03ec
 
 Дрэва залежнасцяў часта выкарыстоўваецца інструментамі зборкі для аб'яднання ўсяго адпаведнага JavaScript кода для спампоўвання і адлюстравання кліентам. Вялікі памер пакета пагаршае карыстальніцкі досвед узаемадзеяння з праграмамі напісанымі з дапамогай React. Разуменне дрэва залежнасцяў модуля дапамагае вырашаць такія праблемы.
 

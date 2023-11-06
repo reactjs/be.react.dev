@@ -7,8 +7,17 @@
       "sectionHeader": "react@18.2.0"
     },
     {
+<<<<<<< HEAD
       "title": "Хукі",
       "path": "/reference/react",
+=======
+      "title": "Overview",
+      "path": "/reference/react"
+    },
+    {
+      "title": "Hooks",
+      "path": "/reference/react/hooks",
+>>>>>>> a8790ca810c1cebd114db35a433b90eb223dbb04
       "routes": [
         {
           "title": "use",

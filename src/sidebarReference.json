@@ -7,8 +7,12 @@
       "sectionHeader": "react@18.2.0"
     },
     {
+      "title": "Агляд",
+      "path": "/reference/react"
+    },
+    {
       "title": "Хукі",
-      "path": "/reference/react",
+      "path": "/reference/react/hooks",
       "routes": [
         {
           "title": "use",

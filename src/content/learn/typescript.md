@@ -11,10 +11,17 @@ TypeScript — папулярны спосаб дадаць тыпізацыю �
 
 <YouWillLearn>
 
+<<<<<<< HEAD
 * [TypeScript з кампанентамі React](/learn/typescript#typescript-with-react-components)
 * [Прыклад тыпізацыі хукаў](/learn/typescript#example-hooks)
 * [Агульныя тыпы з `@types/react`](/learn/typescript/#useful-types)
 * [Іншыя рэсурсы для вывучэння](/learn/typescript/#further-learning)
+=======
+* [TypeScript with React Components](/learn/typescript#typescript-with-react-components)
+* [Examples of typing with Hooks](/learn/typescript#example-hooks)
+* [Common types from `@types/react`](/learn/typescript/#useful-types)
+* [Further learning locations](/learn/typescript/#further-learning)
+>>>>>>> fcd00068bd1bdd4eb37e3e0ab0488a9d093670bc
 
 </YouWillLearn>
 
@@ -124,6 +131,7 @@ export default App = AppTSX;
 
 ## Прыклады хукаў {/*example-hooks*/}
 
+<<<<<<< HEAD
 Апісанні тыпаў у `@types/react` уключае таксама і тыпізацыю ўбудаваных хукаў, таму вы можаце выкарыстоўваць іх у сваіх кампанентах без дадатковай налады. Яны пабудаваныя такім чынам, каб улічваць код, ужо напісаны ў кампаненце, такім чынам вы атрымаеце [аўтаматычна вызначаныя тыпы](https://www.typescriptlang.org/docs/handbook/type-inference.html) і ў большасці выпадкаў вам не давядзецца разбірацца з дробнай тыпізацыяй самастойна. 
 
 Але далей мы разгледзім некалькі прыкладаў, як тыпізаваць хукі.
@@ -131,6 +139,15 @@ export default App = AppTSX;
 ### `useState` {/*typing-usestate*/}
 
 [Хук `useState`](/reference/react/useState) будзе выкарыстоўваць значэнне, зададзенае пры ініцыалізацыі, для аўтаматычнага вызначэння тыпу. Напрыклад:
+=======
+The type definitions from `@types/react` include types for the built-in Hooks, so you can use them in your components without any additional setup. They are built to take into account the code you write in your component, so you will get [inferred types](https://www.typescriptlang.org/docs/handbook/type-inference.html) a lot of the time and ideally do not need to handle the minutiae of providing the types. 
+
+However, we can look at a few examples of how to provide types for Hooks.
+
+### `useState` {/*typing-usestate*/}
+
+The [`useState` Hook](/reference/react/useState) will re-use the value passed in as the initial state to determine what the type of the value should be. For example:
+>>>>>>> fcd00068bd1bdd4eb37e3e0ab0488a9d093670bc
 
 ```ts
 // Тут будзе вызначаны тып boolean
@@ -166,7 +183,11 @@ const [requestState, setRequestState] = useState<RequestState>({ status: 'idle' 
 
 ### `useReducer` {/*typing-usereducer*/}
 
+<<<<<<< HEAD
 [Хук `useReducer`](/reference/react/useReducer) — больш скаладаны хук, які прымае функцыю рэд’юсара і першапачатковы стан. Аўтаматычна тып будзе вызначаны па тыпу значэння стану. Таксама вы можаце ўказаць тып стану пры выкліку `useReducer`, але звычайна лепей пакінуць першапачатковы стан:
+=======
+The [`useReducer` Hook](/reference/react/useReducer) is a more complex Hook that takes a reducer function and an initial state. The types for the reducer function are inferred from the initial state. You can optionally provide a type argument to the `useReducer` call to provide a type for the state, but it is often better to set the type on the initial state instead:
+>>>>>>> fcd00068bd1bdd4eb37e3e0ab0488a9d093670bc
 
 <Sandpack>
 
@@ -242,7 +263,11 @@ export default function App() {
 
 ### `useContext` {/*typing-usecontext*/}
 
+<<<<<<< HEAD
 [Хук `useContext`](/reference/react/useContext) — тэхніка для перадачы даных кампанентам уніз па дрэве без неабходнасці перадаваць пропсы цераз кампаненты. Выкарыстоўваецца шляхам стварэння кампанента-правайдара і хука для атрымання даных у даччыных кампанентах.
+=======
+The [`useContext` Hook](/reference/react/useContext) is a technique for passing data down the component tree without having to pass props through components. It is used by creating a provider component and often by creating a Hook to consume the value in a child component.
+>>>>>>> fcd00068bd1bdd4eb37e3e0ab0488a9d093670bc
 
 Аўтаматычна тып будзе вызначаны згодна з тыпам даных, што былі перададзеныя пры выкліку `createContext`:
 
@@ -286,7 +311,11 @@ export default App = AppTSX;
 
 Дадзеная тэхніка працуе калі маецца прадвызначанае значэнне, якое мае сэнс, але бываюць сітуацыі, калі такога няма. У такім выпадку разумна будзе скарыстацца `null` у якасці прадвызначанага значэння. Але каб сістэме тыпізацыі было зразумела, трэба відавочна ўказаць тып `ContextShape | null` для `createContext`.
 
+<<<<<<< HEAD
 Разам з тым з’яўляецца патрэба выключаць `| null` пры атрыманні значэння. Мы раім дадаць у хук праверку, якая будзе падчас выканання правяраць наяўнасць значэння і выкідваць памылку пры яго адсутнасці:
+=======
+This causes the issue that you need to eliminate the `| null` in the type for context consumers. Our recommendation is to have the Hook do a runtime check for it's existence and throw an error when not present:
+>>>>>>> fcd00068bd1bdd4eb37e3e0ab0488a9d093670bc
 
 ```js {5, 16-20}
 import { createContext, useContext, useState, useMemo } from 'react';
@@ -299,7 +328,11 @@ type ComplexObject = {
 // Кантэкст створаны з ужываннем `| null`, каб дакладна адлюстроўваць прадвызначанае значэнне
 const Context = createContext<ComplexObject | null>(null);
 
+<<<<<<< HEAD
 // `| null` будзе выключаны пасля таго, як спрацуе хук.
+=======
+// The `| null` will be removed via the check in the Hook.
+>>>>>>> fcd00068bd1bdd4eb37e3e0ab0488a9d093670bc
 const useGetComplexObject = () => {
   const object = useContext(Context);
   if (!object) { throw new Error("useGetComplexObject must be used within a Provider") }
@@ -329,7 +362,11 @@ function MyComponent() {
 
 ### `useMemo` {/*typing-usememo*/}
 
+<<<<<<< HEAD
 [Хук `useMemo`](/reference/react/useMemo) дапамагае ствараць і паўторна атрымліваць доступ да запомненых вынікаў запуску функцыі. Функцыя будзе выконвацца наноў толькі ў выпадках, калі зменіцца залежнае значэнне, перададзенае другім параметрам. Вынік выкліку функцыі будзе аўтаматычна тыпізаваны адпаведна функцыі, што была перададзеная першым параметрам. Вы можаце тыпізаваць хук відавочна, перадаўшы яму тып.
+=======
+The [`useMemo`](/reference/react/useMemo) Hooks will create/re-access a memorized value from a function call, re-running the function only when dependencies passed as the 2nd parameter are changed. The result of calling the Hook is inferred from the return value from the function in the first parameter. You can be more explicit by providing a type argument to the Hook.
+>>>>>>> fcd00068bd1bdd4eb37e3e0ab0488a9d093670bc
 
 ```ts
 // Тып visibleTodos вызначаны аўтаматычна з тыпу значэння, што вяртае функцыя filterTodos
@@ -339,7 +376,11 @@ const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]);
 
 ### `useCallback` {/*typing-usecallback*/}
 
+<<<<<<< HEAD
 [Хук `useCallback`](/reference/react/useCallback) забяспечвае стабільную спасылку на функцыю пакуль залежнасці, перададзеныя другім параметрам, не змяняюцца. Як і `useMemo`, тып функцыі вызначаецца па тыпе функцыі, што перададзеная першым параметрам, але болей відавочна ўказаць тып можна перадаўшы яго ў хук.
+=======
+The [`useCallback`](/reference/react/useCallback) provide a stable reference to a function as long as the dependencies passed into the second parameter are the same. Like `useMemo`, the function's type is inferred from the return value of the function in the first parameter, and you can be more explicit by providing a type argument to the Hook.
+>>>>>>> fcd00068bd1bdd4eb37e3e0ab0488a9d093670bc
 
 
 ```ts

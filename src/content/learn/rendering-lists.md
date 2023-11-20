@@ -1145,11 +1145,7 @@ hr {
 
 <Hint>
 
-<<<<<<< HEAD
 Вам трэба альбо пераўтварыць `map` у звычайны цыкл, альбо выкарыстоўваць фрагмент.
-=======
-You'll either need to convert `map` to a manual loop, or use a Fragment.
->>>>>>> 4f9e9a56611c7a56b9506cf0a7ca84ab409824bc
 
 </Hint>
 

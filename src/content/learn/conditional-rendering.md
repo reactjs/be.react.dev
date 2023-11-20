@@ -626,7 +626,11 @@ export default function PackingList() {
 
 Звярніце ўвагу, што трэба пісаць `importance > 0 && ...`, а не `importance && ...`, каб пры `importance` роўным `0` у выніку не рэндэрылася лічба `0`!
 
+<<<<<<< HEAD
 У гэтым рашэнні дзве асобныя ўмовы выкарыстоўваюцца для ўстаўкі прабелу паміж іменем і меткай важнасці. Але замест гэтага вы таксама можаце выкарыстоўваць фрагмент з прабелам у пачатку: `importance > 0 && <> <i>...</i></>` або дадаць прабел непасрэдна ўнутры `<i>`: `importance > 0 && <i> ...</i>`.
+=======
+In this solution, two separate conditions are used to insert a space between the name and the importance label. Alternatively, you could use a Fragment with a leading space: `importance > 0 && <> <i>...</i></>` or add a space immediately inside the `<i>`:  `importance > 0 && <i> ...</i>`.
+>>>>>>> 4f9e9a56611c7a56b9506cf0a7ca84ab409824bc
 
 </Solution>
 

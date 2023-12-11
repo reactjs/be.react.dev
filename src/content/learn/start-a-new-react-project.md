@@ -24,11 +24,7 @@ title: Пачаць новы React праект
 npx create-next-app@latest
 </TerminalBlock>
 
-<<<<<<< HEAD
-Для знаёмства з Next.js вы можаце азнаёміцца з іх [падручнікам па Next.js.](https://nextjs.org/learn/foundations/about-nextjs)
-=======
-If you're new to Next.js, check out the [learn Next.js course.](https://nextjs.org/learn)
->>>>>>> af54fc873819892f6050340df236f33a18ba5fb8
+Для знаёмства з Next.js вы можаце азнаёміцца з іх [курсам па Next.js.](https://nextjs.org/learn)
 
 Next.js падтрымліваецца [Vercel](https://vercel.com/). Вы можаце [разгарнуць Next.js](https://nextjs.org/docs/app/building-your-application/deploying) на любым бессерверным хостынгу, Node.js хостынгу або на вашым уласным серверы. Next.js таксама падтрымлівае [экспарт у статычныя файлы](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports), якія не патрабуюць хостынгу.
 

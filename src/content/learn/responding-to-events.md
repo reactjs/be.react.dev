@@ -628,7 +628,7 @@ export default function LightSwitch() {
 
 <Sandpack>
 
-```js ColorSwitch.js active
+```js src/ColorSwitch.js active
 export default function ColorSwitch({
   onChangeColor
 }) {
@@ -640,7 +640,7 @@ export default function ColorSwitch({
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState } from 'react';
 import ColorSwitch from './ColorSwitch.js';
 
@@ -684,7 +684,7 @@ export default function App() {
 
 <Sandpack>
 
-```js ColorSwitch.js active
+```js src/ColorSwitch.js active
 export default function ColorSwitch({
   onChangeColor
 }) {
@@ -699,7 +699,7 @@ export default function ColorSwitch({
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState } from 'react';
 import ColorSwitch from './ColorSwitch.js';
 

@@ -1,25 +1,25 @@
 ---
-title: "State: A Component's Memory"
+title: "Стан: памяць кампанента"
 ---
 
 <Intro>
 
-Components often need to change what's on the screen as a result of an interaction. Typing into the form should update the input field, clicking "next" on an image carousel should change which image is displayed, clicking "buy" should put a product in the shopping cart. Components need to "remember" things: the current input value, the current image, the shopping cart. In React, this kind of component-specific memory is called *state*.
+Часта ў выніку ўзаемадзеяння кампаненты павінны змяніць тое, што адлюстроўваецца на экране. Увод у форму павінен абнавіць поле ўводу, націсканне кнопкі «далей» на каруселі відарысаў павінна змяніць відарыс, які адлюстроўваецца, націсканне кнопкі «купіць» павінна дадаць прадукт у кошык. Кампаненты павінны ўмець «запамінаць»: бягучае ўваходнае значэнне, бягучы відарыс, кошык для пакупак. У React такая памяць кампанента называецца *стан*.
 
 </Intro>
 
 <YouWillLearn>
 
-* How to add a state variable with the [`useState`](/reference/react/useState) Hook
-* What pair of values the `useState` Hook returns
-* How to add more than one state variable
-* Why state is called local
+* Як дадаць пераменную стану з дапамогай хука [`useState`](/reference/react/useState)
+* Якую пару значэнняў вяртае хук `useState`
+* Як дадаць некалькі пераменных стану
+* Чаму стан называецца лакальным
 
 </YouWillLearn>
 
-## When a regular variable isn’t enough {/*when-a-regular-variable-isnt-enough*/}
+## Калі звычайнай пераменнай недастаткова {/*when-a-regular-variable-isnt-enough*/}
 
-Here's a component that renders a sculpture image. Clicking the "Next" button should show the next sculpture by changing the `index` to `1`, then `2`, and so on. However, this **won't work** (you can try it!):
+Вось кампанент, які адлюстроўвае відарыс скульптуры. Пры націсканні кнопкі «Далей» павінна паказацца наступная скульптура, змяніўшы значэнне `index` на `1`, затым на `2` і гэтак далей. Аднак гэта **не спрацуе** (можаце паспрабаваць!):
 
 <Sandpack>
 
@@ -37,14 +37,14 @@ export default function Gallery() {
   return (
     <>
       <button onClick={handleClick}>
-        Next
+        Далей
       </button>
       <h2>
-        <i>{sculpture.name} </i> 
-        by {sculpture.artist}
+        <i>«{sculpture.name}» </i> 
+        {sculpture.artist}
       </h2>
       <h3>  
-        ({index + 1} of {sculptureList.length})
+        ({index + 1} з {sculptureList.length})
       </h3>
       <img 
         src={sculpture.url} 
@@ -60,77 +60,77 @@ export default function Gallery() {
 
 ```js src/data.js
 export const sculptureList = [{
-  name: 'Homenaje a la Neurocirugía',
-  artist: 'Marta Colvin Andrade',
-  description: 'Although Colvin is predominantly known for abstract themes that allude to pre-Hispanic symbols, this gigantic sculpture, an homage to neurosurgery, is one of her most recognizable public art pieces.',
+  name: 'Даніна нейрахірургіі',
+  artist: 'Марта Колвін Андрадэ',
+  description: 'Хаця Колвін пераважна вядомая сваімі абстрактнымі тэмамі, якія спасылаюцца на да-іспанскія сімвалы, гэтая гіганцкая скульптура, даніна павагі нейрахірургіі, з\'яўляецца адным з яе самых вядомых твораў мастацтва.',
   url: 'https://i.imgur.com/Mx7dA2Y.jpg',
-  alt: 'A bronze statue of two crossed hands delicately holding a human brain in their fingertips.'  
+  alt: 'Бронзавая статуя дзвюх скрыжаваных рук, якія далікатна трымаюць чалавечы мозг на кончыках пальцаў.'  
 }, {
-  name: 'Floralis Genérica',
-  artist: 'Eduardo Catalano',
-  description: 'This enormous (75 ft. or 23m) silver flower is located in Buenos Aires. It is designed to move, closing its petals in the evening or when strong winds blow and opening them in the morning.',
+  name: 'Родавы Флораліс',
+  artist: 'Эдуарда Каталана',
+  description: 'Гэтая велізарная (75 футаў або 23 метры) серабрыстая кветка знаходзіцца ў Буэнас-Айрэсе. Яна спраектавана так, што можа закрываць пялёсткі ўвечары або пры моцным ветры і раскрываць іх раніцай.',
   url: 'https://i.imgur.com/ZF6s192m.jpg',
-  alt: 'A gigantic metallic flower sculpture with reflective mirror-like petals and strong stamens.'
+  alt: 'Гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі і моцнымі тычынкамі.'
 }, {
-  name: 'Eternal Presence',
-  artist: 'John Woodrow Wilson',
-  description: 'Wilson was known for his preoccupation with equality, social justice, as well as the essential and spiritual qualities of humankind. This massive (7ft. or 2,13m) bronze represents what he described as "a symbolic Black presence infused with a sense of universal humanity."',
+  name: 'Вечная прысутнасць',
+  artist: 'Джон Вудраў Уілсан',
+  description: 'Уілсан быў вядомы сваёй заклапочанасцю тэмамі роўнасці, сацыяльнай справядлівасці, а таксама істотнымі і духоўнымі якасцямі чалавецтва. Гэтая масіўная (7 футаў або 2,13 метра) бронзавая статуя ўяўляе тое, што ён назваў «сімвалічнай прысутнасцю чарнаскурых, прасякнутай пачуццём універсальнай чалавечнасці».',
   url: 'https://i.imgur.com/aTtVpES.jpg',
-  alt: 'The sculpture depicting a human head seems ever-present and solemn. It radiates calm and serenity.'
+  alt: 'Скульптура з выявай чалавечай галавы здаецца ўсюдыіснай і панурай. Яна выпраменьвае спакой і ціхамірнасць.'
 }, {
-  name: 'Moai',
-  artist: 'Unknown Artist',
-  description: 'Located on the Easter Island, there are 1,000 moai, or extant monumental statues, created by the early Rapa Nui people, which some believe represented deified ancestors.',
+  name: 'Мааі',
+  artist: 'Невядомы мастак',
+  description: 'На востраве Пасхі знаходзіцца 1000 мааі, або захаваных манументальных статуй, створаных раннім народам Рапа-Нуі, якія, на думку некаторых, прадстаўлялі абагаўлёных продкаў.',
   url: 'https://i.imgur.com/RCwLEoQm.jpg',
-  alt: 'Three monumental stone busts with the heads that are disproportionately large with somber faces.'
+  alt: 'Тры манументальныя каменныя бюсты з непрапарцыянальна вялікімі галовамі і змрочнымі тварамі.'
 }, {
-  name: 'Blue Nana',
-  artist: 'Niki de Saint Phalle',
-  description: 'The Nanas are triumphant creatures, symbols of femininity and maternity. Initially, Saint Phalle used fabric and found objects for the Nanas, and later on introduced polyester to achieve a more vibrant effect.',
+  name: 'Блакітная нана',
+  artist: 'Нікі дэ Сен-Фаль',
+  description: 'Наны — трыумфуючыя істоты, сімвалы жаноцкасці і мацярынства. Першапачаткова Сен-Фаль выкарыстаў тканіну і знайшоў прадметы для Нан, а пазней увёў поліэстэр для дасягнення больш яркага эфекту.',
   url: 'https://i.imgur.com/Sd1AgUOm.jpg',
-  alt: 'A large mosaic sculpture of a whimsical dancing female figure in a colorful costume emanating joy.'
+  alt: 'Вялікая мазаічная скульптура мудрагелістай танцуючай жаночай фігуры ў маляўнічым касцюме, якая выпраменьвае радасць.'
 }, {
-  name: 'Ultimate Form',
-  artist: 'Barbara Hepworth',
-  description: 'This abstract bronze sculpture is a part of The Family of Man series located at Yorkshire Sculpture Park. Hepworth chose not to create literal representations of the world but developed abstract forms inspired by people and landscapes.',
+  name: 'Канчатковая форма',
+  artist: 'Барбара Хепуарт',
+  description: 'Гэтая абстрактная бронзавая скульптура з\'яўляецца часткай серыі «Сям\'я чалавека», размешчанай у Ёркшырскім парку скульптур. Хепуарт вырашыла не ствараць літаральныя ўяўленні аб свеце, а распрацавала абстрактныя формы, натхнёныя людзьмі і ландшафтамі.',
   url: 'https://i.imgur.com/2heNQDcm.jpg',
-  alt: 'A tall sculpture made of three elements stacked on each other reminding of a human figure.'
+  alt: 'Высокая скульптура з трох пастаўленых адзін на аднаго элементаў, якія нагадваюць фігуру чалавека.'
 }, {
-  name: 'Cavaliere',
-  artist: 'Lamidi Olonade Fakeye',
-  description: "Descended from four generations of woodcarvers, Fakeye's work blended traditional and contemporary Yoruba themes.",
+  name: 'Кавалер',
+  artist: 'Ламідзі Аланадэ Фэйкі',
+  description: "Праца Фэйкі, які з'яўляецца разьбяром па дрэве ў чацвёртым пакаленні, змяшала традыцыйныя і сучасныя тэмы ёруба.",
   url: 'https://i.imgur.com/wIdGuZwm.png',
-  alt: 'An intricate wood sculpture of a warrior with a focused face on a horse adorned with patterns.'
+  alt: 'Складаная драўляная скульптура воіна са сканцэнтраваным тварам на кані, упрыгожаная ўзорамі.'
 }, {
-  name: 'Big Bellies',
-  artist: 'Alina Szapocznikow',
-  description: "Szapocznikow is known for her sculptures of the fragmented body as a metaphor for the fragility and impermanence of youth and beauty. This sculpture depicts two very realistic large bellies stacked on top of each other, each around five feet (1,5m) tall.",
+  name: 'Вялікі пузы',
+  artist: 'Аліна Шапачнікаў',
+  description: "Шапачнікаў вядомая сваімі скульптурамі фрагментаванага цела як метафарай крохкасці і нясталасці маладосці і прыгажосці. Гэтая скульптура адлюстроўвае два вельмі рэалістычныя вялікія жываты, пакладзеныя адзін на аднаго, кожны вышынёй каля пяці футаў (1,5 м).",
   url: 'https://i.imgur.com/AlHTAdDm.jpg',
-  alt: 'The sculpture reminds a cascade of folds, quite different from bellies in classical sculptures.'
+  alt: 'Скульптура нагадвае каскад зморшчын, зусім іншы, чым жываты ў класічных скульптурах.'
 }, {
-  name: 'Terracotta Army',
-  artist: 'Unknown Artist',
-  description: 'The Terracotta Army is a collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China. The army consisted of more than 8,000 soldiers, 130 chariots with 520 horses, and 150 cavalry horses.',
+  name: 'Тэракотовая армія',
+  artist: 'Невядомы мастак',
+  description: 'Тэракотавая армія — гэта калекцыя тэракотавых скульптур, якія адлюстроўваюць армію Цынь Шыхуан-дзі, першага імператара Кітая. Войска налічвала больш за 8 тысяч воінаў, 130 калясніц з 520 коньмі і 150 кавалерыйскіх коней.',
   url: 'https://i.imgur.com/HMFmH6m.jpg',
-  alt: '12 terracotta sculptures of solemn warriors, each with a unique facial expression and armor.'
+  alt: '12 тэракотавых скульптур урачыстых воінаў, кожная з унікальным выразам твару і даспехамі.'
 }, {
-  name: 'Lunar Landscape',
-  artist: 'Louise Nevelson',
-  description: 'Nevelson was known for scavenging objects from New York City debris, which she would later assemble into monumental constructions. In this one, she used disparate parts like a bedpost, juggling pin, and seat fragment, nailing and gluing them into boxes that reflect the influence of Cubism’s geometric abstraction of space and form.',
+  name: 'Месяцовы пейзаж',
+  artist: 'Луіза Нэвельсан',
+  description: 'Нэвельсан была вядомая тым, што ачышчала аб\'екты з руін Нью-Ёрка, якія пазней яна збярэ ў манументальныя канструкцыі. У гэтай статуі яна выкарыстала разрозненыя часткі, такія як ложак, шпільку для жангліравання і фрагмент сядзення, прыбіўшы і склеіўшы іх у скрынкі, якія адлюстроўваюць уплыў геаметрычнай абстракцыі прасторы і формы кубізму.',
   url: 'https://i.imgur.com/rN7hY6om.jpg',
-  alt: 'A black matte sculpture where the individual elements are initially indistinguishable.'
+  alt: 'Чорная матавая скульптура, дзе асобныя элементы першапачаткова неадрозныя.'
 }, {
-  name: 'Aureole',
-  artist: 'Ranjani Shettar',
-  description: 'Shettar merges the traditional and the modern, the natural and the industrial. Her art focuses on the relationship between man and nature. Her work was described as compelling both abstractly and figuratively, gravity defying, and a "fine synthesis of unlikely materials."',
+  name: 'Арэол',
+  artist: 'Ранджані Шэтар',
+  description: 'Шэтар спалучае традыцыйнае і сучаснае, натуральнае і індустрыяльнае. Яе мастацтва засяроджана на ўзаемаадносінах чалавека і прыроды. Яе праца была апісана як пераканаўчая як у абстрактным, так і ў вобразным сэнсе, якая кідае выклік гравітацыі і ўяўляе сабой «вытанчаны сінтэз малаверагодных матэрыялаў».',
   url: 'https://i.imgur.com/okTpbHhm.jpg',
-  alt: 'A pale wire-like sculpture mounted on concrete wall and descending on the floor. It appears light.'
+  alt: 'Бледная скульптура, падобная на дрот, усталяваная на бетоннай сцяне і спускаецца на падлогу. Здаецца вельмі лёгкай.'
 }, {
-  name: 'Hippos',
-  artist: 'Taipei Zoo',
-  description: 'The Taipei Zoo commissioned a Hippo Square featuring submerged hippos at play.',
+  name: 'Бегемоты',
+  artist: 'Тайбэйскі заапарк',
+  description: 'Заапарк Тайбэя заказаў плошчу бегемотаў, на якой гулялі пагружаныя ў ваду бегемоты.',
   url: 'https://i.imgur.com/6o5Vuyu.jpg',
-  alt: 'A group of bronze hippo sculptures emerging from the sett sidewalk as if they were swimming.'
+  alt: 'Група бронзавых скульптур бегемотаў, якія выходзяць з тратуара, нібы яны плывуць.'
 }];
 ```
 
@@ -151,46 +151,46 @@ button {
 
 </Sandpack>
 
-The `handleClick` event handler is updating a local variable, `index`. But two things prevent that change from being visible:
+Апрацоўшчык падзей `handleClick` абнаўляе лакальную пераменную ` index`. Але два моманты не даюць пабачыць змены:
 
-1. **Local variables don't persist between renders.** When React renders this component a second time, it renders it from scratch—it doesn't consider any changes to the local variables.
-2. **Changes to local variables won't trigger renders.** React doesn't realize it needs to render the component again with the new data.
+1. **Лакальныя пераменныя не захоўваюцца паміж рэндэрамі.** Калі React другі раз рэндэрыць гэты кампанент, ён рэндэрыць яго з нуля — не ўлічваючы ніякіх змен у лакальных пераменных.
+2. **Змены ў лакальных пераменных не запускаюць паўторны рэндэр.** React не разумее, што яму трэба зноў адрэндэрыць кампанент з новымі данымі.
 
-To update a component with new data, two things need to happen:
+Для таго, каб новыя даныя з'явіліся ў кампаненце, трэба зрабіць дзве рэчы:
 
-1. **Retain** the data between renders.
-2. **Trigger** React to render the component with new data (re-rendering).
+1. **Захаваць** даныя паміж рэндэрамі.
+2. **Запусціць** рэндэр кампанента з новымі данымі (перарэндэр).
 
-The [`useState`](/reference/react/useState) Hook provides those two things:
+Хук [`useState`](/reference/react/useState) забяспечвае наступнае:
 
-1. A **state variable** to retain the data between renders.
-2. A **state setter function** to update the variable and trigger React to render the component again.
+1. **Пераменная стану** для захавання даных паміж рэндэрамі.
+2. **Функцыя задання стану** для абнаўлення пераменнай і запуску паўторнага рэндэру кампанента.
 
-## Adding a state variable {/*adding-a-state-variable*/}
+## Дадаванне пераменнай стану {/*adding-a-state-variable*/}
 
-To add a state variable, import `useState` from React at the top of the file:
+Каб дадаць пераменную стану, імпартуйце `useState` з React у пачатку файла:
 
 ```js
 import { useState } from 'react';
 ```
 
-Then, replace this line:
+Затым замяніце гэты радок:
 
 ```js
 let index = 0;
 ```
 
-with
+на
 
 ```js
 const [index, setIndex] = useState(0);
 ```
 
-`index` is a state variable and `setIndex` is the setter function.
+`index` — гэта пераменная стану, а `setIndex` — функцыя задання стану.
 
-> The `[` and `]` syntax here is called [array destructuring](https://javascript.info/destructuring-assignment) and it lets you read values from an array. The array returned by `useState` always has exactly two items.
+> Сінтаксіс `[` і `]` называецца [дэструктурызацыя масіву](https://javascript.info/destructuring-assignment) і дазваляе чытаць значэнні з масіву. Масіў, які вяртае `useState`, заўсёды мае два элементы.
 
-This is how they work together in `handleClick`:
+Вось як яны працуюць разам у `handleclick`:
 
 ```js
 function handleClick() {
@@ -198,7 +198,7 @@ function handleClick() {
 }
 ```
 
-Now clicking the "Next" button switches the current sculpture:
+Цяпер націсканне кнопкі «Далей» пераключае бягучую скульптуру:
 
 <Sandpack>
 
@@ -217,14 +217,14 @@ export default function Gallery() {
   return (
     <>
       <button onClick={handleClick}>
-        Next
+        Далей
       </button>
       <h2>
-        <i>{sculpture.name} </i> 
-        by {sculpture.artist}
+        <i>«{sculpture.name}» </i> 
+        {sculpture.artist}
       </h2>
       <h3>  
-        ({index + 1} of {sculptureList.length})
+        ({index + 1} з {sculptureList.length})
       </h3>
       <img 
         src={sculpture.url} 
@@ -240,77 +240,77 @@ export default function Gallery() {
 
 ```js src/data.js
 export const sculptureList = [{
-  name: 'Homenaje a la Neurocirugía',
-  artist: 'Marta Colvin Andrade',
-  description: 'Although Colvin is predominantly known for abstract themes that allude to pre-Hispanic symbols, this gigantic sculpture, an homage to neurosurgery, is one of her most recognizable public art pieces.',
+  name: 'Даніна нейрахірургіі',
+  artist: 'Марта Колвін Андрадэ',
+  description: 'Хаця Колвін пераважна вядомая сваімі абстрактнымі тэмамі, якія спасылаюцца на да-іспанскія сімвалы, гэтая гіганцкая скульптура, даніна павагі нейрахірургіі, з\'яўляецца адным з яе самых вядомых твораў мастацтва.',
   url: 'https://i.imgur.com/Mx7dA2Y.jpg',
-  alt: 'A bronze statue of two crossed hands delicately holding a human brain in their fingertips.'  
+  alt: 'Бронзавая статуя дзвюх скрыжаваных рук, якія далікатна трымаюць чалавечы мозг на кончыках пальцаў.'  
 }, {
-  name: 'Floralis Genérica',
-  artist: 'Eduardo Catalano',
-  description: 'This enormous (75 ft. or 23m) silver flower is located in Buenos Aires. It is designed to move, closing its petals in the evening or when strong winds blow and opening them in the morning.',
+  name: 'Родавы Флораліс',
+  artist: 'Эдуарда Каталана',
+  description: 'Гэтая велізарная (75 футаў або 23 метры) серабрыстая кветка знаходзіцца ў Буэнас-Айрэсе. Яна спраектавана так, што можа закрываць пялёсткі ўвечары або пры моцным ветры і раскрываць іх раніцай.',
   url: 'https://i.imgur.com/ZF6s192m.jpg',
-  alt: 'A gigantic metallic flower sculpture with reflective mirror-like petals and strong stamens.'
+  alt: 'Гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі і моцнымі тычынкамі.'
 }, {
-  name: 'Eternal Presence',
-  artist: 'John Woodrow Wilson',
-  description: 'Wilson was known for his preoccupation with equality, social justice, as well as the essential and spiritual qualities of humankind. This massive (7ft. or 2,13m) bronze represents what he described as "a symbolic Black presence infused with a sense of universal humanity."',
+  name: 'Вечная прысутнасць',
+  artist: 'Джон Вудраў Уілсан',
+  description: 'Уілсан быў вядомы сваёй заклапочанасцю тэмамі роўнасці, сацыяльнай справядлівасці, а таксама істотнымі і духоўнымі якасцямі чалавецтва. Гэтая масіўная (7 футаў або 2,13 метра) бронзавая статуя ўяўляе тое, што ён назваў «сімвалічнай прысутнасцю чарнаскурых, прасякнутай пачуццём універсальнай чалавечнасці».',
   url: 'https://i.imgur.com/aTtVpES.jpg',
-  alt: 'The sculpture depicting a human head seems ever-present and solemn. It radiates calm and serenity.'
+  alt: 'Скульптура з выявай чалавечай галавы здаецца ўсюдыіснай і панурай. Яна выпраменьвае спакой і ціхамірнасць.'
 }, {
-  name: 'Moai',
-  artist: 'Unknown Artist',
-  description: 'Located on the Easter Island, there are 1,000 moai, or extant monumental statues, created by the early Rapa Nui people, which some believe represented deified ancestors.',
+  name: 'Мааі',
+  artist: 'Невядомы мастак',
+  description: 'На востраве Пасхі знаходзіцца 1000 мааі, або захаваных манументальных статуй, створаных раннім народам Рапа-Нуі, якія, на думку некаторых, прадстаўлялі абагаўлёных продкаў.',
   url: 'https://i.imgur.com/RCwLEoQm.jpg',
-  alt: 'Three monumental stone busts with the heads that are disproportionately large with somber faces.'
+  alt: 'Тры манументальныя каменныя бюсты з непрапарцыянальна вялікімі галовамі і змрочнымі тварамі.'
 }, {
-  name: 'Blue Nana',
-  artist: 'Niki de Saint Phalle',
-  description: 'The Nanas are triumphant creatures, symbols of femininity and maternity. Initially, Saint Phalle used fabric and found objects for the Nanas, and later on introduced polyester to achieve a more vibrant effect.',
+  name: 'Блакітная нана',
+  artist: 'Нікі дэ Сен-Фаль',
+  description: 'Наны — трыумфуючыя істоты, сімвалы жаноцкасці і мацярынства. Першапачаткова Сен-Фаль выкарыстаў тканіну і знайшоў прадметы для Нан, а пазней увёў поліэстэр для дасягнення больш яркага эфекту.',
   url: 'https://i.imgur.com/Sd1AgUOm.jpg',
-  alt: 'A large mosaic sculpture of a whimsical dancing female figure in a colorful costume emanating joy.'
+  alt: 'Вялікая мазаічная скульптура мудрагелістай танцуючай жаночай фігуры ў маляўнічым касцюме, якая выпраменьвае радасць.'
 }, {
-  name: 'Ultimate Form',
-  artist: 'Barbara Hepworth',
-  description: 'This abstract bronze sculpture is a part of The Family of Man series located at Yorkshire Sculpture Park. Hepworth chose not to create literal representations of the world but developed abstract forms inspired by people and landscapes.',
+  name: 'Канчатковая форма',
+  artist: 'Барбара Хепуарт',
+  description: 'Гэтая абстрактная бронзавая скульптура з\'яўляецца часткай серыі «Сям\'я чалавека», размешчанай у Ёркшырскім парку скульптур. Хепуарт вырашыла не ствараць літаральныя ўяўленні аб свеце, а распрацавала абстрактныя формы, натхнёныя людзьмі і ландшафтамі.',
   url: 'https://i.imgur.com/2heNQDcm.jpg',
-  alt: 'A tall sculpture made of three elements stacked on each other reminding of a human figure.'
+  alt: 'Высокая скульптура з трох пастаўленых адзін на аднаго элементаў, якія нагадваюць фігуру чалавека.'
 }, {
-  name: 'Cavaliere',
-  artist: 'Lamidi Olonade Fakeye',
-  description: "Descended from four generations of woodcarvers, Fakeye's work blended traditional and contemporary Yoruba themes.",
+  name: 'Кавалер',
+  artist: 'Ламідзі Аланадэ Фэйкі',
+  description: "Праца Фэйкі, які з'яўляецца разьбяром па дрэве ў чацвёртым пакаленні, змяшала традыцыйныя і сучасныя тэмы ёруба.",
   url: 'https://i.imgur.com/wIdGuZwm.png',
-  alt: 'An intricate wood sculpture of a warrior with a focused face on a horse adorned with patterns.'
+  alt: 'Складаная драўляная скульптура воіна са сканцэнтраваным тварам на кані, упрыгожаная ўзорамі.'
 }, {
-  name: 'Big Bellies',
-  artist: 'Alina Szapocznikow',
-  description: "Szapocznikow is known for her sculptures of the fragmented body as a metaphor for the fragility and impermanence of youth and beauty. This sculpture depicts two very realistic large bellies stacked on top of each other, each around five feet (1,5m) tall.",
+  name: 'Вялікі пузы',
+  artist: 'Аліна Шапачнікаў',
+  description: "Шапачнікаў вядомая сваімі скульптурамі фрагментаванага цела як метафарай крохкасці і нясталасці маладосці і прыгажосці. Гэтая скульптура адлюстроўвае два вельмі рэалістычныя вялікія жываты, пакладзеныя адзін на аднаго, кожны вышынёй каля пяці футаў (1,5 м).",
   url: 'https://i.imgur.com/AlHTAdDm.jpg',
-  alt: 'The sculpture reminds a cascade of folds, quite different from bellies in classical sculptures.'
+  alt: 'Скульптура нагадвае каскад зморшчын, зусім іншы, чым жываты ў класічных скульптурах.'
 }, {
-  name: 'Terracotta Army',
-  artist: 'Unknown Artist',
-  description: 'The Terracotta Army is a collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China. The army consisted of more than 8,000 soldiers, 130 chariots with 520 horses, and 150 cavalry horses.',
+  name: 'Тэракотовая армія',
+  artist: 'Невядомы мастак',
+  description: 'Тэракотавая армія — гэта калекцыя тэракотавых скульптур, якія адлюстроўваюць армію Цынь Шыхуан-дзі, першага імператара Кітая. Войска налічвала больш за 8 тысяч воінаў, 130 калясніц з 520 коньмі і 150 кавалерыйскіх коней.',
   url: 'https://i.imgur.com/HMFmH6m.jpg',
-  alt: '12 terracotta sculptures of solemn warriors, each with a unique facial expression and armor.'
+  alt: '12 тэракотавых скульптур урачыстых воінаў, кожная з унікальным выразам твару і даспехамі.'
 }, {
-  name: 'Lunar Landscape',
-  artist: 'Louise Nevelson',
-  description: 'Nevelson was known for scavenging objects from New York City debris, which she would later assemble into monumental constructions. In this one, she used disparate parts like a bedpost, juggling pin, and seat fragment, nailing and gluing them into boxes that reflect the influence of Cubism’s geometric abstraction of space and form.',
+  name: 'Месяцовы пейзаж',
+  artist: 'Луіза Нэвельсан',
+  description: 'Нэвельсан была вядомая тым, што ачышчала аб\'екты з руін Нью-Ёрка, якія пазней яна збярэ ў манументальныя канструкцыі. У гэтай статуі яна выкарыстала разрозненыя часткі, такія як ложак, шпільку для жангліравання і фрагмент сядзення, прыбіўшы і склеіўшы іх у скрынкі, якія адлюстроўваюць уплыў геаметрычнай абстракцыі прасторы і формы кубізму.',
   url: 'https://i.imgur.com/rN7hY6om.jpg',
-  alt: 'A black matte sculpture where the individual elements are initially indistinguishable.'
+  alt: 'Чорная матавая скульптура, дзе асобныя элементы першапачаткова неадрозныя.'
 }, {
-  name: 'Aureole',
-  artist: 'Ranjani Shettar',
-  description: 'Shettar merges the traditional and the modern, the natural and the industrial. Her art focuses on the relationship between man and nature. Her work was described as compelling both abstractly and figuratively, gravity defying, and a "fine synthesis of unlikely materials."',
+  name: 'Арэол',
+  artist: 'Ранджані Шэтар',
+  description: 'Шэтар спалучае традыцыйнае і сучаснае, натуральнае і індустрыяльнае. Яе мастацтва засяроджана на ўзаемаадносінах чалавека і прыроды. Яе праца была апісана як пераканаўчая як у абстрактным, так і ў вобразным сэнсе, якая кідае выклік гравітацыі і ўяўляе сабой «вытанчаны сінтэз малаверагодных матэрыялаў».',
   url: 'https://i.imgur.com/okTpbHhm.jpg',
-  alt: 'A pale wire-like sculpture mounted on concrete wall and descending on the floor. It appears light.'
+  alt: 'Бледная скульптура, падобная на дрот, усталяваная на бетоннай сцяне і спускаецца на падлогу. Здаецца вельмі лёгкай.'
 }, {
-  name: 'Hippos',
-  artist: 'Taipei Zoo',
-  description: 'The Taipei Zoo commissioned a Hippo Square featuring submerged hippos at play.',
+  name: 'Бегемоты',
+  artist: 'Тайбэйскі заапарк',
+  description: 'Заапарк Тайбэя заказаў плошчу бегемотаў, на якой гулялі пагружаныя ў ваду бегемоты.',
   url: 'https://i.imgur.com/6o5Vuyu.jpg',
-  alt: 'A group of bronze hippo sculptures emerging from the sett sidewalk as if they were swimming.'
+  alt: 'Група бронзавых скульптур бегемотаў, якія выходзяць з тратуара, нібы яны плывуць.'
 }];
 ```
 
@@ -331,57 +331,56 @@ button {
 
 </Sandpack>
 
-### Meet your first Hook {/*meet-your-first-hook*/}
+### Пазнаёмцеся з вашым першым хукам {/*meet-your-first-hook*/}
 
-In React, `useState`, as well as any other function starting with "`use`", is called a Hook.
+У React `useState`, як і любая іншая функцыя, якая пачынаецца з «`use`», называецца хукам.
 
-*Hooks* are special functions that are only available while React is [rendering](/learn/render-and-commit#step-1-trigger-a-render) (which we'll get into in more detail on the next page). They let you "hook into" different React features.
+*Хукі* — гэта спецыяльныя функцыі, даступныя толькі падчас [рэндэру](/learn/render-and-commit#step-1-trigger-a-render) React (пра што мы падрабязней раскажам на наступнай старонцы). Яны дазваляюць вам падключацца («hook into») да розных функцый React.
 
-State is just one of those features, but you will meet the other Hooks later.
+Стан — гэта толькі адна з такіх функцый, але вы пазнаёміцеся з іншымі хукамі пазней.
 
 <Pitfall>
 
-**Hooks—functions starting with `use`—can only be called at the top level of your components or [your own Hooks.](/learn/reusing-logic-with-custom-hooks)** You can't call Hooks inside conditions, loops, or other nested functions. Hooks are functions, but it's helpful to think of them as unconditional declarations about your component's needs. You "use" React features at the top of your component similar to how you "import" modules at the top of your file.
+**Хукі (функцыі, якія пачынаюцца з `use`) можна выклікаць толькі на верхнім узроўні вашых кампанентаў або [вашых уласных хукаў.](/learn/reusing-logic-with-custom-hooks)** Вы не можаце выклікаць хукі ўнутры ўмоў, цыклаў або іншых укладзеных функцый. Хукі — гэта функцыі, але карысна разглядаць іх як безумоўныя заявы аб патрэбах вашага кампанента. Вы «выкарыстоўваеце» (use) функцыі React у верхняй частцы вашага кампанента падобна таму, як вы «імпартуеце» (import) модулі ў верхняй частцы вашага файла.
 
 </Pitfall>
 
-### Anatomy of `useState` {/*anatomy-of-usestate*/}
+### Анатомія `useState` {/*anatomy-of-usestate*/}
 
-When you call [`useState`](/reference/react/useState), you are telling React that you want this component to remember something:
+Калі вы выклікаеце [`useState`](/reference/react/useState), вы кажаце React, што хочаце, каб гэты кампанент нешта запомніў:
 
 ```js
 const [index, setIndex] = useState(0);
 ```
-
-In this case, you want React to remember `index`.
+У гэтым выпадку вы хочаце, каб React запомніў `index`.
 
 <Note>
 
-The convention is to name this pair like `const [something, setSomething]`. You could name it anything you like, but conventions make things easier to understand across projects.
+Згодна з пагадненнем, гэту пару прынята называць як `const [something, setSomething]`. Вы можаце называць гэту пару як хочаце, але пагадненні палягчаюць разуменне розных праектаў.
 
 </Note>
 
-The only argument to `useState` is the **initial value** of your state variable. In this example, the `index`'s initial value is set to `0` with `useState(0)`. 
+Адзіным аргументам для `useState` з'яўляецца **пачатковае значэнне** вашай пераменнай стану. У гэтым прыкладзе пачатковае значэнне `index` зададзена як `0` з дапамогай `useState(0)`.
 
-Every time your component renders, `useState` gives you an array containing two values:
+Кожны раз, калі ваш кампанент рэндэрыцца, `useState` дае вам масіў, які змяшчае два значэнні:
 
-1. The **state variable** (`index`) with the value you stored.
-2. The **state setter function** (`setIndex`) which can update the state variable and trigger React to render the component again.
+1. **Пераменную стану** (`index`) са значэннем, якое вы захавалі.
+2. **Функцыю задання стану** (`setIndex`), якая можа абнаўляць пераменную стану і прымусіць React паўторна адрэндэрыць кампанент.
 
-Here's how that happens in action:
+Вось як гэта адбываецца:
 
 ```js
 const [index, setIndex] = useState(0);
 ```
 
-1. **Your component renders the first time.** Because you passed `0` to `useState` as the initial value for `index`, it will return `[0, setIndex]`. React remembers `0` is the latest state value.
-2. **You update the state.** When a user clicks the button, it calls `setIndex(index + 1)`. `index` is `0`, so it's `setIndex(1)`. This tells React to remember `index` is `1` now and triggers another render.
-3. **Your component's second render.** React still sees `useState(0)`, but because React *remembers* that you set `index` to `1`, it returns `[1, setIndex]` instead.
-4. And so on!
+1. **Ваш кампанент рэндэрыцца ў першы раз.** Паколькі вы перадалі `0` у функцыю `useState` як пачатковае значэнне для `index`, яна верне `[0, setIndex]`. React запамінае, што `0` — гэта апошняе значэнне стану.
+2. **Вы абнаўляеце стан.** Калі карыстальнік націскае кнопку, гэта выклікае `setIndex(index + 1)`. Паколькі `index` роўны `0`, таму насамрэч выклікаецца `setIndex(1)`. Гэта загадвае React запомніць, што `index` цяпер роўны `1`, і запускае яшчэ адзін рэндэр.
+3. **Другі рэндэр вашага кампанента.** React па-ранейшаму бачыць `useState(0)`, але паколькі React *памятае*, што вы захавалі ў `index` значэнне `1`, таму ён вяртае `[1, setIndex]`.
+4. І гэтак далей!
 
-## Giving a component multiple state variables {/*giving-a-component-multiple-state-variables*/}
+## Стварэнне ў кампаненце некалькіх пераменных стану {/*giving-a-component-multiple-state-variables*/}
 
-You can have as many state variables of as many types as you like in one component. This component has two state variables, a number `index` and a boolean `showMore` that's toggled when you click "Show details":
+У адным кампаненце вы можаце мець любую колькасць пераменных стану розных тыпаў. Гэты кампанент мае дзве пераменныя стану, лік `index` і лагічнае значэнне `showMore`, якое пераключаюцца, калі вы націскаеце кнопку «Паказаць падрабязную інфармацыю»:
 
 <Sandpack>
 
@@ -405,17 +404,17 @@ export default function Gallery() {
   return (
     <>
       <button onClick={handleNextClick}>
-        Next
+        Далей
       </button>
       <h2>
-        <i>{sculpture.name} </i> 
-        by {sculpture.artist}
+        <i>«{sculpture.name}» </i> 
+        {sculpture.artist}
       </h2>
       <h3>  
-        ({index + 1} of {sculptureList.length})
+        ({index + 1} з {sculptureList.length})
       </h3>
       <button onClick={handleMoreClick}>
-        {showMore ? 'Hide' : 'Show'} details
+        {showMore ? 'Паказаць' : 'Схаваць'} падрабязную інфармацыю
       </button>
       {showMore && <p>{sculpture.description}</p>}
       <img 
@@ -429,77 +428,77 @@ export default function Gallery() {
 
 ```js src/data.js
 export const sculptureList = [{
-  name: 'Homenaje a la Neurocirugía',
-  artist: 'Marta Colvin Andrade',
-  description: 'Although Colvin is predominantly known for abstract themes that allude to pre-Hispanic symbols, this gigantic sculpture, an homage to neurosurgery, is one of her most recognizable public art pieces.',
+  name: 'Даніна нейрахірургіі',
+  artist: 'Марта Колвін Андрадэ',
+  description: 'Хаця Колвін пераважна вядомая сваімі абстрактнымі тэмамі, якія спасылаюцца на да-іспанскія сімвалы, гэтая гіганцкая скульптура, даніна павагі нейрахірургіі, з\'яўляецца адным з яе самых вядомых твораў мастацтва.',
   url: 'https://i.imgur.com/Mx7dA2Y.jpg',
-  alt: 'A bronze statue of two crossed hands delicately holding a human brain in their fingertips.'  
+  alt: 'Бронзавая статуя дзвюх скрыжаваных рук, якія далікатна трымаюць чалавечы мозг на кончыках пальцаў.'  
 }, {
-  name: 'Floralis Genérica',
-  artist: 'Eduardo Catalano',
-  description: 'This enormous (75 ft. or 23m) silver flower is located in Buenos Aires. It is designed to move, closing its petals in the evening or when strong winds blow and opening them in the morning.',
+  name: 'Родавы Флораліс',
+  artist: 'Эдуарда Каталана',
+  description: 'Гэтая велізарная (75 футаў або 23 метры) серабрыстая кветка знаходзіцца ў Буэнас-Айрэсе. Яна спраектавана так, што можа закрываць пялёсткі ўвечары або пры моцным ветры і раскрываць іх раніцай.',
   url: 'https://i.imgur.com/ZF6s192m.jpg',
-  alt: 'A gigantic metallic flower sculpture with reflective mirror-like petals and strong stamens.'
+  alt: 'Гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі і моцнымі тычынкамі.'
 }, {
-  name: 'Eternal Presence',
-  artist: 'John Woodrow Wilson',
-  description: 'Wilson was known for his preoccupation with equality, social justice, as well as the essential and spiritual qualities of humankind. This massive (7ft. or 2,13m) bronze represents what he described as "a symbolic Black presence infused with a sense of universal humanity."',
+  name: 'Вечная прысутнасць',
+  artist: 'Джон Вудраў Уілсан',
+  description: 'Уілсан быў вядомы сваёй заклапочанасцю тэмамі роўнасці, сацыяльнай справядлівасці, а таксама істотнымі і духоўнымі якасцямі чалавецтва. Гэтая масіўная (7 футаў або 2,13 метра) бронзавая статуя ўяўляе тое, што ён назваў «сімвалічнай прысутнасцю чарнаскурых, прасякнутай пачуццём універсальнай чалавечнасці».',
   url: 'https://i.imgur.com/aTtVpES.jpg',
-  alt: 'The sculpture depicting a human head seems ever-present and solemn. It radiates calm and serenity.'
+  alt: 'Скульптура з выявай чалавечай галавы здаецца ўсюдыіснай і панурай. Яна выпраменьвае спакой і ціхамірнасць.'
 }, {
-  name: 'Moai',
-  artist: 'Unknown Artist',
-  description: 'Located on the Easter Island, there are 1,000 moai, or extant monumental statues, created by the early Rapa Nui people, which some believe represented deified ancestors.',
+  name: 'Мааі',
+  artist: 'Невядомы мастак',
+  description: 'На востраве Пасхі знаходзіцца 1000 мааі, або захаваных манументальных статуй, створаных раннім народам Рапа-Нуі, якія, на думку некаторых, прадстаўлялі абагаўлёных продкаў.',
   url: 'https://i.imgur.com/RCwLEoQm.jpg',
-  alt: 'Three monumental stone busts with the heads that are disproportionately large with somber faces.'
+  alt: 'Тры манументальныя каменныя бюсты з непрапарцыянальна вялікімі галовамі і змрочнымі тварамі.'
 }, {
-  name: 'Blue Nana',
-  artist: 'Niki de Saint Phalle',
-  description: 'The Nanas are triumphant creatures, symbols of femininity and maternity. Initially, Saint Phalle used fabric and found objects for the Nanas, and later on introduced polyester to achieve a more vibrant effect.',
+  name: 'Блакітная нана',
+  artist: 'Нікі дэ Сен-Фаль',
+  description: 'Наны — трыумфуючыя істоты, сімвалы жаноцкасці і мацярынства. Першапачаткова Сен-Фаль выкарыстаў тканіну і знайшоў прадметы для Нан, а пазней увёў поліэстэр для дасягнення больш яркага эфекту.',
   url: 'https://i.imgur.com/Sd1AgUOm.jpg',
-  alt: 'A large mosaic sculpture of a whimsical dancing female figure in a colorful costume emanating joy.'
+  alt: 'Вялікая мазаічная скульптура мудрагелістай танцуючай жаночай фігуры ў маляўнічым касцюме, якая выпраменьвае радасць.'
 }, {
-  name: 'Ultimate Form',
-  artist: 'Barbara Hepworth',
-  description: 'This abstract bronze sculpture is a part of The Family of Man series located at Yorkshire Sculpture Park. Hepworth chose not to create literal representations of the world but developed abstract forms inspired by people and landscapes.',
+  name: 'Канчатковая форма',
+  artist: 'Барбара Хепуарт',
+  description: 'Гэтая абстрактная бронзавая скульптура з\'яўляецца часткай серыі «Сям\'я чалавека», размешчанай у Ёркшырскім парку скульптур. Хепуарт вырашыла не ствараць літаральныя ўяўленні аб свеце, а распрацавала абстрактныя формы, натхнёныя людзьмі і ландшафтамі.',
   url: 'https://i.imgur.com/2heNQDcm.jpg',
-  alt: 'A tall sculpture made of three elements stacked on each other reminding of a human figure.'
+  alt: 'Высокая скульптура з трох пастаўленых адзін на аднаго элементаў, якія нагадваюць фігуру чалавека.'
 }, {
-  name: 'Cavaliere',
-  artist: 'Lamidi Olonade Fakeye',
-  description: "Descended from four generations of woodcarvers, Fakeye's work blended traditional and contemporary Yoruba themes.",
+  name: 'Кавалер',
+  artist: 'Ламідзі Аланадэ Фэйкі',
+  description: "Праца Фэйкі, які з'яўляецца разьбяром па дрэве ў чацвёртым пакаленні, змяшала традыцыйныя і сучасныя тэмы ёруба.",
   url: 'https://i.imgur.com/wIdGuZwm.png',
-  alt: 'An intricate wood sculpture of a warrior with a focused face on a horse adorned with patterns.'
+  alt: 'Складаная драўляная скульптура воіна са сканцэнтраваным тварам на кані, упрыгожаная ўзорамі.'
 }, {
-  name: 'Big Bellies',
-  artist: 'Alina Szapocznikow',
-  description: "Szapocznikow is known for her sculptures of the fragmented body as a metaphor for the fragility and impermanence of youth and beauty. This sculpture depicts two very realistic large bellies stacked on top of each other, each around five feet (1,5m) tall.",
+  name: 'Вялікі пузы',
+  artist: 'Аліна Шапачнікаў',
+  description: "Шапачнікаў вядомая сваімі скульптурамі фрагментаванага цела як метафарай крохкасці і нясталасці маладосці і прыгажосці. Гэтая скульптура адлюстроўвае два вельмі рэалістычныя вялікія жываты, пакладзеныя адзін на аднаго, кожны вышынёй каля пяці футаў (1,5 м).",
   url: 'https://i.imgur.com/AlHTAdDm.jpg',
-  alt: 'The sculpture reminds a cascade of folds, quite different from bellies in classical sculptures.'
+  alt: 'Скульптура нагадвае каскад зморшчын, зусім іншы, чым жываты ў класічных скульптурах.'
 }, {
-  name: 'Terracotta Army',
-  artist: 'Unknown Artist',
-  description: 'The Terracotta Army is a collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China. The army consisted of more than 8,000 soldiers, 130 chariots with 520 horses, and 150 cavalry horses.',
+  name: 'Тэракотовая армія',
+  artist: 'Невядомы мастак',
+  description: 'Тэракотавая армія — гэта калекцыя тэракотавых скульптур, якія адлюстроўваюць армію Цынь Шыхуан-дзі, першага імператара Кітая. Войска налічвала больш за 8 тысяч воінаў, 130 калясніц з 520 коньмі і 150 кавалерыйскіх коней.',
   url: 'https://i.imgur.com/HMFmH6m.jpg',
-  alt: '12 terracotta sculptures of solemn warriors, each with a unique facial expression and armor.'
+  alt: '12 тэракотавых скульптур урачыстых воінаў, кожная з унікальным выразам твару і даспехамі.'
 }, {
-  name: 'Lunar Landscape',
-  artist: 'Louise Nevelson',
-  description: 'Nevelson was known for scavenging objects from New York City debris, which she would later assemble into monumental constructions. In this one, she used disparate parts like a bedpost, juggling pin, and seat fragment, nailing and gluing them into boxes that reflect the influence of Cubism’s geometric abstraction of space and form.',
+  name: 'Месяцовы пейзаж',
+  artist: 'Луіза Нэвельсан',
+  description: 'Нэвельсан была вядомая тым, што ачышчала аб\'екты з руін Нью-Ёрка, якія пазней яна збярэ ў манументальныя канструкцыі. У гэтай статуі яна выкарыстала разрозненыя часткі, такія як ложак, шпільку для жангліравання і фрагмент сядзення, прыбіўшы і склеіўшы іх у скрынкі, якія адлюстроўваюць уплыў геаметрычнай абстракцыі прасторы і формы кубізму.',
   url: 'https://i.imgur.com/rN7hY6om.jpg',
-  alt: 'A black matte sculpture where the individual elements are initially indistinguishable.'
+  alt: 'Чорная матавая скульптура, дзе асобныя элементы першапачаткова неадрозныя.'
 }, {
-  name: 'Aureole',
-  artist: 'Ranjani Shettar',
-  description: 'Shettar merges the traditional and the modern, the natural and the industrial. Her art focuses on the relationship between man and nature. Her work was described as compelling both abstractly and figuratively, gravity defying, and a "fine synthesis of unlikely materials."',
+  name: 'Арэол',
+  artist: 'Ранджані Шэтар',
+  description: 'Шэтар спалучае традыцыйнае і сучаснае, натуральнае і індустрыяльнае. Яе мастацтва засяроджана на ўзаемаадносінах чалавека і прыроды. Яе праца была апісана як пераканаўчая як у абстрактным, так і ў вобразным сэнсе, якая кідае выклік гравітацыі і ўяўляе сабой «вытанчаны сінтэз малаверагодных матэрыялаў».',
   url: 'https://i.imgur.com/okTpbHhm.jpg',
-  alt: 'A pale wire-like sculpture mounted on concrete wall and descending on the floor. It appears light.'
+  alt: 'Бледная скульптура, падобная на дрот, усталяваная на бетоннай сцяне і спускаецца на падлогу. Здаецца вельмі лёгкай.'
 }, {
-  name: 'Hippos',
-  artist: 'Taipei Zoo',
-  description: 'The Taipei Zoo commissioned a Hippo Square featuring submerged hippos at play.',
+  name: 'Бегемоты',
+  artist: 'Тайбэйскі заапарк',
+  description: 'Заапарк Тайбэя заказаў плошчу бегемотаў, на якой гулялі пагружаныя ў ваду бегемоты.',
   url: 'https://i.imgur.com/6o5Vuyu.jpg',
-  alt: 'A group of bronze hippo sculptures emerging from the sett sidewalk as if they were swimming.'
+  alt: 'Група бронзавых скульптур бегемотаў, якія выходзяць з тратуара, нібы яны плывуць.'
 }];
 ```
 
@@ -520,19 +519,19 @@ button {
 
 </Sandpack>
 
-It is a good idea to have multiple state variables if their state is unrelated, like `index` and `showMore` in this example. But if you find that you often change two state variables together, it might be easier to combine them into one. For example, if you have a form with many fields, it's more convenient to have a single state variable that holds an object than state variable per field. Read [Choosing the State Structure](/learn/choosing-the-state-structure) for more tips.
+Пажадана мець некалькі пераменных стану, калі іх станы не звязаныя паміж сабой, як, напрыклад, `index` і `showMore` у гэтым прыкладзе. Але калі вы часта змяняеце дзве пераменныя стану разам, магчыма аб'яднанне іх у адну пераменную дапаможа спрасціць ваш код. Напрыклад, калі ў вас ёсць форма з вялікай колькасцю палёў, зручней мець адну пераменную стану, якая змяшчае аб'ект, чым мець па адной пераменнай стану на кожнае поле. На старонцы «[Выбар структуры стану](/learn/choosing-the-state-structure)» вы можаце знайсці больш дадатковых парад.
 
 <DeepDive>
 
-#### How does React know which state to return? {/*how-does-react-know-which-state-to-return*/}
+#### Як React даведаецца, які стан вярнуць? {/*how-does-react-know-which-state-to-return*/}
 
-You might have noticed that the `useState` call does not receive any information about *which* state variable it refers to. There is no "identifier" that is passed to `useState`, so how does it know which of the state variables to return? Does it rely on some magic like parsing your functions? The answer is no.
+Магчыма, вы заўважылі, што выклік `useState` не атрымлівае ніякай інфармацыі аб тым, *на якую* пераменную стану ён спасылаецца. Няма «ідэнтыфікатара», які перадаецца ў `useState`, дык як ён ведае, якую з пераменных стану вярнуць? Ён выкарыстоўвае нейкую магію, накшталт разбору вашых функцый? Адказ — не.
 
-Instead, to enable their concise syntax, Hooks **rely on a stable call order on every render of the same component.** This works well in practice because if you follow the rule above ("only call Hooks at the top level"), Hooks will always be called in the same order. Additionally, a [linter plugin](https://www.npmjs.com/package/eslint-plugin-react-hooks) catches most mistakes.
+Замест гэтага, каб забяспечыць іх лаканічны сінтаксіс, хукі **разлічваюць на стабільны парадак выклікаў на кожным рэндэры аднаго і таго ж кампанента.** Гэта добра працуе на практыцы, таму што калі вы будзеце прытрымлівацца правіла вышэй («выклікайце хукі толькі на верхнім узроўні»), хукі заўсёды будуць выклікацца ў адным і тым жа парадку. Акрамя таго, [убудова linter] (https://www.npmjs.com/package/eslint-plugin-react-hooks) дазваляе выявіць большасць памылак.
 
-Internally, React holds an array of state pairs for every component. It also maintains the current pair index, which is set to `0` before rendering. Each time you call `useState`, React gives you the next state pair and increments the index. You can read more about this mechanism in [React Hooks: Not Magic, Just Arrays.](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)
+Пад капотам React захоўвае масіў пар станаў для кожнага кампанента. Ён таксама падтрымлівае бягучы індэкс пары, якому перад рэндэрам задаецца значэнне `0`. Кожны раз, калі вы выклікаеце `useState`, React дае вам наступную пару станаў і павялічвае індэкс. Больш даведацца аб гэтым механізме вы можаце ў артыкуле «[Хукі ў React: не магія, а проста масівы (React Hooks: Not Magic, Just Arrays)](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)».
 
-This example **doesn't use React** but it gives you an idea of how `useState` works internally:
+У гэтым прыкладзе **не выкарыстоўваецца React**, але ён дае вам уяўленне аб тым, як `useState` працуе ўнутры:
 
 <Sandpack>
 
@@ -540,37 +539,37 @@ This example **doesn't use React** but it gives you an idea of how `useState` wo
 let componentHooks = [];
 let currentHookIndex = 0;
 
-// How useState works inside React (simplified).
+// Як працуе useState унутры React (спрошчана).
 function useState(initialState) {
   let pair = componentHooks[currentHookIndex];
   if (pair) {
-    // This is not the first render,
-    // so the state pair already exists.
-    // Return it and prepare for next Hook call.
+    // Гэта не першы рэндэр,
+    // таму пара стану ўжо існуе.
+    // Вернем яе і падрыхтуемся да наступнага выкліку хука.
     currentHookIndex++;
     return pair;
   }
 
-  // This is the first time we're rendering,
-  // so create a state pair and store it.
+  // Гэта першы рэндэр,
+  // таму ствараем пару стану і захоўваем яе.
   pair = [initialState, setState];
 
   function setState(nextState) {
-    // When the user requests a state change,
-    // put the new value into the pair.
+    // Калі карыстальнік запытвае змену стану,
+    // захоўваем новае значэнне ў пары.
     pair[0] = nextState;
     updateDOM();
   }
 
-  // Store the pair for future renders
-  // and prepare for the next Hook call.
+  // Захаваем пару для будучых рэндэраў
+  // і падрыхтуемся да наступнага выкліку хука.
   componentHooks[currentHookIndex] = pair;
   currentHookIndex++;
   return pair;
 }
 
 function Gallery() {
-  // Each useState() call will get the next pair.
+  // Кожны выклік useState() атрымае наступную пару.
   const [index, setIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
 
@@ -583,14 +582,14 @@ function Gallery() {
   }
 
   let sculpture = sculptureList[index];
-  // This example doesn't use React, so
-  // return an output object instead of JSX.
+  // У гэтым прыкладзе не выкарыстоўваецца React, таму
+  // вяртаем выхадны аб'ект замест JSX.
   return {
     onNextClick: handleNextClick,
     onMoreClick: handleMoreClick,
-    header: `${sculpture.name} by ${sculpture.artist}`,
-    counter: `${index + 1} of ${sculptureList.length}`,
-    more: `${showMore ? 'Hide' : 'Show'} details`,
+    header: `«${sculpture.name}» ${sculpture.artist}`,
+    counter: `${index + 1} з ${sculptureList.length}`,
+    more: `${showMore ? 'Паказаць' : 'Схаваць'} падрабязную інфармацыю`,
     description: showMore ? sculpture.description : null,
     imageSrc: sculpture.url,
     imageAlt: sculpture.alt
@@ -598,13 +597,13 @@ function Gallery() {
 }
 
 function updateDOM() {
-  // Reset the current Hook index
-  // before rendering the component.
+  // Скідваем бягучы індэкс хука
+  // перад рэндэрам кампанента.
   currentHookIndex = 0;
   let output = Gallery();
 
-  // Update the DOM to match the output.
-  // This is the part React does for you.
+  // Абнаўляем DOM, каб ён адпавядаў выхаду (пераменнай output).
+  // Гэта тое, што React робіць за вас.
   nextButton.onclick = output.onNextClick;
   header.textContent = output.header;
   moreButton.onclick = output.onMoreClick;
@@ -625,80 +624,80 @@ let moreButton = document.getElementById('moreButton');
 let description = document.getElementById('description');
 let image = document.getElementById('image');
 let sculptureList = [{
-  name: 'Homenaje a la Neurocirugía',
-  artist: 'Marta Colvin Andrade',
-  description: 'Although Colvin is predominantly known for abstract themes that allude to pre-Hispanic symbols, this gigantic sculpture, an homage to neurosurgery, is one of her most recognizable public art pieces.',
+  name: 'Даніна нейрахірургіі',
+  artist: 'Марта Колвін Андрадэ',
+  description: 'Хаця Колвін пераважна вядомая сваімі абстрактнымі тэмамі, якія спасылаюцца на да-іспанскія сімвалы, гэтая гіганцкая скульптура, даніна павагі нейрахірургіі, з\'яўляецца адным з яе самых вядомых твораў мастацтва.',
   url: 'https://i.imgur.com/Mx7dA2Y.jpg',
-  alt: 'A bronze statue of two crossed hands delicately holding a human brain in their fingertips.'  
+  alt: 'Бронзавая статуя дзвюх скрыжаваных рук, якія далікатна трымаюць чалавечы мозг на кончыках пальцаў.'  
 }, {
-  name: 'Floralis Genérica',
-  artist: 'Eduardo Catalano',
-  description: 'This enormous (75 ft. or 23m) silver flower is located in Buenos Aires. It is designed to move, closing its petals in the evening or when strong winds blow and opening them in the morning.',
+  name: 'Родавы Флораліс',
+  artist: 'Эдуарда Каталана',
+  description: 'Гэтая велізарная (75 футаў або 23 метры) серабрыстая кветка знаходзіцца ў Буэнас-Айрэсе. Яна спраектавана так, што можа закрываць пялёсткі ўвечары або пры моцным ветры і раскрываць іх раніцай.',
   url: 'https://i.imgur.com/ZF6s192m.jpg',
-  alt: 'A gigantic metallic flower sculpture with reflective mirror-like petals and strong stamens.'
+  alt: 'Гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі і моцнымі тычынкамі.'
 }, {
-  name: 'Eternal Presence',
-  artist: 'John Woodrow Wilson',
-  description: 'Wilson was known for his preoccupation with equality, social justice, as well as the essential and spiritual qualities of humankind. This massive (7ft. or 2,13m) bronze represents what he described as "a symbolic Black presence infused with a sense of universal humanity."',
+  name: 'Вечная прысутнасць',
+  artist: 'Джон Вудраў Уілсан',
+  description: 'Уілсан быў вядомы сваёй заклапочанасцю тэмамі роўнасці, сацыяльнай справядлівасці, а таксама істотнымі і духоўнымі якасцямі чалавецтва. Гэтая масіўная (7 футаў або 2,13 метра) бронзавая статуя ўяўляе тое, што ён назваў «сімвалічнай прысутнасцю чарнаскурых, прасякнутай пачуццём універсальнай чалавечнасці».',
   url: 'https://i.imgur.com/aTtVpES.jpg',
-  alt: 'The sculpture depicting a human head seems ever-present and solemn. It radiates calm and serenity.'
+  alt: 'Скульптура з выявай чалавечай галавы здаецца ўсюдыіснай і панурай. Яна выпраменьвае спакой і ціхамірнасць.'
 }, {
-  name: 'Moai',
-  artist: 'Unknown Artist',
-  description: 'Located on the Easter Island, there are 1,000 moai, or extant monumental statues, created by the early Rapa Nui people, which some believe represented deified ancestors.',
+  name: 'Мааі',
+  artist: 'Невядомы мастак',
+  description: 'На востраве Пасхі знаходзіцца 1000 мааі, або захаваных манументальных статуй, створаных раннім народам Рапа-Нуі, якія, на думку некаторых, прадстаўлялі абагаўлёных продкаў.',
   url: 'https://i.imgur.com/RCwLEoQm.jpg',
-  alt: 'Three monumental stone busts with the heads that are disproportionately large with somber faces.'
+  alt: 'Тры манументальныя каменныя бюсты з непрапарцыянальна вялікімі галовамі і змрочнымі тварамі.'
 }, {
-  name: 'Blue Nana',
-  artist: 'Niki de Saint Phalle',
-  description: 'The Nanas are triumphant creatures, symbols of femininity and maternity. Initially, Saint Phalle used fabric and found objects for the Nanas, and later on introduced polyester to achieve a more vibrant effect.',
+  name: 'Блакітная нана',
+  artist: 'Нікі дэ Сен-Фаль',
+  description: 'Наны — трыумфуючыя істоты, сімвалы жаноцкасці і мацярынства. Першапачаткова Сен-Фаль выкарыстаў тканіну і знайшоў прадметы для Нан, а пазней увёў поліэстэр для дасягнення больш яркага эфекту.',
   url: 'https://i.imgur.com/Sd1AgUOm.jpg',
-  alt: 'A large mosaic sculpture of a whimsical dancing female figure in a colorful costume emanating joy.'
+  alt: 'Вялікая мазаічная скульптура мудрагелістай танцуючай жаночай фігуры ў маляўнічым касцюме, якая выпраменьвае радасць.'
 }, {
-  name: 'Ultimate Form',
-  artist: 'Barbara Hepworth',
-  description: 'This abstract bronze sculpture is a part of The Family of Man series located at Yorkshire Sculpture Park. Hepworth chose not to create literal representations of the world but developed abstract forms inspired by people and landscapes.',
+  name: 'Канчатковая форма',
+  artist: 'Барбара Хепуарт',
+  description: 'Гэтая абстрактная бронзавая скульптура з\'яўляецца часткай серыі «Сям\'я чалавека», размешчанай у Ёркшырскім парку скульптур. Хепуарт вырашыла не ствараць літаральныя ўяўленні аб свеце, а распрацавала абстрактныя формы, натхнёныя людзьмі і ландшафтамі.',
   url: 'https://i.imgur.com/2heNQDcm.jpg',
-  alt: 'A tall sculpture made of three elements stacked on each other reminding of a human figure.'
+  alt: 'Высокая скульптура з трох пастаўленых адзін на аднаго элементаў, якія нагадваюць фігуру чалавека.'
 }, {
-  name: 'Cavaliere',
-  artist: 'Lamidi Olonade Fakeye',
-  description: "Descended from four generations of woodcarvers, Fakeye's work blended traditional and contemporary Yoruba themes.",
+  name: 'Кавалер',
+  artist: 'Ламідзі Аланадэ Фэйкі',
+  description: "Праца Фэйкі, які з'яўляецца разьбяром па дрэве ў чацвёртым пакаленні, змяшала традыцыйныя і сучасныя тэмы ёруба.",
   url: 'https://i.imgur.com/wIdGuZwm.png',
-  alt: 'An intricate wood sculpture of a warrior with a focused face on a horse adorned with patterns.'
+  alt: 'Складаная драўляная скульптура воіна са сканцэнтраваным тварам на кані, упрыгожаная ўзорамі.'
 }, {
-  name: 'Big Bellies',
-  artist: 'Alina Szapocznikow',
-  description: "Szapocznikow is known for her sculptures of the fragmented body as a metaphor for the fragility and impermanence of youth and beauty. This sculpture depicts two very realistic large bellies stacked on top of each other, each around five feet (1,5m) tall.",
+  name: 'Вялікі пузы',
+  artist: 'Аліна Шапачнікаў',
+  description: "Шапачнікаў вядомая сваімі скульптурамі фрагментаванага цела як метафарай крохкасці і нясталасці маладосці і прыгажосці. Гэтая скульптура адлюстроўвае два вельмі рэалістычныя вялікія жываты, пакладзеныя адзін на аднаго, кожны вышынёй каля пяці футаў (1,5 м).",
   url: 'https://i.imgur.com/AlHTAdDm.jpg',
-  alt: 'The sculpture reminds a cascade of folds, quite different from bellies in classical sculptures.'
+  alt: 'Скульптура нагадвае каскад зморшчын, зусім іншы, чым жываты ў класічных скульптурах.'
 }, {
-  name: 'Terracotta Army',
-  artist: 'Unknown Artist',
-  description: 'The Terracotta Army is a collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China. The army consisted of more than 8,000 soldiers, 130 chariots with 520 horses, and 150 cavalry horses.',
+  name: 'Тэракотовая армія',
+  artist: 'Невядомы мастак',
+  description: 'Тэракотавая армія — гэта калекцыя тэракотавых скульптур, якія адлюстроўваюць армію Цынь Шыхуан-дзі, першага імператара Кітая. Войска налічвала больш за 8 тысяч воінаў, 130 калясніц з 520 коньмі і 150 кавалерыйскіх коней.',
   url: 'https://i.imgur.com/HMFmH6m.jpg',
-  alt: '12 terracotta sculptures of solemn warriors, each with a unique facial expression and armor.'
+  alt: '12 тэракотавых скульптур урачыстых воінаў, кожная з унікальным выразам твару і даспехамі.'
 }, {
-  name: 'Lunar Landscape',
-  artist: 'Louise Nevelson',
-  description: 'Nevelson was known for scavenging objects from New York City debris, which she would later assemble into monumental constructions. In this one, she used disparate parts like a bedpost, juggling pin, and seat fragment, nailing and gluing them into boxes that reflect the influence of Cubism’s geometric abstraction of space and form.',
+  name: 'Месяцовы пейзаж',
+  artist: 'Луіза Нэвельсан',
+  description: 'Нэвельсан была вядомая тым, што ачышчала аб\'екты з руін Нью-Ёрка, якія пазней яна збярэ ў манументальныя канструкцыі. У гэтай статуі яна выкарыстала разрозненыя часткі, такія як ложак, шпільку для жангліравання і фрагмент сядзення, прыбіўшы і склеіўшы іх у скрынкі, якія адлюстроўваюць уплыў геаметрычнай абстракцыі прасторы і формы кубізму.',
   url: 'https://i.imgur.com/rN7hY6om.jpg',
-  alt: 'A black matte sculpture where the individual elements are initially indistinguishable.'
+  alt: 'Чорная матавая скульптура, дзе асобныя элементы першапачаткова неадрозныя.'
 }, {
-  name: 'Aureole',
-  artist: 'Ranjani Shettar',
-  description: 'Shettar merges the traditional and the modern, the natural and the industrial. Her art focuses on the relationship between man and nature. Her work was described as compelling both abstractly and figuratively, gravity defying, and a "fine synthesis of unlikely materials."',
+  name: 'Арэол',
+  artist: 'Ранджані Шэтар',
+  description: 'Шэтар спалучае традыцыйнае і сучаснае, натуральнае і індустрыяльнае. Яе мастацтва засяроджана на ўзаемаадносінах чалавека і прыроды. Яе праца была апісана як пераканаўчая як у абстрактным, так і ў вобразным сэнсе, якая кідае выклік гравітацыі і ўяўляе сабой «вытанчаны сінтэз малаверагодных матэрыялаў».',
   url: 'https://i.imgur.com/okTpbHhm.jpg',
-  alt: 'A pale wire-like sculpture mounted on concrete wall and descending on the floor. It appears light.'
+  alt: 'Бледная скульптура, падобная на дрот, усталяваная на бетоннай сцяне і спускаецца на падлогу. Здаецца вельмі лёгкай.'
 }, {
-  name: 'Hippos',
-  artist: 'Taipei Zoo',
-  description: 'The Taipei Zoo commissioned a Hippo Square featuring submerged hippos at play.',
+  name: 'Бегемоты',
+  artist: 'Тайбэйскі заапарк',
+  description: 'Заапарк Тайбэя заказаў плошчу бегемотаў, на якой гулялі пагружаныя ў ваду бегемоты.',
   url: 'https://i.imgur.com/6o5Vuyu.jpg',
-  alt: 'A group of bronze hippo sculptures emerging from the sett sidewalk as if they were swimming.'
+  alt: 'Група бронзавых скульптур бегемотаў, якія выходзяць з тратуара, нібы яны плывуць.'
 }];
 
-// Make UI match the initial state.
+// Робім так, каб карыстальніцкі інтэрфейс адпавядаў першапачатковаму стану.
 updateDOM();
 ```
 
@@ -724,15 +723,15 @@ button { display: block; margin-bottom: 10px; }
 
 </Sandpack>
 
-You don't have to understand it to use React, but you might find this a helpful mental model.
+Для таго, каб выкарыстоўваць React, вам не абавязкова трэба разумець гэта, але гэта можа быць карыснай ментальнай мадэллю.
 
 </DeepDive>
 
-## State is isolated and private {/*state-is-isolated-and-private*/}
+## Стан ізаляваны і прыватны {/*state-is-isolated-and-private*/}
 
-State is local to a component instance on the screen. In other words, **if you render the same component twice, each copy will have completely isolated state!** Changing one of them will not affect the other.
+Стан з'яўляецца лакальным для асобніка кампанента на экране. Іншымі словамі, **калі вы рэндэрыце адзін і той жа кампанент двойчы, кожная копія будзе мець цалкам ізаляваны стан!** Змена аднаго з іх не паўплывае на іншы.
 
-In this example, the `Gallery` component from earlier is rendered twice with no changes to its logic. Try clicking the buttons inside each of the galleries. Notice that their state is independent:
+У гэтым прыкладзе кампанент `Gallery`, паказаны раней, рэндэрыцца двойчы без змяненняў у яго логіцы. Паспрабуйце панаціскаць на кнопкі ўнутры кожнай галерэі. Заўважце, што іх станы незалежныя:
 
 <Sandpack>
 
@@ -770,17 +769,17 @@ export default function Gallery() {
   return (
     <section>
       <button onClick={handleNextClick}>
-        Next
+        Далей
       </button>
       <h2>
-        <i>{sculpture.name} </i> 
-        by {sculpture.artist}
+        <i>«{sculpture.name}» </i> 
+        {sculpture.artist}
       </h2>
       <h3>  
-        ({index + 1} of {sculptureList.length})
+        ({index + 1} з {sculptureList.length})
       </h3>
       <button onClick={handleMoreClick}>
-        {showMore ? 'Hide' : 'Show'} details
+        {showMore ? 'Паказаць' : 'Схаваць'} падрабязную інфармацыю
       </button>
       {showMore && <p>{sculpture.description}</p>}
       <img 
@@ -794,77 +793,77 @@ export default function Gallery() {
 
 ```js src/data.js
 export const sculptureList = [{
-  name: 'Homenaje a la Neurocirugía',
-  artist: 'Marta Colvin Andrade',
-  description: 'Although Colvin is predominantly known for abstract themes that allude to pre-Hispanic symbols, this gigantic sculpture, an homage to neurosurgery, is one of her most recognizable public art pieces.',
+  name: 'Даніна нейрахірургіі',
+  artist: 'Марта Колвін Андрадэ',
+  description: 'Хаця Колвін пераважна вядомая сваімі абстрактнымі тэмамі, якія спасылаюцца на да-іспанскія сімвалы, гэтая гіганцкая скульптура, даніна павагі нейрахірургіі, з\'яўляецца адным з яе самых вядомых твораў мастацтва.',
   url: 'https://i.imgur.com/Mx7dA2Y.jpg',
-  alt: 'A bronze statue of two crossed hands delicately holding a human brain in their fingertips.'  
+  alt: 'Бронзавая статуя дзвюх скрыжаваных рук, якія далікатна трымаюць чалавечы мозг на кончыках пальцаў.'  
 }, {
-  name: 'Floralis Genérica',
-  artist: 'Eduardo Catalano',
-  description: 'This enormous (75 ft. or 23m) silver flower is located in Buenos Aires. It is designed to move, closing its petals in the evening or when strong winds blow and opening them in the morning.',
+  name: 'Родавы Флораліс',
+  artist: 'Эдуарда Каталана',
+  description: 'Гэтая велізарная (75 футаў або 23 метры) серабрыстая кветка знаходзіцца ў Буэнас-Айрэсе. Яна спраектавана так, што можа закрываць пялёсткі ўвечары або пры моцным ветры і раскрываць іх раніцай.',
   url: 'https://i.imgur.com/ZF6s192m.jpg',
-  alt: 'A gigantic metallic flower sculpture with reflective mirror-like petals and strong stamens.'
+  alt: 'Гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі і моцнымі тычынкамі.'
 }, {
-  name: 'Eternal Presence',
-  artist: 'John Woodrow Wilson',
-  description: 'Wilson was known for his preoccupation with equality, social justice, as well as the essential and spiritual qualities of humankind. This massive (7ft. or 2,13m) bronze represents what he described as "a symbolic Black presence infused with a sense of universal humanity."',
+  name: 'Вечная прысутнасць',
+  artist: 'Джон Вудраў Уілсан',
+  description: 'Уілсан быў вядомы сваёй заклапочанасцю тэмамі роўнасці, сацыяльнай справядлівасці, а таксама істотнымі і духоўнымі якасцямі чалавецтва. Гэтая масіўная (7 футаў або 2,13 метра) бронзавая статуя ўяўляе тое, што ён назваў «сімвалічнай прысутнасцю чарнаскурых, прасякнутай пачуццём універсальнай чалавечнасці».',
   url: 'https://i.imgur.com/aTtVpES.jpg',
-  alt: 'The sculpture depicting a human head seems ever-present and solemn. It radiates calm and serenity.'
+  alt: 'Скульптура з выявай чалавечай галавы здаецца ўсюдыіснай і панурай. Яна выпраменьвае спакой і ціхамірнасць.'
 }, {
-  name: 'Moai',
-  artist: 'Unknown Artist',
-  description: 'Located on the Easter Island, there are 1,000 moai, or extant monumental statues, created by the early Rapa Nui people, which some believe represented deified ancestors.',
+  name: 'Мааі',
+  artist: 'Невядомы мастак',
+  description: 'На востраве Пасхі знаходзіцца 1000 мааі, або захаваных манументальных статуй, створаных раннім народам Рапа-Нуі, якія, на думку некаторых, прадстаўлялі абагаўлёных продкаў.',
   url: 'https://i.imgur.com/RCwLEoQm.jpg',
-  alt: 'Three monumental stone busts with the heads that are disproportionately large with somber faces.'
+  alt: 'Тры манументальныя каменныя бюсты з непрапарцыянальна вялікімі галовамі і змрочнымі тварамі.'
 }, {
-  name: 'Blue Nana',
-  artist: 'Niki de Saint Phalle',
-  description: 'The Nanas are triumphant creatures, symbols of femininity and maternity. Initially, Saint Phalle used fabric and found objects for the Nanas, and later on introduced polyester to achieve a more vibrant effect.',
+  name: 'Блакітная нана',
+  artist: 'Нікі дэ Сен-Фаль',
+  description: 'Наны — трыумфуючыя істоты, сімвалы жаноцкасці і мацярынства. Першапачаткова Сен-Фаль выкарыстаў тканіну і знайшоў прадметы для Нан, а пазней увёў поліэстэр для дасягнення больш яркага эфекту.',
   url: 'https://i.imgur.com/Sd1AgUOm.jpg',
-  alt: 'A large mosaic sculpture of a whimsical dancing female figure in a colorful costume emanating joy.'
+  alt: 'Вялікая мазаічная скульптура мудрагелістай танцуючай жаночай фігуры ў маляўнічым касцюме, якая выпраменьвае радасць.'
 }, {
-  name: 'Ultimate Form',
-  artist: 'Barbara Hepworth',
-  description: 'This abstract bronze sculpture is a part of The Family of Man series located at Yorkshire Sculpture Park. Hepworth chose not to create literal representations of the world but developed abstract forms inspired by people and landscapes.',
+  name: 'Канчатковая форма',
+  artist: 'Барбара Хепуарт',
+  description: 'Гэтая абстрактная бронзавая скульптура з\'яўляецца часткай серыі «Сям\'я чалавека», размешчанай у Ёркшырскім парку скульптур. Хепуарт вырашыла не ствараць літаральныя ўяўленні аб свеце, а распрацавала абстрактныя формы, натхнёныя людзьмі і ландшафтамі.',
   url: 'https://i.imgur.com/2heNQDcm.jpg',
-  alt: 'A tall sculpture made of three elements stacked on each other reminding of a human figure.'
+  alt: 'Высокая скульптура з трох пастаўленых адзін на аднаго элементаў, якія нагадваюць фігуру чалавека.'
 }, {
-  name: 'Cavaliere',
-  artist: 'Lamidi Olonade Fakeye',
-  description: "Descended from four generations of woodcarvers, Fakeye's work blended traditional and contemporary Yoruba themes.",
+  name: 'Кавалер',
+  artist: 'Ламідзі Аланадэ Фэйкі',
+  description: "Праца Фэйкі, які з'яўляецца разьбяром па дрэве ў чацвёртым пакаленні, змяшала традыцыйныя і сучасныя тэмы ёруба.",
   url: 'https://i.imgur.com/wIdGuZwm.png',
-  alt: 'An intricate wood sculpture of a warrior with a focused face on a horse adorned with patterns.'
+  alt: 'Складаная драўляная скульптура воіна са сканцэнтраваным тварам на кані, упрыгожаная ўзорамі.'
 }, {
-  name: 'Big Bellies',
-  artist: 'Alina Szapocznikow',
-  description: "Szapocznikow is known for her sculptures of the fragmented body as a metaphor for the fragility and impermanence of youth and beauty. This sculpture depicts two very realistic large bellies stacked on top of each other, each around five feet (1,5m) tall.",
+  name: 'Вялікі пузы',
+  artist: 'Аліна Шапачнікаў',
+  description: "Шапачнікаў вядомая сваімі скульптурамі фрагментаванага цела як метафарай крохкасці і нясталасці маладосці і прыгажосці. Гэтая скульптура адлюстроўвае два вельмі рэалістычныя вялікія жываты, пакладзеныя адзін на аднаго, кожны вышынёй каля пяці футаў (1,5 м).",
   url: 'https://i.imgur.com/AlHTAdDm.jpg',
-  alt: 'The sculpture reminds a cascade of folds, quite different from bellies in classical sculptures.'
+  alt: 'Скульптура нагадвае каскад зморшчын, зусім іншы, чым жываты ў класічных скульптурах.'
 }, {
-  name: 'Terracotta Army',
-  artist: 'Unknown Artist',
-  description: 'The Terracotta Army is a collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China. The army consisted of more than 8,000 soldiers, 130 chariots with 520 horses, and 150 cavalry horses.',
+  name: 'Тэракотовая армія',
+  artist: 'Невядомы мастак',
+  description: 'Тэракотавая армія — гэта калекцыя тэракотавых скульптур, якія адлюстроўваюць армію Цынь Шыхуан-дзі, першага імператара Кітая. Войска налічвала больш за 8 тысяч воінаў, 130 калясніц з 520 коньмі і 150 кавалерыйскіх коней.',
   url: 'https://i.imgur.com/HMFmH6m.jpg',
-  alt: '12 terracotta sculptures of solemn warriors, each with a unique facial expression and armor.'
+  alt: '12 тэракотавых скульптур урачыстых воінаў, кожная з унікальным выразам твару і даспехамі.'
 }, {
-  name: 'Lunar Landscape',
-  artist: 'Louise Nevelson',
-  description: 'Nevelson was known for scavenging objects from New York City debris, which she would later assemble into monumental constructions. In this one, she used disparate parts like a bedpost, juggling pin, and seat fragment, nailing and gluing them into boxes that reflect the influence of Cubism’s geometric abstraction of space and form.',
+  name: 'Месяцовы пейзаж',
+  artist: 'Луіза Нэвельсан',
+  description: 'Нэвельсан была вядомая тым, што ачышчала аб\'екты з руін Нью-Ёрка, якія пазней яна збярэ ў манументальныя канструкцыі. У гэтай статуі яна выкарыстала разрозненыя часткі, такія як ложак, шпільку для жангліравання і фрагмент сядзення, прыбіўшы і склеіўшы іх у скрынкі, якія адлюстроўваюць уплыў геаметрычнай абстракцыі прасторы і формы кубізму.',
   url: 'https://i.imgur.com/rN7hY6om.jpg',
-  alt: 'A black matte sculpture where the individual elements are initially indistinguishable.'
+  alt: 'Чорная матавая скульптура, дзе асобныя элементы першапачаткова неадрозныя.'
 }, {
-  name: 'Aureole',
-  artist: 'Ranjani Shettar',
-  description: 'Shettar merges the traditional and the modern, the natural and the industrial. Her art focuses on the relationship between man and nature. Her work was described as compelling both abstractly and figuratively, gravity defying, and a "fine synthesis of unlikely materials."',
+  name: 'Арэол',
+  artist: 'Ранджані Шэтар',
+  description: 'Шэтар спалучае традыцыйнае і сучаснае, натуральнае і індустрыяльнае. Яе мастацтва засяроджана на ўзаемаадносінах чалавека і прыроды. Яе праца была апісана як пераканаўчая як у абстрактным, так і ў вобразным сэнсе, якая кідае выклік гравітацыі і ўяўляе сабой «вытанчаны сінтэз малаверагодных матэрыялаў».',
   url: 'https://i.imgur.com/okTpbHhm.jpg',
-  alt: 'A pale wire-like sculpture mounted on concrete wall and descending on the floor. It appears light.'
+  alt: 'Бледная скульптура, падобная на дрот, усталяваная на бетоннай сцяне і спускаецца на падлогу. Здаецца вельмі лёгкай.'
 }, {
-  name: 'Hippos',
-  artist: 'Taipei Zoo',
-  description: 'The Taipei Zoo commissioned a Hippo Square featuring submerged hippos at play.',
+  name: 'Бегемоты',
+  artist: 'Тайбэйскі заапарк',
+  description: 'Заапарк Тайбэя заказаў плошчу бегемотаў, на якой гулялі пагружаныя ў ваду бегемоты.',
   url: 'https://i.imgur.com/6o5Vuyu.jpg',
-  alt: 'A group of bronze hippo sculptures emerging from the sett sidewalk as if they were swimming.'
+  alt: 'Група бронзавых скульптур бегемотаў, якія выходзяць з тратуара, нібы яны плывуць.'
 }];
 ```
 
@@ -891,21 +890,21 @@ button {
 
 </Sandpack>
 
-This is what makes state different from regular variables that you might declare at the top of your module. State is not tied to a particular function call or a place in the code, but it's "local" to the specific place on the screen. You rendered two `<Gallery />` components, so their state is stored separately.
+Гэта тое, што адрознівае стан ад звычайных пераменных, якія вы можаце аб'явіць у верхняй частцы вашага модуля. Стан не прывязаны да пэўнага выкліку функцыі або месца ў кодзе, ён «лакальны» для пэўнага месца на экране. Вы адрэндэрылі два кампаненты `<Gallery />`, таму іх стан захоўваецца асобна.
 
-Also notice how the `Page` component doesn't "know" anything about the `Gallery` state or even whether it has any. Unlike props, **state is fully private to the component declaring it.** The parent component can't change it. This lets you add state to any component or remove it without impacting the rest of the components.
+Таксама звярніце ўвагу на тое, што кампанент `Page` нічога не «ведае» пра стан кампанента `Gallery` і нават пра тое, ці ёсць ён у яго наогул. У адрозненне ад пропсаў, **стан з'яўляецца цалкам прыватным для кампанента, які яго аб'яўляе.** Бацькоўскі кампанент не можа змяніць яго. Дзякуючы гэтаму дадаванне стану да любога кампанента або яго выдаленне, не ўплывае на астатнія кампаненты.
 
-What if you wanted both galleries to keep their states in sync? The right way to do it in React is to *remove* state from child components and add it to their closest shared parent. The next few pages will focus on organizing state of a single component, but we will return to this topic in [Sharing State Between Components.](/learn/sharing-state-between-components)
+Што рабіць, калі вы хочаце, каб абедзве галерэі сінхранізавалі свае станы? Правільны спосаб зрабіць гэта ў React — гэта *выдаліць* стан з даччыных кампанентаў і дадаць яго да іх бліжэйшага агульнага бацькоўскага кампанента. Наступныя некалькі старонак будуць прысвечаны арганізацыі стану аднаго кампанента, але мы вернемся да гэтай тэмы ў раздзеле [Сумеснае выкарыстанне стану кампанентамі.](/learn/sharing-state-between-components)
 
 <Recap>
 
-* Use a state variable when a component needs to "remember" some information between renders.
-* State variables are declared by calling the `useState` Hook.
-* Hooks are special functions that start with `use`. They let you "hook into" React features like state.
-* Hooks might remind you of imports: they need to be called unconditionally. Calling Hooks, including `useState`, is only valid at the top level of a component or another Hook.
-* The `useState` Hook returns a pair of values: the current state and the function to update it.
-* You can have more than one state variable. Internally, React matches them up by their order.
-* State is private to the component. If you render it in two places, each copy gets its own state.
+* Выкарыстоўвайце пераменную стану, калі кампаненту трэба «запомніць» некаторую інфармацыю паміж рэндэрамі.
+* Пераменныя стану аб'яўляюцца з дапамогай выкліку хука `useState`.
+* Хукі — гэта спецыяльныя функцыі, якія пачынаюцца з `use`. Яны дазваляюць падключацца («hook into») да функцый React, такіх як стан.
+* Хукі могуць нагадваць імпарт: яны павінны выклікацца безумоўна. Выклік хукаў, у тым ліку `useState`, дзейнічае толькі на верхнім узроўні кампанента або іншага хука.
+* Хук `useState` вяртае пару значэнняў: бягучы стан і функцыю для яго абнаўлення.
+* У вас можа быць больш за адну пераменную стану. Унутры React супастаўляе іх па парадку.
+* Стан з'яўляецца прыватным для кампанента. Калі вы рэндэрыце яго ў двух месцах, кожная копія атрымлівае свой уласны стан.
 
 </Recap>
 
@@ -913,11 +912,11 @@ What if you wanted both galleries to keep their states in sync? The right way to
 
 <Challenges>
 
-#### Complete the gallery {/*complete-the-gallery*/}
+#### Завяршыце галерэю {/*complete-the-gallery*/}
 
-When you press "Next" on the last sculpture, the code crashes. Fix the logic to prevent the crash. You may do this by adding extra logic to event handler or by disabling the button when the action is not possible.
+Калі вы націскаеце «Далей» на апошняй скульптуры, код дае збой. Выправіце логіку, каб прадухіліць збой. Вы можаце зрабіць гэта, дадаўшы дадатковую логіку ў апрацоўшчык падзей або адключыўшы кнопку, калі дзеянне немагчыма.
 
-After fixing the crash, add a "Previous" button that shows the previous sculpture. It shouldn't crash on the first sculpture.
+Пасля ліквідацыі збою дадайце кнопку «Назад», якая паказвае папярэднюю скульптуру. Яна не павінна даваць збой на першай скульптуры.
 
 <Sandpack>
 
@@ -941,17 +940,17 @@ export default function Gallery() {
   return (
     <>
       <button onClick={handleNextClick}>
-        Next
+        Далей
       </button>
       <h2>
-        <i>{sculpture.name} </i> 
-        by {sculpture.artist}
+        <i>«{sculpture.name}» </i> 
+        {sculpture.artist}
       </h2>
       <h3>  
-        ({index + 1} of {sculptureList.length})
+        ({index + 1} з {sculptureList.length})
       </h3>
       <button onClick={handleMoreClick}>
-        {showMore ? 'Hide' : 'Show'} details
+        {showMore ? 'Паказаць' : 'Схаваць'} падрабязную інфармацыю
       </button>
       {showMore && <p>{sculpture.description}</p>}
       <img 
@@ -965,77 +964,77 @@ export default function Gallery() {
 
 ```js src/data.js
 export const sculptureList = [{
-  name: 'Homenaje a la Neurocirugía',
-  artist: 'Marta Colvin Andrade',
-  description: 'Although Colvin is predominantly known for abstract themes that allude to pre-Hispanic symbols, this gigantic sculpture, an homage to neurosurgery, is one of her most recognizable public art pieces.',
+  name: 'Даніна нейрахірургіі',
+  artist: 'Марта Колвін Андрадэ',
+  description: 'Хаця Колвін пераважна вядомая сваімі абстрактнымі тэмамі, якія спасылаюцца на да-іспанскія сімвалы, гэтая гіганцкая скульптура, даніна павагі нейрахірургіі, з\'яўляецца адным з яе самых вядомых твораў мастацтва.',
   url: 'https://i.imgur.com/Mx7dA2Y.jpg',
-  alt: 'A bronze statue of two crossed hands delicately holding a human brain in their fingertips.'  
+  alt: 'Бронзавая статуя дзвюх скрыжаваных рук, якія далікатна трымаюць чалавечы мозг на кончыках пальцаў.'  
 }, {
-  name: 'Floralis Genérica',
-  artist: 'Eduardo Catalano',
-  description: 'This enormous (75 ft. or 23m) silver flower is located in Buenos Aires. It is designed to move, closing its petals in the evening or when strong winds blow and opening them in the morning.',
+  name: 'Родавы Флораліс',
+  artist: 'Эдуарда Каталана',
+  description: 'Гэтая велізарная (75 футаў або 23 метры) серабрыстая кветка знаходзіцца ў Буэнас-Айрэсе. Яна спраектавана так, што можа закрываць пялёсткі ўвечары або пры моцным ветры і раскрываць іх раніцай.',
   url: 'https://i.imgur.com/ZF6s192m.jpg',
-  alt: 'A gigantic metallic flower sculpture with reflective mirror-like petals and strong stamens.'
+  alt: 'Гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі і моцнымі тычынкамі.'
 }, {
-  name: 'Eternal Presence',
-  artist: 'John Woodrow Wilson',
-  description: 'Wilson was known for his preoccupation with equality, social justice, as well as the essential and spiritual qualities of humankind. This massive (7ft. or 2,13m) bronze represents what he described as "a symbolic Black presence infused with a sense of universal humanity."',
+  name: 'Вечная прысутнасць',
+  artist: 'Джон Вудраў Уілсан',
+  description: 'Уілсан быў вядомы сваёй заклапочанасцю тэмамі роўнасці, сацыяльнай справядлівасці, а таксама істотнымі і духоўнымі якасцямі чалавецтва. Гэтая масіўная (7 футаў або 2,13 метра) бронзавая статуя ўяўляе тое, што ён назваў «сімвалічнай прысутнасцю чарнаскурых, прасякнутай пачуццём універсальнай чалавечнасці».',
   url: 'https://i.imgur.com/aTtVpES.jpg',
-  alt: 'The sculpture depicting a human head seems ever-present and solemn. It radiates calm and serenity.'
+  alt: 'Скульптура з выявай чалавечай галавы здаецца ўсюдыіснай і панурай. Яна выпраменьвае спакой і ціхамірнасць.'
 }, {
-  name: 'Moai',
-  artist: 'Unknown Artist',
-  description: 'Located on the Easter Island, there are 1,000 moai, or extant monumental statues, created by the early Rapa Nui people, which some believe represented deified ancestors.',
+  name: 'Мааі',
+  artist: 'Невядомы мастак',
+  description: 'На востраве Пасхі знаходзіцца 1000 мааі, або захаваных манументальных статуй, створаных раннім народам Рапа-Нуі, якія, на думку некаторых, прадстаўлялі абагаўлёных продкаў.',
   url: 'https://i.imgur.com/RCwLEoQm.jpg',
-  alt: 'Three monumental stone busts with the heads that are disproportionately large with somber faces.'
+  alt: 'Тры манументальныя каменныя бюсты з непрапарцыянальна вялікімі галовамі і змрочнымі тварамі.'
 }, {
-  name: 'Blue Nana',
-  artist: 'Niki de Saint Phalle',
-  description: 'The Nanas are triumphant creatures, symbols of femininity and maternity. Initially, Saint Phalle used fabric and found objects for the Nanas, and later on introduced polyester to achieve a more vibrant effect.',
+  name: 'Блакітная нана',
+  artist: 'Нікі дэ Сен-Фаль',
+  description: 'Наны — трыумфуючыя істоты, сімвалы жаноцкасці і мацярынства. Першапачаткова Сен-Фаль выкарыстаў тканіну і знайшоў прадметы для Нан, а пазней увёў поліэстэр для дасягнення больш яркага эфекту.',
   url: 'https://i.imgur.com/Sd1AgUOm.jpg',
-  alt: 'A large mosaic sculpture of a whimsical dancing female figure in a colorful costume emanating joy.'
+  alt: 'Вялікая мазаічная скульптура мудрагелістай танцуючай жаночай фігуры ў маляўнічым касцюме, якая выпраменьвае радасць.'
 }, {
-  name: 'Ultimate Form',
-  artist: 'Barbara Hepworth',
-  description: 'This abstract bronze sculpture is a part of The Family of Man series located at Yorkshire Sculpture Park. Hepworth chose not to create literal representations of the world but developed abstract forms inspired by people and landscapes.',
+  name: 'Канчатковая форма',
+  artist: 'Барбара Хепуарт',
+  description: 'Гэтая абстрактная бронзавая скульптура з\'яўляецца часткай серыі «Сям\'я чалавека», размешчанай у Ёркшырскім парку скульптур. Хепуарт вырашыла не ствараць літаральныя ўяўленні аб свеце, а распрацавала абстрактныя формы, натхнёныя людзьмі і ландшафтамі.',
   url: 'https://i.imgur.com/2heNQDcm.jpg',
-  alt: 'A tall sculpture made of three elements stacked on each other reminding of a human figure.'
+  alt: 'Высокая скульптура з трох пастаўленых адзін на аднаго элементаў, якія нагадваюць фігуру чалавека.'
 }, {
-  name: 'Cavaliere',
-  artist: 'Lamidi Olonade Fakeye',
-  description: "Descended from four generations of woodcarvers, Fakeye's work blended traditional and contemporary Yoruba themes.",
+  name: 'Кавалер',
+  artist: 'Ламідзі Аланадэ Фэйкі',
+  description: "Праца Фэйкі, які з'яўляецца разьбяром па дрэве ў чацвёртым пакаленні, змяшала традыцыйныя і сучасныя тэмы ёруба.",
   url: 'https://i.imgur.com/wIdGuZwm.png',
-  alt: 'An intricate wood sculpture of a warrior with a focused face on a horse adorned with patterns.'
+  alt: 'Складаная драўляная скульптура воіна са сканцэнтраваным тварам на кані, упрыгожаная ўзорамі.'
 }, {
-  name: 'Big Bellies',
-  artist: 'Alina Szapocznikow',
-  description: "Szapocznikow is known for her sculptures of the fragmented body as a metaphor for the fragility and impermanence of youth and beauty. This sculpture depicts two very realistic large bellies stacked on top of each other, each around five feet (1,5m) tall.",
+  name: 'Вялікі пузы',
+  artist: 'Аліна Шапачнікаў',
+  description: "Шапачнікаў вядомая сваімі скульптурамі фрагментаванага цела як метафарай крохкасці і нясталасці маладосці і прыгажосці. Гэтая скульптура адлюстроўвае два вельмі рэалістычныя вялікія жываты, пакладзеныя адзін на аднаго, кожны вышынёй каля пяці футаў (1,5 м).",
   url: 'https://i.imgur.com/AlHTAdDm.jpg',
-  alt: 'The sculpture reminds a cascade of folds, quite different from bellies in classical sculptures.'
+  alt: 'Скульптура нагадвае каскад зморшчын, зусім іншы, чым жываты ў класічных скульптурах.'
 }, {
-  name: 'Terracotta Army',
-  artist: 'Unknown Artist',
-  description: 'The Terracotta Army is a collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China. The army consisted of more than 8,000 soldiers, 130 chariots with 520 horses, and 150 cavalry horses.',
+  name: 'Тэракотовая армія',
+  artist: 'Невядомы мастак',
+  description: 'Тэракотавая армія — гэта калекцыя тэракотавых скульптур, якія адлюстроўваюць армію Цынь Шыхуан-дзі, першага імператара Кітая. Войска налічвала больш за 8 тысяч воінаў, 130 калясніц з 520 коньмі і 150 кавалерыйскіх коней.',
   url: 'https://i.imgur.com/HMFmH6m.jpg',
-  alt: '12 terracotta sculptures of solemn warriors, each with a unique facial expression and armor.'
+  alt: '12 тэракотавых скульптур урачыстых воінаў, кожная з унікальным выразам твару і даспехамі.'
 }, {
-  name: 'Lunar Landscape',
-  artist: 'Louise Nevelson',
-  description: 'Nevelson was known for scavenging objects from New York City debris, which she would later assemble into monumental constructions. In this one, she used disparate parts like a bedpost, juggling pin, and seat fragment, nailing and gluing them into boxes that reflect the influence of Cubism’s geometric abstraction of space and form.',
+  name: 'Месяцовы пейзаж',
+  artist: 'Луіза Нэвельсан',
+  description: 'Нэвельсан была вядомая тым, што ачышчала аб\'екты з руін Нью-Ёрка, якія пазней яна збярэ ў манументальныя канструкцыі. У гэтай статуі яна выкарыстала разрозненыя часткі, такія як ложак, шпільку для жангліравання і фрагмент сядзення, прыбіўшы і склеіўшы іх у скрынкі, якія адлюстроўваюць уплыў геаметрычнай абстракцыі прасторы і формы кубізму.',
   url: 'https://i.imgur.com/rN7hY6om.jpg',
-  alt: 'A black matte sculpture where the individual elements are initially indistinguishable.'
+  alt: 'Чорная матавая скульптура, дзе асобныя элементы першапачаткова неадрозныя.'
 }, {
-  name: 'Aureole',
-  artist: 'Ranjani Shettar',
-  description: 'Shettar merges the traditional and the modern, the natural and the industrial. Her art focuses on the relationship between man and nature. Her work was described as compelling both abstractly and figuratively, gravity defying, and a "fine synthesis of unlikely materials."',
+  name: 'Арэол',
+  artist: 'Ранджані Шэтар',
+  description: 'Шэтар спалучае традыцыйнае і сучаснае, натуральнае і індустрыяльнае. Яе мастацтва засяроджана на ўзаемаадносінах чалавека і прыроды. Яе праца была апісана як пераканаўчая як у абстрактным, так і ў вобразным сэнсе, якая кідае выклік гравітацыі і ўяўляе сабой «вытанчаны сінтэз малаверагодных матэрыялаў».',
   url: 'https://i.imgur.com/okTpbHhm.jpg',
-  alt: 'A pale wire-like sculpture mounted on concrete wall and descending on the floor. It appears light.'
+  alt: 'Бледная скульптура, падобная на дрот, усталяваная на бетоннай сцяне і спускаецца на падлогу. Здаецца вельмі лёгкай.'
 }, {
-  name: 'Hippos',
-  artist: 'Taipei Zoo',
-  description: 'The Taipei Zoo commissioned a Hippo Square featuring submerged hippos at play.',
+  name: 'Бегемоты',
+  artist: 'Тайбэйскі заапарк',
+  description: 'Заапарк Тайбэя заказаў плошчу бегемотаў, на якой гулялі пагружаныя ў ваду бегемоты.',
   url: 'https://i.imgur.com/6o5Vuyu.jpg',
-  alt: 'A group of bronze hippo sculptures emerging from the sett sidewalk as if they were swimming.'
+  alt: 'Група бронзавых скульптур бегемотаў, якія выходзяць з тратуара, нібы яны плывуць.'
 }];
 ```
 
@@ -1059,7 +1058,7 @@ img { width: 120px; height: 120px; }
 
 <Solution>
 
-This adds a guarding condition inside both event handlers and disables the buttons when needed:
+Гэта дадае ахоўную логіку ўнутры абодвух апрацоўшчыкаў падзей і, калі неабходна, адключае кнопкі:
 
 <Sandpack>
 
@@ -1097,23 +1096,23 @@ export default function Gallery() {
         onClick={handlePrevClick}
         disabled={!hasPrev}
       >
-        Previous
+        Назад
       </button>
       <button
         onClick={handleNextClick}
         disabled={!hasNext}
       >
-        Next
+        Далей
       </button>
       <h2>
-        <i>{sculpture.name} </i> 
-        by {sculpture.artist}
+        <i>«{sculpture.name}» </i> 
+        {sculpture.artist}
       </h2>
       <h3>  
-        ({index + 1} of {sculptureList.length})
+        ({index + 1} з {sculptureList.length})
       </h3>
       <button onClick={handleMoreClick}>
-        {showMore ? 'Hide' : 'Show'} details
+        {showMore ? 'Паказаць' : 'Схаваць'} падрабязную інфармацыю
       </button>
       {showMore && <p>{sculpture.description}</p>}
       <img 
@@ -1127,77 +1126,77 @@ export default function Gallery() {
 
 ```js src/data.js hidden
 export const sculptureList = [{
-  name: 'Homenaje a la Neurocirugía',
-  artist: 'Marta Colvin Andrade',
-  description: 'Although Colvin is predominantly known for abstract themes that allude to pre-Hispanic symbols, this gigantic sculpture, an homage to neurosurgery, is one of her most recognizable public art pieces.',
+  name: 'Даніна нейрахірургіі',
+  artist: 'Марта Колвін Андрадэ',
+  description: 'Хаця Колвін пераважна вядомая сваімі абстрактнымі тэмамі, якія спасылаюцца на да-іспанскія сімвалы, гэтая гіганцкая скульптура, даніна павагі нейрахірургіі, з\'яўляецца адным з яе самых вядомых твораў мастацтва.',
   url: 'https://i.imgur.com/Mx7dA2Y.jpg',
-  alt: 'A bronze statue of two crossed hands delicately holding a human brain in their fingertips.'  
+  alt: 'Бронзавая статуя дзвюх скрыжаваных рук, якія далікатна трымаюць чалавечы мозг на кончыках пальцаў.'  
 }, {
-  name: 'Floralis Genérica',
-  artist: 'Eduardo Catalano',
-  description: 'This enormous (75 ft. or 23m) silver flower is located in Buenos Aires. It is designed to move, closing its petals in the evening or when strong winds blow and opening them in the morning.',
+  name: 'Родавы Флораліс',
+  artist: 'Эдуарда Каталана',
+  description: 'Гэтая велізарная (75 футаў або 23 метры) серабрыстая кветка знаходзіцца ў Буэнас-Айрэсе. Яна спраектавана так, што можа закрываць пялёсткі ўвечары або пры моцным ветры і раскрываць іх раніцай.',
   url: 'https://i.imgur.com/ZF6s192m.jpg',
-  alt: 'A gigantic metallic flower sculpture with reflective mirror-like petals and strong stamens.'
+  alt: 'Гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі і моцнымі тычынкамі.'
 }, {
-  name: 'Eternal Presence',
-  artist: 'John Woodrow Wilson',
-  description: 'Wilson was known for his preoccupation with equality, social justice, as well as the essential and spiritual qualities of humankind. This massive (7ft. or 2,13m) bronze represents what he described as "a symbolic Black presence infused with a sense of universal humanity."',
+  name: 'Вечная прысутнасць',
+  artist: 'Джон Вудраў Уілсан',
+  description: 'Уілсан быў вядомы сваёй заклапочанасцю тэмамі роўнасці, сацыяльнай справядлівасці, а таксама істотнымі і духоўнымі якасцямі чалавецтва. Гэтая масіўная (7 футаў або 2,13 метра) бронзавая статуя ўяўляе тое, што ён назваў «сімвалічнай прысутнасцю чарнаскурых, прасякнутай пачуццём універсальнай чалавечнасці».',
   url: 'https://i.imgur.com/aTtVpES.jpg',
-  alt: 'The sculpture depicting a human head seems ever-present and solemn. It radiates calm and serenity.'
+  alt: 'Скульптура з выявай чалавечай галавы здаецца ўсюдыіснай і панурай. Яна выпраменьвае спакой і ціхамірнасць.'
 }, {
-  name: 'Moai',
-  artist: 'Unknown Artist',
-  description: 'Located on the Easter Island, there are 1,000 moai, or extant monumental statues, created by the early Rapa Nui people, which some believe represented deified ancestors.',
+  name: 'Мааі',
+  artist: 'Невядомы мастак',
+  description: 'На востраве Пасхі знаходзіцца 1000 мааі, або захаваных манументальных статуй, створаных раннім народам Рапа-Нуі, якія, на думку некаторых, прадстаўлялі абагаўлёных продкаў.',
   url: 'https://i.imgur.com/RCwLEoQm.jpg',
-  alt: 'Three monumental stone busts with the heads that are disproportionately large with somber faces.'
+  alt: 'Тры манументальныя каменныя бюсты з непрапарцыянальна вялікімі галовамі і змрочнымі тварамі.'
 }, {
-  name: 'Blue Nana',
-  artist: 'Niki de Saint Phalle',
-  description: 'The Nanas are triumphant creatures, symbols of femininity and maternity. Initially, Saint Phalle used fabric and found objects for the Nanas, and later on introduced polyester to achieve a more vibrant effect.',
+  name: 'Блакітная нана',
+  artist: 'Нікі дэ Сен-Фаль',
+  description: 'Наны — трыумфуючыя істоты, сімвалы жаноцкасці і мацярынства. Першапачаткова Сен-Фаль выкарыстаў тканіну і знайшоў прадметы для Нан, а пазней увёў поліэстэр для дасягнення больш яркага эфекту.',
   url: 'https://i.imgur.com/Sd1AgUOm.jpg',
-  alt: 'A large mosaic sculpture of a whimsical dancing female figure in a colorful costume emanating joy.'
+  alt: 'Вялікая мазаічная скульптура мудрагелістай танцуючай жаночай фігуры ў маляўнічым касцюме, якая выпраменьвае радасць.'
 }, {
-  name: 'Ultimate Form',
-  artist: 'Barbara Hepworth',
-  description: 'This abstract bronze sculpture is a part of The Family of Man series located at Yorkshire Sculpture Park. Hepworth chose not to create literal representations of the world but developed abstract forms inspired by people and landscapes.',
+  name: 'Канчатковая форма',
+  artist: 'Барбара Хепуарт',
+  description: 'Гэтая абстрактная бронзавая скульптура з\'яўляецца часткай серыі «Сям\'я чалавека», размешчанай у Ёркшырскім парку скульптур. Хепуарт вырашыла не ствараць літаральныя ўяўленні аб свеце, а распрацавала абстрактныя формы, натхнёныя людзьмі і ландшафтамі.',
   url: 'https://i.imgur.com/2heNQDcm.jpg',
-  alt: 'A tall sculpture made of three elements stacked on each other reminding of a human figure.'
+  alt: 'Высокая скульптура з трох пастаўленых адзін на аднаго элементаў, якія нагадваюць фігуру чалавека.'
 }, {
-  name: 'Cavaliere',
-  artist: 'Lamidi Olonade Fakeye',
-  description: "Descended from four generations of woodcarvers, Fakeye's work blended traditional and contemporary Yoruba themes.",
+  name: 'Кавалер',
+  artist: 'Ламідзі Аланадэ Фэйкі',
+  description: "Праца Фэйкі, які з'яўляецца разьбяром па дрэве ў чацвёртым пакаленні, змяшала традыцыйныя і сучасныя тэмы ёруба.",
   url: 'https://i.imgur.com/wIdGuZwm.png',
-  alt: 'An intricate wood sculpture of a warrior with a focused face on a horse adorned with patterns.'
+  alt: 'Складаная драўляная скульптура воіна са сканцэнтраваным тварам на кані, упрыгожаная ўзорамі.'
 }, {
-  name: 'Big Bellies',
-  artist: 'Alina Szapocznikow',
-  description: "Szapocznikow is known for her sculptures of the fragmented body as a metaphor for the fragility and impermanence of youth and beauty. This sculpture depicts two very realistic large bellies stacked on top of each other, each around five feet (1,5m) tall.",
+  name: 'Вялікі пузы',
+  artist: 'Аліна Шапачнікаў',
+  description: "Шапачнікаў вядомая сваімі скульптурамі фрагментаванага цела як метафарай крохкасці і нясталасці маладосці і прыгажосці. Гэтая скульптура адлюстроўвае два вельмі рэалістычныя вялікія жываты, пакладзеныя адзін на аднаго, кожны вышынёй каля пяці футаў (1,5 м).",
   url: 'https://i.imgur.com/AlHTAdDm.jpg',
-  alt: 'The sculpture reminds a cascade of folds, quite different from bellies in classical sculptures.'
+  alt: 'Скульптура нагадвае каскад зморшчын, зусім іншы, чым жываты ў класічных скульптурах.'
 }, {
-  name: 'Terracotta Army',
-  artist: 'Unknown Artist',
-  description: 'The Terracotta Army is a collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China. The army consisted of more than 8,000 soldiers, 130 chariots with 520 horses, and 150 cavalry horses.',
+  name: 'Тэракотовая армія',
+  artist: 'Невядомы мастак',
+  description: 'Тэракотавая армія — гэта калекцыя тэракотавых скульптур, якія адлюстроўваюць армію Цынь Шыхуан-дзі, першага імператара Кітая. Войска налічвала больш за 8 тысяч воінаў, 130 калясніц з 520 коньмі і 150 кавалерыйскіх коней.',
   url: 'https://i.imgur.com/HMFmH6m.jpg',
-  alt: '12 terracotta sculptures of solemn warriors, each with a unique facial expression and armor.'
+  alt: '12 тэракотавых скульптур урачыстых воінаў, кожная з унікальным выразам твару і даспехамі.'
 }, {
-  name: 'Lunar Landscape',
-  artist: 'Louise Nevelson',
-  description: 'Nevelson was known for scavenging objects from New York City debris, which she would later assemble into monumental constructions. In this one, she used disparate parts like a bedpost, juggling pin, and seat fragment, nailing and gluing them into boxes that reflect the influence of Cubism’s geometric abstraction of space and form.',
+  name: 'Месяцовы пейзаж',
+  artist: 'Луіза Нэвельсан',
+  description: 'Нэвельсан была вядомая тым, што ачышчала аб\'екты з руін Нью-Ёрка, якія пазней яна збярэ ў манументальныя канструкцыі. У гэтай статуі яна выкарыстала разрозненыя часткі, такія як ложак, шпільку для жангліравання і фрагмент сядзення, прыбіўшы і склеіўшы іх у скрынкі, якія адлюстроўваюць уплыў геаметрычнай абстракцыі прасторы і формы кубізму.',
   url: 'https://i.imgur.com/rN7hY6om.jpg',
-  alt: 'A black matte sculpture where the individual elements are initially indistinguishable.'
+  alt: 'Чорная матавая скульптура, дзе асобныя элементы першапачаткова неадрозныя.'
 }, {
-  name: 'Aureole',
-  artist: 'Ranjani Shettar',
-  description: 'Shettar merges the traditional and the modern, the natural and the industrial. Her art focuses on the relationship between man and nature. Her work was described as compelling both abstractly and figuratively, gravity defying, and a "fine synthesis of unlikely materials."',
+  name: 'Арэол',
+  artist: 'Ранджані Шэтар',
+  description: 'Шэтар спалучае традыцыйнае і сучаснае, натуральнае і індустрыяльнае. Яе мастацтва засяроджана на ўзаемаадносінах чалавека і прыроды. Яе праца была апісана як пераканаўчая як у абстрактным, так і ў вобразным сэнсе, якая кідае выклік гравітацыі і ўяўляе сабой «вытанчаны сінтэз малаверагодных матэрыялаў».',
   url: 'https://i.imgur.com/okTpbHhm.jpg',
-  alt: 'A pale wire-like sculpture mounted on concrete wall and descending on the floor. It appears light.'
+  alt: 'Бледная скульптура, падобная на дрот, усталяваная на бетоннай сцяне і спускаецца на падлогу. Здаецца вельмі лёгкай.'
 }, {
-  name: 'Hippos',
-  artist: 'Taipei Zoo',
-  description: 'The Taipei Zoo commissioned a Hippo Square featuring submerged hippos at play.',
+  name: 'Бегемоты',
+  artist: 'Тайбэйскі заапарк',
+  description: 'Заапарк Тайбэя заказаў плошчу бегемотаў, на якой гулялі пагружаныя ў ваду бегемоты.',
   url: 'https://i.imgur.com/6o5Vuyu.jpg',
-  alt: 'A group of bronze hippo sculptures emerging from the sett sidewalk as if they were swimming.'
+  alt: 'Група бронзавых скульптур бегемотаў, якія выходзяць з тратуара, нібы яны плывуць.'
 }];
 ```
 
@@ -1219,13 +1218,13 @@ img { width: 120px; height: 120px; }
 
 </Sandpack>
 
-Notice how `hasPrev` and `hasNext` are used *both* for the returned JSX and inside the event handlers! This handy pattern works because event handler functions ["close over"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) any variables declared while rendering.
+Звярніце ўвагу, як функцыі `hasPrev` і `hasNext` выкарыстоўваюцца *адначасова* і ў JSX і ўнутры апрацоўшчыка падзей! Гэты зручны шаблон працуе, таму што функцыі апрацоўшчыкаў падзей [«замыкаюць»](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) любыя пераменныя, аб'яўленыя падчас рэндэру.
 
 </Solution>
 
-#### Fix stuck form inputs {/*fix-stuck-form-inputs*/}
+#### Выправіце палі ўводу, якія захраслі {/*fix-stuck-form-inputs*/}
 
-When you type into the input fields, nothing appears. It's like the input values are "stuck" with empty strings. The `value` of the first `<input>` is set to always match the `firstName` variable, and the `value` for the second `<input>` is set to always match the `lastName` variable. This is correct. Both inputs have `onChange` event handlers, which try to update the variables based on the latest user input (`e.target.value`). However, the variables don't seem to "remember" their values between re-renders. Fix this by using state variables instead.
+Калі вы ўводзіце ў палі ўводу, нічога не з'яўляецца. Падобна на тое, што значэнні ўводу «захраслі» з пустымі радкамі. `value` першага `<input>` зададзена так, каб заўсёды супадаць з пераменнай `firstName`, а `value` другога `<input>` зададзена так, каб заўсёды супадаць з пераменнай `lastName`. Гэта правільна. Абодва ўводы маюць апрацоўшчыкі падзей `onChange`, якія спрабуюць абнавіць пераменныя на аснове апошняга ўводу карыстальніка (`e.target.value`). Аднак здаецца, што пераменныя не «запамінаюць» свае значэнні паміж паўторнымі рэндэрамі. Выправіце гэта, выкарыстоўваючы пераменныя стану.
 
 <Sandpack>
 
@@ -1250,17 +1249,17 @@ export default function Form() {
   return (
     <form onSubmit={e => e.preventDefault()}>
       <input
-        placeholder="First name"
+        placeholder="Імя"
         value={firstName}
         onChange={handleFirstNameChange}
       />
       <input
-        placeholder="Last name"
+        placeholder="Прозвішча"
         value={lastName}
         onChange={handleLastNameChange}
       />
-      <h1>Hi, {firstName} {lastName}</h1>
-      <button onClick={handleReset}>Reset</button>
+      <h1>Вітаем, {firstName} {lastName}</h1>
+      <button onClick={handleReset}>Скінуць</button>
     </form>
   );
 }
@@ -1274,7 +1273,7 @@ h1 { margin-top: 10px; }
 
 <Solution>
 
-First, import `useState` from React. Then replace `firstName` and `lastName` with state variables declared by calling `useState`. Finally, replace every `firstName = ...` assignment with `setFirstName(...)`, and do the same for `lastName`. Don't forget to update `handleReset` too so that the reset button works.
+Спачатку імпартуйце `useState` з React. Затым заменіце `firstName` і `lastName` пераменнымі стану, аб'яўленымі праз выклік `useState`. Нарэшце, заменіце кожнае прызначэнне `firstName = ...` на `setFirstName(...)` і зрабіце тое ж самае для `lastName`. Не забудзьце таксама абнавіць функцыю `handleReset`, каб кнопка скіду таксама працавала.
 
 <Sandpack>
 
@@ -1301,17 +1300,17 @@ export default function Form() {
   return (
     <form onSubmit={e => e.preventDefault()}>
       <input
-        placeholder="First name"
+        placeholder="Імя"
         value={firstName}
         onChange={handleFirstNameChange}
       />
       <input
-        placeholder="Last name"
+        placeholder="Прозвішча"
         value={lastName}
         onChange={handleLastNameChange}
       />
-      <h1>Hi, {firstName} {lastName}</h1>
-      <button onClick={handleReset}>Reset</button>
+      <h1>Вітаю, {firstName} {lastName}</h1>
+      <button onClick={handleReset}>Скінуць</button>
     </form>
   );
 }
@@ -1325,13 +1324,13 @@ h1 { margin-top: 10px; }
 
 </Solution>
 
-#### Fix a crash {/*fix-a-crash*/}
+#### Выправіце збой {/*fix-a-crash*/}
 
-Here is a small form that is supposed to let the user leave some feedback. When the feedback is submitted, it's supposed to display a thank-you message. However, it crashes with an error message saying "Rendered fewer hooks than expected". Can you spot the mistake and fix it?
+Вось невялікая форма, якая павінна дазволіць карыстальніку пакінуць водгук. Калі водгук адпраўлены, павінна з'явіцца паведамленне з падзякай. Аднак, яна дае збой з паведамленнем пра памылку, якая кажа «Адрэндэрана менш хукаў, чым чакалася». Ці можаце выявіць памылку і выправіць яе?
 
 <Hint>
 
-Are there any limitations on _where_ Hooks may be called? Does this component break any rules? Check if there are any comments disabling the linter checks--this is where the bugs often hide!
+Ці існуюць нейкія абмежаванні на тое, _дзе_ могуць быць выкліканыя хукі? Ці парушае гэты кампанент якія-небудзь правілы? Праверце, ці ёсць якія-небудзь каментарыі, якія адключаюць праверку лінтара — у такіх месцах часта хаваюцца памылкі!
 
 </Hint>
 
@@ -1343,23 +1342,23 @@ import { useState } from 'react';
 export default function FeedbackForm() {
   const [isSent, setIsSent] = useState(false);
   if (isSent) {
-    return <h1>Thank you!</h1>;
+    return <h1>Дзякуй!</h1>;
   } else {
     // eslint-disable-next-line
     const [message, setMessage] = useState('');
     return (
       <form onSubmit={e => {
         e.preventDefault();
-        alert(`Sending: "${message}"`);
+        alert(`Адпраўка: "${message}"`);
         setIsSent(true);
       }}>
         <textarea
-          placeholder="Message"
+          placeholder="Паведамленне"
           value={message}
           onChange={e => setMessage(e.target.value)}
         />
         <br />
-        <button type="submit">Send</button>
+        <button type="submit">Адправіць</button>
       </form>
     );
   }
@@ -1370,9 +1369,9 @@ export default function FeedbackForm() {
 
 <Solution>
 
-Hooks can only be called at the top level of the component function. Here, the first `isSent` definition follows this rule, but the `message` definition is nested in a condition.
+Хукі можна выклікаць толькі на верхнім узроўні функцыі кампанента. Тут жа, першае вызначэнне `isSent` прытрымліваецца гэтага правіла, але вызначэнне `message` — укладзена ва ўмову.
 
-Move it out of the condition to fix the issue:
+Перамясціце яго з умовы, каб выправіць праблему:
 
 <Sandpack>
 
@@ -1389,16 +1388,16 @@ export default function FeedbackForm() {
     return (
       <form onSubmit={e => {
         e.preventDefault();
-        alert(`Sending: "${message}"`);
+        alert(`Адпраўка: "${message}"`);
         setIsSent(true);
       }}>
         <textarea
-          placeholder="Message"
+          placeholder="Паведамленне"
           value={message}
           onChange={e => setMessage(e.target.value)}
         />
         <br />
-        <button type="submit">Send</button>
+        <button type="submit">Адправіць</button>
       </form>
     );
   }
@@ -1407,9 +1406,9 @@ export default function FeedbackForm() {
 
 </Sandpack>
 
-Remember, Hooks must be called unconditionally and always in the same order!
+Памятайце, хукі павінны выклікацца безумоўна і заўсёды ў адным і тым жа парадку!
 
-You could also remove the unnecessary `else` branch to reduce the nesting. However, it's still important that all calls to Hooks happen *before* the first `return`.
+Таксама вы можаце выдаліць непатрэбную галіну `else`, каб паменшыць укладзенасць. Тым не меней, па-ранейшаму важна, каб усе выклікі хукаў адбываліся *да* першага `return`.
 
 <Sandpack>
 
@@ -1421,22 +1420,22 @@ export default function FeedbackForm() {
   const [message, setMessage] = useState('');
 
   if (isSent) {
-    return <h1>Thank you!</h1>;
+    return <h1>Дзякуй!</h1>;
   }
 
   return (
     <form onSubmit={e => {
       e.preventDefault();
-      alert(`Sending: "${message}"`);
+      alert(`Адпраўка: "${message}"`);
       setIsSent(true);
     }}>
       <textarea
-        placeholder="Message"
+        placeholder="Паведамленне"
         value={message}
         onChange={e => setMessage(e.target.value)}
       />
       <br />
-      <button type="submit">Send</button>
+      <button type="submit">Адправіць</button>
     </form>
   );
 }
@@ -1444,19 +1443,19 @@ export default function FeedbackForm() {
 
 </Sandpack>
 
-Try moving the second `useState` call after the `if` condition and notice how this breaks it again.
+Паспрабуйце паставіць другі выклік `useState` пасля ўмовы `if` і звярніце ўвагу, як гэта зноў зламала код.
 
-If your linter is [configured for React](/learn/editor-setup#linting), you should see a lint error when you make a mistake like this. If you don't see an error when you try the faulty code locally, you need to set up linting for your project. 
+Калі ваш лінтар [сканфігураваны для React](/learn/editor-setup#linting), то вы павінны ўбачыць паведамленне ад лінтара, калі робіце падобную памылку. Калі вы не бачыце памылкі пры тэсціраванні няправільнага кода лакальна, вам трэба наладзіць лінтаванне для вашага праекта.
 
 </Solution>
 
-#### Remove unnecessary state {/*remove-unnecessary-state*/}
+#### Выдаліце непатрэбны стан {/*remove-unnecessary-state*/}
 
-When the button is clicked, this example should ask for the user's name and then display an alert greeting them. You tried to use state to keep the name, but for some reason it always shows "Hello, !".
+Пры націсканні на кнопку праграма павінна запытаць імя карыстальніка, а затым адлюстроўваць прывітанне. Вы спрабавалі выкарыстоўваць стан, каб захаваць імя, але па нейкай прычыне заўсёды паказваецца «Вітаю, !».
 
-To fix this code, remove the unnecessary state variable. (We will discuss about [why this didn't work](/learn/state-as-a-snapshot) later.)
+Каб выправіць гэты код, выдаліце непатрэбную пераменную стану. (Мы абмяркуем [чаму гэта не спрацавала](/learn/state-as-a-snapshot) пазней.)
 
-Can you explain why this state variable was unnecessary?
+Ці можаце растлумачыць, чаму гэтая пераменная стану была не патрэбна?
 
 <Sandpack>
 
@@ -1467,13 +1466,13 @@ export default function FeedbackForm() {
   const [name, setName] = useState('');
 
   function handleClick() {
-    setName(prompt('What is your name?'));
-    alert(`Hello, ${name}!`);
+    setName(prompt('Як вас завуць?'));
+    alert(`Вітаю, ${name}!`);
   }
 
   return (
     <button onClick={handleClick}>
-      Greet
+      Вітаць
     </button>
   );
 }
@@ -1483,20 +1482,20 @@ export default function FeedbackForm() {
 
 <Solution>
 
-Here is a fixed version that uses a regular `name` variable declared in the function that needs it:
+Вось выпраўленая версія, якая выкарыстоўвае звычайную пераменную `name`, абвешчаную ў функцыі, якой яна патрэбна:
 
 <Sandpack>
 
 ```js
 export default function FeedbackForm() {
   function handleClick() {
-    const name = prompt('What is your name?');
-    alert(`Hello, ${name}!`);
+    const name = prompt('Як вас завуць?');
+    alert(`Вітаю, ${name}!`);
   }
 
   return (
     <button onClick={handleClick}>
-      Greet
+      Вітаць
     </button>
   );
 }
@@ -1504,7 +1503,7 @@ export default function FeedbackForm() {
 
 </Sandpack>
 
-A state variable is only necessary to keep information between re-renders of a component. Within a single event handler, a regular variable will do fine. Don't introduce state variables when a regular variable works well.
+Пераменная стану неабходная толькі для захавання інфармацыі паміж паўторнымі рэндэрамі кампанента. У рамках аднаго апрацоўшчыка падзей добра падыдзе звычайная пераменная. Не ўводзьце пераменныя стану, калі дастаткова звычайная пераменнай.
 
 </Solution>
 

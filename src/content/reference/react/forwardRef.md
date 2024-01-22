@@ -42,12 +42,7 @@ const MyInput = forwardRef(function MyInput(props, ref) {
 
 #### Перасцярогі {/*caveats*/}
 
-<<<<<<< HEAD
 * У Строгім рэжыме, React будзе **выклікаць функцыю рэндэрынгу двойчы** каб [дапамагчы выявіць магчымыя пабочныя эфекты](/reference/react/useState#my-initializer-or-updater-function-runs-twice). Такія паводзіны адбываюцца толькі ў асяроддзі для распрацоўкі і ніяк не ўплываюць на працоўнае. Калі функцыя вашага кампанента чыстая (якой яна мае быць), гэта не павінна ўплываць на логіку кампанента. Вынік аднаго з выклікаў будзе праігнараваны.
-=======
-* In Strict Mode, React will **call your render function twice** in order to [help you find accidental impurities.](/reference/react/useState#my-initializer-or-updater-function-runs-twice) This is development-only behavior and does not affect production. If your render function is pure (as it should be), this should not affect the logic of your component. The result from one of the calls will be ignored.
->>>>>>> 3563d95efe8719bdae8bbd258e6ab4134753348b
-
 
 ---
 

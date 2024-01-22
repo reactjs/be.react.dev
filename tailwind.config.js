@@ -60,6 +60,10 @@ module.exports = {
         ...defaultTheme.maxWidth,
         'custom-xs': '21rem',
       },
+      minWidth:{
+        ...defaultTheme.minWidth,
+        80: '20rem',
+      },
       outline: {
         blue: ['1px auto ' + colors.link, '3px'],
       },

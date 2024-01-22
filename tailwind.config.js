@@ -58,7 +58,7 @@ module.exports = {
       },
       maxWidth: {
         ...defaultTheme.maxWidth,
-        xs: '21rem',
+        'custom-xs': '21rem',
       },
       minWidth:{
         ...defaultTheme.minWidth,

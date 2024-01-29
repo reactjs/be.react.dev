@@ -497,7 +497,7 @@ function SearchBar({
       <input
         type="text"
         value={filterText}
-        placeholder="Search..."
+        placeholder="Шукаць..."
         onChange={(e) => onFilterTextChange(e.target.value)}
       />
       <label>

@@ -485,12 +485,26 @@ function FilterableProductTable({ products }) {
 
 Унутры `SearchBar` дадайце апрацоўшчыкі падзей `onChange` і з іх дапамогай задайце значэнні станаў у бацькавым кампаненце:
 
-```js {5}
-<input 
-  type="text" 
-  value={filterText} 
-  placeholder="Шукаць..." 
-  onChange={(e) => onFilterTextChange(e.target.value)} />
+```js {4,5,13,19}
+function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange
+}) {
+  return (
+    <form>
+      <input
+        type="text"
+        value={filterText}
+        placeholder="Шукаць..."
+        onChange={(e) => onFilterTextChange(e.target.value)}
+      />
+      <label>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => onInStockOnlyChange(e.target.checked)}
 ```
 
 Цяпер праграма цалкам працуе!

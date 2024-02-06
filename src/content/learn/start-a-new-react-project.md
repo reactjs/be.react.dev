@@ -4,52 +4,41 @@ title: Пачаць новы React праект
 
 <Intro>
 
-<<<<<<< HEAD
-Калі вы хочаце стварыць новую праграму або новы вэб-сайт цалкам на React, мы рэкамендуем выбраць адзін з фрэймворкаў на базе React, папулярных у супольнасці. Фрэймворкі забяспечваюць функцыі, якія патрэбны большасці праграм і сайтаў, уключаючы маршрутызацыю, выбарку даных і генерацыю HTML.
-=======
-If you want to build a new app or a new website fully with React, we recommend picking one of the React-powered frameworks popular in the community.
->>>>>>> 2372ecf920ac4cda7c900f9ac7f9c0cd4284f281
+Калі вы хочаце стварыць новую праграму або новы вэб-сайт цалкам на React, мы рэкамендуем выбраць адзін з фрэймворкаў на базе React, папулярных у супольнасці.
 
 </Intro>
 
 
-<<<<<<< HEAD
-**Вам трэба ўсталяваць [Node.js](https://nodejs.org/en/) для лакальнага разгортвання.** Вы можаце *таксама* выкарыстоўваць Node.js у вытворчасці, але гэта неабавязкова. Многія React фрэймворкі падтрымліваюць экспарт у статычны HTML/CSS/JS.
-=======
-You can use React without a framework, however we’ve found that most apps and sites eventually build solutions to common problems such as code-splitting, routing, data fetching, and generating HTML. These problems are common to all UI libraries, not just React.
->>>>>>> 2372ecf920ac4cda7c900f9ac7f9c0cd4284f281
+Вы можаце выкарыстоўваць React без фрэймворка, аднак большасць праграм і сайтаў у канчатковым выніку ствараюць рашэнні для агульных праблем, такіх як раздзяленне кода, маршрутызацыя, выбарка даных і генерацыя HTML. Гэтыя праблемы характэрныя для ўсіх UI бібліятэк, а не толькі для React.
 
-By starting with a framework, you can get started with React quickly, and avoid essentially building your own framework later.
+Калі вы пачнеце з фрэймворка, то зможаце хутка пачаць працу з React і пазбегнуць стварэння ўласнага фрэймворка пазней.
 
 <DeepDive>
 
-#### Can I use React without a framework? {/*can-i-use-react-without-a-framework*/}
+#### Ці можна выкарыстоўваць React без фрэймворка? {/*can-i-use-react-without-a-framework*/}
 
-You can definitely use React without a framework--that's how you'd [use React for a part of your page.](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) **However, if you're building a new app or a site fully with React, we recommend using a framework.**
+React дакладна можна выкарыстоўваць без фрэймворка. Напрыклад, вы можаце [выкарыстоўваць React толькі для пэўнай часткі старонкі.](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) **Аднак, калі вы ствараеце новую праграму або сайт цалкам з React, мы рэкамендуем выкарыстоўваць фрэймворк.**
 
-Here's why.
+Вось чаму:
 
-Even if you don't need routing or data fetching at first, you'll likely want to add some libraries for them. As your JavaScript bundle grows with every new feature, you might have to figure out how to split code for every route individually. As your data fetching needs get more complex, you are likely to encounter server-client network waterfalls that make your app feel very slow. As your audience includes more users with poor network conditions and low-end devices, you might need to generate HTML from your components to display content early--either on the server, or during the build time. Changing your setup to run some of your code on the server or during the build can be very tricky.
+Нават калі спачатку вам не патрэбна маршрутызацыя або атрыманне даных, вы, верагодна, захочаце пазней дадаць некаторыя бібліятэкі для гэтага. С кожнай новай функцыяй памер вашага JavaScript кода будзе расці і вам давядзецца задумацца аб тым, як падзяляць код для розных маршрутаў. Па меры таго, як ваша праграма будзе атрымліваць усё больш даных, вы можаце сутыкнуцца з каскаднымі запытамі, якія запаволяць вашу праграму. Сярод вашых карыстальнікаў з'явяцца тыя, хто карыстаецца нізкахуткасным інтэрнэтам або старымі прыладамі, і вы захочаце генерыраваць HTML на серверы або падчас зборкі. Змяніць налады вялікага праекту так, каб запускаць код на серверы або падчас зборкі, можа аказацца складанай задачай.
 
-**These problems are not React-specific. This is why Svelte has SvelteKit, Vue has Nuxt, and so on.** To solve these problems on your own, you'll need to integrate your bundler with your router and with your data fetching library. It's not hard to get an initial setup working, but there are a lot of subtleties involved in making an app that loads quickly even as it grows over time. You'll want to send down the minimal amount of app code but do so in a single client–server roundtrip, in parallel with any data required for the page. You'll likely want the page to be interactive before your JavaScript code even runs, to support progressive enhancement. You may want to generate a folder of fully static HTML files for your marketing pages that can be hosted anywhere and still work with JavaScript disabled. Building these capabilities yourself takes real work.
+**Гэтыя праблемы не з'яўляюцца спецыфічнымі для React. Вось чаму ў Svelte ёсць SvelteKit, у Vue ёсць Nuxt і гэтак далей.** Каб іх вырашыць, вам давядзецца інтэграваць ваш зборшчык з абранымі бібліятэкамі для маршрутызацыі і атрымання даных. Зрабіць першасную наладу і прымусіць усё гэта працаваць разам можа аказацца не так складана, але існуе шмат падводных камянёў аб якіх вам прыйдзецца даведацца, каб падтрымліваць прадукцыйнасць праграмы па меры яе росту. Вы захочаце адпраўляць як мага менш кода, але зрабіць гэта за адзін раўнд запытаў паміж кліентам і серверам, пры гэтым паралельна атрымліваючы неабходныя для старонкі даныя. Верагодна, вы захочаце, каб са старонка можна было працаваць яшчэ да запуску JavaScript кода, каб падтрымліваць прагрэсіўнае паляпшэнне. Магчыма, вам спатрэбіцца дадаць папку статычных HTML файлаў для маркетынгавых старонак, якія могуць працаваць з адключаным на старонцы Javascript. Самастойнае стварэнне і падтрымка ўсіх гэтых магчымасцей патрабуе вельмі вялікай і сур'ёзнай працы.
 
-**React frameworks on this page solve problems like these by default, with no extra work from your side.** They let you start very lean and then scale your app with your needs. Each React framework has a community, so finding answers to questions and upgrading tooling is easier. Frameworks also give structure to your code, helping you and others retain context and skills between different projects. Conversely, with a custom setup it's easier to get stuck on unsupported dependency versions, and you'll essentially end up creating your own framework—albeit one with no community or upgrade path (and if it's anything like the ones we've made in the past, more haphazardly designed).
+**React фреймворкі на гэтай старонцы вырашаюць усе гэтыя праблемы і не патрабуюць ад вас дадатковых намаганняў.** Вы можаце пачаць з малога і дадаваць неабходную функцыянальнасць па меры неабходнасці. Кожны React фрэймворк мае суполку, таму знаходзіць адказы на пытанні і абнаўляць інструменты з іх дапамогай прасцей. Акрамя таго, фрэймворкі дапамагаюць структураваць ваш код і робяць яго зразумелым для іншых распрацоўшчыкаў. Правільна і адваротнае, зрабіўшы ўласнае рашэнне, ёсць рызыка захраснуць на версіі залежнасці, якая ўжо не падтрымліваецца і ў выніку стварыць свой уласны фрэймворк без суполкі і развіцця (і, хутчэй за ўсё, ён акажацца спраектаваны горш за ўжо існуючыя рашэнні ад каманд, якія прысвяцілі гэтым праблемам вялікую колькасць часу).
 
-If your app has unusual constraints not served well by these frameworks, or you prefer to solve these problems yourself, you can roll your own custom setup with React. Grab `react` and `react-dom` from npm, set up your custom build process with a bundler like [Vite](https://vitejs.dev/) or [Parcel](https://parceljs.org/), and add other tools as you need them for routing, static generation or server-side rendering, and more.
+Калі мы вас яшчэ не пераканалі або фрэймворкі не рашаюць тую праблему, якая паўстала перад вашай праграмай і вы хочаце стварыць свой уласны фрэймворк - дзейнічайце! Усталюйце `react` і `react-dom` з npm, наладзьце свой уласны працэс зборкі з дапамогай зборшчыка, напрыклад [Vite](https://vitejs.dev/) або [Parcel](https://parceljs.org/), і па меры неабходнасці дадайце ўсе неабходныя інструменты для маршрутызацыі, статычнай генерацыі кода, сервернага рэндэрынгу і гэтак далей.
 
 </DeepDive>
+
 
 ## React фрэймворкі, гатовыя для выкарыстання ў працоўным асяроддзі {/*production-grade-react-frameworks*/}
 
 These frameworks support all the features you need to deploy and scale your app in production and are working towards supporting our [full-stack architecture vision](#which-features-make-up-the-react-teams-full-stack-architecture-vision). All of the frameworks we recommend are open source with active communities for support, and can be deployed to your own server or a hosting provider. If you’re a framework author interested in being included on this list, [please let us know](https://github.com/reactjs/react.dev/issues/new?assignees=&labels=type%3A+framework&projects=&template=3-framework.yml&title=%5BFramework%5D%3A+).
 
-<<<<<<< HEAD
-**[Next.js](https://nextjs.org/) — гэта ўніверсальны фулстэк React фрэймворк.** З яго дапамогай вы можаце ствараць сайты любога памеру ад простага статычнага блога да складанага дынамічнага сайта. Каб стварыць новы Next.js праект, запусціце ў вашым тэрмінале:
-=======
 ### Next.js {/*nextjs-pages-router*/}
 
-**[Next.js' Pages Router](https://nextjs.org/) is a full-stack React framework.** It's versatile and lets you create React apps of any size--from a mostly static blog to a complex dynamic application. To create a new Next.js project, run in your terminal:
->>>>>>> 2372ecf920ac4cda7c900f9ac7f9c0cd4284f281
+**[Next.js Pages Router](https://nextjs.org/) — гэта ўніверсальны фулстэк React фрэймворк.** З яго дапамогай вы можаце ствараць сайты любога памеру ад простага статычнага блога да складанага дынамічнага сайта. Каб стварыць новы Next.js праект, запусціце ў вашым тэрмінале:
 
 <TerminalBlock>
 npx create-next-app@latest
@@ -95,28 +84,7 @@ npx create-expo-app
 
 Expo падтрымліваецца [Expo (кампанія)](https://expo.dev/about). Вы можаце бясплатна ствараць праграмы з дапамогай Expo і дадаваць іх у крамы Google і Apple без абмежаванняў. Дадаткова Expo прапануе платныя воблачныя паслугі.
 
-<<<<<<< HEAD
-<DeepDive>
-
-#### Ці можна выкарыстоўваць React без фрэймворка? {/*can-i-use-react-without-a-framework*/}
-
-React дакладна можна выкарыстоўваць без фрэймворка. Напрыклад, вы можаце [выкарыстоўваць React толькі для пэўнай часткі старонкі.](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) **Аднак, калі вы ствараеце новую праграму або сайт цалкам з React, мы рэкамендуем выкарыстоўваць фрэймворк.**
-
-Вось чаму:
-
-Нават калі спачатку вам не патрэбна маршрутызацыя або атрыманне даных, вы, верагодна, захочаце пазней дадаць некаторыя бібліятэкі для гэтага. С кожнай новай функцыяй памер вашага JavaScript кода будзе расці і вам давядзецца задумацца аб тым, як падзяляць код для розных маршрутаў. Па меры таго, як ваша праграма будзе атрымліваць усё больш даных, вы можаце сутыкнуцца з каскаднымі запытамі, якія запаволяць вашу праграму. Сярод вашых карыстальнікаў з'явяцца тыя, хто карыстаецца нізкахуткасным інтэрнэтам або старымі прыладамі, і вы захочаце генерыраваць HTML на серверы або падчас зборкі. Змяніць налады вялікага праекту так, каб запускаць код на серверы або падчас зборкі, можа аказацца складанай задачай.
-
-**Гэтыя праблемы не з'яўляюцца спецыфічнымі для React. Вось чаму ў Svelte ёсць SvelteKit, у Vue ёсць Nuxt і гэтак далей.** Каб іх вырашыць, вам давядзецца інтэграваць ваш зборшчык з абранымі бібліятэкамі для маршрутызацыі і атрымання даных. Зрабіць першасную наладу і прымусіць усё гэта працаваць разам можа аказацца не так складана, але існуе шмат падводных камянёў аб якіх вам прыйдзецца даведацца, каб падтрымліваць прадукцыйнасць праграмы па меры яе росту. Вы захочаце адпраўляць як мага менш кода, але зрабіць гэта за адзін раўнд запытаў паміж кліентам і серверам, пры гэтым паралельна атрымліваючы неабходныя для старонкі даныя. Верагодна, вы захочаце, каб са старонка можна было працаваць яшчэ да запуску JavaScript кода, каб падтрымліваць прагрэсіўнае паляпшэнне. Магчыма, вам спатрэбіцца дадаць папку статычных HTML файлаў для маркетынгавых старонак, якія могуць працаваць з адключаным на старонцы Javascript. Самастойнае стварэнне і падтрымка ўсіх гэтых магчымасцей патрабуе вельмі вялікай і сур'ёзнай працы.
-
-**React фреймворкі на гэтай старонцы вырашаюць усе гэтыя праблемы і не патрабуюць ад вас дадатковых намаганняў.** Вы можаце пачаць з малога і дадаваць неабходную функцыянальнасць па меры неабходнасці. Кожны React фрэймворк мае суполку, таму знаходзіць адказы на пытанні і абнаўляць інструменты з іх дапамогай прасцей. Акрамя таго, фрэймворкі дапамагаюць структураваць ваш код і робяць яго зразумелым для іншых распрацоўшчыкаў. Правільна і адваротнае, зрабіўшы ўласнае рашэнне, ёсць рызыка захраснуць на версіі залежнасці, якая ўжо не падтрымліваецца і ў выніку стварыць свой уласны фрэймворк без суполкі і развіцця (і, хутчэй за ўсё, ён акажацца спраектаваны горш за ўжо існуючыя рашэнні ад каманд, якія прысвяцілі гэтым праблемам вялікую колькасць часу).
-
-Калі мы вас яшчэ не пераканалі або фрэймворкі не рашаюць тую праблему, якая паўстала перад вашай праграмай і вы хочаце стварыць свой уласны фрэймворк - дзейнічайце! Усталюйце `react` і `react-dom` з npm, наладзьце свой уласны працэс зборкі з дапамогай зборшчыка, напрыклад [Vite](https://vitejs.dev/) або [Parcel](https://parceljs.org/), і па меры неабходнасці дадайце ўсе неабходныя інструменты для маршрутызацыі, статычнай генерацыі кода, сервернага рэндэрынгу і гэтак далей.
-</DeepDive>
-
 ## Перадавыя React фрэймворкі {/*bleeding-edge-react-frameworks*/}
-=======
-## Bleeding-edge React frameworks {/*bleeding-edge-react-frameworks*/}
->>>>>>> 2372ecf920ac4cda7c900f9ac7f9c0cd4284f281
 
 Па меры таго як мы развівалі React, мы зразумелі, што лепшая інтэграцыя з фрэймворкамі (асабліва ў пытаннях маршрутызацыі, зборкі і серверных тэхналогій) прынясе найбольшую карысць нашым карыстальнікам. Каманда Next.js пагадзілася ўзаемадзейнічаць з намі ў пошуку, распрацоўцы, інтэграцыі і тэсціраванні перадавых падыходаў, якія не залежаць ад канкрэтнага фрэймворка, напрыклад [серверныя кампаненты React.](/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components)
 

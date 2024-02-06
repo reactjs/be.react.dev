@@ -34,7 +34,7 @@ React дакладна можна выкарыстоўваць без фрэйм
 
 ## React фрэймворкі, гатовыя для выкарыстання ў працоўным асяроддзі {/*production-grade-react-frameworks*/}
 
-These frameworks support all the features you need to deploy and scale your app in production and are working towards supporting our [full-stack architecture vision](#which-features-make-up-the-react-teams-full-stack-architecture-vision). All of the frameworks we recommend are open source with active communities for support, and can be deployed to your own server or a hosting provider. If you’re a framework author interested in being included on this list, [please let us know](https://github.com/reactjs/react.dev/issues/new?assignees=&labels=type%3A+framework&projects=&template=3-framework.yml&title=%5BFramework%5D%3A+).
+Гэтыя фрэймворкі падтрымліваюць усе функцыі, неабходныя для разгортвання і маштабіравання вашай праграмы ў працоўным асяроддзі, а таксама працуюць над падтрымкай нашага [бачання фулстэк архітэктуры](#which-features-make-up-the-react-teams-full-stack-architecture-vision). Усе фрэймворкі, якія мы рэкамендуем, маюць адкрыты зыходны код з актыўнымі суполкамі для падтрымкі і могуць быць разгорнуты на вашым уласным серверы або хостынгу правайдара. Калі вы аўтар фрэймворка і хочаце, каб ваш фрэймворк ўключылі ў гэты спіс, [то паведаміце нам](https://github.com/reactjs/react.dev/issues/new?assignees=&labels=type%3A+framework&projects=&template=3-framework.yml&title=%5BFramework%5D%3A+).
 
 ### Next.js {/*nextjs-pages-router*/}
 

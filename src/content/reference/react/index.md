@@ -8,11 +8,7 @@ title: Агляд даведкі па React
 
 </Intro>
 
-<<<<<<< HEAD
-Наша даведачная дакументацыя па React разбіта на функцыянальныя падраздзелы:
-=======
-The React reference documentation is broken down into functional subsections:
->>>>>>> bb3a0f5c10aaeba6e6fb35f31f36b47812ece158
+Даведачная дакументацыя па React разбіта на функцыянальныя падраздзелы:
 
 ## React {/*react*/}
 

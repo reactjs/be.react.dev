@@ -22,7 +22,7 @@ TypeScript — папулярны спосаб дадаць тыпізацыю �
 
 Усе [React фрэймворкі, гатовыя для выкарыстання ў працоўным асяроддзі](/learn/start-a-new-react-project#production-grade-react-frameworks) прапануюць падтрымку TypeScript. Для кожнага фрэймворка трымайцеся ягоных уласных інструкцый:
 
-- [Next.js](https://nextjs.org/docs/pages/building-your-application/configuring/typescript)
+- [Next.js](https://nextjs.org/docs/app/building-your-application/configuring/typescript)
 - [Remix](https://remix.run/docs/en/1.19.2/guides/typescript)
 - [Gatsby](https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/)
 - [Expo](https://docs.expo.dev/guides/typescript/)

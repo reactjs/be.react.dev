@@ -29,18 +29,14 @@ React-dom змяшчае функцыі, якія падтрымліваюцца
 * [Кліенцкія API](/reference/react-dom/client) - API з пакета `react-dom/client` дазваляюць рэндэрыць кампаненты React на кліенце (у браўзеры).
 * [Серверныя API](/reference/react-dom/server) - API з пакета `react-dom/server` дазваляюць рэндэрыць кампаненты React у HTML на серверы.
 
-<<<<<<< HEAD
+## Правілы React {/*rules-of-react*/}
+
+У React ёсць ідыёмы (або правілы) для выражэння патэрнаў такім чынам, каб іх было лёгка зразумець і атрымаць якасныя праграмы:
+
+* [Кампаненты і хукі павінны быць чыстымі](/reference/rules/components-and-hooks-must-be-pure) — Чысціня спрашчае разуменне і адладку вашага кода і дазваляе React аўтаматычна і правільна аптымізаваць вашыя кампаненты і хукі.
+* [React выклікае кампаненты і хукі](/reference/rules/react-calls-components-and-hooks) – React адказвае за рэндэрынг кампанентаў і хукаў, калі гэта неабходна для аптымізацыі карыстальніцкага вопыту.
+* [Правілы хукаў](/reference/rules/rules-of-hooks) – Хукі вызначаюцца з дапамогай JavaScript функцый, але яны ўяўляюць сабой адмысловы тып UI логікі прыдатнай да паўторнага выкарыстання з абмежаваннямі на тое, дзе яны могуць быць выкліканыя.
+
 ## Устарэлыя API {/*legacy-apis*/}
-=======
-## Rules of React {/*rules-of-react*/}
-
-React has idioms — or rules — for how to express patterns in a way that is easy to understand and yields high-quality applications:
-
-* [Components and Hooks must be pure](/reference/rules/components-and-hooks-must-be-pure) – Purity makes your code easier to understand, debug, and allows React to automatically optimize your components and hooks correctly.
-* [React calls Components and Hooks](/reference/rules/react-calls-components-and-hooks) – React is responsible for rendering components and hooks when necessary to optimize the user experience.
-* [Rules of Hooks](/reference/rules/rules-of-hooks) – Hooks are defined using JavaScript functions, but they represent a special type of reusable UI logic with restrictions on where they can be called.
-
-## Legacy APIs {/*legacy-apis*/}
->>>>>>> f55d9487c6648570fc80f1421d7dca0a3b9b94b6
 
 * [Устарэлыя API](/reference/react/legacy) - API экспартаваныя з пакета React, але не рэкамендуюцца для выкарыстання ў нядаўна напісаным кодзе.

@@ -437,7 +437,7 @@ interface ModalRendererProps {
 
 Вы можаце пабачыць прыклады абодвух тыпаў `React.ReactNode` і `React.ReactElement` з праверкай тыпаў на [гэтай тэставай пляцоўцы TypeScript](https://www.typescriptlang.org/play?#code/JYWwDg9gTgLgBAJQKYEMDG8BmUIjgIilQ3wChSB6CxYmAOmXRgDkIATJOdNJMGAZzgwAFpxAR+8YADswAVwGkZMJFEzpOjDKw4AFHGEEBvUnDhphwADZsi0gFw0mDWjqQBuUgF9yaCNMlENzgAXjgACjADfkctFnYkfQhDAEpQgD44AB42YAA3dKMo5P46C2tbJGkvLIpcgt9-QLi3AEEwMFCItJDMrPTTbIQ3dKywdIB5aU4kKyQQKpha8drhhIGzLLWODbNs3b3s8YAxKBQAcwXpAThMaGWDvbH0gFloGbmrgQfBzYpd1YjQZbEYARkB6zMwO2SHSAAlZlYIBCdtCRkZpHIrFYahQYQD8UYYFA5EhcfjyGYqHAXnJAsIUHlOOUbHYhMIIHJzsI0Qk4P9SLUBuRqXEXEwAKKfRZcNA8PiCfxWACecAAUgBlAAacFm80W-CU11U6h4TgwUv11yShjgJjMLMqDnN9Dilq+nh8pD8AXgCHdMrCkWisVoAet0R6fXqhWKhjKllZVVxMcavpd4Zg7U6Qaj+2hmdG4zeRF10uu-Aeq0LBfLMEe-V+T2L7zLVu+FBWLdLeq+lc7DYFf39deFVOotMCACNOCh1dq219a+30uC8YWoZsRyuEdjkevR8uvoVMdjyTWt4WiSSydXD4NqZP4AymeZE072ZzuUeZQKheQgA).
 
-### Пропс стыляў {/*typing-style-props*/}
+### Пропсы стыляў {/*typing-style-props*/}
 
 Калі вы выкарыстоўваеце ўбудаваныя стылі ў React, вы можаце выкарыстоўваць `React.CSSProperties` для апісання аб’екта, перадаваемага ў пропс `style`. Дадзены тып уключае ўсе магчымыя CSS параметры і з’яўляецца добрым спосабам пераканацца, што вы перадаяце правільны пропс `style`, і атрымаць аўтадапаўненне ў рэдактары кода.
 

@@ -106,6 +106,7 @@ function TodoList({ todos, tab, theme }) {
 
 ---
 
+<<<<<<< HEAD
 ## Хукі рэсурсаў {/*resource-hooks*/}
 
 *Рэсурсы* — штосьці, да чаго кампаненты могуць атрымаць доступ, не маючы іх як частку ўласнага стану. Напрыклад, кампанент можа прачытаць паведамленне з Promise або інфармацыю пра тэму з кантэксту.
@@ -125,12 +126,22 @@ function MessageComponent({ messagePromise }) {
 ---
 
 ## Іншыя хукі {/*other-hooks*/}
+=======
+## Other Hooks {/*other-hooks*/}
+>>>>>>> 9e1f5cd590fd066e72dda9022237bee30b499951
 
 Гэтыя хукі болей карысныя аўтарам бібліятэк і не часта выкарыстоўваюцца ў кодзе праграм. 
 
+<<<<<<< HEAD
 - [`useDebugValue`](/reference/react/useDebugValue) дазваляе наладзіць пазнаку, якую React DevTools будзе паказваць для вашага хука.
 - [`useId`](/reference/react/useId) дазваляе кампаненту атрымаць унікальны ідэнтыфікатар. Звычайна выкарыстоўваецца з API спецыяльных магчымасцяў.
 - [`useSyncExternalStore`](/reference/react/useSyncExternalStore) дазваляе кампаненту падпісацца на знешняе сховішча.
+=======
+- [`useDebugValue`](/reference/react/useDebugValue) lets you customize the label React DevTools displays for your custom Hook.
+- [`useId`](/reference/react/useId) lets a component associate a unique ID with itself. Typically used with accessibility APIs.
+- [`useSyncExternalStore`](/reference/react/useSyncExternalStore) lets a component subscribe to an external store.
+* [`useActionState`](/reference/react/useActionState) allows you to manage state of actions.
+>>>>>>> 9e1f5cd590fd066e72dda9022237bee30b499951
 
 ---
 

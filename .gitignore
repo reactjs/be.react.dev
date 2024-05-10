@@ -37,8 +37,5 @@ yarn-error.log*
 # external fonts
 public/fonts/**/Optimistic_*.woff2
 
-
-# IntellijIdea files
-.idea
 # rss
 public/rss.xml

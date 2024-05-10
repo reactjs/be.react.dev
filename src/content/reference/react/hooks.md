@@ -106,24 +106,6 @@ function TodoList({ todos, tab, theme }) {
 
 ---
 
-## Хукі рэсурсаў {/*resource-hooks*/}
-
-*Рэсурсы* — штосьці, да чаго кампаненты могуць атрымаць доступ, не маючы іх як частку ўласнага стану. Напрыклад, кампанент можа прачытаць паведамленне з Promise або інфармацыю пра тэму з кантэксту.
-
-Для атрымання даных з рэсурсу, выкарыстоўвайце наступны хук:
-
-- [`use`](/reference/react/use) дазваляе атрымліваць значэнні з такіх рэсурсаў, як [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) або [кантэкст](/learn/passing-data-deeply-with-context).
-
-```js
-function MessageComponent({ messagePromise }) {
-  const message = use(messagePromise);
-  const theme = use(ThemeContext);
-  // ...
-}
-```
-
----
-
 ## Іншыя хукі {/*other-hooks*/}
 
 Гэтыя хукі болей карысныя аўтарам бібліятэк і не часта выкарыстоўваюцца ў кодзе праграм. 
@@ -131,6 +113,7 @@ function MessageComponent({ messagePromise }) {
 - [`useDebugValue`](/reference/react/useDebugValue) дазваляе наладзіць пазнаку, якую React DevTools будзе паказваць для вашага хука.
 - [`useId`](/reference/react/useId) дазваляе кампаненту атрымаць унікальны ідэнтыфікатар. Звычайна выкарыстоўваецца з API спецыяльных магчымасцяў.
 - [`useSyncExternalStore`](/reference/react/useSyncExternalStore) дазваляе кампаненту падпісацца на знешняе сховішча.
+* [`useActionState`](/reference/react/useActionState) дазваляе кіраваць станам дзеянняў.
 
 ---
 

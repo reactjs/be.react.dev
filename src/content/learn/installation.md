@@ -38,7 +38,7 @@ export default function App() {
 
 Вы можаце рэдагаваць код прама тут, або адкрыць у новай укладцы, націснуўшы кнопку «Fork» у правым верхнім куце.
 
-Большасць старонак дакументацыі React утрымліваюць пясочніцы падобныя гэтай. Па-за дакументацыяй React існуюць і іншыя анлайн-пясочніцы, якія падтрымліваюць React: напрыклад, [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), або [CodePen.](https://codepen.io/pen?&editors=0010&layout=left&prefill_data_id=3f4569d1-1b11-4bce-bd46-89090eed5ddb)
+Большасць старонак дакументацыі React утрымліваюць пясочніцы падобныя гэтай. Па-за дакументацыяй React існуюць і іншыя анлайн-пясочніцы, якія падтрымліваюць React: напрыклад, [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), або [CodePen.](https://codepen.io/pen?template=QWYVwWN)
 
 ### Паспрабаваць React лакальна {/*try-react-locally*/}
 

@@ -24,9 +24,9 @@ React павінен адрэндэрыць вашы кампаненты пер
 3. **Фіксацыя** у DOM (падача стравы на стол)
 
 <IllustrationBlock sequential>
-  <Illustration caption="Trigger" alt="React as a server in a restaurant, fetching orders from the users and delivering them to the Component Kitchen." src="/images/docs/illustrations/i_render-and-commit1.png" />
-  <Illustration caption="Render" alt="The Card Chef gives React a fresh Card component." src="/images/docs/illustrations/i_render-and-commit2.png" />
-  <Illustration caption="Commit" alt="React delivers the Card to the user at their table." src="/images/docs/illustrations/i_render-and-commit3.png" /></IllustrationBlock>
+  <Illustration caption="Ініцыяцыя" alt="React — гэта афіцыянт у рэстаране, які атрымлівае заказы ад карыстальнікаў і дастаўляе іх на кухню кампанентаў." src="/images/docs/illustrations/i_render-and-commit1.png" />
+  <Illustration caption="Рэндэрынг" alt="Шэф дае React свежы экземпляр кампанента Card." src="/images/docs/illustrations/i_render-and-commit2.png" />
+  <Illustration caption="Фіксацыя" alt="React дастаўляе кампанент Cart карыстальніку за яго сталом." src="/images/docs/illustrations/i_render-and-commit3.png" /></IllustrationBlock>
 
 ## Этап 1: Ініцыяцыя рэндэрынгу {/_step-1-trigger-a-render_/}
 
@@ -54,7 +54,7 @@ export default function Image() {
   return (
     <img
       src="https://i.imgur.com/ZF6s192.jpg"
-      alt="'Floralis Genérica' by Eduardo Catalano: a gigantic metallic flower sculpture with reflective petals"
+      alt="'Родавы Флораліс' Эдуарда Каталана: гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі"
     />
   );
 }
@@ -69,9 +69,9 @@ export default function Image() {
 Пасля таго як кампанент быў першапачаткова адрэндэраны, вы можаце ініцыяваць наступныя рэндэры, абнаўляючы яго стан з дапамогай функцыі [`set`.](/reference/react/useState#setstate) Абнаўленне стану кампанента аўтаматычна ставіць яго ў чаргу на рэндэр. (Гэта падобна на наведвальніка рэстарана, які пасля першапачатковага заказу, дазаказвае сабе чай, дэсерт і разнастайныя рэчы, у залежнасці ад стану смагі ці голаду.)
 
 <IllustrationBlock sequential>
-  <Illustration caption="State update..." alt="React as a server in a restaurant, serving a Card UI to the user, represented as a patron with a cursor for their head. They patron expresses they want a pink card, not a black one!" src="/images/docs/illustrations/i_rerender1.png" />
-  <Illustration caption="...triggers..." alt="React returns to the Component Kitchen and tells the Card Chef they need a pink Card." src="/images/docs/illustrations/i_rerender2.png" />
-  <Illustration caption="...render!" alt="The Card Chef gives React the pink Card." src="/images/docs/illustrations/i_rerender3.png" /></IllustrationBlock>
+  <Illustration caption="Абнаўленне стану..." alt="React — гэта афіцыянт у рэстаране, які дастаўляе карыстальніцкі інтэрфейс кампанета Card кліенту.Кліент кажа, што хоча ружовы Card, а не чорны!" src="/images/docs/illustrations/i_rerender1.png" />
+  <Illustration caption="...запускае..." alt="React вяртаецца на кухню кампанентаў і кажа шэфу, што яму патрэбны ружовы Card." src="/images/docs/illustrations/i_rerender2.png" />
+  <Illustration caption="...рэндэр!" alt="Шэф дае React ружовы Card." src="/images/docs/illustrations/i_rerender3.png" /></IllustrationBlock>
 
 ## Этап 2: React рэндэрыць вашы кампаненты {/_step-2-react-renders-your-components_/}
 
@@ -102,7 +102,7 @@ function Image() {
   return (
     <img
       src="https://i.imgur.com/ZF6s192.jpg"
-      alt="'Floralis Genérica' by Eduardo Catalano: a gigantic metallic flower sculpture with reflective petals"
+      alt="'Родавы Флораліс' Эдуарда Каталана: гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі"
     />
   );
 }
@@ -197,7 +197,7 @@ export default function App() {
 
 Пасля таго як рэндэр завершаны і React абнавіў DOM, браўзер перамалёўвае экран. Хоць гэты працэс і вядомы як «браўзерны рэндэрынг», мы будзем называць яго «маляваннем», каб пазбегнуць блытаніны ў дакументацыі.
 
-<Illustration alt="A browser painting 'still life with card element'." src="/images/docs/illustrations/i_browser-paint.png" />
+<Illustration alt="Браўзер малюе картціну 'Нацюрморт з элементам Card'." src="/images/docs/illustrations/i_browser-paint.png" />
 
 <Recap>
 

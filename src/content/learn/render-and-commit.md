@@ -197,7 +197,7 @@ export default function App() {
 
 Пасля таго як рэндэр завершаны і React абнавіў DOM, браўзер перамалёўвае экран. Хоць гэты працэс і вядомы як «браўзерны рэндэрынг», мы будзем называць яго «маляваннем», каб пазбегнуць блытаніны ў дакументацыі.
 
-<Illustration alt="Браўзер малюе картціну 'Нацюрморт з элементам Card'." src="/images/docs/illustrations/i_browser-paint.png" />
+<Illustration alt="Браўзер малюе карціну 'Нацюрморт з элементам Card'." src="/images/docs/illustrations/i_browser-paint.png" />
 
 <Recap>
 

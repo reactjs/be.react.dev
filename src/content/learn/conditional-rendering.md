@@ -53,7 +53,7 @@ export default function PackingList() {
 </Sandpack>
 
 <<<<<<< HEAD
-Звярніце ўвагу, што ў некаторых кампанентаў `Item` пропс `isPacked` мае значэнне `true` замест `false`. Калі `isPacked={true}`, мы хочам дадаць галачку(✔) да спакаваных рэчаў.
+Звярніце ўвагу, што ў некаторых кампанентаў `Item` пропс `isPacked` мае значэнне `true` замест `false`. Калі `isPacked={true}`, мы хочам дадаць галачку(✅) да спакаваных рэчаў.
 =======
 Notice that some of the `Item` components have their `isPacked` prop set to `true` instead of `false`. You want to add a checkmark (✅) to packed items if `isPacked={true}`.
 >>>>>>> 7d50c3ffd4df2dc7903f4e41069653a456a9c223

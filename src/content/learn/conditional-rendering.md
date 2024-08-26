@@ -52,13 +52,13 @@ export default function PackingList() {
 
 </Sandpack>
 
-Звярніце ўвагу, што ў некаторых кампанентаў `Item` пропс `isPacked` мае значэнне `true` замест `false`. Калі `isPacked={true}`, мы хочам дадаць галачку(✔) да спакаваных рэчаў.
+Звярніце ўвагу, што ў некаторых кампанентаў `Item` пропс `isPacked` мае значэнне `true` замест `false`. Калі `isPacked={true}`, мы хочам дадаць галачку(✅) да спакаваных рэчаў.
 
 Вы можаце зрабіць гэта з дапамогай [канструкцыі `if`/`else`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) такім чынам:
 
 ```js
 if (isPacked) {
-  return <li className="item">{name} ✔</li>;
+  return <li className="item">{name} ✅</li>;
 }
 return <li className="item">{name}</li>;
 ```
@@ -70,7 +70,7 @@ return <li className="item">{name}</li>;
 ```js
 function Item({ name, isPacked }) {
   if (isPacked) {
-    return <li className="item">{name} ✔</li>;
+    return <li className="item">{name} ✅</li>;
   }
   return <li className="item">{name}</li>;
 }
@@ -159,7 +159,7 @@ export default function PackingList() {
 У папярэднім прыкладзе вы кантралявалі, якое JSX дрэва будзе вернута кампанентам (калі нешта будзе вернута ўвогуле!). Магчыма, вы ўжо заўважылі нейкае дубліраванне ў вывадзе рэндэрынгу:
 
 ```js
-<li className="item">{name} ✔</li>
+<li className="item">{name} ✅</li>
 ```
 
 вельмі падобна на
@@ -172,7 +172,7 @@ export default function PackingList() {
 
 ```js
 if (isPacked) {
-  return <li className="item">{name} ✔</li>;
+  return <li className="item">{name} ✅</li>;
 }
 return <li className="item">{name}</li>;
 ```
@@ -187,7 +187,7 @@ JavaScript мае кампактны сінтаксіс для запісу ўм
 
 ```js
 if (isPacked) {
-  return <li className="item">{name} ✔</li>;
+  return <li className="item">{name} ✅</li>;
 }
 return <li className="item">{name}</li>;
 ```
@@ -197,12 +197,12 @@ return <li className="item">{name}</li>;
 ```js
 return (
   <li className="item">
-    {isPacked ? name + ' ✔' : name}
+    {isPacked ? name + ' ✅' : name}
   </li>
 );
 ```
 
-Гэта можна прачытаць як: *«Калі `ispacked` роўны `true`, тады (`?`) рэндэрым `name + ' ✔'`, інакш (`:`) рэндэрым `name`»*.
+Гэта можна прачытаць як: *«Калі `ispacked` роўны `true`, тады (`?`) рэндэрым `name + ' ✅'`, інакш (`:`) рэндэрым `name`»*.
 
 <DeepDive>
 
@@ -222,7 +222,7 @@ function Item({ name, isPacked }) {
     <li className="item">
       {isPacked ? (
         <del>
-          {name + ' ✔'}
+          {name + ' ✅'}
         </del>
       ) : (
         name
@@ -265,7 +265,7 @@ export default function PackingList() {
 ```js
 return (
   <li className="item">
-    {name} {isPacked && '✔'}
+    {name} {isPacked && '✅'}
   </li>
 );
 ```
@@ -280,7 +280,7 @@ return (
 function Item({ name, isPacked }) {
   return (
     <li className="item">
-      {name} {isPacked && '✔'}
+      {name} {isPacked && '✅'}
     </li>
   );
 }
@@ -337,7 +337,7 @@ let itemContent = name;
 
 ```js
 if (isPacked) {
-  itemContent = name + " ✔";
+  itemContent = name + " ✅";
 }
 ```
 
@@ -357,7 +357,7 @@ if (isPacked) {
 function Item({ name, isPacked }) {
   let itemContent = name;
   if (isPacked) {
-    itemContent = name + " ✔";
+    itemContent = name + " ✅";
   }
   return (
     <li className="item">
@@ -401,7 +401,7 @@ function Item({ name, isPacked }) {
   if (isPacked) {
     itemContent = (
       <del>
-        {name + " ✔"}
+        {name + " ✅"}
       </del>
     );
   }
@@ -464,7 +464,7 @@ export default function PackingList() {
 function Item({ name, isPacked }) {
   return (
     <li className="item">
-      {name} {isPacked && '✔'}
+      {name} {isPacked && '✅'}
     </li>
   );
 }
@@ -502,7 +502,7 @@ export default function PackingList() {
 function Item({ name, isPacked }) {
   return (
     <li className="item">
-      {name} {isPacked ? '✔' : '❌'}
+      {name} {isPacked ? '✅' : '❌'}
     </li>
   );
 }

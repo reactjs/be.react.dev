@@ -14,10 +14,17 @@ title: Агляд даведкі па React
 
 Праграмныя функцыі React:
 
+<<<<<<< HEAD
 * [Хукі](/reference/react/hooks) - Выкарыстоўвайце розныя функцыі React прама з вашых кампанентаў.
 * [Кампаненты](/reference/react/components) - Апісвае ўбудаваныя кампаненты, якія можна выкарыстоўваць у вашым JSX.
 * [API](/reference/react/apis) - карысныя API для аб'яўлення кампанентаў.
 * [Дырэктывы](/reference/react/directives) - Пазначце інструкцыі для зборшчыкаў сумяшчальных з сервернымі кампанентамі React.
+=======
+* [Hooks](/reference/react/hooks) - Use different React features from your components.
+* [Components](/reference/react/components) - Built-in components that you can use in your JSX.
+* [APIs](/reference/react/apis) - APIs that are useful for defining components.
+* [Directives](/reference/rsc/directives) - Provide instructions to bundlers compatible with React Server Components.
+>>>>>>> c2d61310664cc0d94f89ca21fc1d44e674329799
 
 ## React DOM {/*react-dom*/}
 

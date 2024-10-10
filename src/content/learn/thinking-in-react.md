@@ -266,19 +266,11 @@ td {
 
 Давайце разбяром іх з дапамогай нашай стратэгіі:
 
-<<<<<<< HEAD
 1. **Вызначыце кампаненты, якія выкарыстоўваюць стан:**
     * `ProductTable` фільтруе спіс прадуктаў на аснове стану (пошукавы запыт і значэнне чэкбокса).
     * `SearchBar` адлюстроўвае стан (пошукавы запыт і значэнне чэкбокса).
 1. **Знайдзіце іх агульнага продка:** Першы агульны бацькоўскі кампанент для іх — `FilterableProductTable`.
 2. **Вызначыце, дзе будзе знаходзіцца стан**: Мы будзем захоўваць тэкст фільтра і значэнне чэкбокса ў `FilterableProductTable`.
-=======
-1. **Identify components that use state:**
-    * `ProductTable` needs to filter the product list based on that state (search text and checkbox value). 
-    * `SearchBar` needs to display that state (search text and checkbox value).
-2. **Find their common parent:** The first parent component both components share is `FilterableProductTable`.
-3. **Decide where the state lives**: We'll keep the filter text and checked state values in `FilterableProductTable`.
->>>>>>> 1697ae89a3bbafd76998dd7496754e5358bc1e9a
 
 Такім чынам, значэнні стану будуць знаходзіцца ў `FilterableProductTable`.
 

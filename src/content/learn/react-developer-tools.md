@@ -52,6 +52,7 @@ react-devtools
 
 ![React Developer Tools standalone](/images/docs/react-devtools-standalone.png)
 
+<<<<<<< HEAD
 ## Для мабільных праграм (React Native) {/*mobile-react-native*/}
 React Developer Tools таксама можна выкарыстоўваць і для прагляду праграм, пабудаваных з дапамогай [React Native](https://reactnative.dev/).
 
@@ -59,11 +60,15 @@ React Developer Tools таксама можна выкарыстоўваць і 
 ```bash
 # Yarn
 yarn global add react-devtools
+=======
+## Mobile (React Native) {/*mobile-react-native*/}
 
-# Npm
-npm install -g react-devtools
-```
+To inspect apps built with [React Native](https://reactnative.dev/), you can use [React Native DevTools](https://reactnative.dev/docs/debugging/react-native-devtools), the built-in debugger that deeply integrates React Developer Tools. All features work identically to the browser extension, including native element highlighting and selection.
+>>>>>>> 3b02f828ff2a4f9d2846f077e442b8a405e2eb04
 
+[Learn more about debugging in React Native.](https://reactnative.dev/docs/debugging)
+
+<<<<<<< HEAD
 Затым адкрыўшы праз тэрмінал:
 ```bash
 react-devtools
@@ -74,3 +79,6 @@ React Developer Tools мае падключыцца да ўжо запушчан
 > Паспрабуйце перазагрузіць праграму, калі інструменты для распрацоўшчыка не падключаюцца да яе цягам некалькіх секунд.
 
 [Даведацца больш пра адладжванне React Native.](https://reactnative.dev/docs/debugging)
+=======
+> For versions of React Native earlier than 0.76, please use the standalone build of React DevTools by following the [Safari and other browsers](#safari-and-other-browsers) guide above.
+>>>>>>> 3b02f828ff2a4f9d2846f077e442b8a405e2eb04

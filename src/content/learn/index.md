@@ -4,11 +4,7 @@ title: Хуткі старт
 
 <Intro>
 
-<<<<<<< HEAD
 Вітаем вас у дакументацыі React! Гэтая старонка пазнаёміць вас з 80% канцэпцый React, якімі вы будзеце карыстацца кожны дзень.
-=======
-Welcome to the React documentation! This page will give you an introduction to 80% of the React concepts that you will use on a daily basis.
->>>>>>> 6ae99dddc3b503233291da96e8fd4b118ed6d682
 
 </Intro>
 

@@ -55,6 +55,4 @@ react-devtools
 ## Для мабільных праграм (React Native) {/*mobile-react-native*/}
 Для прагляду праграм, пабудаваных з дапамогай [React Native](https://reactnative.dev/) таксама можна выкарыстоўваць [React Native DevTools](https://reactnative.dev/docs/debugging/react-native-devtools), убудаваны адладчык, глыбока інтэграваны ў React Developer Tools. Усе функцыі працуюць ідэнтычна браузернаму пашырэнню, уключаючы ўбудаванае падсвятленне і вылучэнне элементаў.
 
-[Даведацца больш пра адладжванне React Native.](https://reactnative.dev/docs/debugging)
-
 > Для версій React Native раней 0.76 выкарыстоўвайце аўтаномную зборку React DevTools, дэталі шукайце ў кіраўніцтве для [Safari і іншых браўзераў](#safari-and-other-browsers) вышэй.

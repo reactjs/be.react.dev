@@ -69,16 +69,10 @@ export default function Image() {
 Пасля таго як кампанент быў першапачаткова адрэндэраны, вы можаце ініцыяваць наступныя рэндэры, абнаўляючы яго стан з дапамогай функцыі [`set`.](/reference/react/useState#setstate) Абнаўленне стану кампанента аўтаматычна ставіць яго ў чаргу на рэндэр. (Гэта падобна на наведвальніка рэстарана, які пасля першапачатковага заказу, дазаказвае сабе чай, дэсерт і разнастайныя рэчы, у залежнасці ад стану смагі ці голаду.)
 
 <IllustrationBlock sequential>
-<<<<<<< HEAD
   <Illustration caption="Абнаўленне стану..." alt="React — гэта афіцыянт у рэстаране, які дастаўляе карыстальніцкі інтэрфейс кампанета Card кліенту.Кліент кажа, што хоча ружовы Card, а не чорны!" src="/images/docs/illustrations/i_rerender1.png" />
   <Illustration caption="...запускае..." alt="React вяртаецца на кухню кампанентаў і кажа шэфу, што яму патрэбны ружовы Card." src="/images/docs/illustrations/i_rerender2.png" />
-  <Illustration caption="...рэндэр!" alt="Шэф дае React ружовы Card." src="/images/docs/illustrations/i_rerender3.png" /></IllustrationBlock>
-=======
-  <Illustration caption="State update..." alt="React as a server in a restaurant, serving a Card UI to the user, represented as a patron with a cursor for their head. The patron expresses they want a pink card, not a black one!" src="/images/docs/illustrations/i_rerender1.png" />
-  <Illustration caption="...triggers..." alt="React returns to the Component Kitchen and tells the Card Chef they need a pink Card." src="/images/docs/illustrations/i_rerender2.png" />
-  <Illustration caption="...render!" alt="The Card Chef gives React the pink Card." src="/images/docs/illustrations/i_rerender3.png" />
+  <Illustration caption="...рэндэр!" alt="Шэф дае React ружовы Card." src="/images/docs/illustrations/i_rerender3.png" />
 </IllustrationBlock>
->>>>>>> fc29603434ec04621139738f4740caed89d659a7
 
 ## Этап 2: React рэндэрыць вашы кампаненты {/*step-2-react-renders-your-components*/}
 
@@ -89,11 +83,7 @@ export default function Image() {
 
 Гэта рэкурсіўны працэс: калі абноўлены кампанент вяртае нейкі іншы кампанент, React адрэндэрыць _гэты_ кампанент наступным, і калі гэты кампанент таксама вяртае што-небудзь, ён адрэндэрыць ужо _гэты_ кампанент наступным, і гэтак далей. Працэс будзе працягвацца датуль, пакуль не застанецца ўкладзеных кампанентаў і React не будзе дакладна ведаць, што павінна быць адлюстравана на экране.
 
-<<<<<<< HEAD
 У наступным прыкладзе React выклікае `Gallery()` і `Image()` некалькі разоў:
-=======
-In the following example, React will call `Gallery()` and `Image()` several times:
->>>>>>> fc29603434ec04621139738f4740caed89d659a7
 
 <Sandpack>
 
@@ -157,17 +147,10 @@ img { margin: 0 10px 10px 0; }
 
 ## Этап 3: React фіксуе змены ў DOM {/*step-3-react-commits-changes-to-the-dom*/}
 
-<<<<<<< HEAD
 Пасля рэндэрынгу (выкліку) вашых кампанентаў React змяняе DOM.
 
 - **Пры першапачатковым рэндэры** React выкарыстоўвае функцыю DOM API [`appendChild()`](https://developer.mozilla.org/docs/Web/API/Node/appendChild), каб вывесці на экран усе створаныя ім DOM-вузлы.
 - **Пры паўторным рэндэры** React прыменіць мінімальна неабходныя аперацыі (якія вылічаюцца падчас рэндэрынгу!), каб DOM адпавядаў апошняму вываду рэндэрынгу.
-=======
-After rendering (calling) your components, React will modify the DOM.
-
-* **For the initial render,** React will use the [`appendChild()`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) DOM API to put all the DOM nodes it has created on screen.
-* **For re-renders,** React will apply the minimal necessary operations (calculated while rendering!) to make the DOM match the latest rendering output.
->>>>>>> fc29603434ec04621139738f4740caed89d659a7
 
 **React змяняе DOM-вузлы толькі калі ёсць розніца паміж рэндэрамі.** Напрыклад, вось кампанент, які рэндэрыцца з рознымі пропсамі, якія перадаюцца ад бацькоўскага кампанента кожную секунду. Звярніце ўвагу, што вы можаце дадаць тэкст у `<input>`, абнаўляючы яго `значэнне`, і што пры паўторным рэндэры кампанента тэкст не знікае:
 

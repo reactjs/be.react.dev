@@ -8,16 +8,6 @@ React быў распрацаваны для паступовага ўкаран
 
 </Intro>
 
-<YouWillLearn isChapter={true}>
-
-
-* [Як стварыць новы праект з React](/learn/start-a-new-react-project)
-* [Як дадаць React у існуючы праект](/learn/add-react-to-an-existing-project)
-* [Як наладзіць рэдактар коду](/learn/editor-setup)
-* [Як усталяваць React Developer Tools](/learn/react-developer-tools)
-
-</YouWillLearn>
-
 ## Паспрабуйце React {/*try-react*/}
 
 Вам не трэба нічога ўсталёўваць, каб паспрабаваць React. Паспрабуйце рэдагаваць код у пясочніцы!
@@ -40,16 +30,28 @@ export default function App() {
 
 Большасць старонак дакументацыі React утрымліваюць пясочніцы падобныя гэтай. Па-за дакументацыяй React існуюць і іншыя анлайн-пясочніцы, якія падтрымліваюць React: напрыклад, [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), або [CodePen.](https://codepen.io/pen?template=QWYVwWN)
 
-### Паспрабаваць React лакальна {/*try-react-locally*/}
-
 Каб паспрабаваць React лакальна на вашым камп’ютары, [спампуйце гэтую HTML старонку.](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html) Адкрыйце яе ў сваім тэкставым рэдактары і браўзеры!
 
-## Стварыць новы React праект {/*start-a-new-react-project*/}
-Калі вы хочаце стварыць праграму або вэб-сайт цалкам на React, [стварыце новы React праект.](/learn/start-a-new-react-project)
+## Стварыць новы React праект {/*creating-a-react-app*/}
+
+Калі вы хочаце стварыць React праграму, [стварыце новы React праект](/learn/creating-a-react-app) з дапамогай рэкамендаваных фрэймворкаў.
+
+## Стварыце React фрэймворк {/*build-a-react-framework*/}
+
+Калі ніводзін з фрэймворкаў не падыходзіць для вашага праекта або вы хочаце стварыць новы, то вы можаце [пабудаваць свой уласны React фрэймворк](/learn/building-a-react-framework).
 
 ## Дадаць React у існуючы праект {/*add-react-to-an-existing-project*/}
 
 Калі вы хочаце выкарыстоўваць React у існуючых праграмах або вэб-сайтах, [дадайце React у існуючы праект.](/learn/add-react-to-an-existing-project)
 
+## Састарэлыя варыянты {/*deprecated-options*/}
+
+### Create React App (Састарэлы) {/*create-react-app-deprecated*/}
+
+Create React App — гэта састарэлы інструмент, які раней рэкамендаваўся для стварэння новых React праграм. Калі вы хочаце стварыць React праграму, [стварыце новы React праект](/learn/creating-a-react-app) з дапамогай рэкамендаваных фрэймворкаў.
+
+Больш інфармацыі даступна на старонцы [Канец Create React App](/blog/2025/02/14/sunsetting-create-react-app).
+
 ## Наступныя крокі {/*next-steps*/}
+
 Азнаёмцеся са старонкай «[Хуткі старт](/learn)», каб пазнаёміцца з найбольш важнымі канцэпцыямі React, якімі вы будзеце карыстацца кожны дзень.

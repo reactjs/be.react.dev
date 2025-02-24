@@ -71,7 +71,8 @@ export default function Image() {
 <IllustrationBlock sequential>
   <Illustration caption="Абнаўленне стану..." alt="React — гэта афіцыянт у рэстаране, які дастаўляе карыстальніцкі інтэрфейс кампанета Card кліенту.Кліент кажа, што хоча ружовы Card, а не чорны!" src="/images/docs/illustrations/i_rerender1.png" />
   <Illustration caption="...запускае..." alt="React вяртаецца на кухню кампанентаў і кажа шэфу, што яму патрэбны ружовы Card." src="/images/docs/illustrations/i_rerender2.png" />
-  <Illustration caption="...рэндэр!" alt="Шэф дае React ружовы Card." src="/images/docs/illustrations/i_rerender3.png" /></IllustrationBlock>
+  <Illustration caption="...рэндэр!" alt="Шэф дае React ружовы Card." src="/images/docs/illustrations/i_rerender3.png" />
+</IllustrationBlock>
 
 ## Этап 2: React рэндэрыць вашы кампаненты {/*step-2-react-renders-your-components*/}
 

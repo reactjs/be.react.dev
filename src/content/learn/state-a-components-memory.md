@@ -1451,7 +1451,11 @@ export default function FeedbackForm() {
 
 #### Выдаліце непатрэбны стан {/*remove-unnecessary-state*/}
 
+<<<<<<< HEAD
 Пры націсканні на кнопку, праграма павінна запытаць імя карыстальніка, а затым адлюстроўваць прывітанне. Вы спрабавалі выкарыстоўваць стан, каб захаваць імя, але па нейкай прычыне заўсёды паказваецца «Вітаю, !».
+=======
+When the button is clicked, this example should ask for the user's name and then display an alert greeting them. You tried to use state to keep the name, but for some reason the first time it shows "Hello, !", and then "Hello, [name]!" with the previous input every time after.
+>>>>>>> fc29603434ec04621139738f4740caed89d659a7
 
 Каб выправіць гэты код, выдаліце непатрэбную пераменную стану. (Мы абмяркуем [чаму гэта не спрацавала](/learn/state-as-a-snapshot) пазней.)
 

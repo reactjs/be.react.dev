@@ -176,7 +176,7 @@ function Cup({ guest }) {
 }
 
 export default function TeaGathering() {
-  let cups = [];
+  const cups = [];
   for (let i = 1; i <= 12; i++) {
     cups.push(<Cup key={i} guest={i} />);
   }
@@ -246,7 +246,7 @@ export default function TeaGathering() {
 
 ```js src/Clock.js active
 export default function Clock({ time }) {
-  let hours = time.getHours();
+  const hours = time.getHours();
   if (hours >= 0 && hours <= 6) {
     document.getElementById('time').className = 'night';
   } else {
@@ -308,7 +308,7 @@ body > * {
 
 ```js src/Clock.js active
 export default function Clock({ time }) {
-  let hours = time.getHours();
+  const hours = time.getHours();
   let className;
   if (hours >= 0 && hours <= 6) {
     className = 'night';
@@ -607,14 +607,14 @@ export default function StoryTray({ stories }) {
 import { useState, useEffect } from 'react';
 import StoryTray from './StoryTray.js';
 
-let initialStories = [
+const initialStories = [
   {id: 0, label: "Гісторыя Анкіта" },
   {id: 1, label: "Гісторыя Тэйлара" },
 ];
 
 export default function App() {
-  let [stories, setStories] = useState([...initialStories])
-  let time = useTime();
+  const [stories, setStories] = useState([...initialStories])
+  const time = useTime();
 
   // HACK: Прадухіленне вечнага росту памяці падчас чытання дакументаў.
   // Тут мы парушаем свае ўласныя правілы.
@@ -703,14 +703,14 @@ export default function StoryTray({ stories }) {
 import { useState, useEffect } from 'react';
 import StoryTray from './StoryTray.js';
 
-let initialStories = [
+const initialStories = [
   {id: 0, label: "Гісторыя Анкіта" },
   {id: 1, label: "Гісторыя Тэйлара" },
 ];
 
 export default function App() {
-  let [stories, setStories] = useState([...initialStories])
-  let time = useTime();
+  const [stories, setStories] = useState([...initialStories])
+  const time = useTime();
 
   // HACK: Прадухіленне вечнага росту памяці падчас чытання дакументаў.
   // Тут мы парушаем свае ўласныя правілы.
@@ -771,7 +771,7 @@ li {
 ```js src/StoryTray.js active
 export default function StoryTray({ stories }) {
   // Скапіруйце масіў!
-  let storiesToDisplay = stories.slice();
+  const storiesToDisplay = stories.slice();
 
   // Не ўплывае на зыходны масіў:
   storiesToDisplay.push({
@@ -795,14 +795,14 @@ export default function StoryTray({ stories }) {
 import { useState, useEffect } from 'react';
 import StoryTray from './StoryTray.js';
 
-let initialStories = [
+const initialStories = [
   {id: 0, label: "Гісторыя Анкіта" },
   {id: 1, label: "Гісторыя Тэйлара" },
 ];
 
 export default function App() {
-  let [stories, setStories] = useState([...initialStories])
-  let time = useTime();
+  const [stories, setStories] = useState([...initialStories])
+  const time = useTime();
 
   // HACK: Прадухіленне вечнага росту памяці падчас чытання дакументаў.
   // Тут мы парушаем свае ўласныя правілы.

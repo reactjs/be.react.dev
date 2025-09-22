@@ -50,7 +50,7 @@ A portal only changes the physical placement of the DOM node. In every other way
 
 * `domNode`: Some DOM node, such as those returned by `document.getElementById()`. The node must already exist. Passing a different DOM node during an update will cause the portal content to be recreated.
 
-* **optional** `key`: A unique string or number to be used as the portal's [key.](/learn/rendering-lists/#keeping-list-items-in-order-with-key)
+* **optional** `key`: A unique string or number to be used as the portal's [key.](/learn/rendering-lists#keeping-list-items-in-order-with-key)
 
 #### Returns {/*returns*/}
 
@@ -398,7 +398,8 @@ Here is a complete example you can play with:
 }
 ```
 
-```js src/App.js
+{/* TODO(@poteto) - fixed by https://github.com/facebook/react/pull/34462. need a new release */}
+```js {expectedErrors: {'react-compiler': [15]}} src/App.js
 import { useRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { createMapWidget, addPopupToMapWidget } from './map-widget.js';

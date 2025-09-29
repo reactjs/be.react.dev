@@ -29,7 +29,25 @@ React-dom змяшчае функцыі, якія падтрымліваюцца
 * [Кліенцкія API](/reference/react-dom/client) - API з пакета `react-dom/client` дазваляюць рэндэрыць кампаненты React на кліенце (у браўзеры).
 * [Серверныя API](/reference/react-dom/server) - API з пакета `react-dom/server` дазваляюць рэндэрыць кампаненты React у HTML на серверы.
 
+<<<<<<< HEAD
 ## Правілы React {/*rules-of-react*/}
+=======
+## React Compiler {/*react-compiler*/}
+
+The React Compiler is a build-time optimization tool that automatically memoizes your React components and values:
+
+* [Configuration](/reference/react-compiler/configuration) - Configuration options for React Compiler.
+* [Directives](/reference/react-compiler/directives) - Function-level directives to control compilation.
+* [Compiling Libraries](/reference/react-compiler/compiling-libraries) - Guide for shipping pre-compiled library code.
+
+## ESLint Plugin React Hooks {/*eslint-plugin-react-hooks*/}
+
+The [ESLint plugin for React Hooks](/reference/eslint-plugin-react-hooks) helps enforce the Rules of React:
+
+* [Lints](/reference/eslint-plugin-react-hooks) - Detailed documentation for each lint with examples.
+
+## Rules of React {/*rules-of-react*/}
+>>>>>>> 49c2d26722fb1b5865ce0221a4cadc71b615e4cf
 
 У React ёсць ідыёмы (або правілы) для выражэння патэрнаў такім чынам, каб іх было лёгка зразумець і атрымаць якасныя праграмы:
 

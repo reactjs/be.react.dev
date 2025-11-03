@@ -11,16 +11,27 @@ TypeScript — папулярны спосаб дадаць тыпізацыю �
 
 <YouWillLearn>
 
+<<<<<<< HEAD
 * [TypeScript з кампанентамі React](/learn/typescript#typescript-with-react-components)
 * [Прыклад тыпізацыі хукаў](/learn/typescript#example-hooks)
 * [Агульныя тыпы з `@types/react`](/learn/typescript/#useful-types)
 * [Іншыя рэсурсы для вывучэння](/learn/typescript/#further-learning)
+=======
+* [TypeScript with React Components](/learn/typescript#typescript-with-react-components)
+* [Examples of typing with Hooks](/learn/typescript#example-hooks)
+* [Common types from `@types/react`](/learn/typescript#useful-types)
+* [Further learning locations](/learn/typescript#further-learning)
+>>>>>>> f9e2c1396769bb5da87db60f9ff03683d18711e2
 
 </YouWillLearn>
 
 ## Усталёўка {/*installation*/}
 
+<<<<<<< HEAD
 Усе [React фрэймворкі, гатовыя для выкарыстання ў працоўным асяроддзі](/learn/start-a-new-react-project#production-grade-react-frameworks) прапануюць падтрымку TypeScript. Для кожнага фрэймворка трымайцеся ягоных уласных інструкцый:
+=======
+All [production-grade React frameworks](/learn/start-a-new-react-project#full-stack-frameworks) offer support for using TypeScript. Follow the framework specific guide for installation:
+>>>>>>> f9e2c1396769bb5da87db60f9ff03683d18711e2
 
 - [Next.js](https://nextjs.org/docs/app/building-your-application/configuring/typescript)
 - [Remix](https://remix.run/docs/en/1.19.2/guides/typescript)
@@ -32,14 +43,20 @@ TypeScript — папулярны спосаб дадаць тыпізацыю �
 Для ўсталявання апошняй версіі тыпаў React выкарыстоўвайце:
 
 <TerminalBlock>
-npm install @types/react @types/react-dom
+npm install --save-dev @types/react @types/react-dom
 </TerminalBlock>
 
 Ваш `tsconfig.json` мае змяшчаць наступныя налады:
 
+<<<<<<< HEAD
 1. `dom` мае быць уключанае ў [`lib`](https://www.typescriptlang.org/tsconfig/#lib) (Заўвага: калі значэнне для `lib` не зададзенае, `dom` прадвызначана уключанае).
 1. [`jsx`](https://www.typescriptlang.org/tsconfig/#jsx) мае мець любое валіднае значэнне. `preserve` мае падыходзіць для большасці выпадкаў.
   Калі вы публікуеце бібліятэку, звярніцеся да [дакументацыі па полю `jsx`](https://www.typescriptlang.org/tsconfig/#jsx) каб падабраць правільнае значэнне.
+=======
+1. `dom` must be included in [`lib`](https://www.typescriptlang.org/tsconfig/#lib) (Note: If no `lib` option is specified, `dom` is included by default).
+2. [`jsx`](https://www.typescriptlang.org/tsconfig/#jsx) must be set to one of the valid options. `preserve` should suffice for most applications.
+  If you're publishing a library, consult the [`jsx` documentation](https://www.typescriptlang.org/tsconfig/#jsx) on what value to choose.
+>>>>>>> f9e2c1396769bb5da87db60f9ff03683d18711e2
 
 ## TypeScript з кампанентамі React {/*typescript-with-react-components*/}
 
@@ -124,7 +141,11 @@ export default App = AppTSX;
 
 ## Прыклады хукаў {/*example-hooks*/}
 
+<<<<<<< HEAD
 Апісанні тыпаў у `@types/react` уключае таксама і тыпізацыю ўбудаваных хукаў, таму вы можаце выкарыстоўваць іх у сваіх кампанентах без дадатковай налады. Яны пабудаваныя такім чынам, каб улічваць код, ужо напісаны ў кампаненце, такім чынам вы атрымаеце [аўтаматычна вызначаныя тыпы](https://www.typescriptlang.org/docs/handbook/type-inference.html) і ў большасці выпадкаў вам не давядзецца разбірацца з дробнай тыпізацыяй самастойна. 
+=======
+The type definitions from `@types/react` include types for the built-in Hooks, so you can use them in your components without any additional setup. They are built to take into account the code you write in your component, so you will get [inferred types](https://www.typescriptlang.org/docs/handbook/type-inference.html) a lot of the time and ideally do not need to handle the minutiae of providing the types.
+>>>>>>> f9e2c1396769bb5da87db60f9ff03683d18711e2
 
 Але далей мы разгледзім некалькі прыкладаў, як тыпізаваць хукі.
 
@@ -139,8 +160,13 @@ const [enabled, setEnabled] = useState(false);
 
 Для `enabled` будзе вызначаны тып `boolean`, а `setEnabled` будзе прымаць або `boolean`, або функцыю, якая вяртае `boolean`. Калі вы хочаце відавочна перадаць тып для вашага стану, вы можаце зрабіць гэта, паказаўшы тып аргумента пры выкліку `useState`:
 
+<<<<<<< HEAD
 ```ts 
 // Тып відавочна зададзены як boolean
+=======
+```ts
+// Explicitly set the type to "boolean"
+>>>>>>> f9e2c1396769bb5da87db60f9ff03683d18711e2
 const [enabled, setEnabled] = useState<boolean>(false);
 ```
 
@@ -174,7 +200,7 @@ const [requestState, setRequestState] = useState<RequestState>({ status: 'idle' 
 import {useReducer} from 'react';
 
 interface State {
-   count: number 
+   count: number
 };
 
 type CounterAction =
@@ -284,7 +310,11 @@ export default App = AppTSX;
 
 </Sandpack>
 
+<<<<<<< HEAD
 Дадзеная тэхніка працуе калі маецца прадвызначанае значэнне, якое мае сэнс, але бываюць сітуацыі, калі такога няма. У такім выпадку разумна будзе скарыстацца `null` у якасці прадвызначанага значэння. Але каб сістэме тыпізацыі было зразумела, трэба відавочна ўказаць тып `ContextShape | null` для `createContext`.
+=======
+This technique works when you have a default value which makes sense - but there are occasionally cases when you do not, and in those cases `null` can feel reasonable as a default value. However, to allow the type-system to understand your code, you need to explicitly set `ContextShape | null` on the `createContext`.
+>>>>>>> f9e2c1396769bb5da87db60f9ff03683d18711e2
 
 Разам з тым з’яўляецца патрэба выключаць `| null` пры атрыманні значэння. Мы раім дадаць у хук праверку, якая будзе падчас выканання правяраць наяўнасць значэння і выкідваць памылку пры яго адсутнасці:
 
@@ -329,7 +359,17 @@ function MyComponent() {
 
 ### `useMemo` {/*typing-usememo*/}
 
+<<<<<<< HEAD
 [Хук `useMemo`](/reference/react/useMemo) дапамагае ствараць і паўторна атрымліваць доступ да запомненых вынікаў запуску функцыі. Функцыя будзе выконвацца наноў толькі ў выпадках, калі зменіцца залежнае значэнне, перададзенае другім параметрам. Вынік выкліку функцыі будзе аўтаматычна тыпізаваны адпаведна функцыі, што была перададзеная першым параметрам. Вы можаце тыпізаваць хук відавочна, перадаўшы яму тып.
+=======
+<Note>
+
+[React Compiler](/learn/react-compiler) automatically memoizes values and functions, reducing the need for manual `useMemo` calls. You can use the compiler to handle memoization automatically.
+
+</Note>
+
+The [`useMemo`](/reference/react/useMemo) Hooks will create/re-access a memorized value from a function call, re-running the function only when dependencies passed as the 2nd parameter are changed. The result of calling the Hook is inferred from the return value from the function in the first parameter. You can be more explicit by providing a type argument to the Hook.
+>>>>>>> f9e2c1396769bb5da87db60f9ff03683d18711e2
 
 ```ts
 // Тып visibleTodos вызначаны аўтаматычна з тыпу значэння, што вяртае функцыя filterTodos
@@ -339,7 +379,17 @@ const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]);
 
 ### `useCallback` {/*typing-usecallback*/}
 
+<<<<<<< HEAD
 [Хук `useCallback`](/reference/react/useCallback) забяспечвае стабільную спасылку на функцыю пакуль залежнасці, перададзеныя другім параметрам, не змяняюцца. Як і `useMemo`, тып функцыі вызначаецца па тыпе функцыі, што перададзеная першым параметрам, але болей відавочна ўказаць тып можна перадаўшы яго ў хук.
+=======
+<Note>
+
+[React Compiler](/learn/react-compiler) automatically memoizes values and functions, reducing the need for manual `useCallback` calls. You can use the compiler to handle memoization automatically.
+
+</Note>
+
+The [`useCallback`](/reference/react/useCallback) provide a stable reference to a function as long as the dependencies passed into the second parameter are the same. Like `useMemo`, the function's type is inferred from the return value of the function in the first parameter, and you can be more explicit by providing a type argument to the Hook.
+>>>>>>> f9e2c1396769bb5da87db60f9ff03683d18711e2
 
 
 ```ts
@@ -350,7 +400,11 @@ const handleClick = useCallback(() => {
 
 Пры працы з TypeScript у строгім рэжыме, `useCallback` патрабуе дадатковай тыпізацыі параметраў функцыі. Гэта таму што тып функцыі вызначаны па тыпе вяртаемага значэння і не можа быць цалкам зразумелым.
 
+<<<<<<< HEAD
 У залежнасці ад вашых пераваг у стылі кода, вы можаце выкарыстоўваць функцыі `*EventHandler` з тыпаў React для забеспячэння тыпізацыі апрацоўшчыкаў падзей прама падчас аб’яўлення: 
+=======
+Depending on your code-style preferences, you could use the `*EventHandler` functions from the React types to provide the type for the event handler at the same time as defining the callback:
+>>>>>>> f9e2c1396769bb5da87db60f9ff03683d18711e2
 
 ```ts
 import { useState, useCallback } from 'react';
@@ -361,7 +415,7 @@ export default function Form() {
   const handleChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>((event) => {
     setValue(event.currentTarget.value);
   }, [setValue])
-  
+
   return (
     <>
       <input value={value} onChange={handleChange} />
@@ -433,7 +487,11 @@ interface ModalRendererProps {
 }
 ```
 
+<<<<<<< HEAD
 Заўважце, што немагчыма выкарыстоўваць TypeScript для апісання нейкага пэўнага элемента JSX. То-бок вы не можаце выкарыстоўваць сістэму тыпізацыі каб апісаць кампанент, які прымае, напрыклад, толькі даччыныя элементы `<li>`.
+=======
+Note, that you cannot use TypeScript to describe that the children are a certain type of JSX elements, so you cannot use the type-system to describe a component which only accepts `<li>` children.
+>>>>>>> f9e2c1396769bb5da87db60f9ff03683d18711e2
 
 Вы можаце пабачыць прыклады абодвух тыпаў `React.ReactNode` і `React.ReactElement` з праверкай тыпаў на [гэтай тэставай пляцоўцы TypeScript](https://www.typescriptlang.org/play?#code/JYWwDg9gTgLgBAJQKYEMDG8BmUIjgIilQ3wChSB6CxYmAOmXRgDkIATJOdNJMGAZzgwAFpxAR+8YADswAVwGkZMJFEzpOjDKw4AFHGEEBvUnDhphwADZsi0gFw0mDWjqQBuUgF9yaCNMlENzgAXjgACjADfkctFnYkfQhDAEpQgD44AB42YAA3dKMo5P46C2tbJGkvLIpcgt9-QLi3AEEwMFCItJDMrPTTbIQ3dKywdIB5aU4kKyQQKpha8drhhIGzLLWODbNs3b3s8YAxKBQAcwXpAThMaGWDvbH0gFloGbmrgQfBzYpd1YjQZbEYARkB6zMwO2SHSAAlZlYIBCdtCRkZpHIrFYahQYQD8UYYFA5EhcfjyGYqHAXnJAsIUHlOOUbHYhMIIHJzsI0Qk4P9SLUBuRqXEXEwAKKfRZcNA8PiCfxWACecAAUgBlAAacFm80W-CU11U6h4TgwUv11yShjgJjMLMqDnN9Dilq+nh8pD8AXgCHdMrCkWisVoAet0R6fXqhWKhjKllZVVxMcavpd4Zg7U6Qaj+2hmdG4zeRF10uu-Aeq0LBfLMEe-V+T2L7zLVu+FBWLdLeq+lc7DYFf39deFVOotMCACNOCh1dq219a+30uC8YWoZsRyuEdjkevR8uvoVMdjyTWt4WiSSydXD4NqZP4AymeZE072ZzuUeZQKheQgA).
 

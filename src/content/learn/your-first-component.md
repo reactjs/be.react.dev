@@ -215,7 +215,11 @@ function Profile() {
 
 Большасць React праграм выкарыстоўваюць кампаненты паўсюль. Гэта азначае, што вы будзеце выкарыстоўваць кампаненты не толькі для элементаў, што паўторна выкарыстоўваюцца, такіх як кнопкі, але і для буйнейшых элементаў: бакавых панэляў, спісаў і, у рэшце, цэлых старонак! Кампаненты — гэта зручны спосаб арганізаваць код карыстальніцкага інтэрфейсу і разметку, нават калі некаторыя з іх выкарыстоўваюцца толькі адзін раз.
 
+<<<<<<< HEAD
 [Фрэймворкі на базе React](/learn/start-a-new-react-project) пайшлі яшчэ далей. Замест таго, каб выкарыстоўваць пусты HTML файл і дазволіць React «узяць на сябе» кіраванне старонкай з дапамогай JavaScript, яны *таксама* аўтаматычна ствараюць HTML з вашых кампанентаў React. Гэта дазваляе вашай праграме паказваць частку змесціва да таго, як JavaScript код загрузіцца.
+=======
+[React-based frameworks](/learn/creating-a-react-app) take this a step further. Instead of using an empty HTML file and letting React "take over" managing the page with JavaScript, they *also* generate the HTML automatically from your React components. This allows your app to show some content before the JavaScript code loads.
+>>>>>>> 2534424ec6c433cc2c811d5a0bd5a65b75efa5f0
 
 Тым не менш, многія вэб-сайты выкарыстоўваюць React толькі для [дадавання інтэрактыўнасці да існуючых HTML старонак.](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) Яны маюць шмат каранёвых кампанентаў замест аднаго для ўсёй старонкі. Вы можаце браць ад React столькі, колькі вам трэба.
 

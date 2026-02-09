@@ -79,6 +79,9 @@ function ChatRoom({ roomId }) {
 * [`useLayoutEffect`](/reference/react/useLayoutEffect) спрацоўвае перад тым, як браўзер абновіць экран. Можна выкарыстоўваць для вымярэнняў элементаў старонкі.
 * [`useInsertionEffect`](/reference/react/useInsertionEffect) спрацоўвае перад тым, як React абновіць DOM. Бібліятэкі могуць выкарыстоўваць яго, каб дынамічна падстаўляць CSS.
 
+You can also separate events from Effects:
+
+- [`useEffectEvent`](/reference/react/useEffectEvent) creates a non-reactive event to fire from any Effect hook.
 ---
 
 ## Хукі прадукцыйнасці {/*performance-hooks*/}

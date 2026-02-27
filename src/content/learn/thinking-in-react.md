@@ -1,3 +1,4 @@
+
 ---
 title: Філасофія React
 ---
@@ -37,14 +38,8 @@ JSON API вяртае даныя, якія выглядаюць наступны
 
 Вы можаце падыходзіць да разбівання дызайну на кампаненты па-рознаму, асноўваючыся на вашым досведзе:
 
-<<<<<<< HEAD
-=======
 * **Programming**--use the same techniques for deciding if you should create a new function or object. One such technique is the [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns), that is, a component should ideally only be concerned with one thing. If it ends up growing, it should be decomposed into smaller subcomponents. 
-* **CSS**--consider what you would make class selectors for. (However, components are a bit less granular.)
-* **Design**--consider how you would organize the design's layers.
->>>>>>> a1cc2ab4bf06b530f86a7049923c402baf86aca1
-
-* **Праграмаванне**--выкарыстоўвайце той жа падыход, што і пры стварэнні простай функцыі або аб'екта. Можна прымяніць [прынцып адзінай адказнасці:](https://be.wikipedia.org/wiki/%D0%9F%D1%80%D1%8B%D0%BD%D1%86%D1%8B%D0%BF_%D0%B0%D0%B4%D0%B7%D1%96%D0%BD%D0%B0%D0%B9_%D0%B0%D0%B4%D0%BA%D0%B0%D0%B7%D0%BD%D0%B0%D1%81%D1%86%D1%96) гэта значыць, што ў ідэале кампанент павінен займацца нейкай адной задачай. Калі функцыянальнасць кампанента павялічваецца з цягам часу, яго варта разбіць на драбнейшыя падкампаненты.
+* **Праграмаванне**--выкарыстоўвайце той жа падыход, што і пры стварэнні простай функцыі або аб'екта. Можна прымяніць [падзяленне адказнасці:](https://en.wikipedia.org/wiki/Separation_of_concerns) гэта значыць, што ў ідэале кампанент мусіць быць адказнымза нешта адно. Калі функцыянальнасць кампанента павялічваецца з цягам часу, яго варта разбіць на драбнейшыя падкампаненты.
 * **CSS**--падумайце, для чаго б вы зрабілі селектары класаў (аднак памятайце, што кампаненты крыху менш дэтальныя).
 * **Дызайн**--падумайце, як бы вы арганізавалі слаі дызайну.
 

@@ -21,23 +21,14 @@ title: Агляд даведкі па React
 
 ## React DOM {/*react-dom*/}
 
-<<<<<<< HEAD
-React-dom змяшчае функцыі, якія падтрымліваюцца толькі для вэб-праграм (якія працуюць у DOM асяроддзі браўзера). Гэты раздзел разбіты на наступныя часткі:
+React DOM змяшчае функцыі, якія падтрымліваюцца толькі для вэб-праграм (якія працуюць у DOM асяроддзі браўзера). Гэты раздзел разбіты на наступныя часткі:
 
 * [Хукі](/reference/react-dom/hooks) - Хукі для вэб-праграм, якія працуюць у DOM асяроддзі браўзера.
 * [Кампаненты](/reference/react-dom/components) - React падтрымлівае ўсе кампаненты HTML і SVG, убудаваныя ў браўзер.
 * [API](/reference/react-dom) - Пакет `react-dom` змяшчае метады, якія падтрымліваюцца толькі ў вэб-праграмах.
 * [Кліенцкія API](/reference/react-dom/client) - API з пакета `react-dom/client` дазваляюць рэндэрыць кампаненты React на кліенце (у браўзеры).
 * [Серверныя API](/reference/react-dom/server) - API з пакета `react-dom/server` дазваляюць рэндэрыць кампаненты React у HTML на серверы.
-=======
-React DOM contains features that are only supported for web applications (which run in the browser DOM environment). This section is broken into the following:
-
-* [Hooks](/reference/react-dom/hooks) - Hooks for web applications which run in the browser DOM environment.
-* [Components](/reference/react-dom/components) - React supports all of the browser built-in HTML and SVG components.
-* [APIs](/reference/react-dom) - The `react-dom` package contains methods supported only in web applications.
-* [Client APIs](/reference/react-dom/client) - The `react-dom/client` APIs let you render React components on the client (in the browser).
-* [Server APIs](/reference/react-dom/server) - The `react-dom/server` APIs let you render React components to HTML on the server.
-* [Static APIs](/reference/react-dom/static) - The `react-dom/static` APIs let you generate static HTML for React components.
+* [Статычныя API](/reference/react-dom/static) - API з пакета `react-dom/static` дазваляюць генераваць статычны HTML для кампанентаў React.
 
 ## React Compiler {/*react-compiler*/}
 
@@ -52,7 +43,6 @@ The React Compiler is a build-time optimization tool that automatically memoizes
 The [ESLint plugin for React Hooks](/reference/eslint-plugin-react-hooks) helps enforce the Rules of React:
 
 * [Lints](/reference/eslint-plugin-react-hooks) - Detailed documentation for each lint with examples.
->>>>>>> a1cc2ab4bf06b530f86a7049923c402baf86aca1
 
 ## Правілы React {/*rules-of-react*/}
 

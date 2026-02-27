@@ -21,13 +21,28 @@ title: Агляд даведкі па React
 
 ## React DOM {/*react-dom*/}
 
-React-dom змяшчае функцыі, якія падтрымліваюцца толькі для вэб-праграм (якія працуюць у DOM асяроддзі браўзера). Гэты раздзел разбіты на наступныя часткі:
+React DOM змяшчае функцыі, якія падтрымліваюцца толькі для вэб-праграм (якія працуюць у DOM асяроддзі браўзера). Гэты раздзел разбіты на наступныя часткі:
 
 * [Хукі](/reference/react-dom/hooks) - Хукі для вэб-праграм, якія працуюць у DOM асяроддзі браўзера.
 * [Кампаненты](/reference/react-dom/components) - React падтрымлівае ўсе кампаненты HTML і SVG, убудаваныя ў браўзер.
 * [API](/reference/react-dom) - Пакет `react-dom` змяшчае метады, якія падтрымліваюцца толькі ў вэб-праграмах.
 * [Кліенцкія API](/reference/react-dom/client) - API з пакета `react-dom/client` дазваляюць рэндэрыць кампаненты React на кліенце (у браўзеры).
 * [Серверныя API](/reference/react-dom/server) - API з пакета `react-dom/server` дазваляюць рэндэрыць кампаненты React у HTML на серверы.
+* [Статычныя API](/reference/react-dom/static) - API з пакета `react-dom/static` дазваляюць генераваць статычны HTML для кампанентаў React.
+
+## Кампілятар React {/*react-compiler*/}
+
+Кампілятар React — інструмент аптымізацыі на этапе зборкі, які аўтаматычна мемаізуе вашыя кампаненты React і значэнні:
+
+* [Канфігурацыя](/reference/react-compiler/configuration) — канфігурацыя параметраў для кампілятара React.
+* [Дырэктывы](/reference/react-compiler/directives) — Дырэктывы, каб кантраляваць кампіляцыю на ўзроўні функцый.
+* [Compiling Libraries](/reference/react-compiler/compiling-libraries) - Дапаможнік па публікацыі папярэдне скампіляваных бібліятэк.
+
+## Плагін ESLint для Хукаў React {/*eslint-plugin-react-hooks*/}
+
+[Плагін ESLint для Хукаў React](/reference/eslint-plugin-react-hooks) дапамагае сачыць за выкананнем правілаў React:
+
+* [Правілы лінтара](/reference/eslint-plugin-react-hooks) - Дэтальная дакументацыя кожнага правіла з прыкладамі.
 
 ## Правілы React {/*rules-of-react*/}
 

@@ -93,7 +93,7 @@ export default function App() {
 
 <Sandpack>
 
-```js
+```js {expectedErrors: {'react-compiler': [5]}}
 let guest = 0;
 
 function Cup() {
@@ -381,7 +381,7 @@ body > * {
 
 <Sandpack>
 
-```js src/Profile.js
+```js {expectedErrors: {'react-compiler': [7]}} src/Profile.js
 import Panel from './Panel.js';
 import { getImageUrl } from './utils.js';
 
@@ -603,19 +603,13 @@ export default function StoryTray({ stories }) {
 }
 ```
 
-```js src/App.js hidden
+```js {expectedErrors: {'react-compiler': [16]}} src/App.js hidden
 import { useState, useEffect } from 'react';
 import StoryTray from './StoryTray.js';
 
-<<<<<<< HEAD
-let initialStories = [
+const initialStories = [
   {id: 0, label: "Гісторыя Анкіта" },
   {id: 1, label: "Гісторыя Тэйлара" },
-=======
-const initialStories = [
-  {id: 0, label: "Ankit's Story" },
-  {id: 1, label: "Taylor's Story" },
->>>>>>> 50d6991ca6652f4bc4c985cf0c0e593864f2cc91
 ];
 
 export default function App() {
@@ -705,19 +699,13 @@ export default function StoryTray({ stories }) {
 }
 ```
 
-```js src/App.js hidden
+```js {expectedErrors: {'react-compiler': [16]}} src/App.js hidden
 import { useState, useEffect } from 'react';
 import StoryTray from './StoryTray.js';
 
-<<<<<<< HEAD
-let initialStories = [
+const initialStories = [
   {id: 0, label: "Гісторыя Анкіта" },
   {id: 1, label: "Гісторыя Тэйлара" },
-=======
-const initialStories = [
-  {id: 0, label: "Ankit's Story" },
-  {id: 1, label: "Taylor's Story" },
->>>>>>> 50d6991ca6652f4bc4c985cf0c0e593864f2cc91
 ];
 
 export default function App() {
@@ -782,13 +770,8 @@ li {
 
 ```js src/StoryTray.js active
 export default function StoryTray({ stories }) {
-<<<<<<< HEAD
   // Скапіруйце масіў!
-  let storiesToDisplay = stories.slice();
-=======
-  // Copy the array!
   const storiesToDisplay = stories.slice();
->>>>>>> 50d6991ca6652f4bc4c985cf0c0e593864f2cc91
 
   // Не ўплывае на зыходны масіў:
   storiesToDisplay.push({
@@ -808,19 +791,13 @@ export default function StoryTray({ stories }) {
 }
 ```
 
-```js src/App.js hidden
+```js {expectedErrors: {'react-compiler': [16]}} src/App.js hidden
 import { useState, useEffect } from 'react';
 import StoryTray from './StoryTray.js';
 
-<<<<<<< HEAD
-let initialStories = [
+const initialStories = [
   {id: 0, label: "Гісторыя Анкіта" },
   {id: 1, label: "Гісторыя Тэйлара" },
-=======
-const initialStories = [
-  {id: 0, label: "Ankit's Story" },
-  {id: 1, label: "Taylor's Story" },
->>>>>>> 50d6991ca6652f4bc4c985cf0c0e593864f2cc91
 ];
 
 export default function App() {

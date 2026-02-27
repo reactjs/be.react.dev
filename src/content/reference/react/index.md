@@ -30,19 +30,19 @@ React DOM змяшчае функцыі, якія падтрымліваюцца
 * [Серверныя API](/reference/react-dom/server) - API з пакета `react-dom/server` дазваляюць рэндэрыць кампаненты React у HTML на серверы.
 * [Статычныя API](/reference/react-dom/static) - API з пакета `react-dom/static` дазваляюць генераваць статычны HTML для кампанентаў React.
 
-## React Compiler {/*react-compiler*/}
+## Кампілятар React {/*react-compiler*/}
 
-The React Compiler is a build-time optimization tool that automatically memoizes your React components and values:
+Кампілятар React — інструмент аптымізацыі на этапе зборкі, які аўтаматычна мемаізуе вашыя кампаненты React і значэнні:
 
-* [Configuration](/reference/react-compiler/configuration) - Configuration options for React Compiler.
-* [Directives](/reference/react-compiler/directives) - Function-level directives to control compilation.
-* [Compiling Libraries](/reference/react-compiler/compiling-libraries) - Guide for shipping pre-compiled library code.
+* [Канфігурацыя](/reference/react-compiler/configuration) — канфігурацыя параметраў для кампілятара React.
+* [Дырэктывы](/reference/react-compiler/directives) — Дырэктывы, каб кантраляваць кампіляцыю на ўзроўні функцый.
+* [Compiling Libraries](/reference/react-compiler/compiling-libraries) - Дапаможнік па публікацыі папярэдне скампіляваных бібліятэк.
 
-## ESLint Plugin React Hooks {/*eslint-plugin-react-hooks*/}
+## Плагін ESLint для Хукаў React {/*eslint-plugin-react-hooks*/}
 
-The [ESLint plugin for React Hooks](/reference/eslint-plugin-react-hooks) helps enforce the Rules of React:
+[Плагін ESLint для Хукаў React](/reference/eslint-plugin-react-hooks) дапамагае сачыць за выкананнем правілаў React:
 
-* [Lints](/reference/eslint-plugin-react-hooks) - Detailed documentation for each lint with examples.
+* [Правілы лінтара](/reference/eslint-plugin-react-hooks) - Дэтальная дакументацыя кожнага правіла з прыкладамі.
 
 ## Правілы React {/*rules-of-react*/}
 

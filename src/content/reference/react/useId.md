@@ -1,26 +1,26 @@
 ---
-title: useId
----
 
-<Intro>
+## title: useId {/*title-useid*/}
 
-`useId` is a React Hook for generating unique IDs that can be passed to accessibility attributes.
+
+
+`useId` — хук React для генерацыі ўнікальных ідэнтыфікатараў, якія далей можна выкарыстоўваць у атрыбутах даступнасці.
 
 ```js
 const id = useId()
 ```
 
-</Intro>
 
-<InlineToc />
+
+
 
 ---
 
-## Reference {/*reference*/}
+## Апісанне {/*reference*/}
 
 ### `useId()` {/*useid*/}
 
-Call `useId` at the top level of your component to generate a unique ID:
+Выклічце `useId` на верхнім узроўні вашага кампанента, каб згенераваць унікальны ідэнтыфікатар:
 
 ```js
 import { useId } from 'react';
@@ -30,39 +30,36 @@ function PasswordField() {
   // ...
 ```
 
-[See more examples below.](#usage)
+[Болей прыкладаў глядзіце ніжэй.](#usage)
 
-#### Parameters {/*parameters*/}
+#### Параметры {/*parameters*/}
 
-`useId` does not take any parameters.
+`useId` не прымае аніякіх параметраў.
 
-#### Returns {/*returns*/}
+#### Значэнні, якія вяртаюцца {/*returns*/}
 
-`useId` returns a unique ID string associated with this particular `useId` call in this particular component.
+`useId` вяртае радок з унікальным ідэнтыфікатарам, які праасацыяваны з гэтым канкрэтным выклікам `useId` у гэтым канкрэтным кампаненце.
 
-#### Caveats {/*caveats*/}
+#### Агаворкі {/*caveats*/}
 
-* `useId` is a Hook, so you can only call it **at the top level of your component** or your own Hooks. You can't call it inside loops or conditions. If you need that, extract a new component and move the state into it.
-
-* `useId` **should not be used to generate cache keys** for [use()](/reference/react/use). The ID is stable when a component is mounted but may change during rendering. Cache keys should be generated from your data.
-
-* `useId` **should not be used to generate keys** in a list. [Keys should be generated from your data.](/learn/rendering-lists#where-to-get-your-key)
-
-* `useId` currently cannot be used in [async Server Components](/reference/rsc/server-components#async-components-with-server-components).
+- `useId` — хук, а значыць, вы можаце яго выклікаць толькі **на верхнім узроўні вашага кампанента** ці ўнутры ўласнага хука. Ëн не можа быць выкліканы ўнутры цыкла альбо ўмовы. Калі вы гэтага патрабуеце, выміце ў новы кампанент і перанясіце стан туды.
+- `useId` **не мусіць быць выкарыстаны для генерацыі ключоў кэша** для [use()](/reference/react/use). Ідэнтыфікатар стабільны пакуль кампанент прымантаваны, але можа змяняцца паміж рэндарамі. Ключы кэша мусяць быць згенераванымі на падставе вашых даных.
+- `useId` **не мусіць быць выкарыстаны для генерацыі ключоў** у спісах. [Ключы мусяць быць згенераванымі на падставе вашых даных](/learn/rendering-lists#where-to-get-your-key).
+- `useId` на дадзены момант не можа быць выкарыстаны ўнутры [асінхронных серверных кампанентаў](/reference/rsc/server-components#async-components-with-server-components).
 
 ---
 
-## Usage {/*usage*/}
+## Выкарыстанне {/*usage*/}
 
-<Pitfall>
 
-**Do not call `useId` to generate keys in a list.** [Keys should be generated from your data.](/learn/rendering-lists#where-to-get-your-key)
 
-</Pitfall>
+**Не выкарыстоўвайце `useId` для генерацыі ключоў у спісах.** [Ключы мусяць быць згенераванымі на падставе вашых даных](/learn/rendering-lists#where-to-get-your-key).
 
-### Generating unique IDs for accessibility attributes {/*generating-unique-ids-for-accessibility-attributes*/}
 
-Call `useId` at the top level of your component to generate a unique ID:
+
+### Генерацыя ўнікальных ідэнтыфікатараў для атрыбутаў даступнасці {/*generating-unique-ids-for-accessibility-attributes*/}
+
+Выклічце `useId` на верхнім узроўні вашага кампанента каб згенераваць унікальны ідэнтыфікатар:
 
 ```js [[1, 4, "passwordHintId"]]
 import { useId } from 'react';
@@ -72,7 +69,7 @@ function PasswordField() {
   // ...
 ```
 
-You can then pass the <CodeStep step={1}>generated ID</CodeStep> to different attributes:
+Далей вы можаце перадаць згенераваны ідэнтыфікатар у розныя атрыбуты:
 
 ```js [[1, 2, "passwordHintId"], [1, 3, "passwordHintId"]]
 <>
@@ -81,26 +78,26 @@ You can then pass the <CodeStep step={1}>generated ID</CodeStep> to different at
 </>
 ```
 
-**Let's walk through an example to see when this is useful.**
+**Давайце разгледзім прыклад, калі гэта можа быць карысна.**
 
-[HTML accessibility attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) like [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) let you specify that two tags are related to each other. For example, you can specify that an element (like an input) is described by another element (like a paragraph).
+[Атрыбуты даступнасці ў HTML](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) як, напрыклад, `[aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby)` дазваляюць пазначыць, што два тэгі звязаныя адно з адным. Такім чынам, як варыянт, вы можаце адзначыць, што элемент (напрыклад, поле ўводу) апісаны іншым элементам (напрыклад, параграфам).
 
-In regular HTML, you would write it like this:
+У звычайным HTML, вы б апісалі гэта так:
 
 ```html {5,8}
 <label>
-  Password:
+  Пароль:
   <input
     type="password"
     aria-describedby="password-hint"
   />
 </label>
 <p id="password-hint">
-  The password should contain at least 18 characters
+  Пароль мусіць змяшчаць як найменш 18 сімвалаў
 </p>
 ```
 
-However, hardcoding IDs like this is not a good practice in React. A component may be rendered more than once on the page--but IDs have to be unique! Instead of hardcoding an ID, generate a unique ID with `useId`:
+Але ўказваць ідэнтыфікатар наўпрост у кодзе не з’яўляецца добрай практыкай у React. Кампанент можа быць адрэндараны болей за адзін раз на старонцы, а ідэнтыфікатары маюць быць унікальнымі! Замест указання пастаяннага ідэнтыфікатара, згенеруйце ўнікальны з дапамогай `useId`:
 
 ```js {4,11,14}
 import { useId } from 'react';
@@ -110,23 +107,23 @@ function PasswordField() {
   return (
     <>
       <label>
-        Password:
+        Пароль:
         <input
           type="password"
           aria-describedby={passwordHintId}
         />
       </label>
       <p id={passwordHintId}>
-        The password should contain at least 18 characters
+        Пароль мусіць змяшчаць як найменш 18 сімвалаў
       </p>
     </>
   );
 }
 ```
 
-Now, even if `PasswordField` appears multiple times on the screen, the generated IDs won't clash.
+Цяпер, нават калі `PasswordField` з’явіцца на старонцы некалькі раз, згенераваныя ідэнтыфікатары не будуць канфліктаваць.
 
-<Sandpack>
+
 
 ```js
 import { useId } from 'react';
@@ -136,14 +133,14 @@ function PasswordField() {
   return (
     <>
       <label>
-        Password:
+        Пароль:
         <input
           type="password"
           aria-describedby={passwordHintId}
         />
       </label>
       <p id={passwordHintId}>
-        The password should contain at least 18 characters
+        Пароль мусіць змяшчаць як найменш 18 сімвалаў
       </p>
     </>
   );
@@ -152,9 +149,9 @@ function PasswordField() {
 export default function App() {
   return (
     <>
-      <h2>Choose password</h2>
+      <h2>Прыдумайце пароль</h2>
       <PasswordField />
-      <h2>Confirm password</h2>
+      <h2>Пацвердзіце пароль</h2>
       <PasswordField />
     </>
   );
@@ -165,37 +162,37 @@ export default function App() {
 input { margin: 5px; }
 ```
 
-</Sandpack>
 
-[Watch this video](https://www.youtube.com/watch?v=0dNzNcuEuOo) to see the difference in the user experience with assistive technologies.
 
-<Pitfall>
+[Азнаёмцеся з відэа](https://www.youtube.com/watch?v=0dNzNcuEuOo), каб пабачыць розніцу ў карыстанні з ужываннем дапаможных тэхналогій.
 
-With [server rendering](/reference/react-dom/server), **`useId` requires an identical component tree on the server and the client**. If the trees you render on the server and the client don't match exactly, the generated IDs won't match.
 
-</Pitfall>
 
-<DeepDive>
+Пры [серверным рэндарынгу](/reference/react-dom/server), `**useId` патрабуе ідэнтычнага дрэва кампанентаў на серверы і на кліенце**. Калі дрэвы, што вы рэндарыце і кліенце і серверы не суадносяцца, згенераваныя ідэнтыфікатары будуць адрознымі.
 
-#### Why is useId better than an incrementing counter? {/*why-is-useid-better-than-an-incrementing-counter*/}
 
-You might be wondering why `useId` is better than incrementing a global variable like `nextId++`.
 
-The primary benefit of `useId` is that React ensures that it works with [server rendering.](/reference/react-dom/server) During server rendering, your components generate HTML output. Later, on the client, [hydration](/reference/react-dom/client/hydrateRoot) attaches your event handlers to the generated HTML. For hydration to work, the client output must match the server HTML.
 
-This is very difficult to guarantee with an incrementing counter because the order in which the Client Components are hydrated may not match the order in which the server HTML was emitted. By calling `useId`, you ensure that hydration will work, and the output will match between the server and the client.
 
-Inside React, `useId` is generated from the "parent path" of the calling component. This is why, if the client and the server tree are the same, the "parent path" will match up regardless of rendering order.
+#### Чым useId лепей за нарастальнага лічыльнік? {/*why-is-useid-better-than-an-incrementing-counter*/}
 
-</DeepDive>
+Вы можаце задумацца: чым `useId` лепей за нарастальную глабальную пераменную накшталт `nextId++`.
+
+Асноўная перавага `useId` у тым, што React забяспечваю працу пры [серверным рэндарынгу](/reference/react-dom/server). Падчас сервернага рэндарынгу, з вашых кампанентаў генеруецца HTML. Потым, на кліенце, падчас [гідратацыі](/reference/react-dom/client/hydrateRoot) адбываецца прывязка апрацоўшчыкаў падзей да згенераванага HTML. Каб гідратацыя спрацавала, вынік кліента мусіць супадаць з HTML сервера.
+
+Гэта вельмі складана гарантаваць праз нарастальны лічыльнік, бо парадак, у якім кліент робіць гідратацыю кампанентаў, можа не адпавядаць парадку, у якім сервер складае HTML. Карыстаючыся `useId`, можна гарантаваць, што гідрадацыя спрацуе, і вынік будзе аднолькавым на серверы і кліенце.
+
+Унутры React, `useId` генеруецца на падставе размяшчэння бацькоўскага кампанента». Менавіта таму, калі дрэвы кліента і сервера ідэнтычныя, «размяшчэнне бацькоўскага кампанента» будзе адпавядаць незалежна ад парадку рэндара.
+
+
 
 ---
 
-### Generating IDs for several related elements {/*generating-ids-for-several-related-elements*/}
+### Генерацыя ідэнтыфікатараў для некалькі звязаных элементаў {/*generating-ids-for-several-related-elements*/}
 
-If you need to give IDs to multiple related elements, you can call `useId` to generate a shared prefix for them: 
+Калі вам трэба даць ідэнтыфікатары некалькім звязаным элементам, вы можаце выкарыстаць `useId` каб згенераваць агульны прэфікс для іх:
 
-<Sandpack>
+
 
 ```js
 import { useId } from 'react';
@@ -204,10 +201,10 @@ export default function Form() {
   const id = useId();
   return (
     <form>
-      <label htmlFor={id + '-firstName'}>First Name:</label>
+      <label htmlFor={id + '-firstName'}>Імя:</label>
       <input id={id + '-firstName'} type="text" />
       <hr />
-      <label htmlFor={id + '-lastName'}>Last Name:</label>
+      <label htmlFor={id + '-lastName'}>Прозвішча:</label>
       <input id={id + '-lastName'} type="text" />
     </form>
   );
@@ -218,22 +215,22 @@ export default function Form() {
 input { margin: 5px; }
 ```
 
-</Sandpack>
 
-This lets you avoid calling `useId` for every single element that needs a unique ID.
+
+Гэта дазволіць вам пазбегнуць выклікаў `useId` для кожнага элемента, які патрабуе ўнікальны ідэнтыфікатар.
 
 ---
 
-### Specifying a shared prefix for all generated IDs {/*specifying-a-shared-prefix-for-all-generated-ids*/}
+### Вызначэнне агульнага прэфікса для ўсіх згенераваных ідэнтыфікатараў {/*specifying-a-shared-prefix-for-all-generated-ids*/}
 
-If you render multiple independent React applications on a single page, pass `identifierPrefix` as an option to your [`createRoot`](/reference/react-dom/client/createRoot#parameters) or [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) calls. This ensures that the IDs generated by the two different apps never clash because every identifier generated with `useId` will start with the distinct prefix you've specified.
+Калі вы рэндарыце некалькі незалежных праграм React на адной старонцы, перадайце `identifierPrefix` у опцыях да вашых выклікаў `[createRoot](/reference/react-dom/client/createRoot#parameters)` ці `[hydrateRoot](/reference/react-dom/client/hydrateRoot)`. Гэта гарантуе, што ідэнтыфікатары з дзвюх розных праграм не будуць канфліктаваць, бо кожны згенераваны праз `useId` ідэнтыфікатар будзе пачынацца з адрознага прэфікса, які вы ўказалі.
 
-<Sandpack>
+
 
 ```html public/index.html
 <!DOCTYPE html>
 <html>
-  <head><title>My app</title></head>
+  <head><title>Мая праграма</title></head>
   <body>
     <div id="root1"></div>
     <div id="root2"></div>
@@ -246,18 +243,18 @@ import { useId } from 'react';
 
 function PasswordField() {
   const passwordHintId = useId();
-  console.log('Generated identifier:', passwordHintId)
+  console.log('Згенераваны ідэнтыфікатар:', passwordHintId)
   return (
     <>
       <label>
-        Password:
+        Пароль:
         <input
           type="password"
           aria-describedby={passwordHintId}
         />
       </label>
       <p id={passwordHintId}>
-        The password should contain at least 18 characters
+        Пароль мусіць змяшчаць як найменш 18 сімвалаў
       </p>
     </>
   );
@@ -266,7 +263,7 @@ function PasswordField() {
 export default function App() {
   return (
     <>
-      <h2>Choose password</h2>
+      <h2>Прыдумайце пароль</h2>
       <PasswordField />
     </>
   );
@@ -305,13 +302,13 @@ root2.render(<App />);
 input { margin: 5px; }
 ```
 
-</Sandpack>
+
 
 ---
 
-### Using the same ID prefix on the client and the server {/*using-the-same-id-prefix-on-the-client-and-the-server*/}
+### Выкарыстанне аднолькавых прэфіксаў для ідэнтыфікатараў на кліенце і на серверы {/*using-the-same-id-prefix-on-the-client-and-the-server*/}
 
-If you [render multiple independent React apps on the same page](#specifying-a-shared-prefix-for-all-generated-ids), and some of these apps are server-rendered, make sure that the `identifierPrefix` you pass to the [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) call on the client side is the same as the `identifierPrefix` you pass to the [server APIs](/reference/react-dom/server) such as [`renderToPipeableStream`.](/reference/react-dom/server/renderToPipeableStream)
+Калі вы [рэндарыце некалькі незалежных праграм React на адной старонцы](#specifying-a-shared-prefix-for-all-generated-ids), і некаторыя з гэтых праграм рэндарацца на серверы, пераканайцеся, што `identifierPrefix`, які вы перадаяце ў выклік `[hydrateRoot](/reference/react-dom/client/hydrateRoot)` на кліенце, ідэнтычны `identifierPrefix`, які вы перадаяце праз [API сервера](/reference/react-dom/server), такія як `[renderToPipeableStream`.](/reference/react-dom/server/renderToPipeableStream)
 
 ```js
 // Server
@@ -335,4 +332,4 @@ const root = hydrateRoot(
 );
 ```
 
-You do not need to pass `identifierPrefix` if you only have one React app on the page.
+У `identifierPrefix` няма патрэбы, калі вы маеце толькі адну праграму React на старонцы.

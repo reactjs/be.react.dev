@@ -1,8 +1,8 @@
 ---
+title: useId
+---
 
-## title: useId {/*title-useid*/}
-
-
+<Intro>
 
 `useId` — хук React для генерацыі ўнікальных ідэнтыфікатараў, якія далей можна выкарыстоўваць у атрыбутах даступнасці.
 
@@ -10,9 +10,9 @@
 const id = useId()
 ```
 
+</Intro>
 
-
-
+<InlineToc />
 
 ---
 
@@ -51,12 +51,11 @@ function PasswordField() {
 
 ## Выкарыстанне {/*usage*/}
 
-
+<Pitfall>
 
 **Не выкарыстоўвайце `useId` для генерацыі ключоў у спісах.** [Ключы мусяць быць згенераванымі на падставе вашых даных](/learn/rendering-lists#where-to-get-your-key).
 
-
-
+</Pitfall>
 ### Генерацыя ўнікальных ідэнтыфікатараў для атрыбутаў даступнасці {/*generating-unique-ids-for-accessibility-attributes*/}
 
 Выклічце `useId` на верхнім узроўні вашага кампанента каб згенераваць унікальны ідэнтыфікатар:
@@ -80,7 +79,7 @@ function PasswordField() {
 
 **Давайце разгледзім прыклад, калі гэта можа быць карысна.**
 
-[Атрыбуты даступнасці ў HTML](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) як, напрыклад, `[aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby)` дазваляюць пазначыць, што два тэгі звязаныя адно з адным. Такім чынам, як варыянт, вы можаце адзначыць, што элемент (напрыклад, поле ўводу) апісаны іншым элементам (напрыклад, параграфам).
+[Атрыбуты даступнасці ў HTML](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) як, напрыклад, [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) дазваляюць пазначыць, што два тэгі звязаныя адно з адным. Такім чынам, як варыянт, вы можаце адзначыць, што элемент (напрыклад, поле ўводу) апісаны іншым элементам (напрыклад, параграфам).
 
 У звычайным HTML, вы б апісалі гэта так:
 
@@ -123,7 +122,7 @@ function PasswordField() {
 
 Цяпер, нават калі `PasswordField` з’явіцца на старонцы некалькі раз, згенераваныя ідэнтыфікатары не будуць канфліктаваць.
 
-
+<Sandpack>
 
 ```js
 import { useId } from 'react';
@@ -162,17 +161,17 @@ export default function App() {
 input { margin: 5px; }
 ```
 
-
+</Sandpack>
 
 [Азнаёмцеся з відэа](https://www.youtube.com/watch?v=0dNzNcuEuOo), каб пабачыць розніцу ў карыстанні з ужываннем дапаможных тэхналогій.
 
+<Pitfall>
 
+Пры [серверным рэндарынгу](/reference/react-dom/server), **`useId` патрабуе ідэнтычнага дрэва кампанентаў на серверы і на кліенце**. Калі дрэвы, што вы рэндарыце і кліенце і серверы не суадносяцца, згенераваныя ідэнтыфікатары будуць адрознымі.
 
-Пры [серверным рэндарынгу](/reference/react-dom/server), `**useId` патрабуе ідэнтычнага дрэва кампанентаў на серверы і на кліенце**. Калі дрэвы, што вы рэндарыце і кліенце і серверы не суадносяцца, згенераваныя ідэнтыфікатары будуць адрознымі.
+</Pitfall>
 
-
-
-
+<DeepDive>
 
 #### Чым useId лепей за нарастальнага лічыльнік? {/*why-is-useid-better-than-an-incrementing-counter*/}
 
@@ -184,7 +183,7 @@ input { margin: 5px; }
 
 Унутры React, `useId` генеруецца на падставе размяшчэння бацькоўскага кампанента». Менавіта таму, калі дрэвы кліента і сервера ідэнтычныя, «размяшчэнне бацькоўскага кампанента» будзе адпавядаць незалежна ад парадку рэндара.
 
-
+</DeepDive>
 
 ---
 
@@ -192,7 +191,7 @@ input { margin: 5px; }
 
 Калі вам трэба даць ідэнтыфікатары некалькім звязаным элементам, вы можаце выкарыстаць `useId` каб згенераваць агульны прэфікс для іх:
 
-
+<Sandpack>
 
 ```js
 import { useId } from 'react';
@@ -215,7 +214,7 @@ export default function Form() {
 input { margin: 5px; }
 ```
 
-
+</Sandpack>
 
 Гэта дазволіць вам пазбегнуць выклікаў `useId` для кожнага элемента, які патрабуе ўнікальны ідэнтыфікатар.
 
@@ -223,9 +222,9 @@ input { margin: 5px; }
 
 ### Вызначэнне агульнага прэфікса для ўсіх згенераваных ідэнтыфікатараў {/*specifying-a-shared-prefix-for-all-generated-ids*/}
 
-Калі вы рэндарыце некалькі незалежных праграм React на адной старонцы, перадайце `identifierPrefix` у опцыях да вашых выклікаў `[createRoot](/reference/react-dom/client/createRoot#parameters)` ці `[hydrateRoot](/reference/react-dom/client/hydrateRoot)`. Гэта гарантуе, што ідэнтыфікатары з дзвюх розных праграм не будуць канфліктаваць, бо кожны згенераваны праз `useId` ідэнтыфікатар будзе пачынацца з адрознага прэфікса, які вы ўказалі.
+Калі вы рэндарыце некалькі незалежных праграм React на адной старонцы, перадайце `identifierPrefix` у опцыях да вашых выклікаў [`createRoot`](/reference/react-dom/client/createRoot#parameters) ці [`hydrateRoot`](/reference/react-dom/client/hydrateRoot). Гэта гарантуе, што ідэнтыфікатары з дзвюх розных праграм не будуць канфліктаваць, бо кожны згенераваны праз `useId` ідэнтыфікатар будзе пачынацца з адрознага прэфікса, які вы ўказалі.
 
-
+<Sandpack>
 
 ```html public/index.html
 <!DOCTYPE html>
@@ -302,13 +301,13 @@ root2.render(<App />);
 input { margin: 5px; }
 ```
 
-
+</Sandpack>
 
 ---
 
 ### Выкарыстанне аднолькавых прэфіксаў для ідэнтыфікатараў на кліенце і на серверы {/*using-the-same-id-prefix-on-the-client-and-the-server*/}
 
-Калі вы [рэндарыце некалькі незалежных праграм React на адной старонцы](#specifying-a-shared-prefix-for-all-generated-ids), і некаторыя з гэтых праграм рэндарацца на серверы, пераканайцеся, што `identifierPrefix`, які вы перадаяце ў выклік `[hydrateRoot](/reference/react-dom/client/hydrateRoot)` на кліенце, ідэнтычны `identifierPrefix`, які вы перадаяце праз [API сервера](/reference/react-dom/server), такія як `[renderToPipeableStream`.](/reference/react-dom/server/renderToPipeableStream)
+Калі вы [рэндарыце некалькі незалежных праграм React на адной старонцы](#specifying-a-shared-prefix-for-all-generated-ids), і некаторыя з гэтых праграм рэндарацца на серверы, пераканайцеся, што `identifierPrefix`, які вы перадаяце ў выклік [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) на кліенце, ідэнтычны `identifierPrefix`, які вы перадаяце праз [API сервера](/reference/react-dom/server), такія як [`renderToPipeableStream`.](/reference/react-dom/server/renderToPipeableStream)
 
 ```js
 // Server

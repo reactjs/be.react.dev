@@ -28,8 +28,13 @@ export default function Avatar() {
   return (
     <img
       className="avatar"
+<<<<<<< HEAD
       src="https://i.imgur.com/7vQD0fPs.jpg"
       alt="Грэгорыа І. Зара"
+=======
+      src="https://react.dev/images/docs/scientists/7vQD0fPs.jpg"
+      alt="Gregorio Y. Zara"
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
     />
   );
 }
@@ -41,7 +46,11 @@ export default function Avatar() {
 
 </Sandpack>
 
+<<<<<<< HEAD
 Тут, `"https://i.imgur.com/7vQD0fPs.jpg"` і `"Грэгорыа І. Зара"` перадаюцца як радкі.
+=======
+Here, `"https://react.dev/images/docs/scientists/7vQD0fPs.jpg"` and `"Gregorio Y. Zara"` are being passed as strings.
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 Але што, калі вы хочаце дынамічна задаць значэнне `src` або `alt`? Вы можаце **выкарыстоўваць значэнне з JavaScript, замяніўшы `"` і `"` на `{` і `}`**:
 
@@ -49,8 +58,13 @@ export default function Avatar() {
 
 ```js
 export default function Avatar() {
+<<<<<<< HEAD
   const avatar = 'https://i.imgur.com/7vQD0fPs.jpg';
   const description = 'Грэгорыа І. Зара';
+=======
+  const avatar = 'https://react.dev/images/docs/scientists/7vQD0fPs.jpg';
+  const description = 'Gregorio Y. Zara';
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
   return (
     <img
       className="avatar"
@@ -190,8 +204,13 @@ export default function TodoList() {
       <h1>Спіс спраў {person.name}</h1>
       <img
         className="avatar"
+<<<<<<< HEAD
         src="https://i.imgur.com/7vQD0fPs.jpg"
         alt="Грэгорыа І. Зара"
+=======
+        src="https://react.dev/images/docs/scientists/7vQD0fPs.jpg"
+        alt="Gregorio Y. Zara"
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
       />
       <ul>
         <li>Палепшыць відэатэлефон</li>
@@ -266,8 +285,13 @@ export default function TodoList() {
       <h1>Спіс спраў {person}</h1>
       <img
         className="avatar"
+<<<<<<< HEAD
         src="https://i.imgur.com/7vQD0fPs.jpg"
         alt="Грэгорыа І. Зара"
+=======
+        src="https://react.dev/images/docs/scientists/7vQD0fPs.jpg"
+        alt="Gregorio Y. Zara"
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
       />
       <ul>
         <li>Палепшыць відэатэлефон</li>
@@ -314,8 +338,13 @@ export default function TodoList() {
       <h1>Спіс спраў {person.name}</h1>
       <img
         className="avatar"
+<<<<<<< HEAD
         src="https://i.imgur.com/7vQD0fPs.jpg"
         alt="Грэгорыа І. Зара"
+=======
+        src="https://react.dev/images/docs/scientists/7vQD0fPs.jpg"
+        alt="Gregorio Y. Zara"
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
       />
       <ul>
         <li>Палепшыць відэатэлефон</li>
@@ -358,8 +387,13 @@ export default function TodoList() {
       <h1>Спіс спраў {person.name}</h1>
       <img
         className="avatar"
+<<<<<<< HEAD
         src="https://i.imgur.com/7vQD0fPs.jpg"
         alt="Грэгорыа І. Зара"
+=======
+        src="https://react.dev/images/docs/scientists/7vQD0fPs.jpg"
+        alt="Gregorio Y. Zara"
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
       />
       <ul>
         <li>Палепшыць відэатэлефон</li>
@@ -387,8 +421,13 @@ body > div > div { padding: 20px; }
 
 ```js
 const person = {
+<<<<<<< HEAD
   name: 'Грэгорыа І. Зара',
   imageUrl: "https://i.imgur.com/7vQD0fPs.jpg",
+=======
+  name: 'Gregorio Y. Zara',
+  imageUrl: "https://react.dev/images/docs/scientists/7vQD0fPs.jpg",
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
   theme: {
     backgroundColor: 'black',
     color: 'pink'
@@ -428,7 +467,11 @@ body > div > div { padding: 20px; }
 
 У прыведзеным ніжэй аб'екце поўны URL відарыса падзелены на чатыры часткі: базавы URL, `imageId`, `imageSize` і пашырэнне файла.
 
+<<<<<<< HEAD
 Мы хочам аб'яднаць гэтыя атрыбуты разам у URL-адрас відарыса: базавы URL (заўсёды `'https://i.imgur.com/'`), `imageId` (`'7vQD0fP'`), `imageSize` (`'s'`) і пашырэнне файла (заўсёды `'.jpg'`). Аднак нешта не так з тым, як тэг `<img>` вызначае свой `src`.
+=======
+We want the image URL to combine these attributes together: base URL (always `'https://react.dev/images/docs/scientists/'`), `imageId` (`'7vQD0fP'`), `imageSize` (`'s'`), and file extension (always `'.jpg'`). However, something is wrong with how the `<img>` tag specifies its `src`.
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 Вы можаце гэта выправіць?
 
@@ -436,7 +479,7 @@ body > div > div { padding: 20px; }
 
 ```js
 
-const baseUrl = 'https://i.imgur.com/';
+const baseUrl = 'https://react.dev/images/docs/scientists/';
 const person = {
   name: 'Грэгорыа І. Зара',
   imageId: '7vQD0fP',
@@ -487,7 +530,7 @@ body > div > div { padding: 20px; }
 <Sandpack>
 
 ```js
-const baseUrl = 'https://i.imgur.com/';
+const baseUrl = 'https://react.dev/images/docs/scientists/';
 const person = {
   name: 'Грэгорыа І. Зара',
   imageId: '7vQD0fP',
@@ -564,7 +607,7 @@ export default function TodoList() {
 ```js src/utils.js
 export function getImageUrl(person) {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     person.imageId +
     person.imageSize +
     '.jpg'

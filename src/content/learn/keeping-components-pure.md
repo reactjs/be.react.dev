@@ -27,6 +27,7 @@ title: Захоўванне кампанентаў чыстымі
 
 Разгледзім наступную матэматычную формулу: <Math><MathI>y</MathI> = 2<MathI>x</MathI></Math>.
 
+<<<<<<< HEAD
 Калі <Math><MathI>x</MathI> = 2</Math>, тады <Math><MathI>y</MathI> = 4</Math>. Заўсёды.
 
 Калі <Math><MathI>x</MathI> = 3</Math>, тады <Math><MathI>y</MathI> = 6</Math>. Заўсёды. 
@@ -34,6 +35,15 @@ title: Захоўванне кампанентаў чыстымі
 Калі <Math><MathI>x</MathI> = 3</Math>, тады <MathI>y</MathI> не будзе часам роўным <Math>9</Math> або <Math>–1</Math>, або <Math>2,5</Math> у залежнасці ад часу сутак або стану фондавага рынку.
 
 Калі <Math><MathI>y</MathI> = 2<MathI>x</MathI></Math> і <Math><MathI>x</MathI> = 3</Math>, тады <MathI>y</MathI> _заўсёды_ будзе <Math>6</Math>. 
+=======
+If <Math><MathI>x</MathI> = 2</Math> then <Math><MathI>y</MathI> = 4</Math>. Always.
+
+If <Math><MathI>x</MathI> = 3</Math> then <Math><MathI>y</MathI> = 6</Math>. Always.
+
+If <Math><MathI>x</MathI> = 3</Math>, <MathI>y</MathI> won't sometimes be <Math>9</Math> or <Math>–1</Math> or <Math>2.5</Math> depending on the time of day or the state of the stock market.
+
+If <Math><MathI>y</MathI> = 2<MathI>x</MathI></Math> and <Math><MathI>x</MathI> = 3</Math>, <MathI>y</MathI> will _always_ be <Math>6</Math>.
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 Калі б мы запісалі гэта як JavaScript функцыю, яна б выглядала наступным чынам:
 
@@ -52,10 +62,17 @@ React пабудаваны вакол гэтай канцэпцыі. **React м�
 ```js src/App.js
 function Recipe({ drinkers }) {
   return (
+<<<<<<< HEAD
     <ol>    
       <li>Закіпяціце {drinkers} шклянкі(-ак) вады.</li>
       <li>Дадайце {drinkers} лыжку(-ак) чаю і {0,5 * drinkers} лыжку(-ак) спецый.</li>
       <li>Дадайце {0,5 * drinkers} шклянкі(-ак) кіпячонага малака і цукар па гусце.</li>
+=======
+    <ol>
+      <li>Boil {drinkers} cups of water.</li>
+      <li>Add {drinkers} spoons of tea and {0.5 * drinkers} spoons of spice.</li>
+      <li>Add {0.5 * drinkers} cups of milk to boil and sugar to taste.</li>
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
     </ol>
   );
 }
@@ -75,11 +92,19 @@ export default function App() {
 
 </Sandpack>
 
+<<<<<<< HEAD
 Калі вы перадаяце `drinkers={2}` у кампанент `Recipe`, ён верне JSX, які змяшчае `2 шклянкі(-ак) вады`. Заўсёды.
+=======
+When you pass `drinkers={2}` to `Recipe`, it will return JSX containing `2 cups of water`. Always.
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 Калі вы перадаяце `drinkers={4}` — ён верне JSX, які змяшчае `4 шклянкі(-ак) вады`. Заўсёды.
 
+<<<<<<< HEAD
 Гэтак жа, як матэматычная формула.
+=======
+Just like a math formula.
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 Вы можаце разглядаць свой кампанент як рэцэпт: калі яго прытрымлівацца і не ўводзіць новыя інгрэдыенты ў працэсе гатавання, то кожны раз атрымаецца адна і тая ж страва. «Страва» — гэта JSX, які кампанент вяртае React для [рэндэру.](/learn/render-and-commit)
 
@@ -216,6 +241,7 @@ export default function TeaGathering() {
 
 <Recap>
 
+<<<<<<< HEAD
 * Кампаненты павінны быць чыстымі, што азначае:
   * **Займаюцца сваёй справай.** Яны не змяняюць аб’екты або пераменныя, якія існавалі да рэндэрынгу.
   * **Вяртаюць прадказальны вынік.** Пры аднолькавых уваходных даных кампанент заўсёды вяртае аднолькавы JSX.
@@ -223,11 +249,20 @@ export default function TeaGathering() {
 * Вы не павінны змяняць уваходныя даныя, якія вашы кампаненты выкарыстоўваюць для рэндэрынгу. Гэта могуць быць пропсы, стан або кантэкст. Каб абнавіць экран, [«задайце» (set) стан](/learn/state-a-components-memory) замест таго, каб муціраваць раней існуючыя аб'екты.
 * Імкніцеся апісваць логіку вашага кампанента ў JSX, які вы вяртаеце. Калі вам трэба нешта змяніць, лепш гэта зрабіць у апрацоўшчыку падзей. У крайнім выпадку, карыстайцеся `useEffect`.
 * Напісанне чыстых функцый патрабуе практыкі, але гэта раскрывае моц парадыгмы React.
+=======
+* A component must be pure, meaning:
+  * **It minds its own business.** It should not change any objects or variables that existed before rendering.
+  * **Same inputs, same output.** Given the same inputs, a component should always return the same JSX.
+* Rendering can happen at any time, so components should not depend on each others' rendering sequence.
+* You should not mutate any of the inputs that your components use for rendering. That includes props, state, and context. To update the screen, ["set" state](/learn/state-a-components-memory) instead of mutating preexisting objects.
+* Strive to express your component's logic in the JSX you return. When you need to "change things", you'll usually want to do it in an event handler. As a last resort, you can `useEffect`.
+* Writing pure functions takes a bit of practice, but it unlocks the power of React's paradigm.
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 </Recap>
 
 
-  
+
 <Challenges>
 
 #### Выправіць зламаны гадзіннік {/*fix-a-broken-clock*/}
@@ -452,7 +487,7 @@ export default function App() {
 ```js src/utils.js hidden
 export function getImageUrl(person, size = 's') {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     person.imageId +
     size +
     '.jpg'
@@ -550,7 +585,7 @@ export default function App() {
 ```js src/utils.js hidden
 export function getImageUrl(person, size = 's') {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     person.imageId +
     size +
     '.jpg'

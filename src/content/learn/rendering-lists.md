@@ -84,7 +84,7 @@ li { margin-bottom: 10px; }
 ```
 
 </Sandpack>
- 
+
 Звярніце ўвагу, што ў кансолі пясочніцы адлюстроўваецца памылка:
 
 <ConsoleBlock level="error">
@@ -114,13 +114,8 @@ const people = [{
   profession: 'фізік',
 }, {
   id: 3,
-<<<<<<< HEAD
   name: 'Персі Лавон Джуліан',
-  profession: 'хімік',  
-=======
-  name: 'Percy Lavon Julian',
-  profession: 'chemist',
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+  profession: 'хімік',
 }, {
   id: 4,
   name: 'Субрахманьян Чандрасекар',

@@ -29,13 +29,8 @@ function Avatar() {
   return (
     <img
       className="avatar"
-<<<<<<< HEAD
-      src="https://i.imgur.com/1bX5QH6.jpg"
-      alt="Лінь Ланьін"
-=======
       src="https://react.dev/images/docs/scientists/1bX5QH6.jpg"
-      alt="Lin Lanying"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+      alt="Лінь Ланьін"
       width={100}
       height={100}
     />
@@ -131,36 +126,22 @@ export default function Profile() {
     <div>
       <Avatar
         size={100}
-<<<<<<< HEAD
-        person={{ 
-          name: 'Кацуко Сарухасі', 
-=======
         person={{
-          name: 'Katsuko Saruhashi',
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+          name: 'Кацуко Сарухасі',
           imageId: 'YfeOqp2'
         }}
       />
       <Avatar
         size={80}
         person={{
-<<<<<<< HEAD
-          name: 'Аклілу Лема', 
-=======
-          name: 'Aklilu Lemma',
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+          name: 'Аклілу Лема',
           imageId: 'OKS67lh'
         }}
       />
       <Avatar
         size={50}
-<<<<<<< HEAD
-        person={{ 
-          name: 'Лiнь Ланьін',
-=======
         person={{
-          name: 'Lin Lanying',
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+          name: 'Лiнь Ланьін',
           imageId: '1bX5QH6'
         }}
       />
@@ -310,13 +291,8 @@ export default function Profile() {
     <Card>
       <Avatar
         size={100}
-<<<<<<< HEAD
-        person={{ 
-          name: 'Кацуко Сарухасі',
-=======
         person={{
-          name: 'Katsuko Saruhashi',
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+          name: 'Кацуко Сарухасі',
           imageId: 'YfeOqp2'
         }}
       />
@@ -477,21 +453,12 @@ export default function Gallery() {
         />
         <ul>
           <li>
-<<<<<<< HEAD
-            <b>Сфера дзейнасці: </b> 
+            <b>Сфера дзейнасці: </b>
             фізіка і хімія
           </li>
           <li>
-            <b>Нагароды: 4 </b> 
+            <b>Нагароды: 4 </b>
             (Нобелеўская прэмія па фізіцы, Нобелеўская прэмія па хіміі, медаль Дэві, медаль Матэуччы)
-=======
-            <b>Profession: </b>
-            physicist and chemist
-          </li>
-          <li>
-            <b>Awards: 4 </b>
-            (Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal, Matteucci Medal)
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
           </li>
           <li>
             <b>Адкрыццё: </b>
@@ -510,21 +477,12 @@ export default function Gallery() {
         />
         <ul>
           <li>
-<<<<<<< HEAD
             <b>Сфера дзейнасці: </b>
             геахімія
           </li>
           <li>
-            <b>Нагароды: 2 </b> 
+            <b>Нагароды: 2 </b>
             (прыз Міякэ па геахіміі, прыз Танака)
-=======
-            <b>Profession: </b>
-            geochemist
-          </li>
-          <li>
-            <b>Awards: 2 </b>
-            (Miyake Prize for geochemistry, Tanaka Prize)
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
           </li>
           <li>
             <b>Адкрыццё: </b>
@@ -624,8 +582,8 @@ export default function Gallery() {
         profession="фізіка і хімія"
         discovery="Палоній (элемент)"
         awards={[
-          'Нобелеўская прэмія па фізіцы', 
-          'Нобелеўская прэмія па хіміі', 
+          'Нобелеўская прэмія па фізіцы',
+          'Нобелеўская прэмія па хіміі',
           'медаль Дэві',
           'медаль Матэуччы'
         ]}
@@ -721,8 +679,8 @@ export default function Gallery() {
         profession: 'фізіка і хімія',
         discovery: 'Палоній (элемент)',
         awards: [
-          'Нобелеўская прэмія па фізіцы', 
-          'Нобелеўская прэмія па хіміі', 
+          'Нобелеўская прэмія па фізіцы',
+          'Нобелеўская прэмія па хіміі',
           'медаль Дэві',
           'медаль Матэуччы'
         ],
@@ -800,13 +758,8 @@ export default function Profile() {
   return (
     <Avatar
       size={40}
-<<<<<<< HEAD
-      person={{ 
-        name: 'Грэгорыа І. Зара', 
-=======
       person={{
-        name: 'Gregorio Y. Zara',
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+        name: 'Грэгорыа І. Зара',
         imageId: '7vQD0fP'
       }}
     />
@@ -861,25 +814,15 @@ export default function Profile() {
     <>
       <Avatar
         size={40}
-<<<<<<< HEAD
-        person={{ 
-          name: 'Грэгорыа І. Зара', 
-=======
         person={{
-          name: 'Gregorio Y. Zara',
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+          name: 'Грэгорыа І. Зара',
           imageId: '7vQD0fP'
         }}
       />
       <Avatar
         size={120}
-<<<<<<< HEAD
-        person={{ 
-          name: 'Грэгорыа І. Зара', 
-=======
         person={{
-          name: 'Gregorio Y. Zara',
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+          name: 'Грэгорыа І. Зара',
           imageId: '7vQD0fP'
         }}
       />
@@ -935,37 +878,22 @@ export default function Profile() {
     <>
       <Avatar
         size={40}
-<<<<<<< HEAD
-        person={{ 
-          name: 'Грэгорыа І. Зара', 
-=======
         person={{
-          name: 'Gregorio Y. Zara',
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+          name: 'Грэгорыа І. Зара',
           imageId: '7vQD0fP'
         }}
       />
       <Avatar
         size={70}
-<<<<<<< HEAD
-        person={{ 
-          name: 'Грэгорыа І. Зара', 
-=======
         person={{
-          name: 'Gregorio Y. Zara',
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+          name: 'Грэгорыа І. Зара',
           imageId: '7vQD0fP'
         }}
       />
       <Avatar
         size={120}
-<<<<<<< HEAD
-        person={{ 
-          name: 'Грэгорыа І. Зара', 
-=======
         person={{
-          name: 'Gregorio Y. Zara',
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+          name: 'Грэгорыа І. Зара',
           imageId: '7vQD0fP'
         }}
       />
@@ -1010,13 +938,8 @@ export default function Profile() {
           <h1>Фота</h1>
           <img
             className="avatar"
-<<<<<<< HEAD
-            src="https://i.imgur.com/OKS67lhm.jpg"
-            alt="Аклілу Лема"
-=======
             src="https://react.dev/images/docs/scientists/OKS67lhm.jpg"
-            alt="Aklilu Lemma"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+            alt="Аклілу Лема"
             width={70}
             height={70}
           />
@@ -1088,13 +1011,8 @@ export default function Profile() {
         <h1>Photo</h1>
         <img
           className="avatar"
-<<<<<<< HEAD
-          src="https://i.imgur.com/OKS67lhm.jpg"
-          alt="Аклілу Лема"
-=======
           src="https://react.dev/images/docs/scientists/OKS67lhm.jpg"
-          alt="Aklilu Lemma"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+          alt="Аклілу Лема"
           width={100}
           height={100}
         />
@@ -1155,13 +1073,8 @@ export default function Profile() {
       <Card title="Photo">
         <img
           className="avatar"
-<<<<<<< HEAD
-          src="https://i.imgur.com/OKS67lhm.jpg"
-          alt="Аклілу Лема"
-=======
           src="https://react.dev/images/docs/scientists/OKS67lhm.jpg"
-          alt="Aklilu Lemma"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+          alt="Аклілу Лема"
           width={100}
           height={100}
         />

@@ -526,15 +526,9 @@ export default function TeaSet() {
 
 ## Карыстальніцкі інтэрфейс у выглядзе дрэва {/*your-ui-as-a-tree*/}
 
-<<<<<<< HEAD
 React выкарыстоўвае дрэвы для мадэліравання адносін паміж кампанентамі і модулямі.
 
 Дрэва рэндэрынгу React — гэта адлюстраванне бацькоўскіх і даччыных адносін паміж кампанентамі.
-=======
-React uses trees to model the relationships between components and modules.
-
-A React render tree is a representation of the parent and child relationship between components.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 <Diagram name="generic_render_tree" height={250} width={500} alt="Дрэвападобны графік з пяццю вузламі, кожны з якіх уяўляе кампанент. Каранёвы вузел знаходзіцца ў верхняй частцы дрэвападобнага графіка і пазначаны як «Каранёвы кампанент (Root Component)». Ён мае дзве стрэлкі, якія ідуць уніз да двух вузлоў, пазначаных «Кампанент A (Component A)» і «Кампанент C (Component C)». Кожная са стрэлак пазначана надпісам «рэндэрыць». «Кампанент A» мае адзіную стрэлку «рэндэрыць» да вузла з надпісам «Кампанент B (Component B)». «Кампанент C» мае адну стрэлку «рэндэрыць» да вузла з надпісам «Кампанент D (Component D)».">
 
@@ -544,11 +538,7 @@ A React render tree is a representation of the parent and child relationship bet
 
 Кампаненты, якія знаходзяцца ў верхняй частцы дрэва, каля каранёвага кампанента, лічацца кампанентамі верхняга ўзроўню. Кампаненты без даччыных кампанентаў з'яўляюцца ліставымі кампанентамі. Такая класіфікацыя кампанентаў карысная для разумення патоку даных і прадукцыйнасці рэндэрынгу.
 
-<<<<<<< HEAD
 Мадэліраванне адносін паміж модулямі JavaScript — гэта яшчэ адзін карысны спосаб зразумець вашу праграму. Мы называем гэта «дрэвам залежнасці модуляў».
-=======
-Modelling the relationship between JavaScript modules is another useful way to understand your app. We refer to it as a module dependency tree.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 <Diagram name="generic_dependency_tree" height={250} width={500} alt="Дрэвападобны графік з пяццю вузламі. Кожны вузел уяўляе сабой JavaScript модуль. Самы верхні вузел пазначаны як «RootModule.js». Ён мае тры стрэлкі, якія ідуць да вузлоў: «ModuleA.js», «ModuleB.js» і «ModuleC.js». Кожная стрэлка пазначана надпісам «імпартуе». Вузел «ModuleC.js» мае адну стрэлку з надпісам «імпартуе», якая паказвае на вузел з надпісам «ModuleD.js».">
 
@@ -556,11 +546,7 @@ Modelling the relationship between JavaScript modules is another useful way to u
 
 </Diagram>
 
-<<<<<<< HEAD
 Дрэва залежнасцяў часта выкарыстоўваецца інструментамі зборкі для аб'яднання ўсяго адпаведнага JavaScript кода для спампоўвання і адлюстравання кліентам. Вялікі памер пакета пагаршае карыстальніцкі досвед узаемадзеяння з праграмамі напісанымі з дапамогай React. Разуменне дрэва залежнасцяў модуля дапамагае вырашаць такія праблемы.
-=======
-A dependency tree is often used by build tools to bundle all the relevant JavaScript code for the client to download and render. A large bundle size regresses user experience for React apps. Understanding the module dependency tree is helpful to debug such issues.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 <LearnMore path="/learn/understanding-your-ui-as-a-tree">
 

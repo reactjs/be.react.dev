@@ -11,7 +11,7 @@ title: Наладжванне рэдактара
 <YouWillLearn>
 
 * Якія рэдактары з'яўляюцца найбольш папулярнымі
-* Як аўтаматычна фармаціраваць ваш код 
+* Як аўтаматычна фармаціраваць ваш код
 
 </YouWillLearn>
 
@@ -31,11 +31,7 @@ title: Наладжванне рэдактара
 
 ### Лінтаванне {/*linting*/}
 
-<<<<<<< HEAD
 Лінтары кода знаходзяць праблемы ў вашым кодзе падчас напісання, дапамагаючы вам выправіць іх на ранняй стадыі. [ESLint](https://eslint.org/) — папулярны лінтар з адкрытым зыходным кодам для JavaScript.
-=======
-Code linters find problems in your code as you write, helping you fix them early. [ESLint](https://eslint.org/) is a popular, open source linter for JavaScript.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 * [Усталюйце ESLint з рэкамендаванай канфігурацыяй для React](https://www.npmjs.com/package/eslint-config-react-app) (пераканайцеся, што ў вас усталяваны [Node!](https://nodejs.org/en/download/current/))
 * [Інтэгруйце ESLint у VSCode з дапамогай афіцыйнага пашырэння](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)

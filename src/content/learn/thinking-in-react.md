@@ -38,13 +38,6 @@ JSON API вяртае даныя, якія выглядаюць наступны
 
 Вы можаце падыходзіць да разбівання дызайну на кампаненты па-рознаму, асноўваючыся на вашым досведзе:
 
-<<<<<<< HEAD
-=======
-* **Programming**--use the same techniques for deciding if you should create a new function or object. One such technique is the [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns), that is, a component should ideally only be concerned with one thing. If it ends up growing, it should be decomposed into smaller subcomponents.
-* **CSS**--consider what you would make class selectors for. (However, components are a bit less granular.)
-* **Design**--consider how you would organize the design's layers.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
-
 * **Праграмаванне** -- выкарыстоўвайце той жа падыход, што і пры стварэнні простай функцыі або аб'екта. Можна прымяніць [падзяленне адказнасці](https://en.wikipedia.org/wiki/Separation_of_concerns) — гэта значыць, што ў ідэале кампанент мусіць быць адказнымза нешта адно. Калі функцыянальнасць кампанента павялічваецца з цягам часу, яго варта разбіць на драбнейшыя падкампаненты.
 * **CSS** -- падумайце, для чаго б вы зрабілі селектары класаў (аднак памятайце, што кампаненты крыху менш дэтальныя).
 * **Дызайн** -- падумайце, як бы вы арганізавалі слаі дызайну.
@@ -236,17 +229,10 @@ td {
 
 Давайце пройдземся па іх адзін за адным яшчэ раз:
 
-<<<<<<< HEAD
 1. Першапачатковы спіс прадуктаў **перадаецца праз пропсы, таму яго не трэба захоўваць у стане.**
 2. Пошукавы запыт, здаецца, павінен захоўвацца ў стане, бо ён змяняецца з цягам часу і не можа быць вылічаны з іншых даных.
 3. Значэнне чэкбокса, здаецца, павінна захоўвацца ў стане, бо яно змяняецца з цягам часу і не можа быць вылічаны з іншых даных.
 4. Адфільтраваны спіс тавараў **не трэба захоўваць у стане, бо яго можна вылічыць,** адфільтраваўшы арыгінальны спіс з дапамогай пошукавага запыту і значэння чэкбокса.
-=======
-1. The original list of products is **passed in as props, so it's not state.**
-2. The search text seems to be state since it changes over time and can't be computed from anything.
-3. The value of the checkbox seems to be state since it changes over time and can't be computed from anything.
-4. The filtered list of products **isn't state because it can be computed** by taking the original list of products and filtering it according to the search text and value of the checkbox.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 Атрымліваецца, што толькі тэкст пошуку і значэнне чэкбокса будуць захоўвацца ў стане! Выдатная праца!
 
@@ -280,7 +266,6 @@ td {
 
 Давайце разбяром іх з дапамогай нашай стратэгіі:
 
-<<<<<<< HEAD
 1. **Вызначыце кампаненты, якія выкарыстоўваюць стан:**
     * `ProductTable` фільтруе спіс прадуктаў на аснове стану (пошукавы запыт і значэнне чэкбокса).
     * `SearchBar` адлюстроўвае стан (пошукавы запыт і значэнне чэкбокса).
@@ -288,15 +273,6 @@ td {
 2. **Вызначыце, дзе будзе знаходзіцца стан**: Мы будзем захоўваць тэкст фільтра і значэнне чэкбокса ў `FilterableProductTable`.
 
 Такім чынам, значэнні стану будуць знаходзіцца ў `FilterableProductTable`.
-=======
-1. **Identify components that use state:**
-    * `ProductTable` needs to filter the product list based on that state (search text and checkbox value).
-    * `SearchBar` needs to display that state (search text and checkbox value).
-2. **Find their common parent:** The first parent component both components share is `FilterableProductTable`.
-3. **Decide where the state lives**: We'll keep the filter text and checked state values in `FilterableProductTable`.
-
-So the state values will live in `FilterableProductTable`.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 Дадайце стан да кампанента з дапамогай [хуку `useState()`.](/reference/react/useState) Хукі — гэта спецыяльныя функцыі, якія дазваляюць «падчапіцца» да React. Дадайце дзве пераменныя стану ў пачатак `FilterableProductTable` і ўкажыце іх пачатковыя значэнні:
 
@@ -414,17 +390,10 @@ function ProductTable({ products, filterText, inStockOnly }) {
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
-<<<<<<< HEAD
-      <input 
-        type="text" 
-        value={filterText} 
-        placeholder="Шукаць..."/>
-=======
       <input
         type="text"
         value={filterText}
-        placeholder="Search..."/>
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+        placeholder="Шукаць..."/>
       <label>
         <input
           type="checkbox"
@@ -483,17 +452,10 @@ You provided a \`value\` prop to a form field without an \`onChange\` handler. T
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
-<<<<<<< HEAD
-      <input 
-        type="text" 
-        value={filterText} 
-        placeholder="Шукаць..."/>
-=======
       <input
         type="text"
         value={filterText}
-        placeholder="Search..."/>
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+        placeholder="Шукаць..."/>
 ```
 
 Аднак вы яшчэ не дадалі ніякага кода для рэагавання на дзеянні карыстальніка. Гэта вы зробіце ў апошнім кроку.
@@ -501,11 +463,7 @@ function SearchBar({ filterText, inStockOnly }) {
 
 ## Крок 5: Дадайце зваротны паток даных {/*step-5-add-inverse-data-flow*/}
 
-<<<<<<< HEAD
 Зараз ваша праграма рэндэрыцца, грунтуючыся на пропсах і стане, якія перадаюцца ўніз па іерархіі. Але для таго, каб змяніць стан у адпаведнасці з уводам карыстальніка, вам трэба будзе забяспечыць паток даных у іншы бок: кампаненты формы ў нізе іерархіі павінны абнаўляць стан у `FilterableProductTable`.
-=======
-Currently your app renders correctly with props and state flowing down the hierarchy. But to change the state according to user input, you will need to support data flowing the other way: the form components deep in the hierarchy need to update the state in `FilterableProductTable`.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 React патрабуе каб гэты паток даных быў відавочна прапісаны ўручную, што патрабуе крыху больш кода, чым двухбаковае прывязванне даных. Калі вы паспрабуеце ўвесці тэкст у поле пошуку або паставіць «птушку» ў чэкбоксе ў прыкладзе вышэй, то ўбачыце, што React ігнаруе ваш увод. Ён гэта робіць наўмысна. Калі вы напісалі `<input value={filterText} />`, вы ўказалі, што пропс `value` у `input` будзе роўным значэнню стану `filterText`, якое перадаецца з кампанента `FilterableProductTable`. Паколькі стан `filterText` не зададзены, поле ўводу ніколі не зменіцца.
 
@@ -650,15 +608,9 @@ function SearchBar({
 }) {
   return (
     <form>
-<<<<<<< HEAD
-      <input 
-        type="text" 
-        value={filterText} placeholder="Шукаць..." 
-=======
       <input
         type="text"
-        value={filterText} placeholder="Search..."
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+        value={filterText} placeholder="Шукаць..."
         onChange={(e) => onFilterTextChange(e.target.value)} />
       <label>
         <input

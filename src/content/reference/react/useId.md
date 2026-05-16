@@ -189,11 +189,7 @@ input { margin: 5px; }
 
 ### Генерацыя ідэнтыфікатараў для некалькі звязаных элементаў {/*generating-ids-for-several-related-elements*/}
 
-<<<<<<< HEAD
 Калі вам трэба даць ідэнтыфікатары некалькім звязаным элементам, вы можаце выкарыстаць `useId` каб згенераваць агульны прэфікс для іх:
-=======
-If you need to give IDs to multiple related elements, you can call `useId` to generate a shared prefix for them:
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 <Sandpack>
 

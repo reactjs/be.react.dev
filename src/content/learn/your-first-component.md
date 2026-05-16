@@ -63,13 +63,8 @@ React дазваляе камбінаваць разметку, CSS і JavaScrip
 export default function Profile() {
   return (
     <img
-<<<<<<< HEAD
-      src="https://i.imgur.com/MK3eW3Am.jpg"
-      alt="Кэтрын Джонсан"
-=======
       src="https://react.dev/images/docs/scientists/MK3eW3Am.jpg"
-      alt="Katherine Johnson"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+      alt="Кэтрын Джонсан"
     />
   )
 }
@@ -104,11 +99,7 @@ img { height: 200px; }
 Аператар `return` можа быць запісаны ў адзін радок, як у гэтым кампаненце:
 
 ```js
-<<<<<<< HEAD
-return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />;
-=======
-return <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Katherine Johnson" />;
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+return <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Кэтрын Джонсан" />;
 ```
 
 Але калі ўся ваша разметка не знаходзіцца ў тым жа радку, што і ключавое слова `return`, то вы павінны заключыць яе ў дужкі:
@@ -116,11 +107,7 @@ return <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Kat
 ```js
 return (
   <div>
-<<<<<<< HEAD
-    <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
-=======
-    <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Katherine Johnson" />
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+    <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
   </div>
 );
 ```
@@ -141,13 +128,8 @@ return (
 function Profile() {
   return (
     <img
-<<<<<<< HEAD
-      src="https://i.imgur.com/MK3eW3As.jpg"
-      alt="Кэтрын Джонсан"
-=======
       src="https://react.dev/images/docs/scientists/MK3eW3As.jpg"
-      alt="Katherine Johnson"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+      alt="Кэтрын Джонсан"
     />
   );
 }
@@ -181,17 +163,10 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 ```html
 <section>
-<<<<<<< HEAD
   <h1>Выбітныя навукоўцы</h1>
-  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
-  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
-  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
-=======
-  <h1>Amazing scientists</h1>
-  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Katherine Johnson" />
-  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Katherine Johnson" />
-  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Katherine Johnson" />
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
+  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
+  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
 </section>
 ```
 
@@ -273,13 +248,8 @@ function Profile() {
 function Profile() {
   return (
     <img
-<<<<<<< HEAD
-      src="https://i.imgur.com/lICfvbD.jpg"
-      alt="Аклілу Лема"
-=======
       src="https://react.dev/images/docs/scientists/lICfvbD.jpg"
-      alt="Aklilu Lemma"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+      alt="Аклілу Лема"
     />
   );
 }
@@ -303,13 +273,8 @@ img { height: 181px; }
 export default function Profile() {
   return (
     <img
-<<<<<<< HEAD
-      src="https://i.imgur.com/lICfvbD.jpg"
-      alt="Аклілу Лема"
-=======
       src="https://react.dev/images/docs/scientists/lICfvbD.jpg"
-      alt="Aklilu Lemma"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+      alt="Аклілу Лема"
     />
   );
 }
@@ -341,11 +306,7 @@ img { height: 181px; }
 ```js
 export default function Profile() {
   return
-<<<<<<< HEAD
-    <img src="https://i.imgur.com/jA8hHMpm.jpg" alt="Кацуко Сарухасі" />;
-=======
-    <img src="https://react.dev/images/docs/scientists/jA8hHMpm.jpg" alt="Katsuko Saruhashi" />;
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+    <img src="https://react.dev/images/docs/scientists/jA8hHMpm.jpg" alt="Кацуко Сарухасі" />;
 }
 ```
 
@@ -363,11 +324,7 @@ img { height: 180px; }
 
 ```js
 export default function Profile() {
-<<<<<<< HEAD
-  return <img src="https://i.imgur.com/jA8hHMpm.jpg" alt="Кацуко Сарухасі" />;
-=======
-  return <img src="https://react.dev/images/docs/scientists/jA8hHMpm.jpg" alt="Katsuko Saruhashi" />;
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+  return <img src="https://react.dev/images/docs/scientists/jA8hHMpm.jpg" alt="Кацуко Сарухасі" />;
 }
 ```
 
@@ -384,15 +341,9 @@ img { height: 180px; }
 ```js
 export default function Profile() {
   return (
-<<<<<<< HEAD
-    <img 
-      src="https://i.imgur.com/jA8hHMpm.jpg" 
-      alt="Кацуко Сарухасі" 
-=======
     <img
       src="https://react.dev/images/docs/scientists/jA8hHMpm.jpg"
-      alt="Katsuko Saruhashi"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+      alt="Кацуко Сарухасі"
     />
   );
 }
@@ -416,13 +367,8 @@ img { height: 180px; }
 function profile() {
   return (
     <img
-<<<<<<< HEAD
-      src="https://i.imgur.com/QIrZWGIs.jpg"
-      alt="Алан Л. Харт"
-=======
       src="https://react.dev/images/docs/scientists/QIrZWGIs.jpg"
-      alt="Alan L. Hart"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+      alt="Алан Л. Харт"
     />
   );
 }
@@ -457,13 +403,8 @@ img { margin: 0 10px 10px 0; height: 90px; }
 function Profile() {
   return (
     <img
-<<<<<<< HEAD
-      src="https://i.imgur.com/QIrZWGIs.jpg"
-      alt="Алан Л. Харт"
-=======
       src="https://react.dev/images/docs/scientists/QIrZWGIs.jpg"
-      alt="Alan L. Hart"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+      alt="Алан Л. Харт"
     />
   );
 }

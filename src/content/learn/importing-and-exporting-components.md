@@ -28,13 +28,8 @@ title: Імпартаванне і экспартаванне кампанент
 function Profile() {
   return (
     <img
-<<<<<<< HEAD
-      src="https://i.imgur.com/MK3eW3As.jpg"
-      alt="Кэтрын Джонсан"
-=======
       src="https://react.dev/images/docs/scientists/MK3eW3As.jpg"
-      alt="Katherine Johnson"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+      alt="Кэтрын Джонсан"
     />
   );
 }

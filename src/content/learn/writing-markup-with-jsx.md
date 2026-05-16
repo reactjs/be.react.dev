@@ -69,17 +69,10 @@ JSX і React — дзве асобныя рэчы. Яны часта выкар�
 Уявім, што ў вас ёсць (цалкам правільны) HTML:
 
 ```html
-<<<<<<< HEAD
 <h1>Спіс задач Хедзі Ламар</h1>
-<img 
-  src="https://i.imgur.com/yXOvdOSs.jpg" 
-  alt="Hedy Lamarr" 
-=======
-<h1>Hedy Lamarr's Todos</h1>
 <img
   src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
   alt="Hedy Lamarr"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
   class="photo"
 >
 <ul>
@@ -107,19 +100,11 @@ export default function TodoList() {
 ```js
 export default function TodoList() {
   return (
-<<<<<<< HEAD
     // Гэта не будзе працаваць!
     <h1>Спіс задач Хедзі Ламар</h1>
-    <img 
-      src="https://i.imgur.com/yXOvdOSs.jpg" 
-      alt="Hedy Lamarr" 
-=======
-    // This doesn't quite work!
-    <h1>Hedy Lamarr's Todos</h1>
     <img
       src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
       alt="Hedy Lamarr"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
       class="photo"
     >
     <ul>
@@ -155,17 +140,10 @@ img { height: 90px }
 
 ```js {1,11}
 <div>
-<<<<<<< HEAD
   <h1>Спіс задач Хедзі Ламар</h1>
-  <img 
-    src="https://i.imgur.com/yXOvdOSs.jpg" 
-    alt="Hedy Lamarr" 
-=======
-  <h1>Hedy Lamarr's Todos</h1>
   <img
     src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
     alt="Hedy Lamarr"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
     class="photo"
   >
   <ul>
@@ -179,17 +157,10 @@ img { height: 90px }
 
 ```js {1,11}
 <>
-<<<<<<< HEAD
   <h1>Спіс задач Хедзі Ламар</h1>
-  <img 
-    src="https://i.imgur.com/yXOvdOSs.jpg" 
-    alt="Hedy Lamarr" 
-=======
-  <h1>Hedy Lamarr's Todos</h1>
   <img
     src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
     alt="Hedy Lamarr"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
     class="photo"
   >
   <ul>
@@ -263,19 +234,11 @@ JSX ператвараецца ў JavaScript і атрыбуты, напісан
 export default function TodoList() {
   return (
     <>
-<<<<<<< HEAD
-      <h1>Спіс задач Хедзі Ламар</h1>
-      <img 
-        src="https://i.imgur.com/yXOvdOSs.jpg" 
-        alt="Hedy Lamarr" 
-        className="photo" 
-=======
       <h1>Hedy Lamarr's Todos</h1>
       <img
         src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
         alt="Hedy Lamarr"
         className="photo"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
       />
       <ul>
         <li>Вынайсці новыя святлафоры</li>

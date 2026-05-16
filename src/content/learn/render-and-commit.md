@@ -53,13 +53,8 @@ root.render(<Image />);
 export default function Image() {
   return (
     <img
-<<<<<<< HEAD
-      src="https://i.imgur.com/ZF6s192.jpg"
-      alt="'Родавы Флораліс' Эдуарда Каталана: гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі"
-=======
       src="https://react.dev/images/docs/scientists/ZF6s192.jpg"
-      alt="'Floralis Genérica' by Eduardo Catalano: a gigantic metallic flower sculpture with reflective petals"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+      alt="'Родавы Флораліс' Эдуарда Каталана: гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі"
     />
   );
 }
@@ -107,13 +102,8 @@ export default function Gallery() {
 function Image() {
   return (
     <img
-<<<<<<< HEAD
-      src="https://i.imgur.com/ZF6s192.jpg"
-      alt="'Родавы Флораліс' Эдуарда Каталана: гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі"
-=======
       src="https://react.dev/images/docs/scientists/ZF6s192.jpg"
-      alt="'Floralis Genérica' by Eduardo Catalano: a gigantic metallic flower sculpture with reflective petals"
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+      alt="'Родавы Флораліс' Эдуарда Каталана: гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі"
     />
   );
 }
@@ -133,13 +123,8 @@ img { margin: 0 10px 10px 0; }
 
 </Sandpack>
 
-<<<<<<< HEAD
 - **Пры першапачатковым рэндэры** React [створыць DOM-вузлы](https://developer.mozilla.org/docs/Web/API/Document/createElement) для `<section>`, `<h1>` і трох `<img>` тэгаў.
 - **Падчас паўторнага рэндэру** React падлічыць, якія з іх уласцівасцей, калі такія маюцца, змяніліся з моманту папярэдняга рэндэру. Ён нічога не будзе рабіць з гэтай інфармацыяй да наступнага кроку, фазы фіксацыі.
-=======
-* **During the initial render,** React will [create the DOM nodes](https://developer.mozilla.org/docs/Web/API/Document/createElement) for `<section>`, `<h1>`, and three `<img>` tags.
-* **During a re-render,** React will calculate which of their properties, if any, have changed since the previous render. It won't do anything with that information until the next step, the commit phase.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 <Pitfall>
 

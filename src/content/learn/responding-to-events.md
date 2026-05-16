@@ -168,11 +168,7 @@ button { margin-right: 10px; }
 
 ### Перадача апрацоўшчыкаў падзей у якасці пропсаў {/*passing-event-handlers-as-props*/}
 
-<<<<<<< HEAD
 Часта вам можа спатрэбіцца, каб бацькоўскі кампанент вызначаў апрацоўшчыка падзей для даччынага кампанента. Разгледзім кнопкі: у залежнасці ад таго, дзе вы выкарыстоўваеце кампанент `Button`, вам можа спатрэбіцца выконваць розныя функцыі — магчыма, адна кнопка павінна прайграваць фільм, а другая загружаць відарыс.
-=======
-Often you'll want the parent component to specify a child's event handler. Consider buttons: depending on where you're using a `Button` component, you might want to execute a different function—perhaps one plays a movie and another uploads an image.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 Каб зрабіць гэта, перадайце кампаненту пропс, які ён атрымлівае ад свайго бацькі, у якасці апрацоўшчыка падзей, наступным чынам:
 
@@ -315,21 +311,12 @@ button { margin-right: 10px; }
 
 </Sandpack>
 
-<<<<<<< HEAD
 Звярніце ўвагу, што кампанент `App` не павінен ведаць, *што* кампанент `Toolbar` будзе рабіць з `onPlayMovie` або `onUploadImage`. Гэта дэталі рэалізацыі `Toolbar`. У гэтым прыкладзе `Toolbar` перадае іх у якасці апрацоўшчыкаў падзеі `onClick` сваім кампанентам `Button`, але пазней ён таксама можа выклікаць іх па спалучэнні клавіш. Называнне пропсаў у адпаведнасці са спецыфікай вашай праграмы, напрыклад `onPlayMovie`, дае вам магчымасць змяніць спосаб іх выкарыстання ў будучыні.
-  
+
 <Note>
 
 Упэўніцеся, што вы выкарыстоўваеце адпаведныя HTML тэгі для апрацоўшчыкаў падзей. Напрыклад, для апрацоўкі націскання выкарыстоўвайце [`<button onClick={handleClick}>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) замест `<div onClick={handleClick}>`. Выкарыстанне сапраўднага браўзернага кампанента `<button>` дазваляе выкарыстоўваць убудаваныя функцыі браўзера, напрыклад навігацыю з клавіятуры. Калі вам не падабаецца прадвызначаны стыль кнопкі ў браўзеры і вы хочаце зрабіць яе больш падобнай на спасылку або іншы элемент інтэрфейсу, вы можаце дасягнуць гэтага з дапамогай CSS. [Даведайцеся больш пра напісанне даступнай разметкі.](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)
-  
-=======
-Notice how the `App` component does not need to know *what* `Toolbar` will do with `onPlayMovie` or `onUploadImage`. That's an implementation detail of the `Toolbar`. Here, `Toolbar` passes them down as `onClick` handlers to its `Button`s, but it could later also trigger them on a keyboard shortcut. Naming props after app-specific interactions like `onPlayMovie` gives you the flexibility to change how they're used later.
 
-<Note>
-
-Make sure that you use the appropriate HTML tags for your event handlers. For example, to handle clicks, use [`<button onClick={handleClick}>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) instead of `<div onClick={handleClick}>`. Using a real browser `<button>` enables built-in browser behaviors like keyboard navigation. If you don't like the default browser styling of a button and want to make it look more like a link or a different UI element, you can achieve it with CSS. [Learn more about writing accessible markup.](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)
-
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 </Note>
 
 ## Распаўсюджванне падзей {/*event-propagation*/}
@@ -423,21 +410,12 @@ button { margin: 5px; }
 
 Пры націсканні на кнопку:
 
-<<<<<<< HEAD
-1. React выклікае апрацоўшчык `onClick`, перададзены ў `<button>`. 
+1. React выклікае апрацоўшчык `onClick`, перададзены ў `<button>`.
 2. Гэты апрацоўшчык, аб'яўлены ў `Button`, выконвае наступнае:
    * Выклікае `e.stopPropagation()`, што прадухіляе далейшае ўсплыванне падзеі.
    * Выклікае функцыю `onClick`, якая з'яўляецца пропсам, які перадалі з кампанента `Toolbar`.
 3. Гэтая функцыя, аб'яўленая ў кампаненце `Toolbar`, паказвае ўсплывальнае акно `alert` для кнопкі.
 4. Паколькі распаўсюджванне падзеі было спынена, апрацоўшчык `onClick` бацькоўскага элемента `<div>` *не* выклікаецца.
-=======
-1. React calls the `onClick` handler passed to `<button>`.
-2. That handler, defined in `Button`, does the following:
-   * Calls `e.stopPropagation()`, preventing the event from bubbling further.
-   * Calls the `onClick` function, which is a prop passed from the `Toolbar` component.
-3. That function, defined in the `Toolbar` component, displays the button's own alert.
-4. Since the propagation was stopped, the parent `<div>`'s `onClick` handler does *not* run.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 У выніку `e.stopPropagation()`, пры націсканні на кнопкі цяпер паказваецца толькі адно ўсплывальнае акно (ад `<button>`), а не два (ад `<button>` і ад бацькоўскага `<div>` у кампаненце `Toolbar`). Націсканне кнопкі — гэта не тое ж самае, што націсканне на панэль інструментаў, таму спыненне распаўсюджвання падзеі мае сэнс для гэтага інтэрфейсу.
 
@@ -454,19 +432,11 @@ button { margin: 5px; }
 </div>
 ```
 
-<<<<<<< HEAD
 Кожная падзея распаўсюджваецца ў тры фазы:
 
 1. Яна спускаецца ўніз, выклікаючы ўсе апрацоўшчыкі `onClickCapture`.
 2. Яна выклікае апрацоўшчык `onClick` для націснутага элемента.
 3. Яна падымаецца ўверх, выклікаючы ўсе апрацоўшчыкі `onClick`.
-=======
-Each event propagates in three phases:
-
-1. It travels down, calling all `onClickCapture` handlers.
-2. It runs the clicked element's `onClick` handler.
-3. It travels upwards, calling all `onClick` handlers.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 Перахопліванне падзей карысны пры напісанні маршрутызатараў або аналітыцы, але вы, верагодна, не будзеце выкарыстоўваць іх у сваёй праграме.
 

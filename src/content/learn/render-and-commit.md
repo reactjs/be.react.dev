@@ -53,7 +53,7 @@ root.render(<Image />);
 export default function Image() {
   return (
     <img
-      src="https://i.imgur.com/ZF6s192.jpg"
+      src="https://react.dev/images/docs/scientists/ZF6s192.jpg"
       alt="'Родавы Флораліс' Эдуарда Каталана: гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі"
     />
   );
@@ -102,7 +102,7 @@ export default function Gallery() {
 function Image() {
   return (
     <img
-      src="https://i.imgur.com/ZF6s192.jpg"
+      src="https://react.dev/images/docs/scientists/ZF6s192.jpg"
       alt="'Родавы Флораліс' Эдуарда Каталана: гіганцкая металічная скульптура кветкі з люстэркавымі пялёсткамі"
     />
   );

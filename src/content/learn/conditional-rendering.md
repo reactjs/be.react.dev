@@ -32,17 +32,17 @@ export default function PackingList() {
     <section>
       <h1>Спіс рэчаў Салі Райд</h1>
       <ul>
-        <Item 
-          isPacked={true} 
-          name="Касмічны скафандр" 
+        <Item
+          isPacked={true}
+          name="Касмічны скафандр"
         />
-        <Item 
-          isPacked={true} 
-          name="Шлем з залатым лістом" 
+        <Item
+          isPacked={true}
+          name="Шлем з залатым лістом"
         />
-        <Item 
-          isPacked={false} 
-          name="Фота Тэма" 
+        <Item
+          isPacked={false}
+          name="Фота Тэма"
         />
       </ul>
     </section>
@@ -80,17 +80,17 @@ export default function PackingList() {
     <section>
       <h1>Спіс рэчаў Салі Райд</h1>
       <ul>
-        <Item 
-          isPacked={true} 
-          name="Касмічны скафандр" 
+        <Item
+          isPacked={true}
+          name="Касмічны скафандр"
         />
-        <Item 
-          isPacked={true} 
-          name="Шлем з залатым лістом" 
+        <Item
+          isPacked={true}
+          name="Шлем з залатым лістом"
         />
-        <Item 
-          isPacked={false} 
-          name="Фота Тэма" 
+        <Item
+          isPacked={false}
+          name="Фота Тэма"
         />
       </ul>
     </section>
@@ -132,17 +132,17 @@ export default function PackingList() {
     <section>
       <h1>Спіс рэчаў Салі Райд</h1>
       <ul>
-        <Item 
-          isPacked={true} 
-          name="Касмічны скафандр" 
+        <Item
+          isPacked={true}
+          name="Касмічны скафандр"
         />
-        <Item 
-          isPacked={true} 
-          name="Шлем з залатым лістом" 
+        <Item
+          isPacked={true}
+          name="Шлем з залатым лістом"
         />
-        <Item 
-          isPacked={false} 
-          name="Фота Тэма" 
+        <Item
+          isPacked={false}
+          name="Фота Тэма"
         />
       </ul>
     </section>
@@ -236,17 +236,17 @@ export default function PackingList() {
     <section>
       <h1>Спіс рэчаў Салі Райд</h1>
       <ul>
-        <Item 
-          isPacked={true} 
-          name="Касмічны скафандр" 
+        <Item
+          isPacked={true}
+          name="Касмічны скафандр"
         />
-        <Item 
-          isPacked={true} 
-          name="Шлем з залатым лістом" 
+        <Item
+          isPacked={true}
+          name="Шлем з залатым лістом"
         />
-        <Item 
-          isPacked={false} 
-          name="Фота Тэма" 
+        <Item
+          isPacked={false}
+          name="Фота Тэма"
         />
       </ul>
     </section>
@@ -290,17 +290,17 @@ export default function PackingList() {
     <section>
       <h1>Спіс рэчаў Салі Райд</h1>
       <ul>
-        <Item 
-          isPacked={true} 
-          name="Касмічны скафандр" 
+        <Item
+          isPacked={true}
+          name="Касмічны скафандр"
         />
-        <Item 
-          isPacked={true} 
-          name="Шлем з залатым лістом" 
+        <Item
+          isPacked={true}
+          name="Шлем з залатым лістом"
         />
-        <Item 
-          isPacked={false} 
-          name="Фота Тэма" 
+        <Item
+          isPacked={false}
+          name="Фота Тэма"
         />
       </ul>
     </section>
@@ -371,17 +371,17 @@ export default function PackingList() {
     <section>
       <h1>Спіс рэчаў Салі Райд</h1>
       <ul>
-        <Item 
-          isPacked={true} 
-          name="Касмічны скафандр" 
+        <Item
+          isPacked={true}
+          name="Касмічны скафандр"
         />
-        <Item 
-          isPacked={true} 
-          name="Шлем з залатым лістом" 
+        <Item
+          isPacked={true}
+          name="Шлем з залатым лістом"
         />
-        <Item 
-          isPacked={false} 
-          name="Фота Тэма" 
+        <Item
+          isPacked={false}
+          name="Фота Тэма"
         />
       </ul>
     </section>
@@ -417,17 +417,17 @@ export default function PackingList() {
     <section>
       <h1>Спіс рэчаў Салі Райд</h1>
       <ul>
-        <Item 
-          isPacked={true} 
-          name="Касмічны скафандр" 
+        <Item
+          isPacked={true}
+          name="Касмічны скафандр"
         />
-        <Item 
-          isPacked={true} 
-          name="Шлем з залатым лістом" 
+        <Item
+          isPacked={true}
+          name="Шлем з залатым лістом"
         />
-        <Item 
-          isPacked={false} 
-          name="Фота Тэма" 
+        <Item
+          isPacked={false}
+          name="Фота Тэма"
         />
       </ul>
     </section>
@@ -474,17 +474,17 @@ export default function PackingList() {
     <section>
       <h1>Спіс рэчаў Салі Райд</h1>
       <ul>
-        <Item 
-          isPacked={true} 
-          name="Касмічны скафандр" 
+        <Item
+          isPacked={true}
+          name="Касмічны скафандр"
         />
-        <Item 
-          isPacked={true} 
-          name="Шлем з залатым лістом" 
+        <Item
+          isPacked={true}
+          name="Шлем з залатым лістом"
         />
-        <Item 
-          isPacked={false} 
-          name="Фота Тэма" 
+        <Item
+          isPacked={false}
+          name="Фота Тэма"
         />
       </ul>
     </section>
@@ -512,17 +512,17 @@ export default function PackingList() {
     <section>
       <h1>Спіс рэчаў Салі Райд</h1>
       <ul>
-        <Item 
-          isPacked={true} 
-          name="Касмічны скафандр" 
+        <Item
+          isPacked={true}
+          name="Касмічны скафандр"
         />
-        <Item 
-          isPacked={true} 
-          name="Шлем з залатым лістом" 
+        <Item
+          isPacked={true}
+          name="Шлем з залатым лістом"
         />
-        <Item 
-          isPacked={false} 
-          name="Фота Тэма" 
+        <Item
+          isPacked={false}
+          name="Фота Тэма"
         />
       </ul>
     </section>
@@ -560,17 +560,17 @@ export default function PackingList() {
     <section>
       <h1>Спіс рэчаў Салі Райд</h1>
       <ul>
-        <Item 
-          importance={9} 
-          name="Касмічны скафандр" 
+        <Item
+          importance={9}
+          name="Касмічны скафандр"
         />
-        <Item 
-          importance={0} 
-          name="Шлем з залатым лістом" 
+        <Item
+          importance={0}
+          name="Шлем з залатым лістом"
         />
-        <Item 
-          importance={6} 
-          name="Фота Тэма" 
+        <Item
+          importance={6}
+          name="Фота Тэма"
         />
       </ul>
     </section>
@@ -604,17 +604,17 @@ export default function PackingList() {
     <section>
       <h1>Спіс рэчаў Салі Райд</h1>
       <ul>
-        <Item 
-          importance={9} 
-          name="Касмічны скафандр" 
+        <Item
+          importance={9}
+          name="Касмічны скафандр"
         />
-        <Item 
-          importance={0} 
-          name="Шлем з залатым лістом" 
+        <Item
+          importance={0}
+          name="Шлем з залатым лістом"
         />
-        <Item 
-          importance={6} 
-          name="Фота Тэма" 
+        <Item
+          importance={6}
+          name="Фота Тэма"
         />
       </ul>
     </section>

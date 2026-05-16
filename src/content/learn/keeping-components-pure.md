@@ -29,11 +29,11 @@ title: Захоўванне кампанентаў чыстымі
 
 Калі <Math><MathI>x</MathI> = 2</Math>, тады <Math><MathI>y</MathI> = 4</Math>. Заўсёды.
 
-Калі <Math><MathI>x</MathI> = 3</Math>, тады <Math><MathI>y</MathI> = 6</Math>. Заўсёды. 
+Калі <Math><MathI>x</MathI> = 3</Math>, тады <Math><MathI>y</MathI> = 6</Math>. Заўсёды.
 
 Калі <Math><MathI>x</MathI> = 3</Math>, тады <MathI>y</MathI> не будзе часам роўным <Math>9</Math> або <Math>–1</Math>, або <Math>2,5</Math> у залежнасці ад часу сутак або стану фондавага рынку.
 
-Калі <Math><MathI>y</MathI> = 2<MathI>x</MathI></Math> і <Math><MathI>x</MathI> = 3</Math>, тады <MathI>y</MathI> _заўсёды_ будзе <Math>6</Math>. 
+Калі <Math><MathI>y</MathI> = 2<MathI>x</MathI></Math> і <Math><MathI>x</MathI> = 3</Math>, тады <MathI>y</MathI> _заўсёды_ будзе <Math>6</Math>.
 
 Калі б мы запісалі гэта як JavaScript функцыю, яна б выглядала наступным чынам:
 
@@ -52,7 +52,7 @@ React пабудаваны вакол гэтай канцэпцыі. **React м�
 ```js src/App.js
 function Recipe({ drinkers }) {
   return (
-    <ol>    
+    <ol>
       <li>Закіпяціце {drinkers} шклянкі(-ак) вады.</li>
       <li>Дадайце {drinkers} лыжку(-ак) чаю і {0,5 * drinkers} лыжку(-ак) спецый.</li>
       <li>Дадайце {0,5 * drinkers} шклянкі(-ак) кіпячонага малака і цукар па гусце.</li>
@@ -227,7 +227,7 @@ export default function TeaGathering() {
 </Recap>
 
 
-  
+
 <Challenges>
 
 #### Выправіць зламаны гадзіннік {/*fix-a-broken-clock*/}
@@ -452,7 +452,7 @@ export default function App() {
 ```js src/utils.js hidden
 export function getImageUrl(person, size = 's') {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     person.imageId +
     size +
     '.jpg'
@@ -550,7 +550,7 @@ export default function App() {
 ```js src/utils.js hidden
 export function getImageUrl(person, size = 's') {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     person.imageId +
     size +
     '.jpg'

@@ -70,9 +70,9 @@ JSX і React — дзве асобныя рэчы. Яны часта выкар�
 
 ```html
 <h1>Спіс задач Хедзі Ламар</h1>
-<img 
-  src="https://i.imgur.com/yXOvdOSs.jpg" 
-  alt="Hedy Lamarr" 
+<img
+  src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
+  alt="Hedy Lamarr"
   class="photo"
 >
 <ul>
@@ -102,9 +102,9 @@ export default function TodoList() {
   return (
     // Гэта не будзе працаваць!
     <h1>Спіс задач Хедзі Ламар</h1>
-    <img 
-      src="https://i.imgur.com/yXOvdOSs.jpg" 
-      alt="Hedy Lamarr" 
+    <img
+      src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
+      alt="Hedy Lamarr"
       class="photo"
     >
     <ul>
@@ -141,9 +141,9 @@ img { height: 90px }
 ```js {1,11}
 <div>
   <h1>Спіс задач Хедзі Ламар</h1>
-  <img 
-    src="https://i.imgur.com/yXOvdOSs.jpg" 
-    alt="Hedy Lamarr" 
+  <img
+    src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
+    alt="Hedy Lamarr"
     class="photo"
   >
   <ul>
@@ -158,9 +158,9 @@ img { height: 90px }
 ```js {1,11}
 <>
   <h1>Спіс задач Хедзі Ламар</h1>
-  <img 
-    src="https://i.imgur.com/yXOvdOSs.jpg" 
-    alt="Hedy Lamarr" 
+  <img
+    src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
+    alt="Hedy Lamarr"
     class="photo"
   >
   <ul>
@@ -187,9 +187,9 @@ JSX патрабуе, каб усе тэгі былі закрытыя: няпа
 
 ```js {2-6,8-10}
 <>
-  <img 
-    src="https://i.imgur.com/yXOvdOSs.jpg" 
-    alt="Hedy Lamarr" 
+  <img
+    src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
+    alt="Hedy Lamarr"
     class="photo"
    />
   <ul>
@@ -207,9 +207,9 @@ JSX ператвараецца ў JavaScript і атрыбуты, напісан
 Таму ў React шмат якія HTML і SVG атрыбуты напісаныя ў camelCase. Напрыклад, замест `stroke-width` трэба выкарыстоўваць `strokeWidth`. Так як `class` — зарэзерваванае слова, у React трэба пісаць `className` замест яго, што суадносіцца з [адпаведнай уласцівасцю DOM](https://developer.mozilla.org/en-US/docs/Web/API/Element/className):
 
 ```js {4}
-<img 
-  src="https://i.imgur.com/yXOvdOSs.jpg" 
-  alt="Hedy Lamarr" 
+<img
+  src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
+  alt="Hedy Lamarr"
   className="photo"
 />
 ```
@@ -234,11 +234,11 @@ JSX ператвараецца ў JavaScript і атрыбуты, напісан
 export default function TodoList() {
   return (
     <>
-      <h1>Спіс задач Хедзі Ламар</h1>
-      <img 
-        src="https://i.imgur.com/yXOvdOSs.jpg" 
-        alt="Hedy Lamarr" 
-        className="photo" 
+      <h1>Hedy Lamarr's Todos</h1>
+      <img
+        src="https://react.dev/images/docs/scientists/yXOvdOSs.jpg"
+        alt="Hedy Lamarr"
+        className="photo"
       />
       <ul>
         <li>Вынайсці новыя святлафоры</li>

@@ -63,7 +63,7 @@ React дазваляе камбінаваць разметку, CSS і JavaScrip
 export default function Profile() {
   return (
     <img
-      src="https://i.imgur.com/MK3eW3Am.jpg"
+      src="https://react.dev/images/docs/scientists/MK3eW3Am.jpg"
       alt="Кэтрын Джонсан"
     />
   )
@@ -99,7 +99,7 @@ img { height: 200px; }
 Аператар `return` можа быць запісаны ў адзін радок, як у гэтым кампаненце:
 
 ```js
-return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />;
+return <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Кэтрын Джонсан" />;
 ```
 
 Але калі ўся ваша разметка не знаходзіцца ў тым жа радку, што і ключавое слова `return`, то вы павінны заключыць яе ў дужкі:
@@ -107,7 +107,7 @@ return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонс�
 ```js
 return (
   <div>
-    <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
+    <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
   </div>
 );
 ```
@@ -128,7 +128,7 @@ return (
 function Profile() {
   return (
     <img
-      src="https://i.imgur.com/MK3eW3As.jpg"
+      src="https://react.dev/images/docs/scientists/MK3eW3As.jpg"
       alt="Кэтрын Джонсан"
     />
   );
@@ -164,9 +164,9 @@ img { margin: 0 10px 10px 0; height: 90px; }
 ```html
 <section>
   <h1>Выбітныя навукоўцы</h1>
-  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
-  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
-  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
+  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
+  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
+  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Кэтрын Джонсан" />
 </section>
 ```
 
@@ -248,7 +248,7 @@ function Profile() {
 function Profile() {
   return (
     <img
-      src="https://i.imgur.com/lICfvbD.jpg"
+      src="https://react.dev/images/docs/scientists/lICfvbD.jpg"
       alt="Аклілу Лема"
     />
   );
@@ -273,7 +273,7 @@ img { height: 181px; }
 export default function Profile() {
   return (
     <img
-      src="https://i.imgur.com/lICfvbD.jpg"
+      src="https://react.dev/images/docs/scientists/lICfvbD.jpg"
       alt="Аклілу Лема"
     />
   );
@@ -306,7 +306,7 @@ img { height: 181px; }
 ```js
 export default function Profile() {
   return
-    <img src="https://i.imgur.com/jA8hHMpm.jpg" alt="Кацуко Сарухасі" />;
+    <img src="https://react.dev/images/docs/scientists/jA8hHMpm.jpg" alt="Кацуко Сарухасі" />;
 }
 ```
 
@@ -324,7 +324,7 @@ img { height: 180px; }
 
 ```js
 export default function Profile() {
-  return <img src="https://i.imgur.com/jA8hHMpm.jpg" alt="Кацуко Сарухасі" />;
+  return <img src="https://react.dev/images/docs/scientists/jA8hHMpm.jpg" alt="Кацуко Сарухасі" />;
 }
 ```
 
@@ -341,9 +341,9 @@ img { height: 180px; }
 ```js
 export default function Profile() {
   return (
-    <img 
-      src="https://i.imgur.com/jA8hHMpm.jpg" 
-      alt="Кацуко Сарухасі" 
+    <img
+      src="https://react.dev/images/docs/scientists/jA8hHMpm.jpg"
+      alt="Кацуко Сарухасі"
     />
   );
 }
@@ -367,7 +367,7 @@ img { height: 180px; }
 function profile() {
   return (
     <img
-      src="https://i.imgur.com/QIrZWGIs.jpg"
+      src="https://react.dev/images/docs/scientists/QIrZWGIs.jpg"
       alt="Алан Л. Харт"
     />
   );
@@ -403,7 +403,7 @@ img { margin: 0 10px 10px 0; height: 90px; }
 function Profile() {
   return (
     <img
-      src="https://i.imgur.com/QIrZWGIs.jpg"
+      src="https://react.dev/images/docs/scientists/QIrZWGIs.jpg"
       alt="Алан Л. Харт"
     />
   );

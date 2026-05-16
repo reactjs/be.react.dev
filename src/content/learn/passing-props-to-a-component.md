@@ -29,7 +29,7 @@ function Avatar() {
   return (
     <img
       className="avatar"
-      src="https://i.imgur.com/1bX5QH6.jpg"
+      src="https://react.dev/images/docs/scientists/1bX5QH6.jpg"
       alt="Лінь Ланьін"
       width={100}
       height={100}
@@ -126,21 +126,21 @@ export default function Profile() {
     <div>
       <Avatar
         size={100}
-        person={{ 
-          name: 'Кацуко Сарухасі', 
+        person={{
+          name: 'Кацуко Сарухасі',
           imageId: 'YfeOqp2'
         }}
       />
       <Avatar
         size={80}
         person={{
-          name: 'Аклілу Лема', 
+          name: 'Аклілу Лема',
           imageId: 'OKS67lh'
         }}
       />
       <Avatar
         size={50}
-        person={{ 
+        person={{
           name: 'Лiнь Ланьін',
           imageId: '1bX5QH6'
         }}
@@ -153,7 +153,7 @@ export default function Profile() {
 ```js src/utils.js
 export function getImageUrl(person, size = 's') {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     person.imageId +
     size +
     '.jpg'
@@ -291,7 +291,7 @@ export default function Profile() {
     <Card>
       <Avatar
         size={100}
-        person={{ 
+        person={{
           name: 'Кацуко Сарухасі',
           imageId: 'YfeOqp2'
         }}
@@ -320,7 +320,7 @@ export default function Avatar({ person, size }) {
 ```js src/utils.js
 export function getImageUrl(person, size = 's') {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     person.imageId +
     size +
     '.jpg'
@@ -453,11 +453,11 @@ export default function Gallery() {
         />
         <ul>
           <li>
-            <b>Сфера дзейнасці: </b> 
+            <b>Сфера дзейнасці: </b>
             фізіка і хімія
           </li>
           <li>
-            <b>Нагароды: 4 </b> 
+            <b>Нагароды: 4 </b>
             (Нобелеўская прэмія па фізіцы, Нобелеўская прэмія па хіміі, медаль Дэві, медаль Матэуччы)
           </li>
           <li>
@@ -481,7 +481,7 @@ export default function Gallery() {
             геахімія
           </li>
           <li>
-            <b>Нагароды: 2 </b> 
+            <b>Нагароды: 2 </b>
             (прыз Міякэ па геахіміі, прыз Танака)
           </li>
           <li>
@@ -498,7 +498,7 @@ export default function Gallery() {
 ```js src/utils.js
 export function getImageUrl(imageId, size = 's') {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     imageId +
     size +
     '.jpg'
@@ -582,8 +582,8 @@ export default function Gallery() {
         profession="фізіка і хімія"
         discovery="Палоній (элемент)"
         awards={[
-          'Нобелеўская прэмія па фізіцы', 
-          'Нобелеўская прэмія па хіміі', 
+          'Нобелеўская прэмія па фізіцы',
+          'Нобелеўская прэмія па хіміі',
           'медаль Дэві',
           'медаль Матэуччы'
         ]}
@@ -606,7 +606,7 @@ export default function Gallery() {
 ```js src/utils.js
 export function getImageUrl(imageId, size = 's') {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     imageId +
     size +
     '.jpg'
@@ -679,8 +679,8 @@ export default function Gallery() {
         profession: 'фізіка і хімія',
         discovery: 'Палоній (элемент)',
         awards: [
-          'Нобелеўская прэмія па фізіцы', 
-          'Нобелеўская прэмія па хіміі', 
+          'Нобелеўская прэмія па фізіцы',
+          'Нобелеўская прэмія па хіміі',
           'медаль Дэві',
           'медаль Матэуччы'
         ],
@@ -703,7 +703,7 @@ export default function Gallery() {
 ```js src/utils.js
 export function getImageUrl(person, size = 's') {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     person.imageId +
     size +
     '.jpg'
@@ -758,8 +758,8 @@ export default function Profile() {
   return (
     <Avatar
       size={40}
-      person={{ 
-        name: 'Грэгорыа І. Зара', 
+      person={{
+        name: 'Грэгорыа І. Зара',
         imageId: '7vQD0fP'
       }}
     />
@@ -770,7 +770,7 @@ export default function Profile() {
 ```js src/utils.js
 export function getImageUrl(person, size) {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     person.imageId +
     size +
     '.jpg'
@@ -814,15 +814,15 @@ export default function Profile() {
     <>
       <Avatar
         size={40}
-        person={{ 
-          name: 'Грэгорыа І. Зара', 
+        person={{
+          name: 'Грэгорыа І. Зара',
           imageId: '7vQD0fP'
         }}
       />
       <Avatar
         size={120}
-        person={{ 
-          name: 'Грэгорыа І. Зара', 
+        person={{
+          name: 'Грэгорыа І. Зара',
           imageId: '7vQD0fP'
         }}
       />
@@ -834,7 +834,7 @@ export default function Profile() {
 ```js src/utils.js
 export function getImageUrl(person, size) {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     person.imageId +
     size +
     '.jpg'
@@ -878,22 +878,22 @@ export default function Profile() {
     <>
       <Avatar
         size={40}
-        person={{ 
-          name: 'Грэгорыа І. Зара', 
+        person={{
+          name: 'Грэгорыа І. Зара',
           imageId: '7vQD0fP'
         }}
       />
       <Avatar
         size={70}
-        person={{ 
-          name: 'Грэгорыа І. Зара', 
+        person={{
+          name: 'Грэгорыа І. Зара',
           imageId: '7vQD0fP'
         }}
       />
       <Avatar
         size={120}
-        person={{ 
-          name: 'Грэгорыа І. Зара', 
+        person={{
+          name: 'Грэгорыа І. Зара',
           imageId: '7vQD0fP'
         }}
       />
@@ -905,7 +905,7 @@ export default function Profile() {
 ```js src/utils.js
 export function getImageUrl(person, size) {
   return (
-    'https://i.imgur.com/' +
+    'https://react.dev/images/docs/scientists/' +
     person.imageId +
     size +
     '.jpg'
@@ -938,7 +938,7 @@ export default function Profile() {
           <h1>Фота</h1>
           <img
             className="avatar"
-            src="https://i.imgur.com/OKS67lhm.jpg"
+            src="https://react.dev/images/docs/scientists/OKS67lhm.jpg"
             alt="Аклілу Лема"
             width={70}
             height={70}
@@ -1011,7 +1011,7 @@ export default function Profile() {
         <h1>Photo</h1>
         <img
           className="avatar"
-          src="https://i.imgur.com/OKS67lhm.jpg"
+          src="https://react.dev/images/docs/scientists/OKS67lhm.jpg"
           alt="Аклілу Лема"
           width={100}
           height={100}
@@ -1073,7 +1073,7 @@ export default function Profile() {
       <Card title="Photo">
         <img
           className="avatar"
-          src="https://i.imgur.com/OKS67lhm.jpg"
+          src="https://react.dev/images/docs/scientists/OKS67lhm.jpg"
           alt="Аклілу Лема"
           width={100}
           height={100}

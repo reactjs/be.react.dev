@@ -38,7 +38,6 @@ JSON API вяртае даныя, якія выглядаюць наступны
 
 Вы можаце падыходзіць да разбівання дызайну на кампаненты па-рознаму, асноўваючыся на вашым досведзе:
 
-
 * **Праграмаванне** -- выкарыстоўвайце той жа падыход, што і пры стварэнні простай функцыі або аб'екта. Можна прымяніць [падзяленне адказнасці](https://en.wikipedia.org/wiki/Separation_of_concerns) — гэта значыць, што ў ідэале кампанент мусіць быць адказнымза нешта адно. Калі функцыянальнасць кампанента павялічваецца з цягам часу, яго варта разбіць на драбнейшыя падкампаненты.
 * **CSS** -- падумайце, для чаго б вы зрабілі селектары класаў (аднак памятайце, што кампаненты крыху менш дэтальныя).
 * **Дызайн** -- падумайце, як бы вы арганізавалі слаі дызайну.
@@ -280,17 +279,17 @@ td {
 ```js
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
-  const [inStockOnly, setInStockOnly] = useState(false);  
+  const [inStockOnly, setInStockOnly] = useState(false);
 ```
 
 Затым перадайце `filterText` і `inStockOnly` у кампаненты `ProductTable` і `SearchBar` у якасці пропсаў:
 
 ```js
 <div>
-  <SearchBar 
-    filterText={filterText} 
+  <SearchBar
+    filterText={filterText}
     inStockOnly={inStockOnly} />
-  <ProductTable 
+  <ProductTable
     products={products}
     filterText={filterText}
     inStockOnly={inStockOnly} />
@@ -310,10 +309,10 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
+      <SearchBar
+        filterText={filterText}
         inStockOnly={inStockOnly} />
-      <ProductTable 
+      <ProductTable
         products={products}
         filterText={filterText}
         inStockOnly={inStockOnly} />
@@ -391,13 +390,13 @@ function ProductTable({ products, filterText, inStockOnly }) {
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} 
+      <input
+        type="text"
+        value={filterText}
         placeholder="Шукаць..."/>
       <label>
-        <input 
-          type="checkbox" 
+        <input
+          type="checkbox"
           checked={inStockOnly} />
         {' '}
         Паказваць толькі тавары ў наяўнасці
@@ -453,9 +452,9 @@ You provided a \`value\` prop to a form field without an \`onChange\` handler. T
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} 
+      <input
+        type="text"
+        value={filterText}
         placeholder="Шукаць..."/>
 ```
 
@@ -477,8 +476,8 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
+      <SearchBar
+        filterText={filterText}
         inStockOnly={inStockOnly}
         onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly} />
@@ -521,13 +520,13 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
-        inStockOnly={inStockOnly} 
-        onFilterTextChange={setFilterText} 
+      <SearchBar
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly} />
-      <ProductTable 
-        products={products} 
+      <ProductTable
+        products={products}
         filterText={filterText}
         inStockOnly={inStockOnly} />
     </div>
@@ -609,14 +608,14 @@ function SearchBar({
 }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} placeholder="Шукаць..." 
+      <input
+        type="text"
+        value={filterText} placeholder="Шукаць..."
         onChange={(e) => onFilterTextChange(e.target.value)} />
       <label>
-        <input 
-          type="checkbox" 
-          checked={inStockOnly} 
+        <input
+          type="checkbox"
+          checked={inStockOnly}
           onChange={(e) => onInStockOnlyChange(e.target.checked)} />
         {' '}
         Паказваць толькі тавары ў наяўнасці

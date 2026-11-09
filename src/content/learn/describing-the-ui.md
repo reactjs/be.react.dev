@@ -530,7 +530,11 @@ React выкарыстоўвае дрэвы для мадэліравання а
 
 Дрэва рэндэрынгу React — гэта адлюстраванне бацькоўскіх і даччыных адносін паміж кампанентамі.
 
+<<<<<<< HEAD
 <Diagram name="generic_render_tree" height={250} width={500} alt="Дрэвападобны графік з пяццю вузламі, кожны з якіх уяўляе кампанент. Каранёвы вузел знаходзіцца ў верхняй частцы дрэвападобнага графіка і пазначаны як «Каранёвы кампанент (Root Component)». Ён мае дзве стрэлкі, якія ідуць уніз да двух вузлоў, пазначаных «Кампанент A (Component A)» і «Кампанент C (Component C)». Кожная са стрэлак пазначана надпісам «рэндэрыць». «Кампанент A» мае адзіную стрэлку «рэндэрыць» да вузла з надпісам «Кампанент B (Component B)». «Кампанент C» мае адну стрэлку «рэндэрыць» да вузла з надпісам «Кампанент D (Component D)».">
+=======
+<Diagram name="generic_render_tree" height={250} width={500} alt="A tree graph with five nodes, with each node representing a component. The root node is located at the top of the tree graph and is labelled 'Root Component'. It has two arrows extending down to two nodes labelled 'Component A' and 'Component C'. Each of the arrows is labelled with 'renders'. 'Component A' has a single 'renders' arrow to a node labelled 'Component B'. 'Component C' has a single 'renders' arrow to a node labelled 'Component D'.">
+>>>>>>> f5fa1e82edacdf8c6bfc4dfd9cf52029a96d5fd3
 
 Прыклад дрэва рэндэрынгу React.
 

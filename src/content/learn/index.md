@@ -337,7 +337,11 @@ function MyButton() {
 }
 ```
 
+<<<<<<< HEAD
 React зноў выкліча функцыю вашага кампанента. На гэты раз `count` будзе роўны `1`, затым `2`, і гэтак далей.
+=======
+Calling `setCount` tells React to call your component function again. This is called a *re-render*. This time, `count` will be `1`. Then it will be `2`. And so on.
+>>>>>>> 46a54e0592729712b7640308b53268e84fdc7c9f
 
 Калі вы рэндэрыце адзін і той жа кампанент некалькі разоў, то ў кожнага з іх будзе свой стан. Паспрабуйце націснуць кожную кнопку паасобку:
 

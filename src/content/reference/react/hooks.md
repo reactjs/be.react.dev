@@ -16,8 +16,14 @@ title: "Убудаваныя ў React хукі"
 
 Каб дадаць стан у кампанент, выкарыстоўвайце адзін з дадзеных хукаў:
 
+<<<<<<< HEAD
 * [`useState`](/reference/react/useState) задае пераменную стану, якую вы можаце абнаўляць напрамую.
 * [`useReducer`](/reference/react/useReducer) задае пераменную стану, логіка абнаўленне якой апісваецца праз [функцыю рэд’юсара](/learn/extracting-state-logic-into-a-reducer).
+=======
+* [`useState`](/reference/react/useState) declares a state variable that you can update directly.
+* [`useReducer`](/reference/react/useReducer) declares a state variable with the update logic inside a [reducer function.](/learn/extracting-state-logic-into-a-reducer)
+* [`useOptimistic`](/reference/react/useOptimistic) lets you show a different state while an async action is pending.
+>>>>>>> 46a54e0592729712b7640308b53268e84fdc7c9f
 
 ```js
 function ImageGallery() {
